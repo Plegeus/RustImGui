@@ -4,25 +4,55 @@
 
 #include <imgui_docking.h>
 #include <imgui.h>
+#ifdef _WIN32
+#include <imgui_docking_vk.h>
+#endif
+#ifdef __APPLE__ 
 #include <imgui_docking_mtl.h>
+#endif
 #include <stdio.h>
 
 
-void __init(void* p_window, void* p_device) {
+void __init_glfw(void* p_window, void* p_device) {
+#ifdef __APPLE__
     __init_glfw_mtl(p_window, p_device);
+#endif
+#ifdef _WIN32
+    __init_glfw_vk();
+#endif
 }
 void __terminate() {
+#ifdef __APPLE__
     __terminate_mtl();
+#endif
+#ifdef _WIN32
+    __terminate_vk();
+#endif
 }
 
 void __new_frame(void const* descriptor) {
+#ifdef __APPLE__
     __new_frame_mtl(descriptor);
+#endif
+#ifdef _WIN32
+    __new_frame_vk();
+#endif
 }
 void __end_frame() {
+#ifdef __APPLE__
     __end_frame_mtl();
+#endif
+#ifdef _WIN32
+    __end_frame_vk();
+#endif
 }
 void __render(void const* command_buffer, void const* command_encoder) {
+#ifdef __APPLE__
     __render_mtl(command_buffer, command_encoder);
+#endif
+#ifdef _WIN32
+    __render_vk();
+#endif
 }
 
 
@@ -45,7 +75,7 @@ void set_allocator_functions(void* alloc, void* free, void* user_data) {
 }
 
 void __show_demo_window(int* open) {
-    if (*open == INT32_MAX) {
+    if (open == NULL) {
         ImGui::ShowDemoWindow();
     }
     else {
@@ -134,7 +164,7 @@ void __pop_item_width() {
 }
 
 int __begin(const char const* title, int* open, int flags) {
-    if (*open == INT32_MAX) {
+    if (open == NULL) {
         return ImGui::Begin(title, nullptr, flags) ? 1 : 0;
     }
     else {
@@ -161,7 +191,7 @@ int __begin_popup(const char const* id, int flags) {
     return ImGui::BeginPopup(id, flags) ? 1 : 0;
 }
 int __begin_popup_modal(const char const* name, int* open, int flags) {
-    if (*open == INT32_MAX) {
+    if (open == NULL) {
         return ImGui::BeginPopupModal(name, NULL, flags) ? 1 : 0;
     }
     else {

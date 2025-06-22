@@ -20,10 +20,13 @@ include!("./bindings.rs");
 
 // interface...
 pub unsafe fn show_demo_window(open: Option<&mut bool>) {
-  with_bool(open, |int| { 
-    _show_demo_window(int);
-    0
-  });
+  if let Some(open) = open {
+    let mut int = if *open { 1 } else { 0 };
+    _show_demo_window(&mut int);
+    *open = int != 0;
+  } else {
+    _show_demo_window(std::ptr::null_mut());
+  }
 }
 pub unsafe fn show_style_editor() {
   _show_style_editor();
@@ -99,14 +102,14 @@ pub unsafe fn get_window_pos() -> (f32, f32) {
 pub unsafe fn begin<T: Display>(title: T, open: Option<&mut bool>, flags: Option<i32>) -> bool {
   let title = stringify(title);
   let c_title = title.cify();
-  with_bool(
-    open, 
-    |int| _begin(
-      c_title.as_ptr(), 
-      int,
-      flags.cify()
-    )
-  )
+  if let Some(open) = open {
+    let mut int = if *open { 1 } else { 0 };
+    let res = _begin(c_title.as_ptr(), &mut int, flags.cify());
+    *open = int != 0;
+    res != 0
+  } else {
+    _begin(c_title.as_ptr(), std::ptr::null_mut(), flags.cify()) != 0
+  }
 }
 pub unsafe fn begin_child<T: Display>(id: T, size: Option<[f32; 2]>, child_flags: Option<i32>, window_flags: Option<i32>) -> bool {
   let id = stringify(id);
@@ -127,10 +130,14 @@ pub unsafe fn begin_popup<T: Display>(id: T, flags: Option<i32>) -> bool {
 pub unsafe fn begin_popup_modal<T: Display>(name: T, open: Option<&mut bool>, flags: Option<i32>) -> bool {
   let name = stringify(name);
   let c_name = name.cify();
-  with_bool(
-    open,
-    |int| _begin_popup_modal(c_name.as_ptr(), int, flags.unwrap_or(0))
-  )
+    if let Some(open) = open {
+    let mut int = if *open { 1 } else { 0 };
+    let res = _begin_popup_modal(c_name.as_ptr(), &mut int, flags.unwrap_or(0));
+    *open = int != 0;
+    res != 0
+  } else {
+    _begin_popup_modal(c_name.as_ptr(), std::ptr::null_mut(), flags.unwrap_or(0))  != 0
+  }
 }
 pub unsafe fn collapsing_header<T: Display>(label: T) -> bool {
   let label = stringify(label);

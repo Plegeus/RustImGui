@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 // platform specific...
-void __init(void*, void*);
+void __init_glfw(void*, void*);
 void __terminate();
 
 void __new_frame(void const*);
