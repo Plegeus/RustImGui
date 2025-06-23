@@ -39,8 +39,18 @@ fn main() {
     .unwrap()
     .write_to_file("./src/bindings/imgui_c.rs")
     .unwrap();
-  
 
+  // !!! WARNING !!!
+  // at the time of writing, bindgen does not cover all of C++
+  // !!! WARNING !!!
+  bindgen::Builder::default()
+    .clang_args(["-x", "c++"]) // explicitely tell clang to parse C++, not C.
+    .header("../deps/imgui-docking/imgui.h")
+    //.allowlist_item(r#"enum [a-zA-Z]* { .* }"#)
+    .generate()
+    .unwrap()
+    .write_to_file("./src/bindings/imgui_h.rs")
+    .unwrap();
     
 }
 

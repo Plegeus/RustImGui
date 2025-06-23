@@ -9,5 +9,5 @@ edition = "2021"
 imgui_derive = { path = "./../imgui_derive" }
 
 [build-dependencies]
-bindgen = "0.69.4"
+bindgen = "0.72.0"
 
