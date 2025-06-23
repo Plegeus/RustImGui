@@ -16,7 +16,7 @@ use std::os::raw::c_char as Char;
 use std::os::raw::c_void as Void;
 use std::fmt::{ Display };
 
-include!("./bindings.rs");
+include!("./bindings/imgui_c.rs");
 
 // interface...
 pub unsafe fn show_demo_window(open: Option<&mut bool>) {
