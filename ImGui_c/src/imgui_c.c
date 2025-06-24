@@ -6,8 +6,8 @@
 #include "../include/imgui_c.h"
 
 
-void init(void* p_window, void* p_device) {
-    __init(p_window, p_device);
+void init_glfw(void* p_window, void* p_device) {
+    __init_glfw(p_window, p_device);
 }
 void terminate() {
     __terminate();

@@ -6,7 +6,7 @@
 #define IMGUI_BINDINGS_IMGUI_BINDINGS_H
 
 
-void init(void*, void*);
+void init_glfw(void*, void*);
 void terminate();
 
 void _show_demo_window(int*);

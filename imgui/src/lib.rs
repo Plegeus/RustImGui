@@ -17,6 +17,7 @@ use std::os::raw::c_void as Void;
 use std::fmt::{ Display };
 
 include!("./bindings/imgui_c.rs");
+include!("./bindings/imgui_cpp.rs");
 
 // interface...
 pub unsafe fn show_demo_window(open: Option<&mut bool>) {
@@ -221,7 +222,7 @@ pub unsafe fn table_next_column() -> bool {
 pub unsafe fn text<T: Display>(text: T) {
   let c_text = stringify(text);
   let c_text = c_text.cify();
-  _text(c_text.as_ptr());
+  __text(c_text.as_ptr());
 }
 pub unsafe fn text_wrapped<T: Display>(text: T) {
   let c_text = stringify(text);

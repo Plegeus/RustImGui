@@ -3,26 +3,21 @@ extern crate bindgen;
 
 
 fn main() {
+  link();
+  bind();    
+  //compile();
+}
 
-  //println!("cargo:rustc-link-search=/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_bindings/target");
-  //println!("cargo:rustc-link-search=/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking/target");`
-  println!("cargo:rustc-link-search=E:/Coding/BDS/RustImGui/ImGui_c/target/Debug");
-  println!("cargo:rustc-link-search=E:/Coding/BDS/RustImGui/ImGui_cpp/target/Debug");
-  println!("cargo:rustc-link-search=E:/Coding/BDS/RustImGui/ImGui_cpp_vk/target/Debug");
-  #[cfg(target_os = "macos")] {
-    println!("cargo:rustc-link-search=/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking_mtl/DerivedData/ImGui_docking_mtl/Build/Products/Debug");
-    println!("cargo:rustc-link-search=/Users/timo/Documents/coding/glfw-3.3.9.bin.MACOS/lib-arm64");
-  }
-  
+
+fn link() {
+
+  #[cfg(target_os = "macos")]
+  println!("cargo:rustc-link-search=/usr/local/lib/cms");
+
   println!("cargo:rustc-link-lib=ImGui_c");
   println!("cargo:rustc-link-lib=ImGui_cpp");
-  #[cfg(target_os = "macos")]
-  println!("cargo:rustc-link-lib=ImGui_cpp_mtl");
-  #[cfg(target_os = "windows")]
-  println!("cargo:rustc-link-lib=ImGui_cpp_vk");
-  //println!("cargo:rustc-link-lib=glfw3");
-  
   #[cfg(target_os = "macos")] {
+    println!("cargo:rustc-link-lib=ImGui_cpp_mtl");
     println!("cargo:rustc-link-lib=c++");   
     println!("cargo:rustc-link-lib=framework=Foundation"); 
     println!("cargo:rustc-link-lib=framework=Metal"); 
@@ -31,7 +26,17 @@ fn main() {
     println!("cargo:rustc-link-lib=framework=IOKit"); 
   }
 
+}
+fn bind() {
+    
   // https://rust-lang.github.io/rust-bindgen/customizing-generated-bindings.html
+  bindgen::Builder::default()
+    .header("../ImGui_cpp/include/imgui_cpp.h")
+    .default_visibility(bindgen::FieldVisibilityKind::PublicCrate) // https://docs.rs/bindgen/latest/bindgen/struct.Builder.html#method.default_visibility
+    .generate()
+    .unwrap()
+    .write_to_file("./src/bindings/imgui_cpp.rs")
+    .unwrap();
   bindgen::Builder::default()
     .header("../ImGui_c/include/imgui_c.h")
     .default_visibility(bindgen::FieldVisibilityKind::PublicCrate) // https://docs.rs/bindgen/latest/bindgen/struct.Builder.html#method.default_visibility
@@ -51,11 +56,32 @@ fn main() {
     .unwrap()
     .write_to_file("./src/bindings/imgui_h.rs")
     .unwrap();
-    
+
 }
+fn compile() {
+
+  use std::process::Command;
+
+  fn _compile(dir: &str) {
+    Command::new("cmake")
+      .args(["-B", "./build"])
+      .current_dir(dir)
+      .status()
+      .unwrap();
+    Command::new("cmake")
+      .args(["--build", "./build"])
+      .current_dir(dir)
+      .status()
+      .unwrap();
+  }
+
+  #[cfg(target_os = "windows")]
+  _compile("./../ImGui_cpp_vk");
+  #[cfg(target_os = "macos")] ();
+  // xcode...
+  _compile("./../ImGui_cpp");
+  _compile("./../ImGui_c");
 
 
-
-
-
+}
 

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2543680C2C3E9FDD0076ED60 /* imgui_docking_mtl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2543680B2C3E9FDD0076ED60 /* imgui_docking_mtl.mm */; };
+		2543680C2C3E9FDD0076ED60 /* imgui_cpp_mtl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2543680B2C3E9FDD0076ED60 /* imgui_cpp_mtl.mm */; };
 		2543680F2C3EA02D0076ED60 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2543680E2C3EA02D0076ED60 /* Metal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		254368012C3E9F820076ED60 /* libImGui_docking_mtl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libImGui_docking_mtl.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2543680A2C3E9FC70076ED60 /* imgui_docking_mtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imgui_docking_mtl.h; sourceTree = "<group>"; };
-		2543680B2C3E9FDD0076ED60 /* imgui_docking_mtl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = imgui_docking_mtl.mm; sourceTree = "<group>"; };
+		2543680A2C3E9FC70076ED60 /* imgui_cpp_mtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imgui_cpp_mtl.h; sourceTree = "<group>"; };
+		2543680B2C3E9FDD0076ED60 /* imgui_cpp_mtl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = imgui_cpp_mtl.mm; sourceTree = "<group>"; };
 		2543680E2C3EA02D0076ED60 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 		254368082C3E9F9F0076ED60 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				2543680A2C3E9FC70076ED60 /* imgui_docking_mtl.h */,
+				2543680A2C3E9FC70076ED60 /* imgui_cpp_mtl.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -59,7 +59,7 @@
 		254368092C3E9FA40076ED60 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2543680B2C3E9FDD0076ED60 /* imgui_docking_mtl.mm */,
+				2543680B2C3E9FDD0076ED60 /* imgui_cpp_mtl.mm */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2543680C2C3E9FDD0076ED60 /* imgui_docking_mtl.mm in Sources */,
+				2543680C2C3E9FDD0076ED60 /* imgui_cpp_mtl.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,9 +269,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYSTEM_HEADER_SEARCH_PATHS = (
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_bindings/include",
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking/deps/imgui-docking/backends",
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking/deps/imgui-docking",
+					"../deps/imgui-docking",
+					"../deps/imgui-docking/backends",
+					../ImGui_c/include,
 				);
 			};
 			name = Debug;
@@ -284,9 +284,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYSTEM_HEADER_SEARCH_PATHS = (
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_bindings/include",
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking/deps/imgui-docking/backends",
-					"/Users/timo/Documents/coding/black-death-studios/the-cosmos-game-engine/deps/imgui_bindings/ImGui_docking/deps/imgui-docking",
+					"../deps/imgui-docking",
+					"../deps/imgui-docking/backends",
+					../ImGui_c/include,
 				);
 			};
 			name = Release;
