@@ -13,18 +13,15 @@ fn link() {
 
   #[cfg(target_os = "macos")]
   println!("cargo:rustc-link-search=/usr/local/lib/cms");
+  #[cfg(target_os = "windows")]
+  println!("cargo:rustc-link-search=C:/Program Files/cms");
 
   println!("cargo:rustc-link-lib=ImGui_c");
   println!("cargo:rustc-link-lib=ImGui_cpp");
-  #[cfg(target_os = "macos")] {
+  #[cfg(target_os = "macos")]
     println!("cargo:rustc-link-lib=ImGui_cpp_mtl");
-    println!("cargo:rustc-link-lib=c++");   
-    println!("cargo:rustc-link-lib=framework=Foundation"); 
-    println!("cargo:rustc-link-lib=framework=Metal"); 
-    println!("cargo:rustc-link-lib=framework=QuartzCore"); 
-    println!("cargo:rustc-link-lib=framework=Cocoa"); 
-    println!("cargo:rustc-link-lib=framework=IOKit"); 
-  }
+  #[cfg(target_os = "windows")] 
+  println!("cargo:rustc-link-lib=ImGui_cpp_vk");
 
 }
 fn bind() {
