@@ -76,7 +76,7 @@ int _input_text(const char const*, char*, int, int);
 int _input_text_multi_line(const char const*, char*, int, float, float, int, void*, void*);
 void _text_colored(float r, float g, float b, float a, const char const* text);
 
-void _image(void*, float*, float*, float*, float*, float*);
+void _image(void const*, float const*, float const*, float const*, float const*, float const*);
 
 int _begin_main_menu_bar();
 void end_main_menu_bar();

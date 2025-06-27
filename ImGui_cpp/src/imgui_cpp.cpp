@@ -293,7 +293,7 @@ void __text_colored(float r, float g, float b, float a, const char const* text) 
     ImGui::TextColored(color, "%s", text);
 }
 
-void __image(void* texture_id, float* img_size, float* uv0, float* uv1, float* tint_col, float* border_col) {
+void __image(void const* texture_id, float const* img_size, float const* uv0, float const* uv1, float const* tint_col, float const* border_col) {
     ImVec2 img_size2(img_size[0], img_size[1]);
     ImVec2 uv02(uv0[0], uv0[1]);
     ImVec2 uv12(uv1[0], uv1[1]);

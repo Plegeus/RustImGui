@@ -259,12 +259,12 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn __image(
-        arg1: *mut ::std::os::raw::c_void,
-        arg2: *mut f32,
-        arg3: *mut f32,
-        arg4: *mut f32,
-        arg5: *mut f32,
-        arg6: *mut f32,
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *const f32,
+        arg3: *const f32,
+        arg4: *const f32,
+        arg5: *const f32,
+        arg6: *const f32,
     );
 }
 unsafe extern "C" {

@@ -3,10 +3,10 @@ extern crate proc_macro;
 
 use proc_macro::{TokenStream};
 use quote::quote;
-use syn::punctuated::Punctuated;
-use syn::token::{Comma};
+use syn::Data;
 
 
+/*
 #[proc_macro_derive(Show)]
 pub fn show_derive(input: TokenStream) -> TokenStream { 
 
@@ -69,6 +69,25 @@ pub fn show_derive(input: TokenStream) -> TokenStream {
 
   q.into()
 }
+*/
+
+/*
+#[proc_macro_derive(GuiFlag)]
+pub fn derive_gui_flags(input: TokenStream) -> TokenStream { 
+
+  let ast: syn::DeriveInput = syn::parse(input).unwrap();
+  let Data::Enum(_) = ast.data else { panic!("Can only derive GuiFlags for enums!") };
+  let ident = ast.ident;
+
+  quote! {
+    impl crate::GuiFlag for #ident {
+      fn as_i32(&self) -> i32 {
+        *self as i32
+      }
+    }
+  }
+    .into()
+}*/
 
 
 #[proc_macro_attribute]

@@ -83,8 +83,7 @@ void __text_wrapped(const char const*);
 int __input_text(const char const*, char*, int, int);
 int __input_text_multi_line(const char const*, char*, int, float, float, int, void*, void*);
 void __text_colored(float r, float g, float b, float a, const char const* text);
-
-void __image(void*, float*, float*, float*, float*, float*);
+void __image(void const*, float const*, float const*, float const*, float const*, float const*);
 
 int __begin_main_menu_bar();
 void __end_main_menu_bar();

@@ -194,7 +194,7 @@ void _text_colored(float r, float g, float b, float a, const char const* text) {
     __text_colored(r, g, b, a, text);
 }
 
-void _image(void* texture_id, float* img_size, float* uv0, float* uv1, float* tint_col, float* border_col) {
+void _image(void const* texture_id, float const* img_size, float const* uv0, float const* uv1, float const* tint_col, float const* border_col) {
     __image(texture_id, img_size, uv0, uv1, tint_col, border_col);
 }
 

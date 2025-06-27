@@ -49,7 +49,11 @@ where
             index % 8
         };
         let mask = 1 << bit_index;
-        if val { byte | mask } else { byte & !mask }
+        if val {
+            byte | mask
+        } else {
+            byte & !mask
+        }
     }
     #[inline]
     pub fn set_bit(&mut self, index: usize, val: bool) {
@@ -138,253 +142,762 @@ where
 }
 pub const IMGUI_VERSION: &[u8; 11] = b"1.92.0 WIP\0";
 pub const IMGUI_VERSION_NUM: u32 = 19199;
-pub const _VCRT_COMPILER_PREPROCESSOR: u32 = 1;
-pub const _SAL_VERSION: u32 = 20;
-pub const __SAL_H_VERSION: u32 = 180000000;
-pub const _USE_DECLSPECS_FOR_SAL: u32 = 0;
-pub const _USE_ATTRIBUTES_FOR_SAL: u32 = 0;
-pub const _CRT_PACKING: u32 = 8;
-pub const _HAS_EXCEPTIONS: u32 = 1;
-pub const NULL: u32 = 0;
-pub const _HAS_CXX17: u32 = 0;
-pub const _HAS_CXX20: u32 = 0;
-pub const _HAS_CXX23: u32 = 0;
-pub const _HAS_CXX26: u32 = 0;
-pub const _HAS_NODISCARD: u32 = 1;
-pub const _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE: u32 = 1;
-pub const _CRT_BUILD_DESKTOP_APP: u32 = 1;
-pub const _ARGMAX: u32 = 100;
-pub const _CRT_INT_MAX: u32 = 2147483647;
-pub const _CRT_FUNCTIONS_REQUIRED: u32 = 1;
-pub const _CRT_HAS_CXX17: u32 = 0;
-pub const _CRT_HAS_C11: u32 = 0;
-pub const _CRT_INTERNAL_NONSTDC_NAMES: u32 = 1;
-pub const __STDC_SECURE_LIB__: u32 = 200411;
-pub const __GOT_SECURE_LIB__: u32 = 200411;
-pub const __STDC_WANT_SECURE_LIB__: u32 = 1;
-pub const _SECURECRT_FILL_BUFFER_PATTERN: u32 = 254;
-pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES: u32 = 0;
-pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT: u32 = 0;
-pub const _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES: u32 = 1;
-pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_MEMORY: u32 = 0;
-pub const _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY: u32 = 0;
-pub const FLT_EVAL_METHOD: u32 = 0;
-pub const DBL_DECIMAL_DIG: u32 = 17;
-pub const DBL_DIG: u32 = 15;
-pub const DBL_HAS_SUBNORM: u32 = 1;
-pub const DBL_MANT_DIG: u32 = 53;
-pub const DBL_MAX_10_EXP: u32 = 308;
-pub const DBL_MAX_EXP: u32 = 1024;
-pub const DBL_MIN_10_EXP: i32 = -307;
-pub const DBL_MIN_EXP: i32 = -1021;
-pub const _DBL_RADIX: u32 = 2;
-pub const FLT_DECIMAL_DIG: u32 = 9;
-pub const FLT_DIG: u32 = 6;
+pub const _LIBCPP_ABI_VERSION: u32 = 1;
+pub const _LIBCPP_HARDENING_MODE_DEFAULT: u32 = 2;
+pub const _LIBCPP_OBJECT_FORMAT_MACHO: u32 = 1;
+pub const _LIBCPP_STD_VER: u32 = 14;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_19: u32 = 0;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_18: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_17: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_16: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_15: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_14: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_13: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_12: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_11: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_10: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_9: u32 = 1;
+pub const _LIBCPP_INTRODUCED_IN_LLVM_4: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_BAD_OPTIONAL_ACCESS: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_BAD_VARIANT_ACCESS: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_BAD_ANY_CAST: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_FILESYSTEM_LIBRARY: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_SYNC: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_ADDITIONAL_IOSTREAM_EXPLICIT_INSTANTIATIONS_1: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_TO_CHARS_FLOATING_POINT: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_VERBOSE_ABORT: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_PMR: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_INIT_PRIMARY_EXCEPTION: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_PRINT: u32 = 1;
+pub const _LIBCPP_AVAILABILITY_HAS_TZDB: u32 = 0;
+pub const _LIBCPP_AVAILABILITY_HAS_BAD_FUNCTION_CALL_KEY_FUNCTION: u32 = 0;
+pub const _LIBCPP_AVAILABILITY_HAS_BAD_EXPECTED_ACCESS_KEY_FUNCTION: u32 = 0;
+pub const _LIBCPP_VERSION: u32 = 190102;
+pub const _LIBCPP_HARDENING_MODE_NONE: u32 = 2;
+pub const _LIBCPP_HARDENING_MODE_FAST: u32 = 4;
+pub const _LIBCPP_HARDENING_MODE_EXTENSIVE: u32 = 16;
+pub const _LIBCPP_HARDENING_MODE_DEBUG: u32 = 8;
+pub const _LIBCPP_HARDENING_MODE: u32 = 2;
+pub const _LIBCPP_LOCALE__L_EXTENSIONS: u32 = 1;
 pub const FLT_HAS_SUBNORM: u32 = 1;
-pub const FLT_GUARD: u32 = 0;
-pub const FLT_MANT_DIG: u32 = 24;
-pub const FLT_MAX_10_EXP: u32 = 38;
-pub const FLT_MAX_EXP: u32 = 128;
-pub const FLT_MIN_10_EXP: i32 = -37;
-pub const FLT_MIN_EXP: i32 = -125;
-pub const FLT_NORMALIZE: u32 = 0;
-pub const FLT_RADIX: u32 = 2;
-pub const LDBL_DIG: u32 = 15;
+pub const DBL_HAS_SUBNORM: u32 = 1;
 pub const LDBL_HAS_SUBNORM: u32 = 1;
-pub const LDBL_MANT_DIG: u32 = 53;
-pub const LDBL_MAX_10_EXP: u32 = 308;
-pub const LDBL_MAX_EXP: u32 = 1024;
-pub const LDBL_MIN_10_EXP: i32 = -307;
-pub const LDBL_MIN_EXP: i32 = -1021;
-pub const _LDBL_RADIX: u32 = 2;
-pub const DECIMAL_DIG: u32 = 17;
-pub const _SW_INEXACT: u32 = 1;
-pub const _SW_UNDERFLOW: u32 = 2;
-pub const _SW_OVERFLOW: u32 = 4;
-pub const _SW_ZERODIVIDE: u32 = 8;
-pub const _SW_INVALID: u32 = 16;
-pub const _SW_DENORMAL: u32 = 524288;
-pub const _EM_AMBIGUIOUS: u32 = 2147483648;
-pub const _EM_AMBIGUOUS: u32 = 2147483648;
-pub const _MCW_EM: u32 = 524319;
-pub const _EM_INEXACT: u32 = 1;
-pub const _EM_UNDERFLOW: u32 = 2;
-pub const _EM_OVERFLOW: u32 = 4;
-pub const _EM_ZERODIVIDE: u32 = 8;
-pub const _EM_INVALID: u32 = 16;
-pub const _EM_DENORMAL: u32 = 524288;
-pub const _MCW_RC: u32 = 768;
-pub const _RC_NEAR: u32 = 0;
-pub const _RC_DOWN: u32 = 256;
-pub const _RC_UP: u32 = 512;
-pub const _RC_CHOP: u32 = 768;
-pub const _MCW_PC: u32 = 196608;
-pub const _PC_64: u32 = 0;
-pub const _PC_53: u32 = 65536;
-pub const _PC_24: u32 = 131072;
-pub const _MCW_IC: u32 = 262144;
-pub const _IC_AFFINE: u32 = 262144;
-pub const _IC_PROJECTIVE: u32 = 0;
-pub const _MCW_DN: u32 = 50331648;
-pub const _DN_SAVE: u32 = 0;
-pub const _DN_FLUSH: u32 = 16777216;
-pub const _DN_FLUSH_OPERANDS_SAVE_RESULTS: u32 = 33554432;
-pub const _DN_SAVE_OPERANDS_FLUSH_RESULTS: u32 = 50331648;
-pub const _SW_UNEMULATED: u32 = 64;
-pub const _SW_SQRTNEG: u32 = 128;
-pub const _SW_STACKOVERFLOW: u32 = 512;
-pub const _SW_STACKUNDERFLOW: u32 = 1024;
-pub const _FPE_INVALID: u32 = 129;
-pub const _FPE_DENORMAL: u32 = 130;
-pub const _FPE_ZERODIVIDE: u32 = 131;
-pub const _FPE_OVERFLOW: u32 = 132;
-pub const _FPE_UNDERFLOW: u32 = 133;
-pub const _FPE_INEXACT: u32 = 134;
-pub const _FPE_UNEMULATED: u32 = 135;
-pub const _FPE_SQRTNEG: u32 = 136;
-pub const _FPE_STACKOVERFLOW: u32 = 138;
-pub const _FPE_STACKUNDERFLOW: u32 = 139;
-pub const _FPE_EXPLICITGEN: u32 = 140;
-pub const _FPE_MULTIPLE_TRAPS: u32 = 141;
-pub const _FPE_MULTIPLE_FAULTS: u32 = 142;
-pub const _FPCLASS_SNAN: u32 = 1;
-pub const _FPCLASS_QNAN: u32 = 2;
-pub const _FPCLASS_NINF: u32 = 4;
-pub const _FPCLASS_NN: u32 = 8;
-pub const _FPCLASS_ND: u32 = 16;
-pub const _FPCLASS_NZ: u32 = 32;
-pub const _FPCLASS_PZ: u32 = 64;
-pub const _FPCLASS_PD: u32 = 128;
-pub const _FPCLASS_PN: u32 = 256;
-pub const _FPCLASS_PINF: u32 = 512;
-pub const _CW_DEFAULT: u32 = 524319;
-pub const DBL_RADIX: u32 = 2;
-pub const LDBL_RADIX: u32 = 2;
-pub const EM_AMBIGUIOUS: u32 = 2147483648;
-pub const EM_AMBIGUOUS: u32 = 2147483648;
-pub const MCW_EM: u32 = 524319;
-pub const EM_INVALID: u32 = 16;
-pub const EM_DENORMAL: u32 = 524288;
-pub const EM_ZERODIVIDE: u32 = 8;
-pub const EM_OVERFLOW: u32 = 4;
-pub const EM_UNDERFLOW: u32 = 2;
-pub const EM_INEXACT: u32 = 1;
-pub const MCW_IC: u32 = 262144;
-pub const IC_AFFINE: u32 = 262144;
-pub const IC_PROJECTIVE: u32 = 0;
-pub const MCW_RC: u32 = 768;
-pub const RC_CHOP: u32 = 768;
-pub const RC_UP: u32 = 512;
-pub const RC_DOWN: u32 = 256;
-pub const RC_NEAR: u32 = 0;
-pub const MCW_PC: u32 = 196608;
-pub const PC_24: u32 = 131072;
-pub const PC_53: u32 = 65536;
-pub const PC_64: u32 = 0;
-pub const CW_DEFAULT: u32 = 524319;
-pub const SW_INVALID: u32 = 16;
-pub const SW_DENORMAL: u32 = 524288;
-pub const SW_ZERODIVIDE: u32 = 8;
-pub const SW_OVERFLOW: u32 = 4;
-pub const SW_UNDERFLOW: u32 = 2;
-pub const SW_INEXACT: u32 = 1;
-pub const SW_UNEMULATED: u32 = 64;
-pub const SW_SQRTNEG: u32 = 128;
-pub const SW_STACKOVERFLOW: u32 = 512;
-pub const SW_STACKUNDERFLOW: u32 = 1024;
-pub const FPE_INVALID: u32 = 129;
-pub const FPE_DENORMAL: u32 = 130;
-pub const FPE_ZERODIVIDE: u32 = 131;
-pub const FPE_OVERFLOW: u32 = 132;
-pub const FPE_UNDERFLOW: u32 = 133;
-pub const FPE_INEXACT: u32 = 134;
-pub const FPE_UNEMULATED: u32 = 135;
-pub const FPE_SQRTNEG: u32 = 136;
-pub const FPE_STACKOVERFLOW: u32 = 138;
-pub const FPE_STACKUNDERFLOW: u32 = 139;
-pub const FPE_EXPLICITGEN: u32 = 140;
-pub const EPERM: u32 = 1;
-pub const ENOENT: u32 = 2;
-pub const ESRCH: u32 = 3;
-pub const EINTR: u32 = 4;
-pub const EIO: u32 = 5;
-pub const ENXIO: u32 = 6;
-pub const E2BIG: u32 = 7;
-pub const ENOEXEC: u32 = 8;
-pub const EBADF: u32 = 9;
-pub const ECHILD: u32 = 10;
-pub const EAGAIN: u32 = 11;
-pub const ENOMEM: u32 = 12;
-pub const EACCES: u32 = 13;
-pub const EFAULT: u32 = 14;
-pub const EBUSY: u32 = 16;
-pub const EEXIST: u32 = 17;
-pub const EXDEV: u32 = 18;
-pub const ENODEV: u32 = 19;
-pub const ENOTDIR: u32 = 20;
-pub const EISDIR: u32 = 21;
-pub const ENFILE: u32 = 23;
-pub const EMFILE: u32 = 24;
-pub const ENOTTY: u32 = 25;
-pub const EFBIG: u32 = 27;
-pub const ENOSPC: u32 = 28;
-pub const ESPIPE: u32 = 29;
-pub const EROFS: u32 = 30;
-pub const EMLINK: u32 = 31;
-pub const EPIPE: u32 = 32;
-pub const EDOM: u32 = 33;
-pub const EDEADLK: u32 = 36;
-pub const ENAMETOOLONG: u32 = 38;
-pub const ENOLCK: u32 = 39;
-pub const ENOSYS: u32 = 40;
-pub const ENOTEMPTY: u32 = 41;
-pub const EINVAL: u32 = 22;
-pub const ERANGE: u32 = 34;
-pub const EILSEQ: u32 = 42;
-pub const STRUNCATE: u32 = 80;
-pub const EDEADLOCK: u32 = 36;
-pub const EADDRINUSE: u32 = 100;
-pub const EADDRNOTAVAIL: u32 = 101;
-pub const EAFNOSUPPORT: u32 = 102;
-pub const EALREADY: u32 = 103;
-pub const EBADMSG: u32 = 104;
-pub const ECANCELED: u32 = 105;
-pub const ECONNABORTED: u32 = 106;
-pub const ECONNREFUSED: u32 = 107;
-pub const ECONNRESET: u32 = 108;
-pub const EDESTADDRREQ: u32 = 109;
-pub const EHOSTUNREACH: u32 = 110;
-pub const EIDRM: u32 = 111;
-pub const EINPROGRESS: u32 = 112;
-pub const EISCONN: u32 = 113;
-pub const ELOOP: u32 = 114;
-pub const EMSGSIZE: u32 = 115;
-pub const ENETDOWN: u32 = 116;
-pub const ENETRESET: u32 = 117;
-pub const ENETUNREACH: u32 = 118;
-pub const ENOBUFS: u32 = 119;
-pub const ENODATA: u32 = 120;
-pub const ENOLINK: u32 = 121;
-pub const ENOMSG: u32 = 122;
-pub const ENOPROTOOPT: u32 = 123;
-pub const ENOSR: u32 = 124;
-pub const ENOSTR: u32 = 125;
-pub const ENOTCONN: u32 = 126;
-pub const ENOTRECOVERABLE: u32 = 127;
-pub const ENOTSOCK: u32 = 128;
-pub const ENOTSUP: u32 = 129;
-pub const EOPNOTSUPP: u32 = 130;
-pub const EOTHER: u32 = 131;
-pub const EOVERFLOW: u32 = 132;
-pub const EOWNERDEAD: u32 = 133;
-pub const EPROTO: u32 = 134;
-pub const EPROTONOSUPPORT: u32 = 135;
-pub const EPROTOTYPE: u32 = 136;
-pub const ETIME: u32 = 137;
-pub const ETIMEDOUT: u32 = 138;
-pub const ETXTBSY: u32 = 139;
-pub const EWOULDBLOCK: u32 = 140;
-pub const _NLSCMPERROR: u32 = 2147483647;
+pub const __has_safe_buffers: u32 = 1;
+pub const __DARWIN_ONLY_64_BIT_INO_T: u32 = 1;
+pub const __DARWIN_ONLY_UNIX_CONFORMANCE: u32 = 1;
+pub const __DARWIN_ONLY_VERS_1050: u32 = 1;
+pub const __DARWIN_UNIX03: u32 = 1;
+pub const __DARWIN_64_BIT_INO_T: u32 = 1;
+pub const __DARWIN_VERS_1050: u32 = 1;
+pub const __DARWIN_NON_CANCELABLE: u32 = 0;
+pub const __DARWIN_SUF_EXTSN: &[u8; 14] = b"$DARWIN_EXTSN\0";
+pub const __DARWIN_C_ANSI: u32 = 4096;
+pub const __DARWIN_C_FULL: u32 = 900000;
+pub const __DARWIN_C_LEVEL: u32 = 900000;
+pub const __STDC_WANT_LIB_EXT1__: u32 = 1;
+pub const __DARWIN_NO_LONG_LONG: u32 = 0;
+pub const _DARWIN_FEATURE_64_BIT_INODE: u32 = 1;
+pub const _DARWIN_FEATURE_ONLY_64_BIT_INODE: u32 = 1;
+pub const _DARWIN_FEATURE_ONLY_VERS_1050: u32 = 1;
+pub const _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE: u32 = 1;
+pub const _DARWIN_FEATURE_UNIX_CONFORMANCE: u32 = 3;
+pub const __has_ptrcheck: u32 = 0;
+pub const __has_bounds_safety_attributes: u32 = 0;
+pub const USE_CLANG_TYPES: u32 = 0;
+pub const __PTHREAD_SIZE__: u32 = 8176;
+pub const __PTHREAD_ATTR_SIZE__: u32 = 56;
+pub const __PTHREAD_MUTEXATTR_SIZE__: u32 = 8;
+pub const __PTHREAD_MUTEX_SIZE__: u32 = 56;
+pub const __PTHREAD_CONDATTR_SIZE__: u32 = 8;
+pub const __PTHREAD_COND_SIZE__: u32 = 40;
+pub const __PTHREAD_ONCE_SIZE__: u32 = 8;
+pub const __PTHREAD_RWLOCK_SIZE__: u32 = 192;
+pub const __PTHREAD_RWLOCKATTR_SIZE__: u32 = 16;
+pub const __DARWIN_WCHAR_MIN: i32 = -2147483648;
+pub const _FORTIFY_SOURCE: u32 = 2;
+pub const __API_TO_BE_DEPRECATED: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_MACOS: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_MACOSAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_IOS: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_IOSAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_MACCATALYST: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_MACCATALYSTAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_WATCHOS: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_WATCHOSAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_TVOS: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_TVOSAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_DRIVERKIT: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_VISIONOS: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_VISIONOSAPPLICATIONEXTENSION: u32 = 100000;
+pub const __API_TO_BE_DEPRECATED_KERNELKIT: u32 = 100000;
+pub const __MAC_10_0: u32 = 1000;
+pub const __MAC_10_1: u32 = 1010;
+pub const __MAC_10_2: u32 = 1020;
+pub const __MAC_10_3: u32 = 1030;
+pub const __MAC_10_4: u32 = 1040;
+pub const __MAC_10_5: u32 = 1050;
+pub const __MAC_10_6: u32 = 1060;
+pub const __MAC_10_7: u32 = 1070;
+pub const __MAC_10_8: u32 = 1080;
+pub const __MAC_10_9: u32 = 1090;
+pub const __MAC_10_10: u32 = 101000;
+pub const __MAC_10_10_2: u32 = 101002;
+pub const __MAC_10_10_3: u32 = 101003;
+pub const __MAC_10_11: u32 = 101100;
+pub const __MAC_10_11_2: u32 = 101102;
+pub const __MAC_10_11_3: u32 = 101103;
+pub const __MAC_10_11_4: u32 = 101104;
+pub const __MAC_10_12: u32 = 101200;
+pub const __MAC_10_12_1: u32 = 101201;
+pub const __MAC_10_12_2: u32 = 101202;
+pub const __MAC_10_12_4: u32 = 101204;
+pub const __MAC_10_13: u32 = 101300;
+pub const __MAC_10_13_1: u32 = 101301;
+pub const __MAC_10_13_2: u32 = 101302;
+pub const __MAC_10_13_4: u32 = 101304;
+pub const __MAC_10_14: u32 = 101400;
+pub const __MAC_10_14_1: u32 = 101401;
+pub const __MAC_10_14_4: u32 = 101404;
+pub const __MAC_10_14_5: u32 = 101405;
+pub const __MAC_10_14_6: u32 = 101406;
+pub const __MAC_10_15: u32 = 101500;
+pub const __MAC_10_15_1: u32 = 101501;
+pub const __MAC_10_15_4: u32 = 101504;
+pub const __MAC_10_16: u32 = 101600;
+pub const __MAC_11_0: u32 = 110000;
+pub const __MAC_11_1: u32 = 110100;
+pub const __MAC_11_3: u32 = 110300;
+pub const __MAC_11_4: u32 = 110400;
+pub const __MAC_11_5: u32 = 110500;
+pub const __MAC_11_6: u32 = 110600;
+pub const __MAC_12_0: u32 = 120000;
+pub const __MAC_12_1: u32 = 120100;
+pub const __MAC_12_2: u32 = 120200;
+pub const __MAC_12_3: u32 = 120300;
+pub const __MAC_12_4: u32 = 120400;
+pub const __MAC_12_5: u32 = 120500;
+pub const __MAC_12_6: u32 = 120600;
+pub const __MAC_12_7: u32 = 120700;
+pub const __MAC_13_0: u32 = 130000;
+pub const __MAC_13_1: u32 = 130100;
+pub const __MAC_13_2: u32 = 130200;
+pub const __MAC_13_3: u32 = 130300;
+pub const __MAC_13_4: u32 = 130400;
+pub const __MAC_13_5: u32 = 130500;
+pub const __MAC_13_6: u32 = 130600;
+pub const __MAC_13_7: u32 = 130700;
+pub const __MAC_14_0: u32 = 140000;
+pub const __MAC_14_1: u32 = 140100;
+pub const __MAC_14_2: u32 = 140200;
+pub const __MAC_14_3: u32 = 140300;
+pub const __MAC_14_4: u32 = 140400;
+pub const __MAC_14_5: u32 = 140500;
+pub const __MAC_14_6: u32 = 140600;
+pub const __MAC_14_7: u32 = 140700;
+pub const __MAC_15_0: u32 = 150000;
+pub const __MAC_15_1: u32 = 150100;
+pub const __MAC_15_2: u32 = 150200;
+pub const __MAC_15_3: u32 = 150300;
+pub const __MAC_15_4: u32 = 150400;
+pub const __MAC_15_5: u32 = 150500;
+pub const __IPHONE_2_0: u32 = 20000;
+pub const __IPHONE_2_1: u32 = 20100;
+pub const __IPHONE_2_2: u32 = 20200;
+pub const __IPHONE_3_0: u32 = 30000;
+pub const __IPHONE_3_1: u32 = 30100;
+pub const __IPHONE_3_2: u32 = 30200;
+pub const __IPHONE_4_0: u32 = 40000;
+pub const __IPHONE_4_1: u32 = 40100;
+pub const __IPHONE_4_2: u32 = 40200;
+pub const __IPHONE_4_3: u32 = 40300;
+pub const __IPHONE_5_0: u32 = 50000;
+pub const __IPHONE_5_1: u32 = 50100;
+pub const __IPHONE_6_0: u32 = 60000;
+pub const __IPHONE_6_1: u32 = 60100;
+pub const __IPHONE_7_0: u32 = 70000;
+pub const __IPHONE_7_1: u32 = 70100;
+pub const __IPHONE_8_0: u32 = 80000;
+pub const __IPHONE_8_1: u32 = 80100;
+pub const __IPHONE_8_2: u32 = 80200;
+pub const __IPHONE_8_3: u32 = 80300;
+pub const __IPHONE_8_4: u32 = 80400;
+pub const __IPHONE_9_0: u32 = 90000;
+pub const __IPHONE_9_1: u32 = 90100;
+pub const __IPHONE_9_2: u32 = 90200;
+pub const __IPHONE_9_3: u32 = 90300;
+pub const __IPHONE_10_0: u32 = 100000;
+pub const __IPHONE_10_1: u32 = 100100;
+pub const __IPHONE_10_2: u32 = 100200;
+pub const __IPHONE_10_3: u32 = 100300;
+pub const __IPHONE_11_0: u32 = 110000;
+pub const __IPHONE_11_1: u32 = 110100;
+pub const __IPHONE_11_2: u32 = 110200;
+pub const __IPHONE_11_3: u32 = 110300;
+pub const __IPHONE_11_4: u32 = 110400;
+pub const __IPHONE_12_0: u32 = 120000;
+pub const __IPHONE_12_1: u32 = 120100;
+pub const __IPHONE_12_2: u32 = 120200;
+pub const __IPHONE_12_3: u32 = 120300;
+pub const __IPHONE_12_4: u32 = 120400;
+pub const __IPHONE_13_0: u32 = 130000;
+pub const __IPHONE_13_1: u32 = 130100;
+pub const __IPHONE_13_2: u32 = 130200;
+pub const __IPHONE_13_3: u32 = 130300;
+pub const __IPHONE_13_4: u32 = 130400;
+pub const __IPHONE_13_5: u32 = 130500;
+pub const __IPHONE_13_6: u32 = 130600;
+pub const __IPHONE_13_7: u32 = 130700;
+pub const __IPHONE_14_0: u32 = 140000;
+pub const __IPHONE_14_1: u32 = 140100;
+pub const __IPHONE_14_2: u32 = 140200;
+pub const __IPHONE_14_3: u32 = 140300;
+pub const __IPHONE_14_5: u32 = 140500;
+pub const __IPHONE_14_4: u32 = 140400;
+pub const __IPHONE_14_6: u32 = 140600;
+pub const __IPHONE_14_7: u32 = 140700;
+pub const __IPHONE_14_8: u32 = 140800;
+pub const __IPHONE_15_0: u32 = 150000;
+pub const __IPHONE_15_1: u32 = 150100;
+pub const __IPHONE_15_2: u32 = 150200;
+pub const __IPHONE_15_3: u32 = 150300;
+pub const __IPHONE_15_4: u32 = 150400;
+pub const __IPHONE_15_5: u32 = 150500;
+pub const __IPHONE_15_6: u32 = 150600;
+pub const __IPHONE_15_7: u32 = 150700;
+pub const __IPHONE_15_8: u32 = 150800;
+pub const __IPHONE_16_0: u32 = 160000;
+pub const __IPHONE_16_1: u32 = 160100;
+pub const __IPHONE_16_2: u32 = 160200;
+pub const __IPHONE_16_3: u32 = 160300;
+pub const __IPHONE_16_4: u32 = 160400;
+pub const __IPHONE_16_5: u32 = 160500;
+pub const __IPHONE_16_6: u32 = 160600;
+pub const __IPHONE_16_7: u32 = 160700;
+pub const __IPHONE_17_0: u32 = 170000;
+pub const __IPHONE_17_1: u32 = 170100;
+pub const __IPHONE_17_2: u32 = 170200;
+pub const __IPHONE_17_3: u32 = 170300;
+pub const __IPHONE_17_4: u32 = 170400;
+pub const __IPHONE_17_5: u32 = 170500;
+pub const __IPHONE_17_6: u32 = 170600;
+pub const __IPHONE_17_7: u32 = 170700;
+pub const __IPHONE_18_0: u32 = 180000;
+pub const __IPHONE_18_1: u32 = 180100;
+pub const __IPHONE_18_2: u32 = 180200;
+pub const __IPHONE_18_3: u32 = 180300;
+pub const __IPHONE_18_4: u32 = 180400;
+pub const __IPHONE_18_5: u32 = 180500;
+pub const __WATCHOS_1_0: u32 = 10000;
+pub const __WATCHOS_2_0: u32 = 20000;
+pub const __WATCHOS_2_1: u32 = 20100;
+pub const __WATCHOS_2_2: u32 = 20200;
+pub const __WATCHOS_3_0: u32 = 30000;
+pub const __WATCHOS_3_1: u32 = 30100;
+pub const __WATCHOS_3_1_1: u32 = 30101;
+pub const __WATCHOS_3_2: u32 = 30200;
+pub const __WATCHOS_4_0: u32 = 40000;
+pub const __WATCHOS_4_1: u32 = 40100;
+pub const __WATCHOS_4_2: u32 = 40200;
+pub const __WATCHOS_4_3: u32 = 40300;
+pub const __WATCHOS_5_0: u32 = 50000;
+pub const __WATCHOS_5_1: u32 = 50100;
+pub const __WATCHOS_5_2: u32 = 50200;
+pub const __WATCHOS_5_3: u32 = 50300;
+pub const __WATCHOS_6_0: u32 = 60000;
+pub const __WATCHOS_6_1: u32 = 60100;
+pub const __WATCHOS_6_2: u32 = 60200;
+pub const __WATCHOS_7_0: u32 = 70000;
+pub const __WATCHOS_7_1: u32 = 70100;
+pub const __WATCHOS_7_2: u32 = 70200;
+pub const __WATCHOS_7_3: u32 = 70300;
+pub const __WATCHOS_7_4: u32 = 70400;
+pub const __WATCHOS_7_5: u32 = 70500;
+pub const __WATCHOS_7_6: u32 = 70600;
+pub const __WATCHOS_8_0: u32 = 80000;
+pub const __WATCHOS_8_1: u32 = 80100;
+pub const __WATCHOS_8_3: u32 = 80300;
+pub const __WATCHOS_8_4: u32 = 80400;
+pub const __WATCHOS_8_5: u32 = 80500;
+pub const __WATCHOS_8_6: u32 = 80600;
+pub const __WATCHOS_8_7: u32 = 80700;
+pub const __WATCHOS_8_8: u32 = 80800;
+pub const __WATCHOS_9_0: u32 = 90000;
+pub const __WATCHOS_9_1: u32 = 90100;
+pub const __WATCHOS_9_2: u32 = 90200;
+pub const __WATCHOS_9_3: u32 = 90300;
+pub const __WATCHOS_9_4: u32 = 90400;
+pub const __WATCHOS_9_5: u32 = 90500;
+pub const __WATCHOS_9_6: u32 = 90600;
+pub const __WATCHOS_10_0: u32 = 100000;
+pub const __WATCHOS_10_1: u32 = 100100;
+pub const __WATCHOS_10_2: u32 = 100200;
+pub const __WATCHOS_10_3: u32 = 100300;
+pub const __WATCHOS_10_4: u32 = 100400;
+pub const __WATCHOS_10_5: u32 = 100500;
+pub const __WATCHOS_10_6: u32 = 100600;
+pub const __WATCHOS_10_7: u32 = 100700;
+pub const __WATCHOS_11_0: u32 = 110000;
+pub const __WATCHOS_11_1: u32 = 110100;
+pub const __WATCHOS_11_2: u32 = 110200;
+pub const __WATCHOS_11_3: u32 = 110300;
+pub const __WATCHOS_11_4: u32 = 110400;
+pub const __WATCHOS_11_5: u32 = 110500;
+pub const __TVOS_9_0: u32 = 90000;
+pub const __TVOS_9_1: u32 = 90100;
+pub const __TVOS_9_2: u32 = 90200;
+pub const __TVOS_10_0: u32 = 100000;
+pub const __TVOS_10_0_1: u32 = 100001;
+pub const __TVOS_10_1: u32 = 100100;
+pub const __TVOS_10_2: u32 = 100200;
+pub const __TVOS_11_0: u32 = 110000;
+pub const __TVOS_11_1: u32 = 110100;
+pub const __TVOS_11_2: u32 = 110200;
+pub const __TVOS_11_3: u32 = 110300;
+pub const __TVOS_11_4: u32 = 110400;
+pub const __TVOS_12_0: u32 = 120000;
+pub const __TVOS_12_1: u32 = 120100;
+pub const __TVOS_12_2: u32 = 120200;
+pub const __TVOS_12_3: u32 = 120300;
+pub const __TVOS_12_4: u32 = 120400;
+pub const __TVOS_13_0: u32 = 130000;
+pub const __TVOS_13_2: u32 = 130200;
+pub const __TVOS_13_3: u32 = 130300;
+pub const __TVOS_13_4: u32 = 130400;
+pub const __TVOS_14_0: u32 = 140000;
+pub const __TVOS_14_1: u32 = 140100;
+pub const __TVOS_14_2: u32 = 140200;
+pub const __TVOS_14_3: u32 = 140300;
+pub const __TVOS_14_5: u32 = 140500;
+pub const __TVOS_14_6: u32 = 140600;
+pub const __TVOS_14_7: u32 = 140700;
+pub const __TVOS_15_0: u32 = 150000;
+pub const __TVOS_15_1: u32 = 150100;
+pub const __TVOS_15_2: u32 = 150200;
+pub const __TVOS_15_3: u32 = 150300;
+pub const __TVOS_15_4: u32 = 150400;
+pub const __TVOS_15_5: u32 = 150500;
+pub const __TVOS_15_6: u32 = 150600;
+pub const __TVOS_16_0: u32 = 160000;
+pub const __TVOS_16_1: u32 = 160100;
+pub const __TVOS_16_2: u32 = 160200;
+pub const __TVOS_16_3: u32 = 160300;
+pub const __TVOS_16_4: u32 = 160400;
+pub const __TVOS_16_5: u32 = 160500;
+pub const __TVOS_16_6: u32 = 160600;
+pub const __TVOS_17_0: u32 = 170000;
+pub const __TVOS_17_1: u32 = 170100;
+pub const __TVOS_17_2: u32 = 170200;
+pub const __TVOS_17_3: u32 = 170300;
+pub const __TVOS_17_4: u32 = 170400;
+pub const __TVOS_17_5: u32 = 170500;
+pub const __TVOS_17_6: u32 = 170600;
+pub const __TVOS_18_0: u32 = 180000;
+pub const __TVOS_18_1: u32 = 180100;
+pub const __TVOS_18_2: u32 = 180200;
+pub const __TVOS_18_3: u32 = 180300;
+pub const __TVOS_18_4: u32 = 180400;
+pub const __TVOS_18_5: u32 = 180500;
+pub const __BRIDGEOS_2_0: u32 = 20000;
+pub const __BRIDGEOS_3_0: u32 = 30000;
+pub const __BRIDGEOS_3_1: u32 = 30100;
+pub const __BRIDGEOS_3_4: u32 = 30400;
+pub const __BRIDGEOS_4_0: u32 = 40000;
+pub const __BRIDGEOS_4_1: u32 = 40100;
+pub const __BRIDGEOS_5_0: u32 = 50000;
+pub const __BRIDGEOS_5_1: u32 = 50100;
+pub const __BRIDGEOS_5_3: u32 = 50300;
+pub const __BRIDGEOS_6_0: u32 = 60000;
+pub const __BRIDGEOS_6_2: u32 = 60200;
+pub const __BRIDGEOS_6_4: u32 = 60400;
+pub const __BRIDGEOS_6_5: u32 = 60500;
+pub const __BRIDGEOS_6_6: u32 = 60600;
+pub const __BRIDGEOS_7_0: u32 = 70000;
+pub const __BRIDGEOS_7_1: u32 = 70100;
+pub const __BRIDGEOS_7_2: u32 = 70200;
+pub const __BRIDGEOS_7_3: u32 = 70300;
+pub const __BRIDGEOS_7_4: u32 = 70400;
+pub const __BRIDGEOS_7_6: u32 = 70600;
+pub const __BRIDGEOS_8_0: u32 = 80000;
+pub const __BRIDGEOS_8_1: u32 = 80100;
+pub const __BRIDGEOS_8_2: u32 = 80200;
+pub const __BRIDGEOS_8_3: u32 = 80300;
+pub const __BRIDGEOS_8_4: u32 = 80400;
+pub const __BRIDGEOS_8_5: u32 = 80500;
+pub const __BRIDGEOS_8_6: u32 = 80600;
+pub const __BRIDGEOS_9_0: u32 = 90000;
+pub const __BRIDGEOS_9_1: u32 = 90100;
+pub const __BRIDGEOS_9_2: u32 = 90200;
+pub const __BRIDGEOS_9_3: u32 = 90300;
+pub const __BRIDGEOS_9_4: u32 = 90400;
+pub const __BRIDGEOS_9_5: u32 = 90500;
+pub const __DRIVERKIT_19_0: u32 = 190000;
+pub const __DRIVERKIT_20_0: u32 = 200000;
+pub const __DRIVERKIT_21_0: u32 = 210000;
+pub const __DRIVERKIT_22_0: u32 = 220000;
+pub const __DRIVERKIT_22_4: u32 = 220400;
+pub const __DRIVERKIT_22_5: u32 = 220500;
+pub const __DRIVERKIT_22_6: u32 = 220600;
+pub const __DRIVERKIT_23_0: u32 = 230000;
+pub const __DRIVERKIT_23_1: u32 = 230100;
+pub const __DRIVERKIT_23_2: u32 = 230200;
+pub const __DRIVERKIT_23_3: u32 = 230300;
+pub const __DRIVERKIT_23_4: u32 = 230400;
+pub const __DRIVERKIT_23_5: u32 = 230500;
+pub const __DRIVERKIT_23_6: u32 = 230600;
+pub const __DRIVERKIT_24_0: u32 = 240000;
+pub const __DRIVERKIT_24_1: u32 = 240100;
+pub const __DRIVERKIT_24_2: u32 = 240200;
+pub const __DRIVERKIT_24_3: u32 = 240300;
+pub const __DRIVERKIT_24_4: u32 = 240400;
+pub const __DRIVERKIT_24_5: u32 = 240500;
+pub const __VISIONOS_1_0: u32 = 10000;
+pub const __VISIONOS_1_1: u32 = 10100;
+pub const __VISIONOS_1_2: u32 = 10200;
+pub const __VISIONOS_1_3: u32 = 10300;
+pub const __VISIONOS_2_0: u32 = 20000;
+pub const __VISIONOS_2_1: u32 = 20100;
+pub const __VISIONOS_2_2: u32 = 20200;
+pub const __VISIONOS_2_3: u32 = 20300;
+pub const __VISIONOS_2_4: u32 = 20400;
+pub const __VISIONOS_2_5: u32 = 20500;
+pub const MAC_OS_X_VERSION_10_0: u32 = 1000;
+pub const MAC_OS_X_VERSION_10_1: u32 = 1010;
+pub const MAC_OS_X_VERSION_10_2: u32 = 1020;
+pub const MAC_OS_X_VERSION_10_3: u32 = 1030;
+pub const MAC_OS_X_VERSION_10_4: u32 = 1040;
+pub const MAC_OS_X_VERSION_10_5: u32 = 1050;
+pub const MAC_OS_X_VERSION_10_6: u32 = 1060;
+pub const MAC_OS_X_VERSION_10_7: u32 = 1070;
+pub const MAC_OS_X_VERSION_10_8: u32 = 1080;
+pub const MAC_OS_X_VERSION_10_9: u32 = 1090;
+pub const MAC_OS_X_VERSION_10_10: u32 = 101000;
+pub const MAC_OS_X_VERSION_10_10_2: u32 = 101002;
+pub const MAC_OS_X_VERSION_10_10_3: u32 = 101003;
+pub const MAC_OS_X_VERSION_10_11: u32 = 101100;
+pub const MAC_OS_X_VERSION_10_11_2: u32 = 101102;
+pub const MAC_OS_X_VERSION_10_11_3: u32 = 101103;
+pub const MAC_OS_X_VERSION_10_11_4: u32 = 101104;
+pub const MAC_OS_X_VERSION_10_12: u32 = 101200;
+pub const MAC_OS_X_VERSION_10_12_1: u32 = 101201;
+pub const MAC_OS_X_VERSION_10_12_2: u32 = 101202;
+pub const MAC_OS_X_VERSION_10_12_4: u32 = 101204;
+pub const MAC_OS_X_VERSION_10_13: u32 = 101300;
+pub const MAC_OS_X_VERSION_10_13_1: u32 = 101301;
+pub const MAC_OS_X_VERSION_10_13_2: u32 = 101302;
+pub const MAC_OS_X_VERSION_10_13_4: u32 = 101304;
+pub const MAC_OS_X_VERSION_10_14: u32 = 101400;
+pub const MAC_OS_X_VERSION_10_14_1: u32 = 101401;
+pub const MAC_OS_X_VERSION_10_14_4: u32 = 101404;
+pub const MAC_OS_X_VERSION_10_14_5: u32 = 101405;
+pub const MAC_OS_X_VERSION_10_14_6: u32 = 101406;
+pub const MAC_OS_X_VERSION_10_15: u32 = 101500;
+pub const MAC_OS_X_VERSION_10_15_1: u32 = 101501;
+pub const MAC_OS_X_VERSION_10_15_4: u32 = 101504;
+pub const MAC_OS_X_VERSION_10_16: u32 = 101600;
+pub const MAC_OS_VERSION_11_0: u32 = 110000;
+pub const MAC_OS_VERSION_11_1: u32 = 110100;
+pub const MAC_OS_VERSION_11_3: u32 = 110300;
+pub const MAC_OS_VERSION_11_4: u32 = 110400;
+pub const MAC_OS_VERSION_11_5: u32 = 110500;
+pub const MAC_OS_VERSION_11_6: u32 = 110600;
+pub const MAC_OS_VERSION_12_0: u32 = 120000;
+pub const MAC_OS_VERSION_12_1: u32 = 120100;
+pub const MAC_OS_VERSION_12_2: u32 = 120200;
+pub const MAC_OS_VERSION_12_3: u32 = 120300;
+pub const MAC_OS_VERSION_12_4: u32 = 120400;
+pub const MAC_OS_VERSION_12_5: u32 = 120500;
+pub const MAC_OS_VERSION_12_6: u32 = 120600;
+pub const MAC_OS_VERSION_12_7: u32 = 120700;
+pub const MAC_OS_VERSION_13_0: u32 = 130000;
+pub const MAC_OS_VERSION_13_1: u32 = 130100;
+pub const MAC_OS_VERSION_13_2: u32 = 130200;
+pub const MAC_OS_VERSION_13_3: u32 = 130300;
+pub const MAC_OS_VERSION_13_4: u32 = 130400;
+pub const MAC_OS_VERSION_13_5: u32 = 130500;
+pub const MAC_OS_VERSION_13_6: u32 = 130600;
+pub const MAC_OS_VERSION_13_7: u32 = 130700;
+pub const MAC_OS_VERSION_14_0: u32 = 140000;
+pub const MAC_OS_VERSION_14_1: u32 = 140100;
+pub const MAC_OS_VERSION_14_2: u32 = 140200;
+pub const MAC_OS_VERSION_14_3: u32 = 140300;
+pub const MAC_OS_VERSION_14_4: u32 = 140400;
+pub const MAC_OS_VERSION_14_5: u32 = 140500;
+pub const MAC_OS_VERSION_14_6: u32 = 140600;
+pub const MAC_OS_VERSION_14_7: u32 = 140700;
+pub const MAC_OS_VERSION_15_0: u32 = 150000;
+pub const MAC_OS_VERSION_15_1: u32 = 150100;
+pub const MAC_OS_VERSION_15_2: u32 = 150200;
+pub const MAC_OS_VERSION_15_3: u32 = 150300;
+pub const MAC_OS_VERSION_15_4: u32 = 150400;
+pub const MAC_OS_VERSION_15_5: u32 = 150500;
+pub const __AVAILABILITY_VERSIONS_VERSION_HASH: u32 = 93585900;
+pub const __AVAILABILITY_VERSIONS_VERSION_STRING: &[u8; 6] = b"Local\0";
+pub const __AVAILABILITY_FILE: &[u8; 23] = b"AvailabilityVersions.h\0";
+pub const __MAC_OS_X_VERSION_MAX_ALLOWED: u32 = 150500;
+pub const __ENABLE_LEGACY_MAC_AVAILABILITY: u32 = 1;
+pub const USE_CLANG_STDDEF: u32 = 0;
+pub const __DARWIN_NSIG: u32 = 32;
+pub const NSIG: u32 = 32;
+pub const _ARM_SIGNAL_: u32 = 1;
+pub const SIGHUP: u32 = 1;
+pub const SIGINT: u32 = 2;
+pub const SIGQUIT: u32 = 3;
+pub const SIGILL: u32 = 4;
+pub const SIGTRAP: u32 = 5;
+pub const SIGABRT: u32 = 6;
+pub const SIGIOT: u32 = 6;
+pub const SIGEMT: u32 = 7;
+pub const SIGFPE: u32 = 8;
+pub const SIGKILL: u32 = 9;
+pub const SIGBUS: u32 = 10;
+pub const SIGSEGV: u32 = 11;
+pub const SIGSYS: u32 = 12;
+pub const SIGPIPE: u32 = 13;
+pub const SIGALRM: u32 = 14;
+pub const SIGTERM: u32 = 15;
+pub const SIGURG: u32 = 16;
+pub const SIGSTOP: u32 = 17;
+pub const SIGTSTP: u32 = 18;
+pub const SIGCONT: u32 = 19;
+pub const SIGCHLD: u32 = 20;
+pub const SIGTTIN: u32 = 21;
+pub const SIGTTOU: u32 = 22;
+pub const SIGIO: u32 = 23;
+pub const SIGXCPU: u32 = 24;
+pub const SIGXFSZ: u32 = 25;
+pub const SIGVTALRM: u32 = 26;
+pub const SIGPROF: u32 = 27;
+pub const SIGWINCH: u32 = 28;
+pub const SIGINFO: u32 = 29;
+pub const SIGUSR1: u32 = 30;
+pub const SIGUSR2: u32 = 31;
+pub const __DARWIN_OPAQUE_ARM_THREAD_STATE64: u32 = 0;
+pub const SIGEV_NONE: u32 = 0;
+pub const SIGEV_SIGNAL: u32 = 1;
+pub const SIGEV_THREAD: u32 = 3;
+pub const ILL_NOOP: u32 = 0;
+pub const ILL_ILLOPC: u32 = 1;
+pub const ILL_ILLTRP: u32 = 2;
+pub const ILL_PRVOPC: u32 = 3;
+pub const ILL_ILLOPN: u32 = 4;
+pub const ILL_ILLADR: u32 = 5;
+pub const ILL_PRVREG: u32 = 6;
+pub const ILL_COPROC: u32 = 7;
+pub const ILL_BADSTK: u32 = 8;
+pub const FPE_NOOP: u32 = 0;
+pub const FPE_FLTDIV: u32 = 1;
+pub const FPE_FLTOVF: u32 = 2;
+pub const FPE_FLTUND: u32 = 3;
+pub const FPE_FLTRES: u32 = 4;
+pub const FPE_FLTINV: u32 = 5;
+pub const FPE_FLTSUB: u32 = 6;
+pub const FPE_INTDIV: u32 = 7;
+pub const FPE_INTOVF: u32 = 8;
+pub const SEGV_NOOP: u32 = 0;
+pub const SEGV_MAPERR: u32 = 1;
+pub const SEGV_ACCERR: u32 = 2;
+pub const BUS_NOOP: u32 = 0;
+pub const BUS_ADRALN: u32 = 1;
+pub const BUS_ADRERR: u32 = 2;
+pub const BUS_OBJERR: u32 = 3;
+pub const TRAP_BRKPT: u32 = 1;
+pub const TRAP_TRACE: u32 = 2;
+pub const CLD_NOOP: u32 = 0;
+pub const CLD_EXITED: u32 = 1;
+pub const CLD_KILLED: u32 = 2;
+pub const CLD_DUMPED: u32 = 3;
+pub const CLD_TRAPPED: u32 = 4;
+pub const CLD_STOPPED: u32 = 5;
+pub const CLD_CONTINUED: u32 = 6;
+pub const POLL_IN: u32 = 1;
+pub const POLL_OUT: u32 = 2;
+pub const POLL_MSG: u32 = 3;
+pub const POLL_ERR: u32 = 4;
+pub const POLL_PRI: u32 = 5;
+pub const POLL_HUP: u32 = 6;
+pub const SA_ONSTACK: u32 = 1;
+pub const SA_RESTART: u32 = 2;
+pub const SA_RESETHAND: u32 = 4;
+pub const SA_NOCLDSTOP: u32 = 8;
+pub const SA_NODEFER: u32 = 16;
+pub const SA_NOCLDWAIT: u32 = 32;
+pub const SA_SIGINFO: u32 = 64;
+pub const SA_USERTRAMP: u32 = 256;
+pub const SA_64REGSET: u32 = 512;
+pub const SA_USERSPACE_MASK: u32 = 127;
+pub const SIG_BLOCK: u32 = 1;
+pub const SIG_UNBLOCK: u32 = 2;
+pub const SIG_SETMASK: u32 = 3;
+pub const SI_USER: u32 = 65537;
+pub const SI_QUEUE: u32 = 65538;
+pub const SI_TIMER: u32 = 65539;
+pub const SI_ASYNCIO: u32 = 65540;
+pub const SI_MESGQ: u32 = 65541;
+pub const SS_ONSTACK: u32 = 1;
+pub const SS_DISABLE: u32 = 4;
+pub const MINSIGSTKSZ: u32 = 32768;
+pub const SIGSTKSZ: u32 = 131072;
+pub const SV_ONSTACK: u32 = 1;
+pub const SV_INTERRUPT: u32 = 2;
+pub const SV_RESETHAND: u32 = 4;
+pub const SV_NODEFER: u32 = 16;
+pub const SV_NOCLDSTOP: u32 = 8;
+pub const SV_SIGINFO: u32 = 64;
+pub const __WORDSIZE: u32 = 64;
+pub const INT8_MAX: u32 = 127;
+pub const INT16_MAX: u32 = 32767;
+pub const INT32_MAX: u32 = 2147483647;
+pub const INT64_MAX: u64 = 9223372036854775807;
+pub const INT8_MIN: i32 = -128;
+pub const INT16_MIN: i32 = -32768;
+pub const INT32_MIN: i32 = -2147483648;
+pub const INT64_MIN: i64 = -9223372036854775808;
+pub const UINT8_MAX: u32 = 255;
+pub const UINT16_MAX: u32 = 65535;
+pub const UINT32_MAX: u32 = 4294967295;
+pub const UINT64_MAX: i32 = -1;
+pub const INT_LEAST8_MIN: i32 = -128;
+pub const INT_LEAST16_MIN: i32 = -32768;
+pub const INT_LEAST32_MIN: i32 = -2147483648;
+pub const INT_LEAST64_MIN: i64 = -9223372036854775808;
+pub const INT_LEAST8_MAX: u32 = 127;
+pub const INT_LEAST16_MAX: u32 = 32767;
+pub const INT_LEAST32_MAX: u32 = 2147483647;
+pub const INT_LEAST64_MAX: u64 = 9223372036854775807;
+pub const UINT_LEAST8_MAX: u32 = 255;
+pub const UINT_LEAST16_MAX: u32 = 65535;
+pub const UINT_LEAST32_MAX: u32 = 4294967295;
+pub const UINT_LEAST64_MAX: i32 = -1;
+pub const INT_FAST8_MIN: i32 = -128;
+pub const INT_FAST16_MIN: i32 = -32768;
+pub const INT_FAST32_MIN: i32 = -2147483648;
+pub const INT_FAST64_MIN: i64 = -9223372036854775808;
+pub const INT_FAST8_MAX: u32 = 127;
+pub const INT_FAST16_MAX: u32 = 32767;
+pub const INT_FAST32_MAX: u32 = 2147483647;
+pub const INT_FAST64_MAX: u64 = 9223372036854775807;
+pub const UINT_FAST8_MAX: u32 = 255;
+pub const UINT_FAST16_MAX: u32 = 65535;
+pub const UINT_FAST32_MAX: u32 = 4294967295;
+pub const UINT_FAST64_MAX: i32 = -1;
+pub const INTPTR_MAX: u64 = 9223372036854775807;
+pub const INTPTR_MIN: i64 = -9223372036854775808;
+pub const UINTPTR_MAX: i32 = -1;
+pub const SIZE_MAX: i32 = -1;
+pub const RSIZE_MAX: i32 = -1;
+pub const WINT_MIN: i32 = -2147483648;
+pub const WINT_MAX: u32 = 2147483647;
+pub const SIG_ATOMIC_MIN: i32 = -2147483648;
+pub const SIG_ATOMIC_MAX: u32 = 2147483647;
+pub const PRIO_PROCESS: u32 = 0;
+pub const PRIO_PGRP: u32 = 1;
+pub const PRIO_USER: u32 = 2;
+pub const PRIO_DARWIN_THREAD: u32 = 3;
+pub const PRIO_DARWIN_PROCESS: u32 = 4;
+pub const PRIO_MIN: i32 = -20;
+pub const PRIO_MAX: u32 = 20;
+pub const PRIO_DARWIN_BG: u32 = 4096;
+pub const PRIO_DARWIN_NONUI: u32 = 4097;
+pub const RUSAGE_SELF: u32 = 0;
+pub const RUSAGE_CHILDREN: i32 = -1;
+pub const RUSAGE_INFO_V0: u32 = 0;
+pub const RUSAGE_INFO_V1: u32 = 1;
+pub const RUSAGE_INFO_V2: u32 = 2;
+pub const RUSAGE_INFO_V3: u32 = 3;
+pub const RUSAGE_INFO_V4: u32 = 4;
+pub const RUSAGE_INFO_V5: u32 = 5;
+pub const RUSAGE_INFO_V6: u32 = 6;
+pub const RUSAGE_INFO_CURRENT: u32 = 6;
+pub const RU_PROC_RUNS_RESLIDE: u32 = 1;
+pub const RLIMIT_CPU: u32 = 0;
+pub const RLIMIT_FSIZE: u32 = 1;
+pub const RLIMIT_DATA: u32 = 2;
+pub const RLIMIT_STACK: u32 = 3;
+pub const RLIMIT_CORE: u32 = 4;
+pub const RLIMIT_AS: u32 = 5;
+pub const RLIMIT_RSS: u32 = 5;
+pub const RLIMIT_MEMLOCK: u32 = 6;
+pub const RLIMIT_NPROC: u32 = 7;
+pub const RLIMIT_NOFILE: u32 = 8;
+pub const RLIM_NLIMITS: u32 = 9;
+pub const _RLIMIT_POSIX_FLAG: u32 = 4096;
+pub const RLIMIT_WAKEUPS_MONITOR: u32 = 1;
+pub const RLIMIT_CPU_USAGE_MONITOR: u32 = 2;
+pub const RLIMIT_THREAD_CPULIMITS: u32 = 3;
+pub const RLIMIT_FOOTPRINT_INTERVAL: u32 = 4;
+pub const WAKEMON_ENABLE: u32 = 1;
+pub const WAKEMON_DISABLE: u32 = 2;
+pub const WAKEMON_GET_PARAMS: u32 = 4;
+pub const WAKEMON_SET_DEFAULTS: u32 = 8;
+pub const WAKEMON_MAKE_FATAL: u32 = 16;
+pub const CPUMON_MAKE_FATAL: u32 = 4096;
+pub const FOOTPRINT_INTERVAL_RESET: u32 = 1;
+pub const IOPOL_TYPE_DISK: u32 = 0;
+pub const IOPOL_TYPE_VFS_ATIME_UPDATES: u32 = 2;
+pub const IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES: u32 = 3;
+pub const IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME: u32 = 4;
+pub const IOPOL_TYPE_VFS_TRIGGER_RESOLVE: u32 = 5;
+pub const IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION: u32 = 6;
+pub const IOPOL_TYPE_VFS_IGNORE_PERMISSIONS: u32 = 7;
+pub const IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE: u32 = 8;
+pub const IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES: u32 = 9;
+pub const IOPOL_TYPE_VFS_DISALLOW_RW_FOR_O_EVTONLY: u32 = 10;
+pub const IOPOL_SCOPE_PROCESS: u32 = 0;
+pub const IOPOL_SCOPE_THREAD: u32 = 1;
+pub const IOPOL_SCOPE_DARWIN_BG: u32 = 2;
+pub const IOPOL_DEFAULT: u32 = 0;
+pub const IOPOL_IMPORTANT: u32 = 1;
+pub const IOPOL_PASSIVE: u32 = 2;
+pub const IOPOL_THROTTLE: u32 = 3;
+pub const IOPOL_UTILITY: u32 = 4;
+pub const IOPOL_STANDARD: u32 = 5;
+pub const IOPOL_APPLICATION: u32 = 5;
+pub const IOPOL_NORMAL: u32 = 1;
+pub const IOPOL_ATIME_UPDATES_DEFAULT: u32 = 0;
+pub const IOPOL_ATIME_UPDATES_OFF: u32 = 1;
+pub const IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT: u32 = 0;
+pub const IOPOL_MATERIALIZE_DATALESS_FILES_OFF: u32 = 1;
+pub const IOPOL_MATERIALIZE_DATALESS_FILES_ON: u32 = 2;
+pub const IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT: u32 = 0;
+pub const IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME: u32 = 1;
+pub const IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT: u32 = 0;
+pub const IOPOL_VFS_TRIGGER_RESOLVE_OFF: u32 = 1;
+pub const IOPOL_VFS_CONTENT_PROTECTION_DEFAULT: u32 = 0;
+pub const IOPOL_VFS_CONTENT_PROTECTION_IGNORE: u32 = 1;
+pub const IOPOL_VFS_IGNORE_PERMISSIONS_OFF: u32 = 0;
+pub const IOPOL_VFS_IGNORE_PERMISSIONS_ON: u32 = 1;
+pub const IOPOL_VFS_SKIP_MTIME_UPDATE_OFF: u32 = 0;
+pub const IOPOL_VFS_SKIP_MTIME_UPDATE_ON: u32 = 1;
+pub const IOPOL_VFS_SKIP_MTIME_UPDATE_IGNORE: u32 = 2;
+pub const IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF: u32 = 0;
+pub const IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON: u32 = 1;
+pub const IOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_DEFAULT: u32 = 0;
+pub const IOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_ON: u32 = 1;
+pub const IOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_DEFAULT: u32 = 0;
+pub const IOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_ON: u32 = 1;
+pub const WNOHANG: u32 = 1;
+pub const WUNTRACED: u32 = 2;
+pub const WCOREFLAG: u32 = 128;
+pub const _WSTOPPED: u32 = 127;
+pub const WEXITED: u32 = 4;
+pub const WSTOPPED: u32 = 8;
+pub const WCONTINUED: u32 = 16;
+pub const WNOWAIT: u32 = 32;
+pub const WAIT_ANY: i32 = -1;
+pub const WAIT_MYPGRP: u32 = 0;
+pub const _QUAD_HIGHWORD: u32 = 1;
+pub const _QUAD_LOWWORD: u32 = 0;
+pub const __DARWIN_LITTLE_ENDIAN: u32 = 1234;
+pub const __DARWIN_BIG_ENDIAN: u32 = 4321;
+pub const __DARWIN_PDP_ENDIAN: u32 = 3412;
+pub const LITTLE_ENDIAN: u32 = 1234;
+pub const BIG_ENDIAN: u32 = 4321;
+pub const PDP_ENDIAN: u32 = 3412;
+pub const __DARWIN_BYTE_ORDER: u32 = 1234;
+pub const BYTE_ORDER: u32 = 1234;
+pub const EXIT_FAILURE: u32 = 1;
+pub const EXIT_SUCCESS: u32 = 0;
+pub const RAND_MAX: u32 = 2147483647;
 pub const IMGUI_PAYLOAD_TYPE_COLOR_3F: &[u8; 7] = b"_COL3F\0";
 pub const IMGUI_PAYLOAD_TYPE_COLOR_4F: &[u8; 7] = b"_COL4F\0";
 pub const IM_UNICODE_CODEPOINT_INVALID: u32 = 65533;
@@ -396,906 +909,3116 @@ pub const IM_COL32_A_SHIFT: u32 = 24;
 pub const IM_COL32_A_MASK: u32 = 4278190080;
 pub const IM_DRAWLIST_TEX_LINES_WIDTH_MAX: u32 = 32;
 pub const ImFontAtlasRectId_Invalid: i32 = -1;
-pub type va_list = *mut ::std::os::raw::c_char;
-unsafe extern "C" {
-    pub fn __va_start(arg1: *mut va_list, ...);
-}
+pub type __gnuc_va_list = __builtin_va_list;
+pub type va_list = __builtin_va_list;
+pub type max_align_t = f64;
+pub type __int8_t = ::std::os::raw::c_schar;
+pub type __uint8_t = ::std::os::raw::c_uchar;
+pub type __int16_t = ::std::os::raw::c_short;
+pub type __uint16_t = ::std::os::raw::c_ushort;
+pub type __int32_t = ::std::os::raw::c_int;
+pub type __uint32_t = ::std::os::raw::c_uint;
+pub type __int64_t = ::std::os::raw::c_longlong;
+pub type __uint64_t = ::std::os::raw::c_ulonglong;
+pub type __darwin_intptr_t = ::std::os::raw::c_long;
+pub type __darwin_natural_t = ::std::os::raw::c_uint;
+pub type __darwin_ct_rune_t = ::std::os::raw::c_int;
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __vcrt_va_list_is_reference {
-    pub _address: u8,
-}
-pub const __vcrt_va_list_is_reference___the_value: __vcrt_va_list_is_reference__bindgen_ty_1 =
-    false;
-pub type __vcrt_va_list_is_reference__bindgen_ty_1 = bool;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __vcrt_assert_va_start_is_not_reference {
-    pub _address: u8,
-}
-pub type __vcrt_bool = bool;
-unsafe extern "C" {
-    pub fn __security_init_cookie();
-}
-unsafe extern "C" {
-    pub fn __security_check_cookie(_StackCookie: usize);
-}
-unsafe extern "C" {
-    pub fn __report_gsfailure(_StackCookie: usize) -> !;
-}
-unsafe extern "C" {
-    pub static mut __security_cookie: usize;
-}
-pub type __crt_bool = bool;
-unsafe extern "C" {
-    pub fn _invalid_parameter_noinfo();
-}
-unsafe extern "C" {
-    pub fn _invalid_parameter_noinfo_noreturn() -> !;
-}
-unsafe extern "C" {
-    pub fn _invoke_watson(
-        _Expression: *const u16,
-        _FunctionName: *const u16,
-        _FileName: *const u16,
-        _LineNo: ::std::os::raw::c_uint,
-        _Reserved: usize,
-    ) -> !;
-}
-pub type errno_t = ::std::os::raw::c_int;
-pub type wint_t = ::std::os::raw::c_ushort;
-pub type wctype_t = ::std::os::raw::c_ushort;
-pub type __time32_t = ::std::os::raw::c_long;
-pub type __time64_t = ::std::os::raw::c_longlong;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __crt_locale_data_public {
-    pub _locale_pctype: *const ::std::os::raw::c_ushort,
-    pub _locale_mb_cur_max: ::std::os::raw::c_int,
-    pub _locale_lc_codepage: ::std::os::raw::c_uint,
+#[derive(Copy, Clone)]
+pub union __mbstate_t {
+    pub __mbstate8: [::std::os::raw::c_char; 128usize],
+    pub _mbstateL: ::std::os::raw::c_longlong,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of __crt_locale_data_public"]
-        [::std::mem::size_of::<__crt_locale_data_public>() - 16usize];
-    ["Alignment of __crt_locale_data_public"]
-        [::std::mem::align_of::<__crt_locale_data_public>() - 8usize];
-    ["Offset of field: __crt_locale_data_public::_locale_pctype"]
-        [::std::mem::offset_of!(__crt_locale_data_public, _locale_pctype) - 0usize];
-    ["Offset of field: __crt_locale_data_public::_locale_mb_cur_max"]
-        [::std::mem::offset_of!(__crt_locale_data_public, _locale_mb_cur_max) - 8usize];
-    ["Offset of field: __crt_locale_data_public::_locale_lc_codepage"]
-        [::std::mem::offset_of!(__crt_locale_data_public, _locale_lc_codepage) - 12usize];
+    ["Size of __mbstate_t"][::std::mem::size_of::<__mbstate_t>() - 128usize];
+    ["Alignment of __mbstate_t"][::std::mem::align_of::<__mbstate_t>() - 8usize];
+    ["Offset of field: __mbstate_t::__mbstate8"]
+        [::std::mem::offset_of!(__mbstate_t, __mbstate8) - 0usize];
+    ["Offset of field: __mbstate_t::_mbstateL"]
+        [::std::mem::offset_of!(__mbstate_t, _mbstateL) - 0usize];
 };
+pub type __darwin_mbstate_t = __mbstate_t;
+pub type __darwin_ptrdiff_t = ::std::os::raw::c_long;
+pub type __darwin_size_t = ::std::os::raw::c_ulong;
+pub type __darwin_va_list = __builtin_va_list;
+pub type __darwin_wchar_t = ::std::os::raw::c_int;
+pub type __darwin_rune_t = __darwin_wchar_t;
+pub type __darwin_wint_t = ::std::os::raw::c_int;
+pub type __darwin_clock_t = ::std::os::raw::c_ulong;
+pub type __darwin_socklen_t = __uint32_t;
+pub type __darwin_ssize_t = ::std::os::raw::c_long;
+pub type __darwin_time_t = ::std::os::raw::c_long;
+pub type __darwin_blkcnt_t = __int64_t;
+pub type __darwin_blksize_t = __int32_t;
+pub type __darwin_dev_t = __int32_t;
+pub type __darwin_fsblkcnt_t = ::std::os::raw::c_uint;
+pub type __darwin_fsfilcnt_t = ::std::os::raw::c_uint;
+pub type __darwin_gid_t = __uint32_t;
+pub type __darwin_id_t = __uint32_t;
+pub type __darwin_ino64_t = __uint64_t;
+pub type __darwin_ino_t = __darwin_ino64_t;
+pub type __darwin_mach_port_name_t = __darwin_natural_t;
+pub type __darwin_mach_port_t = __darwin_mach_port_name_t;
+pub type __darwin_mode_t = __uint16_t;
+pub type __darwin_off_t = __int64_t;
+pub type __darwin_pid_t = __int32_t;
+pub type __darwin_sigset_t = __uint32_t;
+pub type __darwin_suseconds_t = __int32_t;
+pub type __darwin_uid_t = __uint32_t;
+pub type __darwin_useconds_t = __uint32_t;
+pub type __darwin_uuid_t = [::std::os::raw::c_uchar; 16usize];
+pub type __darwin_uuid_string_t = [::std::os::raw::c_char; 37usize];
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct __crt_locale_pointers {
-    pub locinfo: *mut __crt_locale_data,
-    pub mbcinfo: *mut __crt_multibyte_data,
+pub struct __darwin_pthread_handler_rec {
+    pub __routine: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
+    pub __arg: *mut ::std::os::raw::c_void,
+    pub __next: *mut __darwin_pthread_handler_rec,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of __crt_locale_pointers"][::std::mem::size_of::<__crt_locale_pointers>() - 16usize];
-    ["Alignment of __crt_locale_pointers"]
-        [::std::mem::align_of::<__crt_locale_pointers>() - 8usize];
-    ["Offset of field: __crt_locale_pointers::locinfo"]
-        [::std::mem::offset_of!(__crt_locale_pointers, locinfo) - 0usize];
-    ["Offset of field: __crt_locale_pointers::mbcinfo"]
-        [::std::mem::offset_of!(__crt_locale_pointers, mbcinfo) - 8usize];
+    ["Size of __darwin_pthread_handler_rec"]
+        [::std::mem::size_of::<__darwin_pthread_handler_rec>() - 24usize];
+    ["Alignment of __darwin_pthread_handler_rec"]
+        [::std::mem::align_of::<__darwin_pthread_handler_rec>() - 8usize];
+    ["Offset of field: __darwin_pthread_handler_rec::__routine"]
+        [::std::mem::offset_of!(__darwin_pthread_handler_rec, __routine) - 0usize];
+    ["Offset of field: __darwin_pthread_handler_rec::__arg"]
+        [::std::mem::offset_of!(__darwin_pthread_handler_rec, __arg) - 8usize];
+    ["Offset of field: __darwin_pthread_handler_rec::__next"]
+        [::std::mem::offset_of!(__darwin_pthread_handler_rec, __next) - 16usize];
 };
-pub type _locale_t = *mut __crt_locale_pointers;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct _Mbstatet {
-    pub _Wchar: ::std::os::raw::c_ulong,
-    pub _Byte: ::std::os::raw::c_ushort,
-    pub _State: ::std::os::raw::c_ushort,
+pub struct _opaque_pthread_attr_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 56usize],
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of _Mbstatet"][::std::mem::size_of::<_Mbstatet>() - 8usize];
-    ["Alignment of _Mbstatet"][::std::mem::align_of::<_Mbstatet>() - 4usize];
-    ["Offset of field: _Mbstatet::_Wchar"][::std::mem::offset_of!(_Mbstatet, _Wchar) - 0usize];
-    ["Offset of field: _Mbstatet::_Byte"][::std::mem::offset_of!(_Mbstatet, _Byte) - 4usize];
-    ["Offset of field: _Mbstatet::_State"][::std::mem::offset_of!(_Mbstatet, _State) - 6usize];
+    ["Size of _opaque_pthread_attr_t"][::std::mem::size_of::<_opaque_pthread_attr_t>() - 64usize];
+    ["Alignment of _opaque_pthread_attr_t"]
+        [::std::mem::align_of::<_opaque_pthread_attr_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_attr_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_attr_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_attr_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_attr_t, __opaque) - 8usize];
 };
-pub type mbstate_t = _Mbstatet;
-pub type time_t = __time64_t;
-pub type rsize_t = usize;
-unsafe extern "C" {
-    pub fn _clearfp() -> ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_cond_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 40usize],
 }
-unsafe extern "C" {
-    pub fn _controlfp(
-        _NewValue: ::std::os::raw::c_uint,
-        _Mask: ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_uint;
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_cond_t"][::std::mem::size_of::<_opaque_pthread_cond_t>() - 48usize];
+    ["Alignment of _opaque_pthread_cond_t"]
+        [::std::mem::align_of::<_opaque_pthread_cond_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_cond_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_cond_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_cond_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_cond_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_condattr_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 8usize],
 }
-unsafe extern "C" {
-    pub fn _set_controlfp(_NewValue: ::std::os::raw::c_uint, _Mask: ::std::os::raw::c_uint);
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_condattr_t"]
+        [::std::mem::size_of::<_opaque_pthread_condattr_t>() - 16usize];
+    ["Alignment of _opaque_pthread_condattr_t"]
+        [::std::mem::align_of::<_opaque_pthread_condattr_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_condattr_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_condattr_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_condattr_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_condattr_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_mutex_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 56usize],
 }
-unsafe extern "C" {
-    pub fn _controlfp_s(
-        _CurrentState: *mut ::std::os::raw::c_uint,
-        _NewValue: ::std::os::raw::c_uint,
-        _Mask: ::std::os::raw::c_uint,
-    ) -> errno_t;
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_mutex_t"][::std::mem::size_of::<_opaque_pthread_mutex_t>() - 64usize];
+    ["Alignment of _opaque_pthread_mutex_t"]
+        [::std::mem::align_of::<_opaque_pthread_mutex_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_mutex_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_mutex_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_mutex_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_mutex_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_mutexattr_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 8usize],
 }
-unsafe extern "C" {
-    pub fn _statusfp() -> ::std::os::raw::c_uint;
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_mutexattr_t"]
+        [::std::mem::size_of::<_opaque_pthread_mutexattr_t>() - 16usize];
+    ["Alignment of _opaque_pthread_mutexattr_t"]
+        [::std::mem::align_of::<_opaque_pthread_mutexattr_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_mutexattr_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_mutexattr_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_mutexattr_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_mutexattr_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_once_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 8usize],
 }
-unsafe extern "C" {
-    pub fn _fpreset();
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_once_t"][::std::mem::size_of::<_opaque_pthread_once_t>() - 16usize];
+    ["Alignment of _opaque_pthread_once_t"]
+        [::std::mem::align_of::<_opaque_pthread_once_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_once_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_once_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_once_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_once_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_rwlock_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 192usize],
 }
-unsafe extern "C" {
-    pub fn _control87(
-        _NewValue: ::std::os::raw::c_uint,
-        _Mask: ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_uint;
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_rwlock_t"]
+        [::std::mem::size_of::<_opaque_pthread_rwlock_t>() - 200usize];
+    ["Alignment of _opaque_pthread_rwlock_t"]
+        [::std::mem::align_of::<_opaque_pthread_rwlock_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_rwlock_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_rwlock_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_rwlock_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_rwlock_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_rwlockattr_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __opaque: [::std::os::raw::c_char; 16usize],
 }
-unsafe extern "C" {
-    pub fn __fpecode() -> *mut ::std::os::raw::c_int;
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_rwlockattr_t"]
+        [::std::mem::size_of::<_opaque_pthread_rwlockattr_t>() - 24usize];
+    ["Alignment of _opaque_pthread_rwlockattr_t"]
+        [::std::mem::align_of::<_opaque_pthread_rwlockattr_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_rwlockattr_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_rwlockattr_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_rwlockattr_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_rwlockattr_t, __opaque) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _opaque_pthread_t {
+    pub __sig: ::std::os::raw::c_long,
+    pub __cleanup_stack: *mut __darwin_pthread_handler_rec,
+    pub __opaque: [::std::os::raw::c_char; 8176usize],
 }
-unsafe extern "C" {
-    pub fn __fpe_flt_rounds() -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _copysign(_Number: f64, _Sign: f64) -> f64;
-}
-unsafe extern "C" {
-    pub fn _chgsign(_X: f64) -> f64;
-}
-unsafe extern "C" {
-    pub fn _scalb(_X: f64, _Y: ::std::os::raw::c_long) -> f64;
-}
-unsafe extern "C" {
-    pub fn _logb(_X: f64) -> f64;
-}
-unsafe extern "C" {
-    pub fn _nextafter(_X: f64, _Y: f64) -> f64;
-}
-unsafe extern "C" {
-    pub fn _finite(_X: f64) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _isnan(_X: f64) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _fpclass(_X: f64) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _scalbf(_X: f32, _Y: ::std::os::raw::c_long) -> f32;
-}
-unsafe extern "C" {
-    pub fn fpreset();
-}
-pub type std_nullptr_t = *const ::std::os::raw::c_void;
-unsafe extern "C" {
-    pub fn _errno() -> *mut ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _set_errno(_Value: ::std::os::raw::c_int) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _get_errno(_Value: *mut ::std::os::raw::c_int) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn __threadid() -> ::std::os::raw::c_ulong;
-}
-unsafe extern "C" {
-    pub fn __threadhandle() -> usize;
-}
-unsafe extern "C" {
-    pub fn __doserrno() -> *mut ::std::os::raw::c_ulong;
-}
-unsafe extern "C" {
-    pub fn _set_doserrno(_Value: ::std::os::raw::c_ulong) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _get_doserrno(_Value: *mut ::std::os::raw::c_ulong) -> errno_t;
-}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _opaque_pthread_t"][::std::mem::size_of::<_opaque_pthread_t>() - 8192usize];
+    ["Alignment of _opaque_pthread_t"][::std::mem::align_of::<_opaque_pthread_t>() - 8usize];
+    ["Offset of field: _opaque_pthread_t::__sig"]
+        [::std::mem::offset_of!(_opaque_pthread_t, __sig) - 0usize];
+    ["Offset of field: _opaque_pthread_t::__cleanup_stack"]
+        [::std::mem::offset_of!(_opaque_pthread_t, __cleanup_stack) - 8usize];
+    ["Offset of field: _opaque_pthread_t::__opaque"]
+        [::std::mem::offset_of!(_opaque_pthread_t, __opaque) - 16usize];
+};
+pub type __darwin_pthread_attr_t = _opaque_pthread_attr_t;
+pub type __darwin_pthread_cond_t = _opaque_pthread_cond_t;
+pub type __darwin_pthread_condattr_t = _opaque_pthread_condattr_t;
+pub type __darwin_pthread_key_t = ::std::os::raw::c_ulong;
+pub type __darwin_pthread_mutex_t = _opaque_pthread_mutex_t;
+pub type __darwin_pthread_mutexattr_t = _opaque_pthread_mutexattr_t;
+pub type __darwin_pthread_once_t = _opaque_pthread_once_t;
+pub type __darwin_pthread_rwlock_t = _opaque_pthread_rwlock_t;
+pub type __darwin_pthread_rwlockattr_t = _opaque_pthread_rwlockattr_t;
+pub type __darwin_pthread_t = *mut _opaque_pthread_t;
+pub type __darwin_nl_item = ::std::os::raw::c_int;
+pub type __darwin_wctrans_t = ::std::os::raw::c_int;
+pub type __darwin_wctype_t = __uint32_t;
 unsafe extern "C" {
     pub fn memchr(
-        _Buf: *const ::std::os::raw::c_void,
-        _Val: ::std::os::raw::c_int,
-        _MaxCount: usize,
-    ) -> *const ::std::os::raw::c_void;
+        __s: *const ::std::os::raw::c_void,
+        __c: ::std::os::raw::c_int,
+        __n: usize,
+    ) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
     pub fn memcmp(
-        _Buf1: *const ::std::os::raw::c_void,
-        _Buf2: *const ::std::os::raw::c_void,
-        _Size: usize,
+        __s1: *const ::std::os::raw::c_void,
+        __s2: *const ::std::os::raw::c_void,
+        __n: usize,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
     pub fn memcpy(
-        _Dst: *mut ::std::os::raw::c_void,
-        _Src: *const ::std::os::raw::c_void,
-        _Size: usize,
+        __dst: *mut ::std::os::raw::c_void,
+        __src: *const ::std::os::raw::c_void,
+        __n: usize,
     ) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
     pub fn memmove(
-        _Dst: *mut ::std::os::raw::c_void,
-        _Src: *const ::std::os::raw::c_void,
-        _Size: usize,
+        __dst: *mut ::std::os::raw::c_void,
+        __src: *const ::std::os::raw::c_void,
+        __len: usize,
     ) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
     pub fn memset(
-        _Dst: *mut ::std::os::raw::c_void,
-        _Val: ::std::os::raw::c_int,
-        _Size: usize,
-    ) -> *mut ::std::os::raw::c_void;
-}
-unsafe extern "C" {
-    pub fn strchr(
-        _Str: *const ::std::os::raw::c_char,
-        _Val: ::std::os::raw::c_int,
-    ) -> *const ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn strrchr(
-        _Str: *const ::std::os::raw::c_char,
-        _Ch: ::std::os::raw::c_int,
-    ) -> *const ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn strstr(
-        _Str: *const ::std::os::raw::c_char,
-        _SubStr: *const ::std::os::raw::c_char,
-    ) -> *const ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn wcschr(_Str: *const u16, _Ch: u16) -> *const u16;
-}
-unsafe extern "C" {
-    pub fn wcsrchr(_Str: *const u16, _Ch: u16) -> *const u16;
-}
-unsafe extern "C" {
-    pub fn wcsstr(_Str: *const u16, _SubStr: *const u16) -> *const u16;
-}
-unsafe extern "C" {
-    pub fn _memicmp(
-        _Buf1: *const ::std::os::raw::c_void,
-        _Buf2: *const ::std::os::raw::c_void,
-        _Size: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _memicmp_l(
-        _Buf1: *const ::std::os::raw::c_void,
-        _Buf2: *const ::std::os::raw::c_void,
-        _Size: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn memccpy(
-        _Dst: *mut ::std::os::raw::c_void,
-        _Src: *const ::std::os::raw::c_void,
-        _Val: ::std::os::raw::c_int,
-        _Size: usize,
-    ) -> *mut ::std::os::raw::c_void;
-}
-unsafe extern "C" {
-    pub fn memicmp(
-        _Buf1: *const ::std::os::raw::c_void,
-        _Buf2: *const ::std::os::raw::c_void,
-        _Size: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcscat_s(_Destination: *mut u16, _SizeInWords: rsize_t, _Source: *const u16) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn wcscpy_s(_Destination: *mut u16, _SizeInWords: rsize_t, _Source: *const u16) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn wcsncat_s(
-        _Destination: *mut u16,
-        _SizeInWords: rsize_t,
-        _Source: *const u16,
-        _MaxCount: rsize_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn wcsncpy_s(
-        _Destination: *mut u16,
-        _SizeInWords: rsize_t,
-        _Source: *const u16,
-        _MaxCount: rsize_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn wcstok_s(_String: *mut u16, _Delimiter: *const u16, _Context: *mut *mut u16)
-    -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcsdup(_String: *const u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcscat(_Destination: *mut u16, _Source: *const u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcscmp(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcscpy(_Destination: *mut u16, _Source: *const u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcscspn(_String: *const u16, _Control: *const u16) -> usize;
-}
-unsafe extern "C" {
-    pub fn wcslen(_String: *const u16) -> usize;
-}
-unsafe extern "C" {
-    pub fn wcsnlen(_Source: *const u16, _MaxCount: usize) -> usize;
-}
-unsafe extern "C" {
-    pub fn wcsncat(_Destination: *mut u16, _Source: *const u16, _Count: usize) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsncmp(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcsncpy(_Destination: *mut u16, _Source: *const u16, _Count: usize) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcspbrk(_String: *const u16, _Control: *const u16) -> *const u16;
-}
-unsafe extern "C" {
-    pub fn wcsspn(_String: *const u16, _Control: *const u16) -> usize;
-}
-unsafe extern "C" {
-    pub fn wcstok(_String: *mut u16, _Delimiter: *const u16, _Context: *mut *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcserror(_ErrorNumber: ::std::os::raw::c_int) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcserror_s(
-        _Buffer: *mut u16,
-        _SizeInWords: usize,
-        _ErrorNumber: ::std::os::raw::c_int,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn __wcserror(_String: *const u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn __wcserror_s(
-        _Buffer: *mut u16,
-        _SizeInWords: usize,
-        _ErrorMessage: *const u16,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcsicmp(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsicmp_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsnicmp(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsnicmp_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsnset_s(
-        _Destination: *mut u16,
-        _SizeInWords: usize,
-        _Value: u16,
-        _MaxCount: usize,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcsnset(_String: *mut u16, _Value: u16, _MaxCount: usize) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcsrev(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcsset_s(_Destination: *mut u16, _SizeInWords: usize, _Value: u16) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcsset(_String: *mut u16, _Value: u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcslwr_s(_String: *mut u16, _SizeInWords: usize) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcslwr(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcslwr_s_l(_String: *mut u16, _SizeInWords: usize, _Locale: _locale_t) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcslwr_l(_String: *mut u16, _Locale: _locale_t) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcsupr_s(_String: *mut u16, _Size: usize) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcsupr(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn _wcsupr_s_l(_String: *mut u16, _Size: usize, _Locale: _locale_t) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _wcsupr_l(_String: *mut u16, _Locale: _locale_t) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsxfrm(_Destination: *mut u16, _Source: *const u16, _MaxCount: usize) -> usize;
-}
-unsafe extern "C" {
-    pub fn _wcsxfrm_l(
-        _Destination: *mut u16,
-        _Source: *const u16,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> usize;
-}
-unsafe extern "C" {
-    pub fn wcscoll(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcscoll_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsicoll(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsicoll_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsncoll(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsncoll_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsnicoll(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _wcsnicoll_l(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcsdup(_String: *const u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsicmp(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcsnicmp(
-        _String1: *const u16,
-        _String2: *const u16,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn wcsnset(_String: *mut u16, _Value: u16, _MaxCount: usize) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsrev(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsset(_String: *mut u16, _Value: u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcslwr(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsupr(_String: *mut u16) -> *mut u16;
-}
-unsafe extern "C" {
-    pub fn wcsicoll(_String1: *const u16, _String2: *const u16) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn strcpy_s(
-        _Destination: *mut ::std::os::raw::c_char,
-        _SizeInBytes: rsize_t,
-        _Source: *const ::std::os::raw::c_char,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strcat_s(
-        _Destination: *mut ::std::os::raw::c_char,
-        _SizeInBytes: rsize_t,
-        _Source: *const ::std::os::raw::c_char,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strerror_s(
-        _Buffer: *mut ::std::os::raw::c_char,
-        _SizeInBytes: usize,
-        _ErrorNumber: ::std::os::raw::c_int,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strncat_s(
-        _Destination: *mut ::std::os::raw::c_char,
-        _SizeInBytes: rsize_t,
-        _Source: *const ::std::os::raw::c_char,
-        _MaxCount: rsize_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strncpy_s(
-        _Destination: *mut ::std::os::raw::c_char,
-        _SizeInBytes: rsize_t,
-        _Source: *const ::std::os::raw::c_char,
-        _MaxCount: rsize_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strtok_s(
-        _String: *mut ::std::os::raw::c_char,
-        _Delimiter: *const ::std::os::raw::c_char,
-        _Context: *mut *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _memccpy(
-        _Dst: *mut ::std::os::raw::c_void,
-        _Src: *const ::std::os::raw::c_void,
-        _Val: ::std::os::raw::c_int,
-        _MaxCount: usize,
+        __b: *mut ::std::os::raw::c_void,
+        __c: ::std::os::raw::c_int,
+        __len: usize,
     ) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
     pub fn strcat(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
+        __s1: *mut ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strchr(
+        __s: *const ::std::os::raw::c_char,
+        __c: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strcmp(
-        _Str1: *const ::std::os::raw::c_char,
-        _Str2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strcmpi(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
+        __s1: *const ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
     pub fn strcoll(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strcoll_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _Locale: _locale_t,
+        __s1: *const ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
     pub fn strcpy(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
+        __dst: *mut ::std::os::raw::c_char,
+        __src: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strcspn(
-        _Str: *const ::std::os::raw::c_char,
-        _Control: *const ::std::os::raw::c_char,
+        __s: *const ::std::os::raw::c_char,
+        __charset: *const ::std::os::raw::c_char,
     ) -> usize;
 }
 unsafe extern "C" {
-    pub fn _strdup(_Source: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn strerror(__errnum: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn _strerror(_ErrorMessage: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _strerror_s(
-        _Buffer: *mut ::std::os::raw::c_char,
-        _SizeInBytes: usize,
-        _ErrorMessage: *const ::std::os::raw::c_char,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn strerror(_ErrorMessage: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _stricmp(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _stricoll(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _stricoll_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _stricmp_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn strlen(_Str: *const ::std::os::raw::c_char) -> usize;
-}
-unsafe extern "C" {
-    pub fn _strlwr_s(_String: *mut ::std::os::raw::c_char, _Size: usize) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strlwr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _strlwr_s_l(
-        _String: *mut ::std::os::raw::c_char,
-        _Size: usize,
-        _Locale: _locale_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strlwr_l(
-        _String: *mut ::std::os::raw::c_char,
-        _Locale: _locale_t,
-    ) -> *mut ::std::os::raw::c_char;
+    pub fn strlen(__s: *const ::std::os::raw::c_char) -> usize;
 }
 unsafe extern "C" {
     pub fn strncat(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
-        _Count: usize,
+        __s1: *mut ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
+        __n: usize,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strncmp(
-        _Str1: *const ::std::os::raw::c_char,
-        _Str2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
+        __s1: *const ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
+        __n: usize,
     ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strnicmp(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strnicmp_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strnicoll(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strnicoll_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strncoll(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn _strncoll_l(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-        _Locale: _locale_t,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn __strncnt(_String: *const ::std::os::raw::c_char, _Count: usize) -> usize;
 }
 unsafe extern "C" {
     pub fn strncpy(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
-        _Count: usize,
-    ) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn strnlen(_String: *const ::std::os::raw::c_char, _MaxCount: usize) -> usize;
-}
-unsafe extern "C" {
-    pub fn _strnset_s(
-        _String: *mut ::std::os::raw::c_char,
-        _SizeInBytes: usize,
-        _Value: ::std::os::raw::c_int,
-        _MaxCount: usize,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strnset(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Value: ::std::os::raw::c_int,
-        _Count: usize,
+        __dst: *mut ::std::os::raw::c_char,
+        __src: *const ::std::os::raw::c_char,
+        __n: usize,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strpbrk(
-        _Str: *const ::std::os::raw::c_char,
-        _Control: *const ::std::os::raw::c_char,
-    ) -> *const ::std::os::raw::c_char;
+        __s: *const ::std::os::raw::c_char,
+        __charset: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn _strrev(_Str: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _strset_s(
-        _Destination: *mut ::std::os::raw::c_char,
-        _DestinationSize: usize,
-        _Value: ::std::os::raw::c_int,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strset(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Value: ::std::os::raw::c_int,
+    pub fn strrchr(
+        __s: *const ::std::os::raw::c_char,
+        __c: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strspn(
-        _Str: *const ::std::os::raw::c_char,
-        _Control: *const ::std::os::raw::c_char,
+        __s: *const ::std::os::raw::c_char,
+        __charset: *const ::std::os::raw::c_char,
     ) -> usize;
 }
 unsafe extern "C" {
-    pub fn strtok(
-        _String: *mut ::std::os::raw::c_char,
-        _Delimiter: *const ::std::os::raw::c_char,
+    pub fn strstr(
+        __big: *const ::std::os::raw::c_char,
+        __little: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn _strupr_s(_String: *mut ::std::os::raw::c_char, _Size: usize) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strupr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn _strupr_s_l(
-        _String: *mut ::std::os::raw::c_char,
-        _Size: usize,
-        _Locale: _locale_t,
-    ) -> errno_t;
-}
-unsafe extern "C" {
-    pub fn _strupr_l(
-        _String: *mut ::std::os::raw::c_char,
-        _Locale: _locale_t,
+    pub fn strtok(
+        __str: *mut ::std::os::raw::c_char,
+        __sep: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     pub fn strxfrm(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
+        __s1: *mut ::std::os::raw::c_char,
+        __s2: *const ::std::os::raw::c_char,
+        __n: usize,
     ) -> usize;
 }
 unsafe extern "C" {
-    pub fn _strxfrm_l(
-        _Destination: *mut ::std::os::raw::c_char,
-        _Source: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-        _Locale: _locale_t,
+    pub fn strtok_r(
+        __str: *mut ::std::os::raw::c_char,
+        __sep: *const ::std::os::raw::c_char,
+        __lasts: *mut *mut ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strerror_r(
+        __errnum: ::std::os::raw::c_int,
+        __strerrbuf: *mut ::std::os::raw::c_char,
+        __buflen: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn strdup(__s1: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn memccpy(
+        __dst: *mut ::std::os::raw::c_void,
+        __src: *const ::std::os::raw::c_void,
+        __c: ::std::os::raw::c_int,
+        __n: usize,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn stpcpy(
+        __dst: *mut ::std::os::raw::c_char,
+        __src: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn stpncpy(
+        __dst: *mut ::std::os::raw::c_char,
+        __src: *const ::std::os::raw::c_char,
+        __n: usize,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strndup(__s1: *const ::std::os::raw::c_char, __n: usize) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strnlen(__s1: *const ::std::os::raw::c_char, __n: usize) -> usize;
+}
+unsafe extern "C" {
+    pub fn strsignal(__sig: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+}
+pub type u_int8_t = ::std::os::raw::c_uchar;
+pub type u_int16_t = ::std::os::raw::c_ushort;
+pub type u_int32_t = ::std::os::raw::c_uint;
+pub type u_int64_t = ::std::os::raw::c_ulonglong;
+pub type register_t = i64;
+pub type user_addr_t = u_int64_t;
+pub type user_size_t = u_int64_t;
+pub type user_ssize_t = i64;
+pub type user_long_t = i64;
+pub type user_ulong_t = u_int64_t;
+pub type user_time_t = i64;
+pub type user_off_t = i64;
+pub type syscall_arg_t = u_int64_t;
+pub type rsize_t = __darwin_size_t;
+pub type errno_t = ::std::os::raw::c_int;
+unsafe extern "C" {
+    pub fn memset_s(
+        __s: *mut ::std::os::raw::c_void,
+        __smax: rsize_t,
+        __c: ::std::os::raw::c_int,
+        __n: rsize_t,
+    ) -> errno_t;
+}
+unsafe extern "C" {
+    pub fn memmem(
+        __big: *const ::std::os::raw::c_void,
+        __big_len: usize,
+        __little: *const ::std::os::raw::c_void,
+        __little_len: usize,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn memset_pattern4(
+        __b: *mut ::std::os::raw::c_void,
+        __pattern4: *const ::std::os::raw::c_void,
+        __len: usize,
+    );
+}
+unsafe extern "C" {
+    pub fn memset_pattern8(
+        __b: *mut ::std::os::raw::c_void,
+        __pattern8: *const ::std::os::raw::c_void,
+        __len: usize,
+    );
+}
+unsafe extern "C" {
+    pub fn memset_pattern16(
+        __b: *mut ::std::os::raw::c_void,
+        __pattern16: *const ::std::os::raw::c_void,
+        __len: usize,
+    );
+}
+unsafe extern "C" {
+    pub fn strcasestr(
+        __big: *const ::std::os::raw::c_char,
+        __little: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strchrnul(
+        __s: *const ::std::os::raw::c_char,
+        __c: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strnstr(
+        __big: *const ::std::os::raw::c_char,
+        __little: *const ::std::os::raw::c_char,
+        __len: usize,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn strlcat(
+        __dst: *mut ::std::os::raw::c_char,
+        __source: *const ::std::os::raw::c_char,
+        __size: usize,
     ) -> usize;
 }
 unsafe extern "C" {
-    pub fn strdup(_String: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn strlcpy(
+        __dst: *mut ::std::os::raw::c_char,
+        __source: *const ::std::os::raw::c_char,
+        __size: usize,
+    ) -> usize;
 }
 unsafe extern "C" {
-    pub fn strcmpi(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+    pub fn strmode(__mode: ::std::os::raw::c_int, __bp: *mut ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    pub fn stricmp(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn strlwr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-}
-unsafe extern "C" {
-    pub fn strnicmp(
-        _String1: *const ::std::os::raw::c_char,
-        _String2: *const ::std::os::raw::c_char,
-        _MaxCount: usize,
-    ) -> ::std::os::raw::c_int;
-}
-unsafe extern "C" {
-    pub fn strnset(
-        _String: *mut ::std::os::raw::c_char,
-        _Value: ::std::os::raw::c_int,
-        _MaxCount: usize,
+    pub fn strsep(
+        __stringp: *mut *mut ::std::os::raw::c_char,
+        __delim: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn strrev(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn swab(
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *mut ::std::os::raw::c_void,
+        __len: isize,
+    );
 }
 unsafe extern "C" {
-    pub fn strset(
-        _String: *mut ::std::os::raw::c_char,
-        _Value: ::std::os::raw::c_int,
+    pub fn timingsafe_bcmp(
+        __b1: *const ::std::os::raw::c_void,
+        __b2: *const ::std::os::raw::c_void,
+        __len: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn strsignal_r(
+        __sig: ::std::os::raw::c_int,
+        __strsignalbuf: *mut ::std::os::raw::c_char,
+        __buflen: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn bcmp(
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *const ::std::os::raw::c_void,
+        __n: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn bcopy(
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *mut ::std::os::raw::c_void,
+        __n: usize,
+    );
+}
+unsafe extern "C" {
+    pub fn bzero(arg1: *mut ::std::os::raw::c_void, __n: usize);
+}
+unsafe extern "C" {
+    pub fn index(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn strupr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn rindex(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    pub fn _wassert(_Message: *const u16, _File: *const u16, _Line: ::std::os::raw::c_uint);
+    pub fn ffs(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn strcasecmp(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn strncasecmp(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn ffsl(arg1: ::std::os::raw::c_long) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn ffsll(arg1: ::std::os::raw::c_longlong) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn fls(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn flsl(arg1: ::std::os::raw::c_long) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn flsll(arg1: ::std::os::raw::c_longlong) -> ::std::os::raw::c_int;
+}
+pub const idtype_t_P_ALL: idtype_t = 0;
+pub const idtype_t_P_PID: idtype_t = 1;
+pub const idtype_t_P_PGID: idtype_t = 2;
+pub type idtype_t = ::std::os::raw::c_uint;
+pub type pid_t = __darwin_pid_t;
+pub type id_t = __darwin_id_t;
+pub type sig_atomic_t = ::std::os::raw::c_int;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_exception_state {
+    pub __exception: __uint32_t,
+    pub __fsr: __uint32_t,
+    pub __far: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_exception_state"]
+        [::std::mem::size_of::<__darwin_arm_exception_state>() - 12usize];
+    ["Alignment of __darwin_arm_exception_state"]
+        [::std::mem::align_of::<__darwin_arm_exception_state>() - 4usize];
+    ["Offset of field: __darwin_arm_exception_state::__exception"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state, __exception) - 0usize];
+    ["Offset of field: __darwin_arm_exception_state::__fsr"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state, __fsr) - 4usize];
+    ["Offset of field: __darwin_arm_exception_state::__far"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state, __far) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_exception_state64 {
+    pub __far: __uint64_t,
+    pub __esr: __uint32_t,
+    pub __exception: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_exception_state64"]
+        [::std::mem::size_of::<__darwin_arm_exception_state64>() - 16usize];
+    ["Alignment of __darwin_arm_exception_state64"]
+        [::std::mem::align_of::<__darwin_arm_exception_state64>() - 8usize];
+    ["Offset of field: __darwin_arm_exception_state64::__far"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state64, __far) - 0usize];
+    ["Offset of field: __darwin_arm_exception_state64::__esr"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state64, __esr) - 8usize];
+    ["Offset of field: __darwin_arm_exception_state64::__exception"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state64, __exception) - 12usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_exception_state64_v2 {
+    pub __far: __uint64_t,
+    pub __esr: __uint64_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_exception_state64_v2"]
+        [::std::mem::size_of::<__darwin_arm_exception_state64_v2>() - 16usize];
+    ["Alignment of __darwin_arm_exception_state64_v2"]
+        [::std::mem::align_of::<__darwin_arm_exception_state64_v2>() - 8usize];
+    ["Offset of field: __darwin_arm_exception_state64_v2::__far"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state64_v2, __far) - 0usize];
+    ["Offset of field: __darwin_arm_exception_state64_v2::__esr"]
+        [::std::mem::offset_of!(__darwin_arm_exception_state64_v2, __esr) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_thread_state {
+    pub __r: [__uint32_t; 13usize],
+    pub __sp: __uint32_t,
+    pub __lr: __uint32_t,
+    pub __pc: __uint32_t,
+    pub __cpsr: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_thread_state"]
+        [::std::mem::size_of::<__darwin_arm_thread_state>() - 68usize];
+    ["Alignment of __darwin_arm_thread_state"]
+        [::std::mem::align_of::<__darwin_arm_thread_state>() - 4usize];
+    ["Offset of field: __darwin_arm_thread_state::__r"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state, __r) - 0usize];
+    ["Offset of field: __darwin_arm_thread_state::__sp"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state, __sp) - 52usize];
+    ["Offset of field: __darwin_arm_thread_state::__lr"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state, __lr) - 56usize];
+    ["Offset of field: __darwin_arm_thread_state::__pc"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state, __pc) - 60usize];
+    ["Offset of field: __darwin_arm_thread_state::__cpsr"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state, __cpsr) - 64usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_thread_state64 {
+    pub __x: [__uint64_t; 29usize],
+    pub __fp: __uint64_t,
+    pub __lr: __uint64_t,
+    pub __sp: __uint64_t,
+    pub __pc: __uint64_t,
+    pub __cpsr: __uint32_t,
+    pub __pad: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_thread_state64"]
+        [::std::mem::size_of::<__darwin_arm_thread_state64>() - 272usize];
+    ["Alignment of __darwin_arm_thread_state64"]
+        [::std::mem::align_of::<__darwin_arm_thread_state64>() - 8usize];
+    ["Offset of field: __darwin_arm_thread_state64::__x"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __x) - 0usize];
+    ["Offset of field: __darwin_arm_thread_state64::__fp"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __fp) - 232usize];
+    ["Offset of field: __darwin_arm_thread_state64::__lr"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __lr) - 240usize];
+    ["Offset of field: __darwin_arm_thread_state64::__sp"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __sp) - 248usize];
+    ["Offset of field: __darwin_arm_thread_state64::__pc"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __pc) - 256usize];
+    ["Offset of field: __darwin_arm_thread_state64::__cpsr"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __cpsr) - 264usize];
+    ["Offset of field: __darwin_arm_thread_state64::__pad"]
+        [::std::mem::offset_of!(__darwin_arm_thread_state64, __pad) - 268usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_vfp_state {
+    pub __r: [__uint32_t; 64usize],
+    pub __fpscr: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_vfp_state"][::std::mem::size_of::<__darwin_arm_vfp_state>() - 260usize];
+    ["Alignment of __darwin_arm_vfp_state"]
+        [::std::mem::align_of::<__darwin_arm_vfp_state>() - 4usize];
+    ["Offset of field: __darwin_arm_vfp_state::__r"]
+        [::std::mem::offset_of!(__darwin_arm_vfp_state, __r) - 0usize];
+    ["Offset of field: __darwin_arm_vfp_state::__fpscr"]
+        [::std::mem::offset_of!(__darwin_arm_vfp_state, __fpscr) - 256usize];
+};
+#[repr(C)]
+#[repr(align(16))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_neon_state64 {
+    pub __v: [__uint128_t; 32usize],
+    pub __fpsr: __uint32_t,
+    pub __fpcr: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_neon_state64"]
+        [::std::mem::size_of::<__darwin_arm_neon_state64>() - 528usize];
+    ["Alignment of __darwin_arm_neon_state64"]
+        [::std::mem::align_of::<__darwin_arm_neon_state64>() - 16usize];
+    ["Offset of field: __darwin_arm_neon_state64::__v"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state64, __v) - 0usize];
+    ["Offset of field: __darwin_arm_neon_state64::__fpsr"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state64, __fpsr) - 512usize];
+    ["Offset of field: __darwin_arm_neon_state64::__fpcr"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state64, __fpcr) - 516usize];
+};
+#[repr(C)]
+#[repr(align(16))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_neon_state {
+    pub __v: [__uint128_t; 16usize],
+    pub __fpsr: __uint32_t,
+    pub __fpcr: __uint32_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_neon_state"]
+        [::std::mem::size_of::<__darwin_arm_neon_state>() - 272usize];
+    ["Alignment of __darwin_arm_neon_state"]
+        [::std::mem::align_of::<__darwin_arm_neon_state>() - 16usize];
+    ["Offset of field: __darwin_arm_neon_state::__v"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state, __v) - 0usize];
+    ["Offset of field: __darwin_arm_neon_state::__fpsr"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state, __fpsr) - 256usize];
+    ["Offset of field: __darwin_arm_neon_state::__fpcr"]
+        [::std::mem::offset_of!(__darwin_arm_neon_state, __fpcr) - 260usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __arm_pagein_state {
+    pub __pagein_error: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __arm_pagein_state"][::std::mem::size_of::<__arm_pagein_state>() - 4usize];
+    ["Alignment of __arm_pagein_state"][::std::mem::align_of::<__arm_pagein_state>() - 4usize];
+    ["Offset of field: __arm_pagein_state::__pagein_error"]
+        [::std::mem::offset_of!(__arm_pagein_state, __pagein_error) - 0usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_sme_state {
+    pub __svcr: __uint64_t,
+    pub __tpidr2_el0: __uint64_t,
+    pub __svl_b: __uint16_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_sme_state"][::std::mem::size_of::<__darwin_arm_sme_state>() - 24usize];
+    ["Alignment of __darwin_arm_sme_state"]
+        [::std::mem::align_of::<__darwin_arm_sme_state>() - 8usize];
+    ["Offset of field: __darwin_arm_sme_state::__svcr"]
+        [::std::mem::offset_of!(__darwin_arm_sme_state, __svcr) - 0usize];
+    ["Offset of field: __darwin_arm_sme_state::__tpidr2_el0"]
+        [::std::mem::offset_of!(__darwin_arm_sme_state, __tpidr2_el0) - 8usize];
+    ["Offset of field: __darwin_arm_sme_state::__svl_b"]
+        [::std::mem::offset_of!(__darwin_arm_sme_state, __svl_b) - 16usize];
+};
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_sve_z_state {
+    pub __z: [[::std::os::raw::c_char; 256usize]; 16usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_sve_z_state"]
+        [::std::mem::size_of::<__darwin_arm_sve_z_state>() - 4096usize];
+    ["Alignment of __darwin_arm_sve_z_state"]
+        [::std::mem::align_of::<__darwin_arm_sve_z_state>() - 4usize];
+    ["Offset of field: __darwin_arm_sve_z_state::__z"]
+        [::std::mem::offset_of!(__darwin_arm_sve_z_state, __z) - 0usize];
+};
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_sve_p_state {
+    pub __p: [[::std::os::raw::c_char; 32usize]; 16usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_sve_p_state"]
+        [::std::mem::size_of::<__darwin_arm_sve_p_state>() - 512usize];
+    ["Alignment of __darwin_arm_sve_p_state"]
+        [::std::mem::align_of::<__darwin_arm_sve_p_state>() - 4usize];
+    ["Offset of field: __darwin_arm_sve_p_state::__p"]
+        [::std::mem::offset_of!(__darwin_arm_sve_p_state, __p) - 0usize];
+};
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_sme_za_state {
+    pub __za: [::std::os::raw::c_char; 4096usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_sme_za_state"]
+        [::std::mem::size_of::<__darwin_arm_sme_za_state>() - 4096usize];
+    ["Alignment of __darwin_arm_sme_za_state"]
+        [::std::mem::align_of::<__darwin_arm_sme_za_state>() - 4usize];
+    ["Offset of field: __darwin_arm_sme_za_state::__za"]
+        [::std::mem::offset_of!(__darwin_arm_sme_za_state, __za) - 0usize];
+};
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_sme2_state {
+    pub __zt0: [::std::os::raw::c_char; 64usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_sme2_state"][::std::mem::size_of::<__darwin_arm_sme2_state>() - 64usize];
+    ["Alignment of __darwin_arm_sme2_state"]
+        [::std::mem::align_of::<__darwin_arm_sme2_state>() - 4usize];
+    ["Offset of field: __darwin_arm_sme2_state::__zt0"]
+        [::std::mem::offset_of!(__darwin_arm_sme2_state, __zt0) - 0usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __arm_legacy_debug_state {
+    pub __bvr: [__uint32_t; 16usize],
+    pub __bcr: [__uint32_t; 16usize],
+    pub __wvr: [__uint32_t; 16usize],
+    pub __wcr: [__uint32_t; 16usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __arm_legacy_debug_state"]
+        [::std::mem::size_of::<__arm_legacy_debug_state>() - 256usize];
+    ["Alignment of __arm_legacy_debug_state"]
+        [::std::mem::align_of::<__arm_legacy_debug_state>() - 4usize];
+    ["Offset of field: __arm_legacy_debug_state::__bvr"]
+        [::std::mem::offset_of!(__arm_legacy_debug_state, __bvr) - 0usize];
+    ["Offset of field: __arm_legacy_debug_state::__bcr"]
+        [::std::mem::offset_of!(__arm_legacy_debug_state, __bcr) - 64usize];
+    ["Offset of field: __arm_legacy_debug_state::__wvr"]
+        [::std::mem::offset_of!(__arm_legacy_debug_state, __wvr) - 128usize];
+    ["Offset of field: __arm_legacy_debug_state::__wcr"]
+        [::std::mem::offset_of!(__arm_legacy_debug_state, __wcr) - 192usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_debug_state32 {
+    pub __bvr: [__uint32_t; 16usize],
+    pub __bcr: [__uint32_t; 16usize],
+    pub __wvr: [__uint32_t; 16usize],
+    pub __wcr: [__uint32_t; 16usize],
+    pub __mdscr_el1: __uint64_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_debug_state32"]
+        [::std::mem::size_of::<__darwin_arm_debug_state32>() - 264usize];
+    ["Alignment of __darwin_arm_debug_state32"]
+        [::std::mem::align_of::<__darwin_arm_debug_state32>() - 8usize];
+    ["Offset of field: __darwin_arm_debug_state32::__bvr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state32, __bvr) - 0usize];
+    ["Offset of field: __darwin_arm_debug_state32::__bcr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state32, __bcr) - 64usize];
+    ["Offset of field: __darwin_arm_debug_state32::__wvr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state32, __wvr) - 128usize];
+    ["Offset of field: __darwin_arm_debug_state32::__wcr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state32, __wcr) - 192usize];
+    ["Offset of field: __darwin_arm_debug_state32::__mdscr_el1"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state32, __mdscr_el1) - 256usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_debug_state64 {
+    pub __bvr: [__uint64_t; 16usize],
+    pub __bcr: [__uint64_t; 16usize],
+    pub __wvr: [__uint64_t; 16usize],
+    pub __wcr: [__uint64_t; 16usize],
+    pub __mdscr_el1: __uint64_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_debug_state64"]
+        [::std::mem::size_of::<__darwin_arm_debug_state64>() - 520usize];
+    ["Alignment of __darwin_arm_debug_state64"]
+        [::std::mem::align_of::<__darwin_arm_debug_state64>() - 8usize];
+    ["Offset of field: __darwin_arm_debug_state64::__bvr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state64, __bvr) - 0usize];
+    ["Offset of field: __darwin_arm_debug_state64::__bcr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state64, __bcr) - 128usize];
+    ["Offset of field: __darwin_arm_debug_state64::__wvr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state64, __wvr) - 256usize];
+    ["Offset of field: __darwin_arm_debug_state64::__wcr"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state64, __wcr) - 384usize];
+    ["Offset of field: __darwin_arm_debug_state64::__mdscr_el1"]
+        [::std::mem::offset_of!(__darwin_arm_debug_state64, __mdscr_el1) - 512usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_arm_cpmu_state64 {
+    pub __ctrs: [__uint64_t; 16usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_arm_cpmu_state64"]
+        [::std::mem::size_of::<__darwin_arm_cpmu_state64>() - 128usize];
+    ["Alignment of __darwin_arm_cpmu_state64"]
+        [::std::mem::align_of::<__darwin_arm_cpmu_state64>() - 8usize];
+    ["Offset of field: __darwin_arm_cpmu_state64::__ctrs"]
+        [::std::mem::offset_of!(__darwin_arm_cpmu_state64, __ctrs) - 0usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_mcontext32 {
+    pub __es: __darwin_arm_exception_state,
+    pub __ss: __darwin_arm_thread_state,
+    pub __fs: __darwin_arm_vfp_state,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_mcontext32"][::std::mem::size_of::<__darwin_mcontext32>() - 340usize];
+    ["Alignment of __darwin_mcontext32"][::std::mem::align_of::<__darwin_mcontext32>() - 4usize];
+    ["Offset of field: __darwin_mcontext32::__es"]
+        [::std::mem::offset_of!(__darwin_mcontext32, __es) - 0usize];
+    ["Offset of field: __darwin_mcontext32::__ss"]
+        [::std::mem::offset_of!(__darwin_mcontext32, __ss) - 12usize];
+    ["Offset of field: __darwin_mcontext32::__fs"]
+        [::std::mem::offset_of!(__darwin_mcontext32, __fs) - 80usize];
+};
+#[repr(C)]
+#[repr(align(16))]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_mcontext64 {
+    pub __es: __darwin_arm_exception_state64,
+    pub __ss: __darwin_arm_thread_state64,
+    pub __ns: __darwin_arm_neon_state64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_mcontext64"][::std::mem::size_of::<__darwin_mcontext64>() - 816usize];
+    ["Alignment of __darwin_mcontext64"][::std::mem::align_of::<__darwin_mcontext64>() - 16usize];
+    ["Offset of field: __darwin_mcontext64::__es"]
+        [::std::mem::offset_of!(__darwin_mcontext64, __es) - 0usize];
+    ["Offset of field: __darwin_mcontext64::__ss"]
+        [::std::mem::offset_of!(__darwin_mcontext64, __ss) - 16usize];
+    ["Offset of field: __darwin_mcontext64::__ns"]
+        [::std::mem::offset_of!(__darwin_mcontext64, __ns) - 288usize];
+};
+pub type mcontext_t = *mut __darwin_mcontext64;
+pub type pthread_attr_t = __darwin_pthread_attr_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_sigaltstack {
+    pub ss_sp: *mut ::std::os::raw::c_void,
+    pub ss_size: __darwin_size_t,
+    pub ss_flags: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_sigaltstack"][::std::mem::size_of::<__darwin_sigaltstack>() - 24usize];
+    ["Alignment of __darwin_sigaltstack"][::std::mem::align_of::<__darwin_sigaltstack>() - 8usize];
+    ["Offset of field: __darwin_sigaltstack::ss_sp"]
+        [::std::mem::offset_of!(__darwin_sigaltstack, ss_sp) - 0usize];
+    ["Offset of field: __darwin_sigaltstack::ss_size"]
+        [::std::mem::offset_of!(__darwin_sigaltstack, ss_size) - 8usize];
+    ["Offset of field: __darwin_sigaltstack::ss_flags"]
+        [::std::mem::offset_of!(__darwin_sigaltstack, ss_flags) - 16usize];
+};
+pub type stack_t = __darwin_sigaltstack;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __darwin_ucontext {
+    pub uc_onstack: ::std::os::raw::c_int,
+    pub uc_sigmask: __darwin_sigset_t,
+    pub uc_stack: __darwin_sigaltstack,
+    pub uc_link: *mut __darwin_ucontext,
+    pub uc_mcsize: __darwin_size_t,
+    pub uc_mcontext: *mut __darwin_mcontext64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __darwin_ucontext"][::std::mem::size_of::<__darwin_ucontext>() - 56usize];
+    ["Alignment of __darwin_ucontext"][::std::mem::align_of::<__darwin_ucontext>() - 8usize];
+    ["Offset of field: __darwin_ucontext::uc_onstack"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_onstack) - 0usize];
+    ["Offset of field: __darwin_ucontext::uc_sigmask"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_sigmask) - 4usize];
+    ["Offset of field: __darwin_ucontext::uc_stack"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_stack) - 8usize];
+    ["Offset of field: __darwin_ucontext::uc_link"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_link) - 32usize];
+    ["Offset of field: __darwin_ucontext::uc_mcsize"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_mcsize) - 40usize];
+    ["Offset of field: __darwin_ucontext::uc_mcontext"]
+        [::std::mem::offset_of!(__darwin_ucontext, uc_mcontext) - 48usize];
+};
+pub type ucontext_t = __darwin_ucontext;
+pub type sigset_t = __darwin_sigset_t;
+pub type uid_t = __darwin_uid_t;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union sigval {
+    pub sival_int: ::std::os::raw::c_int,
+    pub sival_ptr: *mut ::std::os::raw::c_void,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of sigval"][::std::mem::size_of::<sigval>() - 8usize];
+    ["Alignment of sigval"][::std::mem::align_of::<sigval>() - 8usize];
+    ["Offset of field: sigval::sival_int"][::std::mem::offset_of!(sigval, sival_int) - 0usize];
+    ["Offset of field: sigval::sival_ptr"][::std::mem::offset_of!(sigval, sival_ptr) - 0usize];
+};
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct sigevent {
+    pub sigev_notify: ::std::os::raw::c_int,
+    pub sigev_signo: ::std::os::raw::c_int,
+    pub sigev_value: sigval,
+    pub sigev_notify_function: ::std::option::Option<unsafe extern "C" fn(arg1: sigval)>,
+    pub sigev_notify_attributes: *mut pthread_attr_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of sigevent"][::std::mem::size_of::<sigevent>() - 32usize];
+    ["Alignment of sigevent"][::std::mem::align_of::<sigevent>() - 8usize];
+    ["Offset of field: sigevent::sigev_notify"]
+        [::std::mem::offset_of!(sigevent, sigev_notify) - 0usize];
+    ["Offset of field: sigevent::sigev_signo"]
+        [::std::mem::offset_of!(sigevent, sigev_signo) - 4usize];
+    ["Offset of field: sigevent::sigev_value"]
+        [::std::mem::offset_of!(sigevent, sigev_value) - 8usize];
+    ["Offset of field: sigevent::sigev_notify_function"]
+        [::std::mem::offset_of!(sigevent, sigev_notify_function) - 16usize];
+    ["Offset of field: sigevent::sigev_notify_attributes"]
+        [::std::mem::offset_of!(sigevent, sigev_notify_attributes) - 24usize];
+};
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __siginfo {
+    pub si_signo: ::std::os::raw::c_int,
+    pub si_errno: ::std::os::raw::c_int,
+    pub si_code: ::std::os::raw::c_int,
+    pub si_pid: pid_t,
+    pub si_uid: uid_t,
+    pub si_status: ::std::os::raw::c_int,
+    pub si_addr: *mut ::std::os::raw::c_void,
+    pub si_value: sigval,
+    pub si_band: ::std::os::raw::c_long,
+    pub __pad: [::std::os::raw::c_ulong; 7usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __siginfo"][::std::mem::size_of::<__siginfo>() - 104usize];
+    ["Alignment of __siginfo"][::std::mem::align_of::<__siginfo>() - 8usize];
+    ["Offset of field: __siginfo::si_signo"][::std::mem::offset_of!(__siginfo, si_signo) - 0usize];
+    ["Offset of field: __siginfo::si_errno"][::std::mem::offset_of!(__siginfo, si_errno) - 4usize];
+    ["Offset of field: __siginfo::si_code"][::std::mem::offset_of!(__siginfo, si_code) - 8usize];
+    ["Offset of field: __siginfo::si_pid"][::std::mem::offset_of!(__siginfo, si_pid) - 12usize];
+    ["Offset of field: __siginfo::si_uid"][::std::mem::offset_of!(__siginfo, si_uid) - 16usize];
+    ["Offset of field: __siginfo::si_status"]
+        [::std::mem::offset_of!(__siginfo, si_status) - 20usize];
+    ["Offset of field: __siginfo::si_addr"][::std::mem::offset_of!(__siginfo, si_addr) - 24usize];
+    ["Offset of field: __siginfo::si_value"][::std::mem::offset_of!(__siginfo, si_value) - 32usize];
+    ["Offset of field: __siginfo::si_band"][::std::mem::offset_of!(__siginfo, si_band) - 40usize];
+    ["Offset of field: __siginfo::__pad"][::std::mem::offset_of!(__siginfo, __pad) - 48usize];
+};
+pub type siginfo_t = __siginfo;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union __sigaction_u {
+    pub __sa_handler: ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>,
+    pub __sa_sigaction: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: ::std::os::raw::c_int,
+            arg2: *mut __siginfo,
+            arg3: *mut ::std::os::raw::c_void,
+        ),
+    >,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __sigaction_u"][::std::mem::size_of::<__sigaction_u>() - 8usize];
+    ["Alignment of __sigaction_u"][::std::mem::align_of::<__sigaction_u>() - 8usize];
+    ["Offset of field: __sigaction_u::__sa_handler"]
+        [::std::mem::offset_of!(__sigaction_u, __sa_handler) - 0usize];
+    ["Offset of field: __sigaction_u::__sa_sigaction"]
+        [::std::mem::offset_of!(__sigaction_u, __sa_sigaction) - 0usize];
+};
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __sigaction {
+    pub __sigaction_u: __sigaction_u,
+    pub sa_tramp: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: *mut ::std::os::raw::c_void,
+            arg2: ::std::os::raw::c_int,
+            arg3: ::std::os::raw::c_int,
+            arg4: *mut siginfo_t,
+            arg5: *mut ::std::os::raw::c_void,
+        ),
+    >,
+    pub sa_mask: sigset_t,
+    pub sa_flags: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of __sigaction"][::std::mem::size_of::<__sigaction>() - 24usize];
+    ["Alignment of __sigaction"][::std::mem::align_of::<__sigaction>() - 8usize];
+    ["Offset of field: __sigaction::__sigaction_u"]
+        [::std::mem::offset_of!(__sigaction, __sigaction_u) - 0usize];
+    ["Offset of field: __sigaction::sa_tramp"]
+        [::std::mem::offset_of!(__sigaction, sa_tramp) - 8usize];
+    ["Offset of field: __sigaction::sa_mask"]
+        [::std::mem::offset_of!(__sigaction, sa_mask) - 16usize];
+    ["Offset of field: __sigaction::sa_flags"]
+        [::std::mem::offset_of!(__sigaction, sa_flags) - 20usize];
+};
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct sigaction {
+    pub __sigaction_u: __sigaction_u,
+    pub sa_mask: sigset_t,
+    pub sa_flags: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of sigaction"][::std::mem::size_of::<sigaction>() - 16usize];
+    ["Alignment of sigaction"][::std::mem::align_of::<sigaction>() - 8usize];
+    ["Offset of field: sigaction::__sigaction_u"]
+        [::std::mem::offset_of!(sigaction, __sigaction_u) - 0usize];
+    ["Offset of field: sigaction::sa_mask"][::std::mem::offset_of!(sigaction, sa_mask) - 8usize];
+    ["Offset of field: sigaction::sa_flags"][::std::mem::offset_of!(sigaction, sa_flags) - 12usize];
+};
+pub type sig_t = ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sigvec {
+    pub sv_handler: ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>,
+    pub sv_mask: ::std::os::raw::c_int,
+    pub sv_flags: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of sigvec"][::std::mem::size_of::<sigvec>() - 16usize];
+    ["Alignment of sigvec"][::std::mem::align_of::<sigvec>() - 8usize];
+    ["Offset of field: sigvec::sv_handler"][::std::mem::offset_of!(sigvec, sv_handler) - 0usize];
+    ["Offset of field: sigvec::sv_mask"][::std::mem::offset_of!(sigvec, sv_mask) - 8usize];
+    ["Offset of field: sigvec::sv_flags"][::std::mem::offset_of!(sigvec, sv_flags) - 12usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sigstack {
+    pub ss_sp: *mut ::std::os::raw::c_char,
+    pub ss_onstack: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of sigstack"][::std::mem::size_of::<sigstack>() - 16usize];
+    ["Alignment of sigstack"][::std::mem::align_of::<sigstack>() - 8usize];
+    ["Offset of field: sigstack::ss_sp"][::std::mem::offset_of!(sigstack, ss_sp) - 0usize];
+    ["Offset of field: sigstack::ss_onstack"]
+        [::std::mem::offset_of!(sigstack, ss_onstack) - 8usize];
+};
+unsafe extern "C" {
+    pub fn signal(
+        arg1: ::std::os::raw::c_int,
+        arg2: ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>,
+    ) -> ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: ::std::os::raw::c_int,
+            arg2: ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>,
+        ),
+    >;
+}
+pub type int_least8_t = i8;
+pub type int_least16_t = i16;
+pub type int_least32_t = i32;
+pub type int_least64_t = i64;
+pub type uint_least8_t = u8;
+pub type uint_least16_t = u16;
+pub type uint_least32_t = u32;
+pub type uint_least64_t = u64;
+pub type int_fast8_t = i8;
+pub type int_fast16_t = i16;
+pub type int_fast32_t = i32;
+pub type int_fast64_t = i64;
+pub type uint_fast8_t = u8;
+pub type uint_fast16_t = u16;
+pub type uint_fast32_t = u32;
+pub type uint_fast64_t = u64;
+pub type intmax_t = ::std::os::raw::c_long;
+pub type uintmax_t = ::std::os::raw::c_ulong;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct timeval {
+    pub tv_sec: __darwin_time_t,
+    pub tv_usec: __darwin_suseconds_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of timeval"][::std::mem::size_of::<timeval>() - 16usize];
+    ["Alignment of timeval"][::std::mem::align_of::<timeval>() - 8usize];
+    ["Offset of field: timeval::tv_sec"][::std::mem::offset_of!(timeval, tv_sec) - 0usize];
+    ["Offset of field: timeval::tv_usec"][::std::mem::offset_of!(timeval, tv_usec) - 8usize];
+};
+pub type rlim_t = __uint64_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage {
+    pub ru_utime: timeval,
+    pub ru_stime: timeval,
+    pub ru_maxrss: ::std::os::raw::c_long,
+    pub ru_ixrss: ::std::os::raw::c_long,
+    pub ru_idrss: ::std::os::raw::c_long,
+    pub ru_isrss: ::std::os::raw::c_long,
+    pub ru_minflt: ::std::os::raw::c_long,
+    pub ru_majflt: ::std::os::raw::c_long,
+    pub ru_nswap: ::std::os::raw::c_long,
+    pub ru_inblock: ::std::os::raw::c_long,
+    pub ru_oublock: ::std::os::raw::c_long,
+    pub ru_msgsnd: ::std::os::raw::c_long,
+    pub ru_msgrcv: ::std::os::raw::c_long,
+    pub ru_nsignals: ::std::os::raw::c_long,
+    pub ru_nvcsw: ::std::os::raw::c_long,
+    pub ru_nivcsw: ::std::os::raw::c_long,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage"][::std::mem::size_of::<rusage>() - 144usize];
+    ["Alignment of rusage"][::std::mem::align_of::<rusage>() - 8usize];
+    ["Offset of field: rusage::ru_utime"][::std::mem::offset_of!(rusage, ru_utime) - 0usize];
+    ["Offset of field: rusage::ru_stime"][::std::mem::offset_of!(rusage, ru_stime) - 16usize];
+    ["Offset of field: rusage::ru_maxrss"][::std::mem::offset_of!(rusage, ru_maxrss) - 32usize];
+    ["Offset of field: rusage::ru_ixrss"][::std::mem::offset_of!(rusage, ru_ixrss) - 40usize];
+    ["Offset of field: rusage::ru_idrss"][::std::mem::offset_of!(rusage, ru_idrss) - 48usize];
+    ["Offset of field: rusage::ru_isrss"][::std::mem::offset_of!(rusage, ru_isrss) - 56usize];
+    ["Offset of field: rusage::ru_minflt"][::std::mem::offset_of!(rusage, ru_minflt) - 64usize];
+    ["Offset of field: rusage::ru_majflt"][::std::mem::offset_of!(rusage, ru_majflt) - 72usize];
+    ["Offset of field: rusage::ru_nswap"][::std::mem::offset_of!(rusage, ru_nswap) - 80usize];
+    ["Offset of field: rusage::ru_inblock"][::std::mem::offset_of!(rusage, ru_inblock) - 88usize];
+    ["Offset of field: rusage::ru_oublock"][::std::mem::offset_of!(rusage, ru_oublock) - 96usize];
+    ["Offset of field: rusage::ru_msgsnd"][::std::mem::offset_of!(rusage, ru_msgsnd) - 104usize];
+    ["Offset of field: rusage::ru_msgrcv"][::std::mem::offset_of!(rusage, ru_msgrcv) - 112usize];
+    ["Offset of field: rusage::ru_nsignals"]
+        [::std::mem::offset_of!(rusage, ru_nsignals) - 120usize];
+    ["Offset of field: rusage::ru_nvcsw"][::std::mem::offset_of!(rusage, ru_nvcsw) - 128usize];
+    ["Offset of field: rusage::ru_nivcsw"][::std::mem::offset_of!(rusage, ru_nivcsw) - 136usize];
+};
+pub type rusage_info_t = *mut ::std::os::raw::c_void;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v0 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v0"][::std::mem::size_of::<rusage_info_v0>() - 96usize];
+    ["Alignment of rusage_info_v0"][::std::mem::align_of::<rusage_info_v0>() - 8usize];
+    ["Offset of field: rusage_info_v0::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v0::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v0::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v0::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v0::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v0::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v0::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v0::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v0::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v0::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v0::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v0, ri_proc_exit_abstime) - 88usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v1 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v1"][::std::mem::size_of::<rusage_info_v1>() - 144usize];
+    ["Alignment of rusage_info_v1"][::std::mem::align_of::<rusage_info_v1>() - 8usize];
+    ["Offset of field: rusage_info_v1::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v1::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v1::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v1::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v1::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v1::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v1::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v1::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v1::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v1::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v1::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v1::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v1::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v1::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v1::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v1::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v1::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v1, ri_child_elapsed_abstime) - 136usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v2 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+    pub ri_diskio_bytesread: u64,
+    pub ri_diskio_byteswritten: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v2"][::std::mem::size_of::<rusage_info_v2>() - 160usize];
+    ["Alignment of rusage_info_v2"][::std::mem::align_of::<rusage_info_v2>() - 8usize];
+    ["Offset of field: rusage_info_v2::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v2::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v2::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v2::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v2::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v2::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v2::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v2::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v2::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v2::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v2::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v2::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v2::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v2::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v2::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v2::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v2::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_child_elapsed_abstime) - 136usize];
+    ["Offset of field: rusage_info_v2::ri_diskio_bytesread"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_diskio_bytesread) - 144usize];
+    ["Offset of field: rusage_info_v2::ri_diskio_byteswritten"]
+        [::std::mem::offset_of!(rusage_info_v2, ri_diskio_byteswritten) - 152usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v3 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+    pub ri_diskio_bytesread: u64,
+    pub ri_diskio_byteswritten: u64,
+    pub ri_cpu_time_qos_default: u64,
+    pub ri_cpu_time_qos_maintenance: u64,
+    pub ri_cpu_time_qos_background: u64,
+    pub ri_cpu_time_qos_utility: u64,
+    pub ri_cpu_time_qos_legacy: u64,
+    pub ri_cpu_time_qos_user_initiated: u64,
+    pub ri_cpu_time_qos_user_interactive: u64,
+    pub ri_billed_system_time: u64,
+    pub ri_serviced_system_time: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v3"][::std::mem::size_of::<rusage_info_v3>() - 232usize];
+    ["Alignment of rusage_info_v3"][::std::mem::align_of::<rusage_info_v3>() - 8usize];
+    ["Offset of field: rusage_info_v3::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v3::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v3::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v3::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v3::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v3::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v3::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v3::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v3::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v3::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v3::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v3::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v3::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v3::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v3::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v3::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v3::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_child_elapsed_abstime) - 136usize];
+    ["Offset of field: rusage_info_v3::ri_diskio_bytesread"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_diskio_bytesread) - 144usize];
+    ["Offset of field: rusage_info_v3::ri_diskio_byteswritten"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_diskio_byteswritten) - 152usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_default"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_default) - 160usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_maintenance"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_maintenance) - 168usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_background"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_background) - 176usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_utility"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_utility) - 184usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_legacy"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_legacy) - 192usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_user_initiated"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_user_initiated) - 200usize];
+    ["Offset of field: rusage_info_v3::ri_cpu_time_qos_user_interactive"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_cpu_time_qos_user_interactive) - 208usize];
+    ["Offset of field: rusage_info_v3::ri_billed_system_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_billed_system_time) - 216usize];
+    ["Offset of field: rusage_info_v3::ri_serviced_system_time"]
+        [::std::mem::offset_of!(rusage_info_v3, ri_serviced_system_time) - 224usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v4 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+    pub ri_diskio_bytesread: u64,
+    pub ri_diskio_byteswritten: u64,
+    pub ri_cpu_time_qos_default: u64,
+    pub ri_cpu_time_qos_maintenance: u64,
+    pub ri_cpu_time_qos_background: u64,
+    pub ri_cpu_time_qos_utility: u64,
+    pub ri_cpu_time_qos_legacy: u64,
+    pub ri_cpu_time_qos_user_initiated: u64,
+    pub ri_cpu_time_qos_user_interactive: u64,
+    pub ri_billed_system_time: u64,
+    pub ri_serviced_system_time: u64,
+    pub ri_logical_writes: u64,
+    pub ri_lifetime_max_phys_footprint: u64,
+    pub ri_instructions: u64,
+    pub ri_cycles: u64,
+    pub ri_billed_energy: u64,
+    pub ri_serviced_energy: u64,
+    pub ri_interval_max_phys_footprint: u64,
+    pub ri_runnable_time: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v4"][::std::mem::size_of::<rusage_info_v4>() - 296usize];
+    ["Alignment of rusage_info_v4"][::std::mem::align_of::<rusage_info_v4>() - 8usize];
+    ["Offset of field: rusage_info_v4::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v4::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v4::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v4::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v4::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v4::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v4::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v4::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v4::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v4::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v4::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v4::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v4::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v4::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v4::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v4::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v4::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_child_elapsed_abstime) - 136usize];
+    ["Offset of field: rusage_info_v4::ri_diskio_bytesread"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_diskio_bytesread) - 144usize];
+    ["Offset of field: rusage_info_v4::ri_diskio_byteswritten"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_diskio_byteswritten) - 152usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_default"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_default) - 160usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_maintenance"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_maintenance) - 168usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_background"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_background) - 176usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_utility"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_utility) - 184usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_legacy"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_legacy) - 192usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_user_initiated"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_user_initiated) - 200usize];
+    ["Offset of field: rusage_info_v4::ri_cpu_time_qos_user_interactive"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cpu_time_qos_user_interactive) - 208usize];
+    ["Offset of field: rusage_info_v4::ri_billed_system_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_billed_system_time) - 216usize];
+    ["Offset of field: rusage_info_v4::ri_serviced_system_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_serviced_system_time) - 224usize];
+    ["Offset of field: rusage_info_v4::ri_logical_writes"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_logical_writes) - 232usize];
+    ["Offset of field: rusage_info_v4::ri_lifetime_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_lifetime_max_phys_footprint) - 240usize];
+    ["Offset of field: rusage_info_v4::ri_instructions"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_instructions) - 248usize];
+    ["Offset of field: rusage_info_v4::ri_cycles"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_cycles) - 256usize];
+    ["Offset of field: rusage_info_v4::ri_billed_energy"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_billed_energy) - 264usize];
+    ["Offset of field: rusage_info_v4::ri_serviced_energy"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_serviced_energy) - 272usize];
+    ["Offset of field: rusage_info_v4::ri_interval_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_interval_max_phys_footprint) - 280usize];
+    ["Offset of field: rusage_info_v4::ri_runnable_time"]
+        [::std::mem::offset_of!(rusage_info_v4, ri_runnable_time) - 288usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v5 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+    pub ri_diskio_bytesread: u64,
+    pub ri_diskio_byteswritten: u64,
+    pub ri_cpu_time_qos_default: u64,
+    pub ri_cpu_time_qos_maintenance: u64,
+    pub ri_cpu_time_qos_background: u64,
+    pub ri_cpu_time_qos_utility: u64,
+    pub ri_cpu_time_qos_legacy: u64,
+    pub ri_cpu_time_qos_user_initiated: u64,
+    pub ri_cpu_time_qos_user_interactive: u64,
+    pub ri_billed_system_time: u64,
+    pub ri_serviced_system_time: u64,
+    pub ri_logical_writes: u64,
+    pub ri_lifetime_max_phys_footprint: u64,
+    pub ri_instructions: u64,
+    pub ri_cycles: u64,
+    pub ri_billed_energy: u64,
+    pub ri_serviced_energy: u64,
+    pub ri_interval_max_phys_footprint: u64,
+    pub ri_runnable_time: u64,
+    pub ri_flags: u64,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v5"][::std::mem::size_of::<rusage_info_v5>() - 304usize];
+    ["Alignment of rusage_info_v5"][::std::mem::align_of::<rusage_info_v5>() - 8usize];
+    ["Offset of field: rusage_info_v5::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v5::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v5::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v5::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v5::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v5::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v5::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v5::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v5::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v5::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v5::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v5::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v5::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v5::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v5::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v5::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v5::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_child_elapsed_abstime) - 136usize];
+    ["Offset of field: rusage_info_v5::ri_diskio_bytesread"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_diskio_bytesread) - 144usize];
+    ["Offset of field: rusage_info_v5::ri_diskio_byteswritten"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_diskio_byteswritten) - 152usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_default"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_default) - 160usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_maintenance"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_maintenance) - 168usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_background"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_background) - 176usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_utility"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_utility) - 184usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_legacy"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_legacy) - 192usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_user_initiated"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_user_initiated) - 200usize];
+    ["Offset of field: rusage_info_v5::ri_cpu_time_qos_user_interactive"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cpu_time_qos_user_interactive) - 208usize];
+    ["Offset of field: rusage_info_v5::ri_billed_system_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_billed_system_time) - 216usize];
+    ["Offset of field: rusage_info_v5::ri_serviced_system_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_serviced_system_time) - 224usize];
+    ["Offset of field: rusage_info_v5::ri_logical_writes"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_logical_writes) - 232usize];
+    ["Offset of field: rusage_info_v5::ri_lifetime_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_lifetime_max_phys_footprint) - 240usize];
+    ["Offset of field: rusage_info_v5::ri_instructions"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_instructions) - 248usize];
+    ["Offset of field: rusage_info_v5::ri_cycles"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_cycles) - 256usize];
+    ["Offset of field: rusage_info_v5::ri_billed_energy"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_billed_energy) - 264usize];
+    ["Offset of field: rusage_info_v5::ri_serviced_energy"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_serviced_energy) - 272usize];
+    ["Offset of field: rusage_info_v5::ri_interval_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_interval_max_phys_footprint) - 280usize];
+    ["Offset of field: rusage_info_v5::ri_runnable_time"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_runnable_time) - 288usize];
+    ["Offset of field: rusage_info_v5::ri_flags"]
+        [::std::mem::offset_of!(rusage_info_v5, ri_flags) - 296usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rusage_info_v6 {
+    pub ri_uuid: [u8; 16usize],
+    pub ri_user_time: u64,
+    pub ri_system_time: u64,
+    pub ri_pkg_idle_wkups: u64,
+    pub ri_interrupt_wkups: u64,
+    pub ri_pageins: u64,
+    pub ri_wired_size: u64,
+    pub ri_resident_size: u64,
+    pub ri_phys_footprint: u64,
+    pub ri_proc_start_abstime: u64,
+    pub ri_proc_exit_abstime: u64,
+    pub ri_child_user_time: u64,
+    pub ri_child_system_time: u64,
+    pub ri_child_pkg_idle_wkups: u64,
+    pub ri_child_interrupt_wkups: u64,
+    pub ri_child_pageins: u64,
+    pub ri_child_elapsed_abstime: u64,
+    pub ri_diskio_bytesread: u64,
+    pub ri_diskio_byteswritten: u64,
+    pub ri_cpu_time_qos_default: u64,
+    pub ri_cpu_time_qos_maintenance: u64,
+    pub ri_cpu_time_qos_background: u64,
+    pub ri_cpu_time_qos_utility: u64,
+    pub ri_cpu_time_qos_legacy: u64,
+    pub ri_cpu_time_qos_user_initiated: u64,
+    pub ri_cpu_time_qos_user_interactive: u64,
+    pub ri_billed_system_time: u64,
+    pub ri_serviced_system_time: u64,
+    pub ri_logical_writes: u64,
+    pub ri_lifetime_max_phys_footprint: u64,
+    pub ri_instructions: u64,
+    pub ri_cycles: u64,
+    pub ri_billed_energy: u64,
+    pub ri_serviced_energy: u64,
+    pub ri_interval_max_phys_footprint: u64,
+    pub ri_runnable_time: u64,
+    pub ri_flags: u64,
+    pub ri_user_ptime: u64,
+    pub ri_system_ptime: u64,
+    pub ri_pinstructions: u64,
+    pub ri_pcycles: u64,
+    pub ri_energy_nj: u64,
+    pub ri_penergy_nj: u64,
+    pub ri_secure_time_in_system: u64,
+    pub ri_secure_ptime_in_system: u64,
+    pub ri_neural_footprint: u64,
+    pub ri_lifetime_max_neural_footprint: u64,
+    pub ri_interval_max_neural_footprint: u64,
+    pub ri_reserved: [u64; 9usize],
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rusage_info_v6"][::std::mem::size_of::<rusage_info_v6>() - 464usize];
+    ["Alignment of rusage_info_v6"][::std::mem::align_of::<rusage_info_v6>() - 8usize];
+    ["Offset of field: rusage_info_v6::ri_uuid"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_uuid) - 0usize];
+    ["Offset of field: rusage_info_v6::ri_user_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_user_time) - 16usize];
+    ["Offset of field: rusage_info_v6::ri_system_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_system_time) - 24usize];
+    ["Offset of field: rusage_info_v6::ri_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_pkg_idle_wkups) - 32usize];
+    ["Offset of field: rusage_info_v6::ri_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_interrupt_wkups) - 40usize];
+    ["Offset of field: rusage_info_v6::ri_pageins"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_pageins) - 48usize];
+    ["Offset of field: rusage_info_v6::ri_wired_size"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_wired_size) - 56usize];
+    ["Offset of field: rusage_info_v6::ri_resident_size"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_resident_size) - 64usize];
+    ["Offset of field: rusage_info_v6::ri_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_phys_footprint) - 72usize];
+    ["Offset of field: rusage_info_v6::ri_proc_start_abstime"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_proc_start_abstime) - 80usize];
+    ["Offset of field: rusage_info_v6::ri_proc_exit_abstime"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_proc_exit_abstime) - 88usize];
+    ["Offset of field: rusage_info_v6::ri_child_user_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_user_time) - 96usize];
+    ["Offset of field: rusage_info_v6::ri_child_system_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_system_time) - 104usize];
+    ["Offset of field: rusage_info_v6::ri_child_pkg_idle_wkups"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_pkg_idle_wkups) - 112usize];
+    ["Offset of field: rusage_info_v6::ri_child_interrupt_wkups"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_interrupt_wkups) - 120usize];
+    ["Offset of field: rusage_info_v6::ri_child_pageins"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_pageins) - 128usize];
+    ["Offset of field: rusage_info_v6::ri_child_elapsed_abstime"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_child_elapsed_abstime) - 136usize];
+    ["Offset of field: rusage_info_v6::ri_diskio_bytesread"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_diskio_bytesread) - 144usize];
+    ["Offset of field: rusage_info_v6::ri_diskio_byteswritten"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_diskio_byteswritten) - 152usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_default"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_default) - 160usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_maintenance"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_maintenance) - 168usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_background"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_background) - 176usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_utility"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_utility) - 184usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_legacy"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_legacy) - 192usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_user_initiated"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_user_initiated) - 200usize];
+    ["Offset of field: rusage_info_v6::ri_cpu_time_qos_user_interactive"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cpu_time_qos_user_interactive) - 208usize];
+    ["Offset of field: rusage_info_v6::ri_billed_system_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_billed_system_time) - 216usize];
+    ["Offset of field: rusage_info_v6::ri_serviced_system_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_serviced_system_time) - 224usize];
+    ["Offset of field: rusage_info_v6::ri_logical_writes"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_logical_writes) - 232usize];
+    ["Offset of field: rusage_info_v6::ri_lifetime_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_lifetime_max_phys_footprint) - 240usize];
+    ["Offset of field: rusage_info_v6::ri_instructions"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_instructions) - 248usize];
+    ["Offset of field: rusage_info_v6::ri_cycles"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_cycles) - 256usize];
+    ["Offset of field: rusage_info_v6::ri_billed_energy"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_billed_energy) - 264usize];
+    ["Offset of field: rusage_info_v6::ri_serviced_energy"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_serviced_energy) - 272usize];
+    ["Offset of field: rusage_info_v6::ri_interval_max_phys_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_interval_max_phys_footprint) - 280usize];
+    ["Offset of field: rusage_info_v6::ri_runnable_time"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_runnable_time) - 288usize];
+    ["Offset of field: rusage_info_v6::ri_flags"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_flags) - 296usize];
+    ["Offset of field: rusage_info_v6::ri_user_ptime"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_user_ptime) - 304usize];
+    ["Offset of field: rusage_info_v6::ri_system_ptime"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_system_ptime) - 312usize];
+    ["Offset of field: rusage_info_v6::ri_pinstructions"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_pinstructions) - 320usize];
+    ["Offset of field: rusage_info_v6::ri_pcycles"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_pcycles) - 328usize];
+    ["Offset of field: rusage_info_v6::ri_energy_nj"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_energy_nj) - 336usize];
+    ["Offset of field: rusage_info_v6::ri_penergy_nj"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_penergy_nj) - 344usize];
+    ["Offset of field: rusage_info_v6::ri_secure_time_in_system"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_secure_time_in_system) - 352usize];
+    ["Offset of field: rusage_info_v6::ri_secure_ptime_in_system"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_secure_ptime_in_system) - 360usize];
+    ["Offset of field: rusage_info_v6::ri_neural_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_neural_footprint) - 368usize];
+    ["Offset of field: rusage_info_v6::ri_lifetime_max_neural_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_lifetime_max_neural_footprint) - 376usize];
+    ["Offset of field: rusage_info_v6::ri_interval_max_neural_footprint"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_interval_max_neural_footprint) - 384usize];
+    ["Offset of field: rusage_info_v6::ri_reserved"]
+        [::std::mem::offset_of!(rusage_info_v6, ri_reserved) - 392usize];
+};
+pub type rusage_info_current = rusage_info_v6;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rlimit {
+    pub rlim_cur: rlim_t,
+    pub rlim_max: rlim_t,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of rlimit"][::std::mem::size_of::<rlimit>() - 16usize];
+    ["Alignment of rlimit"][::std::mem::align_of::<rlimit>() - 8usize];
+    ["Offset of field: rlimit::rlim_cur"][::std::mem::offset_of!(rlimit, rlim_cur) - 0usize];
+    ["Offset of field: rlimit::rlim_max"][::std::mem::offset_of!(rlimit, rlim_max) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct proc_rlimit_control_wakeupmon {
+    pub wm_flags: u32,
+    pub wm_rate: i32,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of proc_rlimit_control_wakeupmon"]
+        [::std::mem::size_of::<proc_rlimit_control_wakeupmon>() - 8usize];
+    ["Alignment of proc_rlimit_control_wakeupmon"]
+        [::std::mem::align_of::<proc_rlimit_control_wakeupmon>() - 4usize];
+    ["Offset of field: proc_rlimit_control_wakeupmon::wm_flags"]
+        [::std::mem::offset_of!(proc_rlimit_control_wakeupmon, wm_flags) - 0usize];
+    ["Offset of field: proc_rlimit_control_wakeupmon::wm_rate"]
+        [::std::mem::offset_of!(proc_rlimit_control_wakeupmon, wm_rate) - 4usize];
+};
+unsafe extern "C" {
+    pub fn getpriority(arg1: ::std::os::raw::c_int, arg2: id_t) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn getiopolicy_np(
+        arg1: ::std::os::raw::c_int,
+        arg2: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn getrlimit(arg1: ::std::os::raw::c_int, arg2: *mut rlimit) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn getrusage(arg1: ::std::os::raw::c_int, arg2: *mut rusage) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn setpriority(
+        arg1: ::std::os::raw::c_int,
+        arg2: id_t,
+        arg3: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn setiopolicy_np(
+        arg1: ::std::os::raw::c_int,
+        arg2: ::std::os::raw::c_int,
+        arg3: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn setrlimit(arg1: ::std::os::raw::c_int, arg2: *const rlimit) -> ::std::os::raw::c_int;
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union wait {
+    pub w_status: ::std::os::raw::c_int,
+    pub w_T: wait__bindgen_ty_1,
+    pub w_S: wait__bindgen_ty_2,
+}
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct wait__bindgen_ty_1 {
+    pub _bitfield_align_1: [u16; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of wait__bindgen_ty_1"][::std::mem::size_of::<wait__bindgen_ty_1>() - 4usize];
+    ["Alignment of wait__bindgen_ty_1"][::std::mem::align_of::<wait__bindgen_ty_1>() - 4usize];
+};
+impl wait__bindgen_ty_1 {
+    #[inline]
+    pub fn w_Termsig(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 7u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Termsig(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 7u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Termsig_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                0usize,
+                7u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Termsig_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                0usize,
+                7u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn w_Coredump(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(7usize, 1u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Coredump(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(7usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Coredump_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                7usize,
+                1u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Coredump_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                7usize,
+                1u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn w_Retcode(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 8u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Retcode(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(8usize, 8u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Retcode_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                8usize,
+                8u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Retcode_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                8usize,
+                8u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn w_Filler(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(16usize, 16u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Filler(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(16usize, 16u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Filler_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                16usize,
+                16u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Filler_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                16usize,
+                16u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        w_Termsig: ::std::os::raw::c_uint,
+        w_Coredump: ::std::os::raw::c_uint,
+        w_Retcode: ::std::os::raw::c_uint,
+        w_Filler: ::std::os::raw::c_uint,
+    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 7u8, {
+            let w_Termsig: u32 = unsafe { ::std::mem::transmute(w_Termsig) };
+            w_Termsig as u64
+        });
+        __bindgen_bitfield_unit.set(7usize, 1u8, {
+            let w_Coredump: u32 = unsafe { ::std::mem::transmute(w_Coredump) };
+            w_Coredump as u64
+        });
+        __bindgen_bitfield_unit.set(8usize, 8u8, {
+            let w_Retcode: u32 = unsafe { ::std::mem::transmute(w_Retcode) };
+            w_Retcode as u64
+        });
+        __bindgen_bitfield_unit.set(16usize, 16u8, {
+            let w_Filler: u32 = unsafe { ::std::mem::transmute(w_Filler) };
+            w_Filler as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Copy, Clone)]
+pub struct wait__bindgen_ty_2 {
+    pub _bitfield_align_1: [u16; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of wait__bindgen_ty_2"][::std::mem::size_of::<wait__bindgen_ty_2>() - 4usize];
+    ["Alignment of wait__bindgen_ty_2"][::std::mem::align_of::<wait__bindgen_ty_2>() - 4usize];
+};
+impl wait__bindgen_ty_2 {
+    #[inline]
+    pub fn w_Stopval(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 8u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Stopval(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 8u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Stopval_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                0usize,
+                8u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Stopval_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                0usize,
+                8u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn w_Stopsig(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 8u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Stopsig(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(8usize, 8u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Stopsig_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                8usize,
+                8u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Stopsig_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                8usize,
+                8u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn w_Filler(&self) -> ::std::os::raw::c_uint {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(16usize, 16u8) as u32) }
+    }
+    #[inline]
+    pub fn set_w_Filler(&mut self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(16usize, 16u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn w_Filler_raw(this: *const Self) -> ::std::os::raw::c_uint {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                16usize,
+                16u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_w_Filler_raw(this: *mut Self, val: ::std::os::raw::c_uint) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                16usize,
+                16u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        w_Stopval: ::std::os::raw::c_uint,
+        w_Stopsig: ::std::os::raw::c_uint,
+        w_Filler: ::std::os::raw::c_uint,
+    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 8u8, {
+            let w_Stopval: u32 = unsafe { ::std::mem::transmute(w_Stopval) };
+            w_Stopval as u64
+        });
+        __bindgen_bitfield_unit.set(8usize, 8u8, {
+            let w_Stopsig: u32 = unsafe { ::std::mem::transmute(w_Stopsig) };
+            w_Stopsig as u64
+        });
+        __bindgen_bitfield_unit.set(16usize, 16u8, {
+            let w_Filler: u32 = unsafe { ::std::mem::transmute(w_Filler) };
+            w_Filler as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of wait"][::std::mem::size_of::<wait>() - 4usize];
+    ["Alignment of wait"][::std::mem::align_of::<wait>() - 4usize];
+    ["Offset of field: wait::w_status"][::std::mem::offset_of!(wait, w_status) - 0usize];
+    ["Offset of field: wait::w_T"][::std::mem::offset_of!(wait, w_T) - 0usize];
+    ["Offset of field: wait::w_S"][::std::mem::offset_of!(wait, w_S) - 0usize];
+};
+unsafe extern "C" {
+    pub fn wait(arg1: *mut ::std::os::raw::c_int) -> pid_t;
+}
+unsafe extern "C" {
+    pub fn waitpid(
+        arg1: pid_t,
+        arg2: *mut ::std::os::raw::c_int,
+        arg3: ::std::os::raw::c_int,
+    ) -> pid_t;
+}
+unsafe extern "C" {
+    pub fn waitid(
+        arg1: idtype_t,
+        arg2: id_t,
+        arg3: *mut siginfo_t,
+        arg4: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn wait3(
+        arg1: *mut ::std::os::raw::c_int,
+        arg2: ::std::os::raw::c_int,
+        arg3: *mut rusage,
+    ) -> pid_t;
+}
+unsafe extern "C" {
+    pub fn wait4(
+        arg1: pid_t,
+        arg2: *mut ::std::os::raw::c_int,
+        arg3: ::std::os::raw::c_int,
+        arg4: *mut rusage,
+    ) -> pid_t;
+}
+unsafe extern "C" {
+    pub fn alloca(__size: usize) -> *mut ::std::os::raw::c_void;
+}
+pub type ct_rune_t = __darwin_ct_rune_t;
+pub type rune_t = __darwin_rune_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct div_t {
+    pub quot: ::std::os::raw::c_int,
+    pub rem: ::std::os::raw::c_int,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of div_t"][::std::mem::size_of::<div_t>() - 8usize];
+    ["Alignment of div_t"][::std::mem::align_of::<div_t>() - 4usize];
+    ["Offset of field: div_t::quot"][::std::mem::offset_of!(div_t, quot) - 0usize];
+    ["Offset of field: div_t::rem"][::std::mem::offset_of!(div_t, rem) - 4usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ldiv_t {
+    pub quot: ::std::os::raw::c_long,
+    pub rem: ::std::os::raw::c_long,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of ldiv_t"][::std::mem::size_of::<ldiv_t>() - 16usize];
+    ["Alignment of ldiv_t"][::std::mem::align_of::<ldiv_t>() - 8usize];
+    ["Offset of field: ldiv_t::quot"][::std::mem::offset_of!(ldiv_t, quot) - 0usize];
+    ["Offset of field: ldiv_t::rem"][::std::mem::offset_of!(ldiv_t, rem) - 8usize];
+};
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct lldiv_t {
+    pub quot: ::std::os::raw::c_longlong,
+    pub rem: ::std::os::raw::c_longlong,
+}
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of lldiv_t"][::std::mem::size_of::<lldiv_t>() - 16usize];
+    ["Alignment of lldiv_t"][::std::mem::align_of::<lldiv_t>() - 8usize];
+    ["Offset of field: lldiv_t::quot"][::std::mem::offset_of!(lldiv_t, quot) - 0usize];
+    ["Offset of field: lldiv_t::rem"][::std::mem::offset_of!(lldiv_t, rem) - 8usize];
+};
+unsafe extern "C" {
+    pub static mut __mb_cur_max: ::std::os::raw::c_int;
+}
+pub type malloc_type_id_t = ::std::os::raw::c_ulonglong;
+unsafe extern "C" {
+    pub fn malloc_type_malloc(
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_calloc(
+        count: usize,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_free(ptr: *mut ::std::os::raw::c_void, type_id: malloc_type_id_t);
+}
+unsafe extern "C" {
+    pub fn malloc_type_realloc(
+        ptr: *mut ::std::os::raw::c_void,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_valloc(
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_aligned_alloc(
+        alignment: usize,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_posix_memalign(
+        memptr: *mut *mut ::std::os::raw::c_void,
+        alignment: usize,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> ::std::os::raw::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _malloc_zone_t {
+    _unused: [u8; 0],
+}
+pub type malloc_zone_t = _malloc_zone_t;
+unsafe extern "C" {
+    pub fn malloc_type_zone_malloc(
+        zone: *mut malloc_zone_t,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_zone_calloc(
+        zone: *mut malloc_zone_t,
+        count: usize,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_zone_free(
+        zone: *mut malloc_zone_t,
+        ptr: *mut ::std::os::raw::c_void,
+        type_id: malloc_type_id_t,
+    );
+}
+unsafe extern "C" {
+    pub fn malloc_type_zone_realloc(
+        zone: *mut malloc_zone_t,
+        ptr: *mut ::std::os::raw::c_void,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_zone_valloc(
+        zone: *mut malloc_zone_t,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc_type_zone_memalign(
+        zone: *mut malloc_zone_t,
+        alignment: usize,
+        size: usize,
+        type_id: malloc_type_id_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn malloc(__size: usize) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn calloc(__count: usize, __size: usize) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn free(arg1: *mut ::std::os::raw::c_void);
+}
+unsafe extern "C" {
+    pub fn realloc(
+        __ptr: *mut ::std::os::raw::c_void,
+        __size: usize,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn reallocf(
+        __ptr: *mut ::std::os::raw::c_void,
+        __size: usize,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn valloc(__size: usize) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn aligned_alloc(__alignment: usize, __size: usize) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn posix_memalign(
+        __memptr: *mut *mut ::std::os::raw::c_void,
+        __alignment: usize,
+        __size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn abort() -> !;
+}
+unsafe extern "C" {
+    pub fn abs(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn atexit(arg1: ::std::option::Option<unsafe extern "C" fn()>) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn at_quick_exit(
+        arg1: ::std::option::Option<unsafe extern "C" fn()>,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn atof(arg1: *const ::std::os::raw::c_char) -> f64;
+}
+unsafe extern "C" {
+    pub fn atoi(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn atol(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn atoll(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_longlong;
+}
+unsafe extern "C" {
+    pub fn bsearch(
+        __key: *const ::std::os::raw::c_void,
+        __base: *const ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn div(arg1: ::std::os::raw::c_int, arg2: ::std::os::raw::c_int) -> div_t;
+}
+unsafe extern "C" {
+    pub fn exit(arg1: ::std::os::raw::c_int) -> !;
+}
+unsafe extern "C" {
+    pub fn getenv(arg1: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn labs(arg1: ::std::os::raw::c_long) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn ldiv(arg1: ::std::os::raw::c_long, arg2: ::std::os::raw::c_long) -> ldiv_t;
+}
+unsafe extern "C" {
+    pub fn llabs(arg1: ::std::os::raw::c_longlong) -> ::std::os::raw::c_longlong;
+}
+unsafe extern "C" {
+    pub fn lldiv(arg1: ::std::os::raw::c_longlong, arg2: ::std::os::raw::c_longlong) -> lldiv_t;
+}
+unsafe extern "C" {
+    pub fn mblen(__s: *const ::std::os::raw::c_char, __n: usize) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn mbstowcs(arg1: *mut u32, arg2: *const ::std::os::raw::c_char, __n: usize) -> usize;
+}
+unsafe extern "C" {
+    pub fn mbtowc(
+        arg1: *mut u32,
+        arg2: *const ::std::os::raw::c_char,
+        __n: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn qsort(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    );
+}
+unsafe extern "C" {
+    pub fn quick_exit(arg1: ::std::os::raw::c_int) -> !;
+}
+unsafe extern "C" {
+    pub fn rand() -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn srand(arg1: ::std::os::raw::c_uint);
+}
+unsafe extern "C" {
+    pub fn strtod(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+    ) -> f64;
+}
+unsafe extern "C" {
+    pub fn strtof(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+    ) -> f32;
+}
+unsafe extern "C" {
+    pub fn strtol(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn strtold(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+    ) -> f64;
+}
+unsafe extern "C" {
+    pub fn strtoll(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_longlong;
+}
+unsafe extern "C" {
+    pub fn strtoul(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_ulong;
+}
+unsafe extern "C" {
+    pub fn strtoull(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_ulonglong;
+}
+unsafe extern "C" {
+    pub fn system(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn wcstombs(arg1: *mut ::std::os::raw::c_char, arg2: *const u32, __n: usize) -> usize;
+}
+unsafe extern "C" {
+    pub fn wctomb(arg1: *mut ::std::os::raw::c_char, arg2: u32) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn _Exit(arg1: ::std::os::raw::c_int) -> !;
+}
+unsafe extern "C" {
+    pub fn a64l(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn drand48() -> f64;
+}
+unsafe extern "C" {
+    pub fn ecvt(
+        arg1: f64,
+        arg2: ::std::os::raw::c_int,
+        arg3: *mut ::std::os::raw::c_int,
+        arg4: *mut ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn erand48(arg1: *mut ::std::os::raw::c_ushort) -> f64;
+}
+unsafe extern "C" {
+    pub fn fcvt(
+        arg1: f64,
+        arg2: ::std::os::raw::c_int,
+        arg3: *mut ::std::os::raw::c_int,
+        arg4: *mut ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn gcvt(
+        arg1: f64,
+        arg2: ::std::os::raw::c_int,
+        arg3: *mut ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn getsubopt(
+        arg1: *mut *mut ::std::os::raw::c_char,
+        arg2: *const *mut ::std::os::raw::c_char,
+        arg3: *mut *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn grantpt(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn initstate(
+        arg1: ::std::os::raw::c_uint,
+        arg2: *mut ::std::os::raw::c_char,
+        __size: usize,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn jrand48(arg1: *mut ::std::os::raw::c_ushort) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn l64a(arg1: ::std::os::raw::c_long) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn lcong48(arg1: *mut ::std::os::raw::c_ushort);
+}
+unsafe extern "C" {
+    pub fn lrand48() -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn mktemp(arg1: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn mkstemp(arg1: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn mrand48() -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn nrand48(arg1: *mut ::std::os::raw::c_ushort) -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn posix_openpt(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn ptsname(arg1: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn ptsname_r(
+        fildes: ::std::os::raw::c_int,
+        buffer: *mut ::std::os::raw::c_char,
+        buflen: usize,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn putenv(arg1: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn random() -> ::std::os::raw::c_long;
+}
+unsafe extern "C" {
+    pub fn rand_r(arg1: *mut ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    #[link_name = "\u{1}_realpath$DARWIN_EXTSN"]
+    pub fn realpath(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *mut ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn seed48(arg1: *mut ::std::os::raw::c_ushort) -> *mut ::std::os::raw::c_ushort;
+}
+unsafe extern "C" {
+    pub fn setenv(
+        __name: *const ::std::os::raw::c_char,
+        __value: *const ::std::os::raw::c_char,
+        __overwrite: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn setkey(arg1: *const ::std::os::raw::c_char);
+}
+unsafe extern "C" {
+    pub fn setstate(arg1: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn srand48(arg1: ::std::os::raw::c_long);
+}
+unsafe extern "C" {
+    pub fn srandom(arg1: ::std::os::raw::c_uint);
+}
+unsafe extern "C" {
+    pub fn unlockpt(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn unsetenv(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+pub type dev_t = __darwin_dev_t;
+pub type mode_t = __darwin_mode_t;
+unsafe extern "C" {
+    pub fn arc4random() -> u32;
+}
+unsafe extern "C" {
+    pub fn arc4random_addrandom(
+        arg1: *mut ::std::os::raw::c_uchar,
+        __datlen: ::std::os::raw::c_int,
+    );
+}
+unsafe extern "C" {
+    pub fn arc4random_buf(__buf: *mut ::std::os::raw::c_void, __nbytes: usize);
+}
+unsafe extern "C" {
+    pub fn arc4random_stir();
+}
+unsafe extern "C" {
+    pub fn arc4random_uniform(__upper_bound: u32) -> u32;
+}
+unsafe extern "C" {
+    pub fn atexit_b(arg1: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn bsearch_b(
+        __key: *const ::std::os::raw::c_void,
+        __base: *const ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: *mut ::std::os::raw::c_void,
+    ) -> *mut ::std::os::raw::c_void;
+}
+unsafe extern "C" {
+    pub fn cgetcap(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn cgetclose() -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetent(
+        arg1: *mut *mut ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+        arg3: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetfirst(
+        arg1: *mut *mut ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetmatch(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetnext(
+        arg1: *mut *mut ::std::os::raw::c_char,
+        arg2: *mut *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetnum(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: *mut ::std::os::raw::c_long,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetset(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetstr(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: *mut *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn cgetustr(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: *mut *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn daemon(
+        arg1: ::std::os::raw::c_int,
+        arg2: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn devname(arg1: dev_t, arg2: mode_t) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn devname_r(
+        arg1: dev_t,
+        arg2: mode_t,
+        buf: *mut ::std::os::raw::c_char,
+        len: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn getbsize(
+        arg1: *mut ::std::os::raw::c_int,
+        arg2: *mut ::std::os::raw::c_long,
+    ) -> *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn getloadavg(arg1: *mut f64, __nelem: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn getprogname() -> *const ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn setprogname(arg1: *const ::std::os::raw::c_char);
+}
+unsafe extern "C" {
+    pub fn heapsort(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn heapsort_b(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn mergesort(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn mergesort_b(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn psort(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    );
+}
+unsafe extern "C" {
+    pub fn psort_b(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: *mut ::std::os::raw::c_void,
+    );
+}
+unsafe extern "C" {
+    pub fn psort_r(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        arg1: *mut ::std::os::raw::c_void,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *mut ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+                arg3: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    );
+}
+unsafe extern "C" {
+    pub fn qsort_b(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        __compar: *mut ::std::os::raw::c_void,
+    );
+}
+unsafe extern "C" {
+    pub fn qsort_r(
+        __base: *mut ::std::os::raw::c_void,
+        __nel: usize,
+        __width: usize,
+        arg1: *mut ::std::os::raw::c_void,
+        __compar: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *mut ::std::os::raw::c_void,
+                arg2: *const ::std::os::raw::c_void,
+                arg3: *const ::std::os::raw::c_void,
+            ) -> ::std::os::raw::c_int,
+        >,
+    );
+}
+unsafe extern "C" {
+    pub fn radixsort(
+        __base: *mut *const ::std::os::raw::c_uchar,
+        __nel: ::std::os::raw::c_int,
+        __table: *const ::std::os::raw::c_uchar,
+        __endbyte: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn rpmatch(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn sradixsort(
+        __base: *mut *const ::std::os::raw::c_uchar,
+        __nel: ::std::os::raw::c_int,
+        __table: *const ::std::os::raw::c_uchar,
+        __endbyte: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn sranddev();
+}
+unsafe extern "C" {
+    pub fn srandomdev();
+}
+unsafe extern "C" {
+    pub fn strtonum(
+        __numstr: *const ::std::os::raw::c_char,
+        __minval: ::std::os::raw::c_longlong,
+        __maxval: ::std::os::raw::c_longlong,
+        __errstrp: *mut *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_longlong;
+}
+unsafe extern "C" {
+    pub fn strtoq(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_longlong;
+}
+unsafe extern "C" {
+    pub fn strtouq(
+        __str: *const ::std::os::raw::c_char,
+        __endptr: *mut *mut ::std::os::raw::c_char,
+        __base: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_ulonglong;
+}
+unsafe extern "C" {
+    pub static mut suboptarg: *mut ::std::os::raw::c_char;
+}
+unsafe extern "C" {
+    pub fn __assert_rtn(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: ::std::os::raw::c_int,
+        arg4: *const ::std::os::raw::c_char,
+    ) -> !;
 }
 pub type ImGuiID = ::std::os::raw::c_uint;
 pub type ImS8 = ::std::os::raw::c_schar;
@@ -1428,103 +4151,103 @@ const _: () = {
         [::std::mem::offset_of!(ImTextureRef, _TexID) - 8usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?CreateContext@ImGui@@YAPEAUImGuiContext@@PEAUImFontAtlas@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13CreateContextEP11ImFontAtlas"]
     pub fn ImGui_CreateContext(shared_font_atlas: *mut ImFontAtlas) -> *mut ImGuiContext;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DestroyContext@ImGui@@YAXPEAUImGuiContext@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14DestroyContextEP12ImGuiContext"]
     pub fn ImGui_DestroyContext(ctx: *mut ImGuiContext);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCurrentContext@ImGui@@YAPEAUImGuiContext@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetCurrentContextEv"]
     pub fn ImGui_GetCurrentContext() -> *mut ImGuiContext;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCurrentContext@ImGui@@YAXPEAUImGuiContext@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17SetCurrentContextEP12ImGuiContext"]
     pub fn ImGui_SetCurrentContext(ctx: *mut ImGuiContext);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetIO@ImGui@@YAAEAUImGuiIO@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui5GetIOEv"]
     pub fn ImGui_GetIO() -> *mut ImGuiIO;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetPlatformIO@ImGui@@YAAEAUImGuiPlatformIO@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetPlatformIOEv"]
     pub fn ImGui_GetPlatformIO() -> *mut ImGuiPlatformIO;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetStyle@ImGui@@YAAEAUImGuiStyle@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui8GetStyleEv"]
     pub fn ImGui_GetStyle() -> *mut ImGuiStyle;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?NewFrame@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8NewFrameEv"]
     pub fn ImGui_NewFrame();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndFrame@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndFrameEv"]
     pub fn ImGui_EndFrame();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Render@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui6RenderEv"]
     pub fn ImGui_Render();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetDrawData@ImGui@@YAPEAUImDrawData@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui11GetDrawDataEv"]
     pub fn ImGui_GetDrawData() -> *mut ImDrawData;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowDemoWindow@ImGui@@YAXPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14ShowDemoWindowEPb"]
     pub fn ImGui_ShowDemoWindow(p_open: *mut bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowMetricsWindow@ImGui@@YAXPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17ShowMetricsWindowEPb"]
     pub fn ImGui_ShowMetricsWindow(p_open: *mut bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowDebugLogWindow@ImGui@@YAXPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18ShowDebugLogWindowEPb"]
     pub fn ImGui_ShowDebugLogWindow(p_open: *mut bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowIDStackToolWindow@ImGui@@YAXPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21ShowIDStackToolWindowEPb"]
     pub fn ImGui_ShowIDStackToolWindow(p_open: *mut bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowAboutWindow@ImGui@@YAXPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15ShowAboutWindowEPb"]
     pub fn ImGui_ShowAboutWindow(p_open: *mut bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowStyleEditor@ImGui@@YAXPEAUImGuiStyle@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15ShowStyleEditorEP10ImGuiStyle"]
     pub fn ImGui_ShowStyleEditor(ref_: *mut ImGuiStyle);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowStyleSelector@ImGui@@YA_NPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17ShowStyleSelectorEPKc"]
     pub fn ImGui_ShowStyleSelector(label: *const ::std::os::raw::c_char) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowFontSelector@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16ShowFontSelectorEPKc"]
     pub fn ImGui_ShowFontSelector(label: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ShowUserGuide@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13ShowUserGuideEv"]
     pub fn ImGui_ShowUserGuide();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetVersion@ImGui@@YAPEBDXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10GetVersionEv"]
     pub fn ImGui_GetVersion() -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?StyleColorsDark@ImGui@@YAXPEAUImGuiStyle@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15StyleColorsDarkEP10ImGuiStyle"]
     pub fn ImGui_StyleColorsDark(dst: *mut ImGuiStyle);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?StyleColorsLight@ImGui@@YAXPEAUImGuiStyle@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16StyleColorsLightEP10ImGuiStyle"]
     pub fn ImGui_StyleColorsLight(dst: *mut ImGuiStyle);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?StyleColorsClassic@ImGui@@YAXPEAUImGuiStyle@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18StyleColorsClassicEP10ImGuiStyle"]
     pub fn ImGui_StyleColorsClassic(dst: *mut ImGuiStyle);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Begin@ImGui@@YA_NPEBDPEA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5BeginEPKcPbi"]
     pub fn ImGui_Begin(
         name: *const ::std::os::raw::c_char,
         p_open: *mut bool,
@@ -1532,11 +4255,11 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?End@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui3EndEv"]
     pub fn ImGui_End();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginChild@ImGui@@YA_NPEBDAEBUImVec2@@HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginChildEPKcRK6ImVec2ii"]
     pub fn ImGui_BeginChild(
         str_id: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -1545,7 +4268,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginChild@ImGui@@YA_NIAEBUImVec2@@HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginChildEjRK6ImVec2ii"]
     pub fn ImGui_BeginChild1(
         id: ImGuiID,
         size: *const ImVec2,
@@ -1554,63 +4277,63 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndChild@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndChildEv"]
     pub fn ImGui_EndChild();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsWindowAppearing@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17IsWindowAppearingEv"]
     pub fn ImGui_IsWindowAppearing() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsWindowCollapsed@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17IsWindowCollapsedEv"]
     pub fn ImGui_IsWindowCollapsed() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsWindowFocused@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15IsWindowFocusedEi"]
     pub fn ImGui_IsWindowFocused(flags: ImGuiFocusedFlags) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsWindowHovered@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15IsWindowHoveredEi"]
     pub fn ImGui_IsWindowHovered(flags: ImGuiHoveredFlags) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowDrawList@ImGui@@YAPEAUImDrawList@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetWindowDrawListEv"]
     pub fn ImGui_GetWindowDrawList() -> *mut ImDrawList;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowDpiScale@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetWindowDpiScaleEv"]
     pub fn ImGui_GetWindowDpiScale() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowPos@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui12GetWindowPosEv"]
     pub fn ImGui_GetWindowPos() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowSize@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetWindowSizeEv"]
     pub fn ImGui_GetWindowSize() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowWidth@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetWindowWidthEv"]
     pub fn ImGui_GetWindowWidth() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowHeight@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetWindowHeightEv"]
     pub fn ImGui_GetWindowHeight() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowViewport@ImGui@@YAPEAUImGuiViewport@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetWindowViewportEv"]
     pub fn ImGui_GetWindowViewport() -> *mut ImGuiViewport;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowPos@ImGui@@YAXAEBUImVec2@@H0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16SetNextWindowPosERK6ImVec2iS2_"]
     pub fn ImGui_SetNextWindowPos(pos: *const ImVec2, cond: ImGuiCond, pivot: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowSize@ImGui@@YAXAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17SetNextWindowSizeERK6ImVec2i"]
     pub fn ImGui_SetNextWindowSize(size: *const ImVec2, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowSizeConstraints@ImGui@@YAXAEBUImVec2@@0P6AXPEAUImGuiSizeCallbackData@@@ZPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui28SetNextWindowSizeConstraintsERK6ImVec2S2_PFvP21ImGuiSizeCallbackDataEPv"]
     pub fn ImGui_SetNextWindowSizeConstraints(
         size_min: *const ImVec2,
         size_max: *const ImVec2,
@@ -1619,47 +4342,47 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowContentSize@ImGui@@YAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui24SetNextWindowContentSizeERK6ImVec2"]
     pub fn ImGui_SetNextWindowContentSize(size: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowCollapsed@ImGui@@YAX_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui22SetNextWindowCollapsedEbi"]
     pub fn ImGui_SetNextWindowCollapsed(collapsed: bool, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowFocus@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui18SetNextWindowFocusEv"]
     pub fn ImGui_SetNextWindowFocus();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowScroll@ImGui@@YAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19SetNextWindowScrollERK6ImVec2"]
     pub fn ImGui_SetNextWindowScroll(scroll: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowBgAlpha@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20SetNextWindowBgAlphaEf"]
     pub fn ImGui_SetNextWindowBgAlpha(alpha: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowViewport@ImGui@@YAXI@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21SetNextWindowViewportEj"]
     pub fn ImGui_SetNextWindowViewport(viewport_id: ImGuiID);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowPos@ImGui@@YAXAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SetWindowPosERK6ImVec2i"]
     pub fn ImGui_SetWindowPos(pos: *const ImVec2, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowSize@ImGui@@YAXAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SetWindowSizeERK6ImVec2i"]
     pub fn ImGui_SetWindowSize(size: *const ImVec2, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowCollapsed@ImGui@@YAX_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetWindowCollapsedEbi"]
     pub fn ImGui_SetWindowCollapsed(collapsed: bool, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowFocus@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14SetWindowFocusEv"]
     pub fn ImGui_SetWindowFocus();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowPos@ImGui@@YAXPEBDAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SetWindowPosEPKcRK6ImVec2i"]
     pub fn ImGui_SetWindowPos1(
         name: *const ::std::os::raw::c_char,
         pos: *const ImVec2,
@@ -1667,7 +4390,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowSize@ImGui@@YAXPEBDAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SetWindowSizeEPKcRK6ImVec2i"]
     pub fn ImGui_SetWindowSize1(
         name: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -1675,7 +4398,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowCollapsed@ImGui@@YAXPEBD_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetWindowCollapsedEPKcbi"]
     pub fn ImGui_SetWindowCollapsed1(
         name: *const ::std::os::raw::c_char,
         collapsed: bool,
@@ -1683,320 +4406,320 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowFocus@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14SetWindowFocusEPKc"]
     pub fn ImGui_SetWindowFocus1(name: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetScrollX@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10GetScrollXEv"]
     pub fn ImGui_GetScrollX() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetScrollY@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10GetScrollYEv"]
     pub fn ImGui_GetScrollY() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollX@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SetScrollXEf"]
     pub fn ImGui_SetScrollX(scroll_x: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollY@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SetScrollYEf"]
     pub fn ImGui_SetScrollY(scroll_y: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetScrollMaxX@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetScrollMaxXEv"]
     pub fn ImGui_GetScrollMaxX() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetScrollMaxY@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetScrollMaxYEv"]
     pub fn ImGui_GetScrollMaxY() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollHereX@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14SetScrollHereXEf"]
     pub fn ImGui_SetScrollHereX(center_x_ratio: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollHereY@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14SetScrollHereYEf"]
     pub fn ImGui_SetScrollHereY(center_y_ratio: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollFromPosX@ImGui@@YAXMM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17SetScrollFromPosXEff"]
     pub fn ImGui_SetScrollFromPosX(local_x: f32, center_x_ratio: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetScrollFromPosY@ImGui@@YAXMM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17SetScrollFromPosYEff"]
     pub fn ImGui_SetScrollFromPosY(local_y: f32, center_y_ratio: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushFont@ImGui@@YAXPEAUImFont@@M@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8PushFontEP6ImFontf"]
     pub fn ImGui_PushFont(font: *mut ImFont, font_size_base: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopFont@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7PopFontEv"]
     pub fn ImGui_PopFont();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushFontSize@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12PushFontSizeEf"]
     pub fn ImGui_PushFontSize(font_size_base: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopFontSize@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui11PopFontSizeEv"]
     pub fn ImGui_PopFontSize();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleColor@ImGui@@YAXHI@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14PushStyleColorEij"]
     pub fn ImGui_PushStyleColor(idx: ImGuiCol, col: ImU32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleColor@ImGui@@YAXHAEBUImVec4@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14PushStyleColorEiRK6ImVec4"]
     pub fn ImGui_PushStyleColor1(idx: ImGuiCol, col: *const ImVec4);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopStyleColor@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PopStyleColorEi"]
     pub fn ImGui_PopStyleColor(count: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleVar@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12PushStyleVarEif"]
     pub fn ImGui_PushStyleVar(idx: ImGuiStyleVar, val: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleVar@ImGui@@YAXHAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12PushStyleVarEiRK6ImVec2"]
     pub fn ImGui_PushStyleVar1(idx: ImGuiStyleVar, val: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleVarX@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PushStyleVarXEif"]
     pub fn ImGui_PushStyleVarX(idx: ImGuiStyleVar, val_x: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushStyleVarY@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PushStyleVarYEif"]
     pub fn ImGui_PushStyleVarY(idx: ImGuiStyleVar, val_y: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopStyleVar@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11PopStyleVarEi"]
     pub fn ImGui_PopStyleVar(count: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushItemFlag@ImGui@@YAXH_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12PushItemFlagEib"]
     pub fn ImGui_PushItemFlag(option: ImGuiItemFlags, enabled: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopItemFlag@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui11PopItemFlagEv"]
     pub fn ImGui_PopItemFlag();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushItemWidth@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PushItemWidthEf"]
     pub fn ImGui_PushItemWidth(item_width: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopItemWidth@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui12PopItemWidthEv"]
     pub fn ImGui_PopItemWidth();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemWidth@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16SetNextItemWidthEf"]
     pub fn ImGui_SetNextItemWidth(item_width: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CalcItemWidth@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13CalcItemWidthEv"]
     pub fn ImGui_CalcItemWidth() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushTextWrapPos@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15PushTextWrapPosEf"]
     pub fn ImGui_PushTextWrapPos(wrap_local_pos_x: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopTextWrapPos@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14PopTextWrapPosEv"]
     pub fn ImGui_PopTextWrapPos();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFont@ImGui@@YAPEAUImFont@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui7GetFontEv"]
     pub fn ImGui_GetFont() -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFontSize@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui11GetFontSizeEv"]
     pub fn ImGui_GetFontSize() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFontTexUvWhitePixel@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui22GetFontTexUvWhitePixelEv"]
     pub fn ImGui_GetFontTexUvWhitePixel() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFontBaked@ImGui@@YAPEAUImFontBaked@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui12GetFontBakedEv"]
     pub fn ImGui_GetFontBaked() -> *mut ImFontBaked;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColorU32@ImGui@@YAIHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11GetColorU32Eif"]
     pub fn ImGui_GetColorU32(idx: ImGuiCol, alpha_mul: f32) -> ImU32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11GetColorU32ERK6ImVec4"]
     pub fn ImGui_GetColorU321(col: *const ImVec4) -> ImU32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColorU32@ImGui@@YAIIM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11GetColorU32Ejf"]
     pub fn ImGui_GetColorU322(col: ImU32, alpha_mul: f32) -> ImU32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17GetStyleColorVec4Ei"]
     pub fn ImGui_GetStyleColorVec4(idx: ImGuiCol) -> *const ImVec4;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCursorScreenPos@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui18GetCursorScreenPosEv"]
     pub fn ImGui_GetCursorScreenPos() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCursorScreenPos@ImGui@@YAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetCursorScreenPosERK6ImVec2"]
     pub fn ImGui_SetCursorScreenPos(pos: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetContentRegionAvail@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui21GetContentRegionAvailEv"]
     pub fn ImGui_GetContentRegionAvail() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCursorPos@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui12GetCursorPosEv"]
     pub fn ImGui_GetCursorPos() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCursorPosX@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetCursorPosXEv"]
     pub fn ImGui_GetCursorPosX() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCursorPosY@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetCursorPosYEv"]
     pub fn ImGui_GetCursorPosY() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCursorPos@ImGui@@YAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SetCursorPosERK6ImVec2"]
     pub fn ImGui_SetCursorPos(local_pos: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCursorPosX@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SetCursorPosXEf"]
     pub fn ImGui_SetCursorPosX(local_x: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCursorPosY@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SetCursorPosYEf"]
     pub fn ImGui_SetCursorPosY(local_y: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCursorStartPos@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetCursorStartPosEv"]
     pub fn ImGui_GetCursorStartPos() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Separator@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui9SeparatorEv"]
     pub fn ImGui_Separator();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SameLine@ImGui@@YAXMM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8SameLineEff"]
     pub fn ImGui_SameLine(offset_from_start_x: f32, spacing: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?NewLine@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7NewLineEv"]
     pub fn ImGui_NewLine();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Spacing@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7SpacingEv"]
     pub fn ImGui_Spacing();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Dummy@ImGui@@YAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5DummyERK6ImVec2"]
     pub fn ImGui_Dummy(size: *const ImVec2);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Indent@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6IndentEf"]
     pub fn ImGui_Indent(indent_w: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Unindent@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8UnindentEf"]
     pub fn ImGui_Unindent(indent_w: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginGroup@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginGroupEv"]
     pub fn ImGui_BeginGroup();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndGroup@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndGroupEv"]
     pub fn ImGui_EndGroup();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AlignTextToFramePadding@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui23AlignTextToFramePaddingEv"]
     pub fn ImGui_AlignTextToFramePadding();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTextLineHeight@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17GetTextLineHeightEv"]
     pub fn ImGui_GetTextLineHeight() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTextLineHeightWithSpacing@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui28GetTextLineHeightWithSpacingEv"]
     pub fn ImGui_GetTextLineHeightWithSpacing() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFrameHeight@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetFrameHeightEv"]
     pub fn ImGui_GetFrameHeight() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFrameHeightWithSpacing@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui25GetFrameHeightWithSpacingEv"]
     pub fn ImGui_GetFrameHeightWithSpacing() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushID@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6PushIDEPKc"]
     pub fn ImGui_PushID(str_id: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushID@ImGui@@YAXPEBD0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6PushIDEPKcS1_"]
     pub fn ImGui_PushID1(
         str_id_begin: *const ::std::os::raw::c_char,
         str_id_end: *const ::std::os::raw::c_char,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushID@ImGui@@YAXPEBX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6PushIDEPKv"]
     pub fn ImGui_PushID2(ptr_id: *const ::std::os::raw::c_void);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushID@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6PushIDEi"]
     pub fn ImGui_PushID3(int_id: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopID@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui5PopIDEv"]
     pub fn ImGui_PopID();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetID@ImGui@@YAIPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5GetIDEPKc"]
     pub fn ImGui_GetID(str_id: *const ::std::os::raw::c_char) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetID@ImGui@@YAIPEBD0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5GetIDEPKcS1_"]
     pub fn ImGui_GetID1(
         str_id_begin: *const ::std::os::raw::c_char,
         str_id_end: *const ::std::os::raw::c_char,
     ) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetID@ImGui@@YAIPEBX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5GetIDEPKv"]
     pub fn ImGui_GetID2(ptr_id: *const ::std::os::raw::c_void) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetID@ImGui@@YAIH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5GetIDEi"]
     pub fn ImGui_GetID3(int_id: ::std::os::raw::c_int) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextUnformatted@ImGui@@YAXPEBD0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15TextUnformattedEPKcS1_"]
     pub fn ImGui_TextUnformatted(
         text: *const ::std::os::raw::c_char,
         text_end: *const ::std::os::raw::c_char,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Text@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui4TextEPKcz"]
     pub fn ImGui_Text(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5TextVEPKcPc"]
     pub fn ImGui_TextV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextColored@ImGui@@YAXAEBUImVec4@@PEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui11TextColoredERK6ImVec4PKcz"]
     pub fn ImGui_TextColored(col: *const ImVec4, fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextColoredV@ImGui@@YAXAEBUImVec4@@PEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12TextColoredVERK6ImVec4PKcPc"]
     pub fn ImGui_TextColoredV(
         col: *const ImVec4,
         fmt: *const ::std::os::raw::c_char,
@@ -2004,23 +4727,23 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextDisabled@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui12TextDisabledEPKcz"]
     pub fn ImGui_TextDisabled(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextDisabledV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13TextDisabledVEPKcPc"]
     pub fn ImGui_TextDisabledV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextWrapped@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui11TextWrappedEPKcz"]
     pub fn ImGui_TextWrapped(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextWrappedV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12TextWrappedVEPKcPc"]
     pub fn ImGui_TextWrappedV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LabelText@ImGui@@YAXPEBD0ZZ"]
+    #[link_name = "\u{1}__ZN5ImGui9LabelTextEPKcS1_z"]
     pub fn ImGui_LabelText(
         label: *const ::std::os::raw::c_char,
         fmt: *const ::std::os::raw::c_char,
@@ -2028,7 +4751,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LabelTextV@ImGui@@YAXPEBD0PEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10LabelTextVEPKcS1_Pc"]
     pub fn ImGui_LabelTextV(
         label: *const ::std::os::raw::c_char,
         fmt: *const ::std::os::raw::c_char,
@@ -2036,27 +4759,27 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BulletText@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui10BulletTextEPKcz"]
     pub fn ImGui_BulletText(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BulletTextV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11BulletTextVEPKcPc"]
     pub fn ImGui_BulletTextV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SeparatorText@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SeparatorTextEPKc"]
     pub fn ImGui_SeparatorText(label: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Button@ImGui@@YA_NPEBDAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui6ButtonEPKcRK6ImVec2"]
     pub fn ImGui_Button(label: *const ::std::os::raw::c_char, size: *const ImVec2) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SmallButton@ImGui@@YA_NPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11SmallButtonEPKc"]
     pub fn ImGui_SmallButton(label: *const ::std::os::raw::c_char) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InvisibleButton@ImGui@@YA_NPEBDAEBUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15InvisibleButtonEPKcRK6ImVec2i"]
     pub fn ImGui_InvisibleButton(
         str_id: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -2064,15 +4787,15 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ArrowButton@ImGui@@YA_NPEBDW4ImGuiDir@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11ArrowButtonEPKc8ImGuiDir"]
     pub fn ImGui_ArrowButton(str_id: *const ::std::os::raw::c_char, dir: ImGuiDir) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Checkbox@ImGui@@YA_NPEBDPEA_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8CheckboxEPKcPb"]
     pub fn ImGui_Checkbox(label: *const ::std::os::raw::c_char, v: *mut bool) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CheckboxFlags@ImGui@@YA_NPEBDPEAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13CheckboxFlagsEPKcPii"]
     pub fn ImGui_CheckboxFlags(
         label: *const ::std::os::raw::c_char,
         flags: *mut ::std::os::raw::c_int,
@@ -2080,7 +4803,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CheckboxFlags@ImGui@@YA_NPEBDPEAII@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13CheckboxFlagsEPKcPjj"]
     pub fn ImGui_CheckboxFlags1(
         label: *const ::std::os::raw::c_char,
         flags: *mut ::std::os::raw::c_uint,
@@ -2088,11 +4811,11 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RadioButton@ImGui@@YA_NPEBD_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11RadioButtonEPKcb"]
     pub fn ImGui_RadioButton(label: *const ::std::os::raw::c_char, active: bool) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RadioButton@ImGui@@YA_NPEBDPEAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11RadioButtonEPKcPii"]
     pub fn ImGui_RadioButton1(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2100,7 +4823,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ProgressBar@ImGui@@YAXMAEBUImVec2@@PEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11ProgressBarEfRK6ImVec2PKc"]
     pub fn ImGui_ProgressBar(
         fraction: f32,
         size_arg: *const ImVec2,
@@ -2108,22 +4831,22 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Bullet@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui6BulletEv"]
     pub fn ImGui_Bullet();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextLink@ImGui@@YA_NPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8TextLinkEPKc"]
     pub fn ImGui_TextLink(label: *const ::std::os::raw::c_char) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TextLinkOpenURL@ImGui@@YA_NPEBD0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15TextLinkOpenURLEPKcS1_"]
     pub fn ImGui_TextLinkOpenURL(
         label: *const ::std::os::raw::c_char,
         url: *const ::std::os::raw::c_char,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Image@ImGui@@YAXUImTextureRef@@AEBUImVec2@@11@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ImageE12ImTextureRefRK6ImVec2S3_S3_"]
     pub fn ImGui_Image(
         tex_ref: ImTextureRef,
         image_size: *const ImVec2,
@@ -2132,7 +4855,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ImageWithBg@ImGui@@YAXUImTextureRef@@AEBUImVec2@@11AEBUImVec4@@2@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11ImageWithBgE12ImTextureRefRK6ImVec2S3_S3_RK6ImVec4S6_"]
     pub fn ImGui_ImageWithBg(
         tex_ref: ImTextureRef,
         image_size: *const ImVec2,
@@ -2143,7 +4866,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ImageButton@ImGui@@YA_NPEBDUImTextureRef@@AEBUImVec2@@22AEBUImVec4@@3@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11ImageButtonEPKc12ImTextureRefRK6ImVec2S5_S5_RK6ImVec4S8_"]
     pub fn ImGui_ImageButton(
         str_id: *const ::std::os::raw::c_char,
         tex_ref: ImTextureRef,
@@ -2155,7 +4878,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginCombo@ImGui@@YA_NPEBD0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginComboEPKcS1_i"]
     pub fn ImGui_BeginCombo(
         label: *const ::std::os::raw::c_char,
         preview_value: *const ::std::os::raw::c_char,
@@ -2163,11 +4886,11 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndCombo@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndComboEv"]
     pub fn ImGui_EndCombo();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Combo@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ComboEPKcPiPKS1_ii"]
     pub fn ImGui_Combo(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -2177,7 +4900,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Combo@ImGui@@YA_NPEBDPEAH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ComboEPKcPiS1_i"]
     pub fn ImGui_Combo1(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -2186,7 +4909,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Combo@ImGui@@YA_NPEBDPEAHP6APEBDPEAXH@Z2HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ComboEPKcPiPFS1_PviES3_ii"]
     pub fn ImGui_Combo2(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -2202,7 +4925,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragFloat@ImGui@@YA_NPEBDPEAMMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9DragFloatEPKcPffffS1_i"]
     pub fn ImGui_DragFloat(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2214,7 +4937,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10DragFloat2EPKcPffffS1_i"]
     pub fn ImGui_DragFloat2(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2226,7 +4949,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10DragFloat3EPKcPffffS1_i"]
     pub fn ImGui_DragFloat3(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2238,7 +4961,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10DragFloat4EPKcPffffS1_i"]
     pub fn ImGui_DragFloat4(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2250,7 +4973,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragFloatRange2@ImGui@@YA_NPEBDPEAM1MMM00H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15DragFloatRange2EPKcPfS2_fffS1_S1_i"]
     pub fn ImGui_DragFloatRange2(
         label: *const ::std::os::raw::c_char,
         v_current_min: *mut f32,
@@ -2264,7 +4987,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragInt@ImGui@@YA_NPEBDPEAHMHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7DragIntEPKcPifiiS1_i"]
     pub fn ImGui_DragInt(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2276,7 +4999,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragInt2@ImGui@@YA_NPEBDQEAHMHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8DragInt2EPKcPifiiS1_i"]
     pub fn ImGui_DragInt2(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2288,7 +5011,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragInt3@ImGui@@YA_NPEBDQEAHMHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8DragInt3EPKcPifiiS1_i"]
     pub fn ImGui_DragInt3(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2300,7 +5023,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragInt4@ImGui@@YA_NPEBDQEAHMHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8DragInt4EPKcPifiiS1_i"]
     pub fn ImGui_DragInt4(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2312,7 +5035,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragIntRange2@ImGui@@YA_NPEBDPEAH1MHH00H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13DragIntRange2EPKcPiS2_fiiS1_S1_i"]
     pub fn ImGui_DragIntRange2(
         label: *const ::std::os::raw::c_char,
         v_current_min: *mut ::std::os::raw::c_int,
@@ -2326,7 +5049,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10DragScalarEPKciPvfPKvS4_S1_i"]
     pub fn ImGui_DragScalar(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2339,7 +5062,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11DragScalarNEPKciPvifPKvS4_S1_i"]
     pub fn ImGui_DragScalarN(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2353,7 +5076,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderFloat@ImGui@@YA_NPEBDPEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11SliderFloatEPKcPfffS1_i"]
     pub fn ImGui_SliderFloat(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2364,7 +5087,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SliderFloat2EPKcPfffS1_i"]
     pub fn ImGui_SliderFloat2(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2375,7 +5098,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SliderFloat3EPKcPfffS1_i"]
     pub fn ImGui_SliderFloat3(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2386,7 +5109,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SliderFloat4EPKcPfffS1_i"]
     pub fn ImGui_SliderFloat4(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2397,7 +5120,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderAngle@ImGui@@YA_NPEBDPEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11SliderAngleEPKcPfffS1_i"]
     pub fn ImGui_SliderAngle(
         label: *const ::std::os::raw::c_char,
         v_rad: *mut f32,
@@ -2408,7 +5131,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderInt@ImGui@@YA_NPEBDPEAHHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9SliderIntEPKcPiiiS1_i"]
     pub fn ImGui_SliderInt(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2419,7 +5142,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderInt2@ImGui@@YA_NPEBDQEAHHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SliderInt2EPKcPiiiS1_i"]
     pub fn ImGui_SliderInt2(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2430,7 +5153,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderInt3@ImGui@@YA_NPEBDQEAHHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SliderInt3EPKcPiiiS1_i"]
     pub fn ImGui_SliderInt3(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2441,7 +5164,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderInt4@ImGui@@YA_NPEBDQEAHHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SliderInt4EPKcPiiiS1_i"]
     pub fn ImGui_SliderInt4(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2452,7 +5175,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12SliderScalarEPKciPvPKvS4_S1_i"]
     pub fn ImGui_SliderScalar(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2464,7 +5187,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13SliderScalarNEPKciPviPKvS4_S1_i"]
     pub fn ImGui_SliderScalarN(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2477,7 +5200,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?VSliderFloat@ImGui@@YA_NPEBDAEBUImVec2@@PEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12VSliderFloatEPKcRK6ImVec2PfffS1_i"]
     pub fn ImGui_VSliderFloat(
         label: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -2489,7 +5212,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?VSliderInt@ImGui@@YA_NPEBDAEBUImVec2@@PEAHHH0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10VSliderIntEPKcRK6ImVec2PiiiS1_i"]
     pub fn ImGui_VSliderInt(
         label: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -2501,7 +5224,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?VSliderScalar@ImGui@@YA_NPEBDAEBUImVec2@@HPEAXPEBX30H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13VSliderScalarEPKcRK6ImVec2iPvPKvS7_S1_i"]
     pub fn ImGui_VSliderScalar(
         label: *const ::std::os::raw::c_char,
         size: *const ImVec2,
@@ -2514,7 +5237,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9InputTextEPKcPcmiPFiP26ImGuiInputTextCallbackDataEPv"]
     pub fn ImGui_InputText(
         label: *const ::std::os::raw::c_char,
         buf: *mut ::std::os::raw::c_char,
@@ -2525,7 +5248,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputTextMultiline@ImGui@@YA_NPEBDPEAD_KAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18InputTextMultilineEPKcPcmRK6ImVec2iPFiP26ImGuiInputTextCallbackDataEPv"]
     pub fn ImGui_InputTextMultiline(
         label: *const ::std::os::raw::c_char,
         buf: *mut ::std::os::raw::c_char,
@@ -2537,7 +5260,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputTextWithHint@ImGui@@YA_NPEBD0PEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17InputTextWithHintEPKcS1_PcmiPFiP26ImGuiInputTextCallbackDataEPv"]
     pub fn ImGui_InputTextWithHint(
         label: *const ::std::os::raw::c_char,
         hint: *const ::std::os::raw::c_char,
@@ -2549,7 +5272,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputFloat@ImGui@@YA_NPEBDPEAMMM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10InputFloatEPKcPfffS1_i"]
     pub fn ImGui_InputFloat(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2560,7 +5283,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputFloat2@ImGui@@YA_NPEBDQEAM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11InputFloat2EPKcPfS1_i"]
     pub fn ImGui_InputFloat2(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2569,7 +5292,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputFloat3@ImGui@@YA_NPEBDQEAM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11InputFloat3EPKcPfS1_i"]
     pub fn ImGui_InputFloat3(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2578,7 +5301,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputFloat4@ImGui@@YA_NPEBDQEAM0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11InputFloat4EPKcPfS1_i"]
     pub fn ImGui_InputFloat4(
         label: *const ::std::os::raw::c_char,
         v: *mut f32,
@@ -2587,7 +5310,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputInt@ImGui@@YA_NPEBDPEAHHHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8InputIntEPKcPiiii"]
     pub fn ImGui_InputInt(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2597,7 +5320,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputInt2@ImGui@@YA_NPEBDQEAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9InputInt2EPKcPii"]
     pub fn ImGui_InputInt2(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2605,7 +5328,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputInt3@ImGui@@YA_NPEBDQEAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9InputInt3EPKcPii"]
     pub fn ImGui_InputInt3(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2613,7 +5336,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputInt4@ImGui@@YA_NPEBDQEAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9InputInt4EPKcPii"]
     pub fn ImGui_InputInt4(
         label: *const ::std::os::raw::c_char,
         v: *mut ::std::os::raw::c_int,
@@ -2621,7 +5344,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputDouble@ImGui@@YA_NPEBDPEANNN0H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11InputDoubleEPKcPdddS1_i"]
     pub fn ImGui_InputDouble(
         label: *const ::std::os::raw::c_char,
         v: *mut f64,
@@ -2632,7 +5355,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11InputScalarEPKciPvPKvS4_S1_i"]
     pub fn ImGui_InputScalar(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2644,7 +5367,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InputScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12InputScalarNEPKciPviPKvS4_S1_i"]
     pub fn ImGui_InputScalarN(
         label: *const ::std::os::raw::c_char,
         data_type: ImGuiDataType,
@@ -2657,7 +5380,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorEdit3@ImGui@@YA_NPEBDQEAMH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10ColorEdit3EPKcPfi"]
     pub fn ImGui_ColorEdit3(
         label: *const ::std::os::raw::c_char,
         col: *mut f32,
@@ -2665,7 +5388,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorEdit4@ImGui@@YA_NPEBDQEAMH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10ColorEdit4EPKcPfi"]
     pub fn ImGui_ColorEdit4(
         label: *const ::std::os::raw::c_char,
         col: *mut f32,
@@ -2673,7 +5396,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorPicker3@ImGui@@YA_NPEBDQEAMH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12ColorPicker3EPKcPfi"]
     pub fn ImGui_ColorPicker3(
         label: *const ::std::os::raw::c_char,
         col: *mut f32,
@@ -2681,7 +5404,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorPicker4@ImGui@@YA_NPEBDQEAMHPEBM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12ColorPicker4EPKcPfiPKf"]
     pub fn ImGui_ColorPicker4(
         label: *const ::std::os::raw::c_char,
         col: *mut f32,
@@ -2690,7 +5413,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorButton@ImGui@@YA_NPEBDAEBUImVec4@@HAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11ColorButtonEPKcRK6ImVec4iRK6ImVec2"]
     pub fn ImGui_ColorButton(
         desc_id: *const ::std::os::raw::c_char,
         col: *const ImVec4,
@@ -2699,15 +5422,15 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetColorEditOptions@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19SetColorEditOptionsEi"]
     pub fn ImGui_SetColorEditOptions(flags: ImGuiColorEditFlags);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNode@ImGui@@YA_NPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8TreeNodeEPKc"]
     pub fn ImGui_TreeNode(label: *const ::std::os::raw::c_char) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNode@ImGui@@YA_NPEBD0ZZ"]
+    #[link_name = "\u{1}__ZN5ImGui8TreeNodeEPKcS1_z"]
     pub fn ImGui_TreeNode1(
         str_id: *const ::std::os::raw::c_char,
         fmt: *const ::std::os::raw::c_char,
@@ -2715,7 +5438,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNode@ImGui@@YA_NPEBXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui8TreeNodeEPKvPKcz"]
     pub fn ImGui_TreeNode2(
         ptr_id: *const ::std::os::raw::c_void,
         fmt: *const ::std::os::raw::c_char,
@@ -2723,7 +5446,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeV@ImGui@@YA_NPEBD0PEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9TreeNodeVEPKcS1_Pc"]
     pub fn ImGui_TreeNodeV(
         str_id: *const ::std::os::raw::c_char,
         fmt: *const ::std::os::raw::c_char,
@@ -2731,7 +5454,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeV@ImGui@@YA_NPEBXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9TreeNodeVEPKvPKcPc"]
     pub fn ImGui_TreeNodeV1(
         ptr_id: *const ::std::os::raw::c_void,
         fmt: *const ::std::os::raw::c_char,
@@ -2739,14 +5462,14 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeEx@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10TreeNodeExEPKci"]
     pub fn ImGui_TreeNodeEx(
         label: *const ::std::os::raw::c_char,
         flags: ImGuiTreeNodeFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeEx@ImGui@@YA_NPEBDH0ZZ"]
+    #[link_name = "\u{1}__ZN5ImGui10TreeNodeExEPKciS1_z"]
     pub fn ImGui_TreeNodeEx1(
         str_id: *const ::std::os::raw::c_char,
         flags: ImGuiTreeNodeFlags,
@@ -2755,7 +5478,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeEx@ImGui@@YA_NPEBXHPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui10TreeNodeExEPKviPKcz"]
     pub fn ImGui_TreeNodeEx2(
         ptr_id: *const ::std::os::raw::c_void,
         flags: ImGuiTreeNodeFlags,
@@ -2764,7 +5487,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeExV@ImGui@@YA_NPEBDH0PEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11TreeNodeExVEPKciS1_Pc"]
     pub fn ImGui_TreeNodeExV(
         str_id: *const ::std::os::raw::c_char,
         flags: ImGuiTreeNodeFlags,
@@ -2773,7 +5496,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreeNodeExV@ImGui@@YA_NPEBXHPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11TreeNodeExVEPKviPKcPc"]
     pub fn ImGui_TreeNodeExV1(
         ptr_id: *const ::std::os::raw::c_void,
         flags: ImGuiTreeNodeFlags,
@@ -2782,30 +5505,30 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreePush@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8TreePushEPKc"]
     pub fn ImGui_TreePush(str_id: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreePush@ImGui@@YAXPEBX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8TreePushEPKv"]
     pub fn ImGui_TreePush1(ptr_id: *const ::std::os::raw::c_void);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TreePop@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7TreePopEv"]
     pub fn ImGui_TreePop();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTreeNodeToLabelSpacing@ImGui@@YAMXZ"]
+    #[link_name = "\u{1}__ZN5ImGui25GetTreeNodeToLabelSpacingEv"]
     pub fn ImGui_GetTreeNodeToLabelSpacing() -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CollapsingHeader@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16CollapsingHeaderEPKci"]
     pub fn ImGui_CollapsingHeader(
         label: *const ::std::os::raw::c_char,
         flags: ImGuiTreeNodeFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CollapsingHeader@ImGui@@YA_NPEBDPEA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16CollapsingHeaderEPKcPbi"]
     pub fn ImGui_CollapsingHeader1(
         label: *const ::std::os::raw::c_char,
         p_visible: *mut bool,
@@ -2813,15 +5536,15 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemOpen@ImGui@@YAX_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15SetNextItemOpenEbi"]
     pub fn ImGui_SetNextItemOpen(is_open: bool, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemStorageID@ImGui@@YAXI@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20SetNextItemStorageIDEj"]
     pub fn ImGui_SetNextItemStorageID(storage_id: ImGuiID);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Selectable@ImGui@@YA_NPEBD_NHAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SelectableEPKcbiRK6ImVec2"]
     pub fn ImGui_Selectable(
         label: *const ::std::os::raw::c_char,
         selected: bool,
@@ -2830,7 +5553,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Selectable@ImGui@@YA_NPEBDPEA_NHAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10SelectableEPKcPbiRK6ImVec2"]
     pub fn ImGui_Selectable1(
         label: *const ::std::os::raw::c_char,
         p_selected: *mut bool,
@@ -2839,7 +5562,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginMultiSelect@ImGui@@YAPEAUImGuiMultiSelectIO@@HHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16BeginMultiSelectEiii"]
     pub fn ImGui_BeginMultiSelect(
         flags: ImGuiMultiSelectFlags,
         selection_size: ::std::os::raw::c_int,
@@ -2847,27 +5570,27 @@ unsafe extern "C" {
     ) -> *mut ImGuiMultiSelectIO;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndMultiSelect@ImGui@@YAPEAUImGuiMultiSelectIO@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui14EndMultiSelectEv"]
     pub fn ImGui_EndMultiSelect() -> *mut ImGuiMultiSelectIO;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemSelectionUserData@ImGui@@YAX_J@Z"]
+    #[link_name = "\u{1}__ZN5ImGui28SetNextItemSelectionUserDataEx"]
     pub fn ImGui_SetNextItemSelectionUserData(selection_user_data: ImGuiSelectionUserData);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemToggledSelection@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui22IsItemToggledSelectionEv"]
     pub fn ImGui_IsItemToggledSelection() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginListBox@ImGui@@YA_NPEBDAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12BeginListBoxEPKcRK6ImVec2"]
     pub fn ImGui_BeginListBox(label: *const ::std::os::raw::c_char, size: *const ImVec2) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndListBox@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10EndListBoxEv"]
     pub fn ImGui_EndListBox();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ListBox@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7ListBoxEPKcPiPKS1_ii"]
     pub fn ImGui_ListBox(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -2877,7 +5600,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ListBox@ImGui@@YA_NPEBDPEAHP6APEBDPEAXH@Z2HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7ListBoxEPKcPiPFS1_PviES3_ii"]
     pub fn ImGui_ListBox1(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -2893,7 +5616,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PlotLines@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9PlotLinesEPKcPKfiiS1_ff6ImVec2i"]
     pub fn ImGui_PlotLines(
         label: *const ::std::os::raw::c_char,
         values: *const f32,
@@ -2907,7 +5630,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PlotLines@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9PlotLinesEPKcPFfPviES2_iiS1_ff6ImVec2"]
     pub fn ImGui_PlotLines1(
         label: *const ::std::os::raw::c_char,
         values_getter: ::std::option::Option<
@@ -2926,7 +5649,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PlotHistogram@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PlotHistogramEPKcPKfiiS1_ff6ImVec2i"]
     pub fn ImGui_PlotHistogram(
         label: *const ::std::os::raw::c_char,
         values: *const f32,
@@ -2940,7 +5663,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PlotHistogram@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13PlotHistogramEPKcPFfPviES2_iiS1_ff6ImVec2"]
     pub fn ImGui_PlotHistogram1(
         label: *const ::std::os::raw::c_char,
         values_getter: ::std::option::Option<
@@ -2959,19 +5682,19 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Value@ImGui@@YAXPEBD_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ValueEPKcb"]
     pub fn ImGui_Value(prefix: *const ::std::os::raw::c_char, b: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Value@ImGui@@YAXPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ValueEPKci"]
     pub fn ImGui_Value1(prefix: *const ::std::os::raw::c_char, v: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Value@ImGui@@YAXPEBDI@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ValueEPKcj"]
     pub fn ImGui_Value2(prefix: *const ::std::os::raw::c_char, v: ::std::os::raw::c_uint);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Value@ImGui@@YAXPEBDM0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ValueEPKcfS1_"]
     pub fn ImGui_Value3(
         prefix: *const ::std::os::raw::c_char,
         v: f32,
@@ -2979,31 +5702,31 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginMenuBar@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui12BeginMenuBarEv"]
     pub fn ImGui_BeginMenuBar() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndMenuBar@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10EndMenuBarEv"]
     pub fn ImGui_EndMenuBar();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginMainMenuBar@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16BeginMainMenuBarEv"]
     pub fn ImGui_BeginMainMenuBar() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndMainMenuBar@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14EndMainMenuBarEv"]
     pub fn ImGui_EndMainMenuBar();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginMenu@ImGui@@YA_NPEBD_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9BeginMenuEPKcb"]
     pub fn ImGui_BeginMenu(label: *const ::std::os::raw::c_char, enabled: bool) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndMenu@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7EndMenuEv"]
     pub fn ImGui_EndMenu();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?MenuItem@ImGui@@YA_NPEBD0_N1@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8MenuItemEPKcS1_bb"]
     pub fn ImGui_MenuItem(
         label: *const ::std::os::raw::c_char,
         shortcut: *const ::std::os::raw::c_char,
@@ -3012,7 +5735,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?MenuItem@ImGui@@YA_NPEBD0PEA_N_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8MenuItemEPKcS1_Pbb"]
     pub fn ImGui_MenuItem1(
         label: *const ::std::os::raw::c_char,
         shortcut: *const ::std::os::raw::c_char,
@@ -3021,40 +5744,40 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginTooltip@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui12BeginTooltipEv"]
     pub fn ImGui_BeginTooltip() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndTooltip@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10EndTooltipEv"]
     pub fn ImGui_EndTooltip();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetTooltip@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui10SetTooltipEPKcz"]
     pub fn ImGui_SetTooltip(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetTooltipV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11SetTooltipVEPKcPc"]
     pub fn ImGui_SetTooltipV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginItemTooltip@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16BeginItemTooltipEv"]
     pub fn ImGui_BeginItemTooltip() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemTooltip@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui14SetItemTooltipEPKcz"]
     pub fn ImGui_SetItemTooltip(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemTooltipV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15SetItemTooltipVEPKcPc"]
     pub fn ImGui_SetItemTooltipV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginPopup@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginPopupEPKci"]
     pub fn ImGui_BeginPopup(str_id: *const ::std::os::raw::c_char, flags: ImGuiWindowFlags)
-    -> bool;
+        -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginPopupModal@ImGui@@YA_NPEBDPEA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15BeginPopupModalEPKcPbi"]
     pub fn ImGui_BeginPopupModal(
         name: *const ::std::os::raw::c_char,
         p_open: *mut bool,
@@ -3062,56 +5785,56 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndPopup@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndPopupEv"]
     pub fn ImGui_EndPopup();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?OpenPopup@ImGui@@YAXPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9OpenPopupEPKci"]
     pub fn ImGui_OpenPopup(str_id: *const ::std::os::raw::c_char, popup_flags: ImGuiPopupFlags);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?OpenPopup@ImGui@@YAXIH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9OpenPopupEji"]
     pub fn ImGui_OpenPopup1(id: ImGuiID, popup_flags: ImGuiPopupFlags);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?OpenPopupOnItemClick@ImGui@@YAXPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20OpenPopupOnItemClickEPKci"]
     pub fn ImGui_OpenPopupOnItemClick(
         str_id: *const ::std::os::raw::c_char,
         popup_flags: ImGuiPopupFlags,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CloseCurrentPopup@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17CloseCurrentPopupEv"]
     pub fn ImGui_CloseCurrentPopup();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginPopupContextItem@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21BeginPopupContextItemEPKci"]
     pub fn ImGui_BeginPopupContextItem(
         str_id: *const ::std::os::raw::c_char,
         popup_flags: ImGuiPopupFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginPopupContextWindow@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui23BeginPopupContextWindowEPKci"]
     pub fn ImGui_BeginPopupContextWindow(
         str_id: *const ::std::os::raw::c_char,
         popup_flags: ImGuiPopupFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginPopupContextVoid@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21BeginPopupContextVoidEPKci"]
     pub fn ImGui_BeginPopupContextVoid(
         str_id: *const ::std::os::raw::c_char,
         popup_flags: ImGuiPopupFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsPopupOpen@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11IsPopupOpenEPKci"]
     pub fn ImGui_IsPopupOpen(str_id: *const ::std::os::raw::c_char, flags: ImGuiPopupFlags)
-    -> bool;
+        -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginTable@ImGui@@YA_NPEBDHHAEBUImVec2@@M@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10BeginTableEPKciiRK6ImVec2f"]
     pub fn ImGui_BeginTable(
         str_id: *const ::std::os::raw::c_char,
         columns: ::std::os::raw::c_int,
@@ -3121,23 +5844,23 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndTable@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui8EndTableEv"]
     pub fn ImGui_EndTable();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableNextRow@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12TableNextRowEif"]
     pub fn ImGui_TableNextRow(row_flags: ImGuiTableRowFlags, min_row_height: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableNextColumn@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15TableNextColumnEv"]
     pub fn ImGui_TableNextColumn() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableSetColumnIndex@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19TableSetColumnIndexEi"]
     pub fn ImGui_TableSetColumnIndex(column_n: ::std::os::raw::c_int) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableSetupColumn@ImGui@@YAXPEBDHMI@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16TableSetupColumnEPKcifj"]
     pub fn ImGui_TableSetupColumn(
         label: *const ::std::os::raw::c_char,
         flags: ImGuiTableColumnFlags,
@@ -3146,57 +5869,57 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableSetupScrollFreeze@ImGui@@YAXHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui22TableSetupScrollFreezeEii"]
     pub fn ImGui_TableSetupScrollFreeze(cols: ::std::os::raw::c_int, rows: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableHeader@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11TableHeaderEPKc"]
     pub fn ImGui_TableHeader(label: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableHeadersRow@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15TableHeadersRowEv"]
     pub fn ImGui_TableHeadersRow();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableAngledHeadersRow@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui21TableAngledHeadersRowEv"]
     pub fn ImGui_TableAngledHeadersRow();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetSortSpecs@ImGui@@YAPEAUImGuiTableSortSpecs@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui17TableGetSortSpecsEv"]
     pub fn ImGui_TableGetSortSpecs() -> *mut ImGuiTableSortSpecs;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetColumnCount@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui19TableGetColumnCountEv"]
     pub fn ImGui_TableGetColumnCount() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetColumnIndex@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui19TableGetColumnIndexEv"]
     pub fn ImGui_TableGetColumnIndex() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetRowIndex@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16TableGetRowIndexEv"]
     pub fn ImGui_TableGetRowIndex() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetColumnName@ImGui@@YAPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18TableGetColumnNameEi"]
     pub fn ImGui_TableGetColumnName(
         column_n: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetColumnFlags@ImGui@@YAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19TableGetColumnFlagsEi"]
     pub fn ImGui_TableGetColumnFlags(column_n: ::std::os::raw::c_int) -> ImGuiTableColumnFlags;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableSetColumnEnabled@ImGui@@YAXH_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21TableSetColumnEnabledEib"]
     pub fn ImGui_TableSetColumnEnabled(column_n: ::std::os::raw::c_int, v: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableGetHoveredColumn@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui21TableGetHoveredColumnEv"]
     pub fn ImGui_TableGetHoveredColumn() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TableSetBgColor@ImGui@@YAXHIH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15TableSetBgColorEiji"]
     pub fn ImGui_TableSetBgColor(
         target: ImGuiTableBgTarget,
         color: ImU32,
@@ -3204,7 +5927,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Columns@ImGui@@YAXHPEBD_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7ColumnsEiPKcb"]
     pub fn ImGui_Columns(
         count: ::std::os::raw::c_int,
         id: *const ::std::os::raw::c_char,
@@ -3212,46 +5935,46 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?NextColumn@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10NextColumnEv"]
     pub fn ImGui_NextColumn();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColumnIndex@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetColumnIndexEv"]
     pub fn ImGui_GetColumnIndex() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColumnWidth@ImGui@@YAMH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14GetColumnWidthEi"]
     pub fn ImGui_GetColumnWidth(column_index: ::std::os::raw::c_int) -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetColumnWidth@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14SetColumnWidthEif"]
     pub fn ImGui_SetColumnWidth(column_index: ::std::os::raw::c_int, width: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColumnOffset@ImGui@@YAMH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15GetColumnOffsetEi"]
     pub fn ImGui_GetColumnOffset(column_index: ::std::os::raw::c_int) -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetColumnOffset@ImGui@@YAXHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15SetColumnOffsetEif"]
     pub fn ImGui_SetColumnOffset(column_index: ::std::os::raw::c_int, offset_x: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetColumnsCount@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetColumnsCountEv"]
     pub fn ImGui_GetColumnsCount() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginTabBar@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11BeginTabBarEPKci"]
     pub fn ImGui_BeginTabBar(
         str_id: *const ::std::os::raw::c_char,
         flags: ImGuiTabBarFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndTabBar@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui9EndTabBarEv"]
     pub fn ImGui_EndTabBar();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginTabItem@ImGui@@YA_NPEBDPEA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12BeginTabItemEPKcPbi"]
     pub fn ImGui_BeginTabItem(
         label: *const ::std::os::raw::c_char,
         p_open: *mut bool,
@@ -3259,22 +5982,22 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndTabItem@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10EndTabItemEv"]
     pub fn ImGui_EndTabItem();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?TabItemButton@ImGui@@YA_NPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13TabItemButtonEPKci"]
     pub fn ImGui_TabItemButton(
         label: *const ::std::os::raw::c_char,
         flags: ImGuiTabItemFlags,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetTabItemClosed@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16SetTabItemClosedEPKc"]
     pub fn ImGui_SetTabItemClosed(tab_or_docked_window_label: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DockSpace@ImGui@@YAIIAEBUImVec2@@HPEBUImGuiWindowClass@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9DockSpaceEjRK6ImVec2iPK16ImGuiWindowClass"]
     pub fn ImGui_DockSpace(
         dockspace_id: ImGuiID,
         size: *const ImVec2,
@@ -3283,7 +6006,7 @@ unsafe extern "C" {
     ) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DockSpaceOverViewport@ImGui@@YAIIPEBUImGuiViewport@@HPEBUImGuiWindowClass@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21DockSpaceOverViewportEjPK13ImGuiViewportiPK16ImGuiWindowClass"]
     pub fn ImGui_DockSpaceOverViewport(
         dockspace_id: ImGuiID,
         viewport: *const ImGuiViewport,
@@ -3292,58 +6015,58 @@ unsafe extern "C" {
     ) -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowDockID@ImGui@@YAXIH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19SetNextWindowDockIDEji"]
     pub fn ImGui_SetNextWindowDockID(dock_id: ImGuiID, cond: ImGuiCond);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextWindowClass@ImGui@@YAXPEBUImGuiWindowClass@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetNextWindowClassEPK16ImGuiWindowClass"]
     pub fn ImGui_SetNextWindowClass(window_class: *const ImGuiWindowClass);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowDockID@ImGui@@YAIXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetWindowDockIDEv"]
     pub fn ImGui_GetWindowDockID() -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsWindowDocked@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14IsWindowDockedEv"]
     pub fn ImGui_IsWindowDocked() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogToTTY@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8LogToTTYEi"]
     pub fn ImGui_LogToTTY(auto_open_depth: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogToFile@ImGui@@YAXHPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9LogToFileEiPKc"]
     pub fn ImGui_LogToFile(
         auto_open_depth: ::std::os::raw::c_int,
         filename: *const ::std::os::raw::c_char,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogToClipboard@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14LogToClipboardEi"]
     pub fn ImGui_LogToClipboard(auto_open_depth: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogFinish@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui9LogFinishEv"]
     pub fn ImGui_LogFinish();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogButtons@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui10LogButtonsEv"]
     pub fn ImGui_LogButtons();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogText@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui7LogTextEPKcz"]
     pub fn ImGui_LogText(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LogTextV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8LogTextVEPKcPc"]
     pub fn ImGui_LogTextV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginDragDropSource@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19BeginDragDropSourceEi"]
     pub fn ImGui_BeginDragDropSource(flags: ImGuiDragDropFlags) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetDragDropPayload@ImGui@@YA_NPEBDPEBX_KH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetDragDropPayloadEPKcPKvmi"]
     pub fn ImGui_SetDragDropPayload(
         type_: *const ::std::os::raw::c_char,
         data: *const ::std::os::raw::c_void,
@@ -3352,38 +6075,38 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndDragDropSource@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17EndDragDropSourceEv"]
     pub fn ImGui_EndDragDropSource();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginDragDropTarget@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui19BeginDragDropTargetEv"]
     pub fn ImGui_BeginDragDropTarget() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AcceptDragDropPayload@ImGui@@YAPEBUImGuiPayload@@PEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21AcceptDragDropPayloadEPKci"]
     pub fn ImGui_AcceptDragDropPayload(
         type_: *const ::std::os::raw::c_char,
         flags: ImGuiDragDropFlags,
     ) -> *const ImGuiPayload;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndDragDropTarget@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17EndDragDropTargetEv"]
     pub fn ImGui_EndDragDropTarget();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetDragDropPayload@ImGui@@YAPEBUImGuiPayload@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui18GetDragDropPayloadEv"]
     pub fn ImGui_GetDragDropPayload() -> *const ImGuiPayload;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BeginDisabled@ImGui@@YAX_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13BeginDisabledEb"]
     pub fn ImGui_BeginDisabled(disabled: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EndDisabled@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui11EndDisabledEv"]
     pub fn ImGui_EndDisabled();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushClipRect@ImGui@@YAXAEBUImVec2@@0_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12PushClipRectERK6ImVec2S2_b"]
     pub fn ImGui_PushClipRect(
         clip_rect_min: *const ImVec2,
         clip_rect_max: *const ImVec2,
@@ -3391,139 +6114,139 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopClipRect@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui11PopClipRectEv"]
     pub fn ImGui_PopClipRect();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemDefaultFocus@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui19SetItemDefaultFocusEv"]
     pub fn ImGui_SetItemDefaultFocus();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetKeyboardFocusHere@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20SetKeyboardFocusHereEi"]
     pub fn ImGui_SetKeyboardFocusHere(offset: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNavCursorVisible@ImGui@@YAX_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19SetNavCursorVisibleEb"]
     pub fn ImGui_SetNavCursorVisible(visible: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemAllowOverlap@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui23SetNextItemAllowOverlapEv"]
     pub fn ImGui_SetNextItemAllowOverlap();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemHovered@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13IsItemHoveredEi"]
     pub fn ImGui_IsItemHovered(flags: ImGuiHoveredFlags) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemActive@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui12IsItemActiveEv"]
     pub fn ImGui_IsItemActive() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemFocused@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13IsItemFocusedEv"]
     pub fn ImGui_IsItemFocused() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemClicked@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13IsItemClickedEi"]
     pub fn ImGui_IsItemClicked(mouse_button: ImGuiMouseButton) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemVisible@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13IsItemVisibleEv"]
     pub fn ImGui_IsItemVisible() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemEdited@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui12IsItemEditedEv"]
     pub fn ImGui_IsItemEdited() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemActivated@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15IsItemActivatedEv"]
     pub fn ImGui_IsItemActivated() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemDeactivated@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17IsItemDeactivatedEv"]
     pub fn ImGui_IsItemDeactivated() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemDeactivatedAfterEdit@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui26IsItemDeactivatedAfterEditEv"]
     pub fn ImGui_IsItemDeactivatedAfterEdit() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsItemToggledOpen@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui17IsItemToggledOpenEv"]
     pub fn ImGui_IsItemToggledOpen() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsAnyItemHovered@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16IsAnyItemHoveredEv"]
     pub fn ImGui_IsAnyItemHovered() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsAnyItemActive@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui15IsAnyItemActiveEv"]
     pub fn ImGui_IsAnyItemActive() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsAnyItemFocused@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16IsAnyItemFocusedEv"]
     pub fn ImGui_IsAnyItemFocused() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetItemID@ImGui@@YAIXZ"]
+    #[link_name = "\u{1}__ZN5ImGui9GetItemIDEv"]
     pub fn ImGui_GetItemID() -> ImGuiID;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetItemRectMin@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetItemRectMinEv"]
     pub fn ImGui_GetItemRectMin() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetItemRectMax@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetItemRectMaxEv"]
     pub fn ImGui_GetItemRectMax() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetItemRectSize@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetItemRectSizeEv"]
     pub fn ImGui_GetItemRectSize() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMainViewport@ImGui@@YAPEAUImGuiViewport@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetMainViewportEv"]
     pub fn ImGui_GetMainViewport() -> *mut ImGuiViewport;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetBackgroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21GetBackgroundDrawListEP13ImGuiViewport"]
     pub fn ImGui_GetBackgroundDrawList(viewport: *mut ImGuiViewport) -> *mut ImDrawList;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21GetForegroundDrawListEP13ImGuiViewport"]
     pub fn ImGui_GetForegroundDrawList(viewport: *mut ImGuiViewport) -> *mut ImDrawList;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsRectVisible@ImGui@@YA_NAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13IsRectVisibleERK6ImVec2"]
     pub fn ImGui_IsRectVisible(size: *const ImVec2) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsRectVisible@ImGui@@YA_NAEBUImVec2@@0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13IsRectVisibleERK6ImVec2S2_"]
     pub fn ImGui_IsRectVisible1(rect_min: *const ImVec2, rect_max: *const ImVec2) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTime@ImGui@@YANXZ"]
+    #[link_name = "\u{1}__ZN5ImGui7GetTimeEv"]
     pub fn ImGui_GetTime() -> f64;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFrameCount@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui13GetFrameCountEv"]
     pub fn ImGui_GetFrameCount() -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetDrawListSharedData@ImGui@@YAPEAUImDrawListSharedData@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui21GetDrawListSharedDataEv"]
     pub fn ImGui_GetDrawListSharedData() -> *mut ImDrawListSharedData;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetStyleColorName@ImGui@@YAPEBDH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17GetStyleColorNameEi"]
     pub fn ImGui_GetStyleColorName(idx: ImGuiCol) -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetStateStorage@ImGui@@YAXPEAUImGuiStorage@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15SetStateStorageEP12ImGuiStorage"]
     pub fn ImGui_SetStateStorage(storage: *mut ImGuiStorage);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetStateStorage@ImGui@@YAPEAUImGuiStorage@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui15GetStateStorageEv"]
     pub fn ImGui_GetStateStorage() -> *mut ImGuiStorage;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CalcTextSize@ImGui@@YA?AUImVec2@@PEBD0_NM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12CalcTextSizeEPKcS1_bf"]
     pub fn ImGui_CalcTextSize(
         text: *const ::std::os::raw::c_char,
         text_end: *const ::std::os::raw::c_char,
@@ -3532,15 +6255,15 @@ unsafe extern "C" {
     ) -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorConvertU32ToFloat4@ImGui@@YA?AUImVec4@@I@Z"]
+    #[link_name = "\u{1}__ZN5ImGui23ColorConvertU32ToFloat4Ej"]
     pub fn ImGui_ColorConvertU32ToFloat4(in_: ImU32) -> ImVec4;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorConvertFloat4ToU32@ImGui@@YAIAEBUImVec4@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui23ColorConvertFloat4ToU32ERK6ImVec4"]
     pub fn ImGui_ColorConvertFloat4ToU32(in_: *const ImVec4) -> ImU32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorConvertRGBtoHSV@ImGui@@YAXMMMAEAM00@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20ColorConvertRGBtoHSVEfffRfS0_S0_"]
     pub fn ImGui_ColorConvertRGBtoHSV(
         r: f32,
         g: f32,
@@ -3551,7 +6274,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ColorConvertHSVtoRGB@ImGui@@YAXMMMAEAM00@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20ColorConvertHSVtoRGBEfffRfS0_S0_"]
     pub fn ImGui_ColorConvertHSVtoRGB(
         h: f32,
         s: f32,
@@ -3562,23 +6285,23 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsKeyDown@ImGui@@YA_NW4ImGuiKey@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9IsKeyDownE8ImGuiKey"]
     pub fn ImGui_IsKeyDown(key: ImGuiKey) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsKeyPressed@ImGui@@YA_NW4ImGuiKey@@_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui12IsKeyPressedE8ImGuiKeyb"]
     pub fn ImGui_IsKeyPressed(key: ImGuiKey, repeat: bool) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsKeyReleased@ImGui@@YA_NW4ImGuiKey@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui13IsKeyReleasedE8ImGuiKey"]
     pub fn ImGui_IsKeyReleased(key: ImGuiKey) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsKeyChordPressed@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17IsKeyChordPressedEi"]
     pub fn ImGui_IsKeyChordPressed(key_chord: ImGuiKeyChord) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetKeyPressedAmount@ImGui@@YAHW4ImGuiKey@@MM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19GetKeyPressedAmountE8ImGuiKeyff"]
     pub fn ImGui_GetKeyPressedAmount(
         key: ImGuiKey,
         repeat_delay: f32,
@@ -3586,51 +6309,51 @@ unsafe extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetKeyName@ImGui@@YAPEBDW4ImGuiKey@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui10GetKeyNameE8ImGuiKey"]
     pub fn ImGui_GetKeyName(key: ImGuiKey) -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextFrameWantCaptureKeyboard@ImGui@@YAX_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui31SetNextFrameWantCaptureKeyboardEb"]
     pub fn ImGui_SetNextFrameWantCaptureKeyboard(want_capture_keyboard: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Shortcut@ImGui@@YA_NHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8ShortcutEii"]
     pub fn ImGui_Shortcut(key_chord: ImGuiKeyChord, flags: ImGuiInputFlags) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextItemShortcut@ImGui@@YAXHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19SetNextItemShortcutEii"]
     pub fn ImGui_SetNextItemShortcut(key_chord: ImGuiKeyChord, flags: ImGuiInputFlags);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemKeyOwner@ImGui@@YAXW4ImGuiKey@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15SetItemKeyOwnerE8ImGuiKey"]
     pub fn ImGui_SetItemKeyOwner(key: ImGuiKey);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseDown@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui11IsMouseDownEi"]
     pub fn ImGui_IsMouseDown(button: ImGuiMouseButton) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseClicked@ImGui@@YA_NH_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14IsMouseClickedEib"]
     pub fn ImGui_IsMouseClicked(button: ImGuiMouseButton, repeat: bool) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseReleased@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15IsMouseReleasedEi"]
     pub fn ImGui_IsMouseReleased(button: ImGuiMouseButton) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseDoubleClicked@ImGui@@YA_NH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20IsMouseDoubleClickedEi"]
     pub fn ImGui_IsMouseDoubleClicked(button: ImGuiMouseButton) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseReleasedWithDelay@ImGui@@YA_NHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui24IsMouseReleasedWithDelayEif"]
     pub fn ImGui_IsMouseReleasedWithDelay(button: ImGuiMouseButton, delay: f32) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMouseClickedCount@ImGui@@YAHH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20GetMouseClickedCountEi"]
     pub fn ImGui_GetMouseClickedCount(button: ImGuiMouseButton) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseHoveringRect@ImGui@@YA_NAEBUImVec2@@0_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19IsMouseHoveringRectERK6ImVec2S2_b"]
     pub fn ImGui_IsMouseHoveringRect(
         r_min: *const ImVec2,
         r_max: *const ImVec2,
@@ -3638,87 +6361,87 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMousePosValid@ImGui@@YA_NPEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15IsMousePosValidEPK6ImVec2"]
     pub fn ImGui_IsMousePosValid(mouse_pos: *const ImVec2) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsAnyMouseDown@ImGui@@YA_NXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14IsAnyMouseDownEv"]
     pub fn ImGui_IsAnyMouseDown() -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMousePos@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui11GetMousePosEv"]
     pub fn ImGui_GetMousePos() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMousePosOnOpeningCurrentPopup@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui32GetMousePosOnOpeningCurrentPopupEv"]
     pub fn ImGui_GetMousePosOnOpeningCurrentPopup() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsMouseDragging@ImGui@@YA_NHM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui15IsMouseDraggingEif"]
     pub fn ImGui_IsMouseDragging(button: ImGuiMouseButton, lock_threshold: f32) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMouseDragDelta@ImGui@@YA?AUImVec2@@HM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17GetMouseDragDeltaEif"]
     pub fn ImGui_GetMouseDragDelta(button: ImGuiMouseButton, lock_threshold: f32) -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ResetMouseDragDelta@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui19ResetMouseDragDeltaEi"]
     pub fn ImGui_ResetMouseDragDelta(button: ImGuiMouseButton);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetMouseCursor@ImGui@@YAHXZ"]
+    #[link_name = "\u{1}__ZN5ImGui14GetMouseCursorEv"]
     pub fn ImGui_GetMouseCursor() -> ImGuiMouseCursor;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetMouseCursor@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui14SetMouseCursorEi"]
     pub fn ImGui_SetMouseCursor(cursor_type: ImGuiMouseCursor);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetNextFrameWantCaptureMouse@ImGui@@YAX_N@Z"]
+    #[link_name = "\u{1}__ZN5ImGui28SetNextFrameWantCaptureMouseEb"]
     pub fn ImGui_SetNextFrameWantCaptureMouse(want_capture_mouse: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetClipboardText@ImGui@@YAPEBDXZ"]
+    #[link_name = "\u{1}__ZN5ImGui16GetClipboardTextEv"]
     pub fn ImGui_GetClipboardText() -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetClipboardText@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16SetClipboardTextEPKc"]
     pub fn ImGui_SetClipboardText(text: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LoadIniSettingsFromDisk@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui23LoadIniSettingsFromDiskEPKc"]
     pub fn ImGui_LoadIniSettingsFromDisk(ini_filename: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?LoadIniSettingsFromMemory@ImGui@@YAXPEBD_K@Z"]
+    #[link_name = "\u{1}__ZN5ImGui25LoadIniSettingsFromMemoryEPKcm"]
     pub fn ImGui_LoadIniSettingsFromMemory(
         ini_data: *const ::std::os::raw::c_char,
         ini_size: usize,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SaveIniSettingsToDisk@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21SaveIniSettingsToDiskEPKc"]
     pub fn ImGui_SaveIniSettingsToDisk(ini_filename: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SaveIniSettingsToMemory@ImGui@@YAPEBDPEA_K@Z"]
+    #[link_name = "\u{1}__ZN5ImGui23SaveIniSettingsToMemoryEPm"]
     pub fn ImGui_SaveIniSettingsToMemory(out_ini_size: *mut usize)
-    -> *const ::std::os::raw::c_char;
+        -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugTextEncoding@ImGui@@YAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui17DebugTextEncodingEPKc"]
     pub fn ImGui_DebugTextEncoding(text: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugFlashStyleColor@ImGui@@YAXH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui20DebugFlashStyleColorEi"]
     pub fn ImGui_DebugFlashStyleColor(idx: ImGuiCol);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugStartItemPicker@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui20DebugStartItemPickerEv"]
     pub fn ImGui_DebugStartItemPicker();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugCheckVersionAndDataLayout@ImGui@@YA_NPEBD_K11111@Z"]
+    #[link_name = "\u{1}__ZN5ImGui30DebugCheckVersionAndDataLayoutEPKcmmmmmm"]
     pub fn ImGui_DebugCheckVersionAndDataLayout(
         version_str: *const ::std::os::raw::c_char,
         sz_io: usize,
@@ -3730,15 +6453,15 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugLog@ImGui@@YAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN5ImGui8DebugLogEPKcz"]
     pub fn ImGui_DebugLog(fmt: *const ::std::os::raw::c_char, ...);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DebugLogV@ImGui@@YAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN5ImGui9DebugLogVEPKcPc"]
     pub fn ImGui_DebugLogV(fmt: *const ::std::os::raw::c_char, args: va_list);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetAllocatorFunctions@ImGui@@YAXP6APEAX_KPEAX@ZP6AX11@Z1@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21SetAllocatorFunctionsEPFPvmS0_EPFvS0_S0_ES0_"]
     pub fn ImGui_SetAllocatorFunctions(
         alloc_func: ImGuiMemAllocFunc,
         free_func: ImGuiMemFreeFunc,
@@ -3746,7 +6469,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetAllocatorFunctions@ImGui@@YAXPEAP6APEAX_KPEAX@ZPEAP6AX11@ZPEAPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui21GetAllocatorFunctionsEPPFPvmS0_EPPFvS0_S0_EPS0_"]
     pub fn ImGui_GetAllocatorFunctions(
         p_alloc_func: *mut ImGuiMemAllocFunc,
         p_free_func: *mut ImGuiMemFreeFunc,
@@ -3754,44 +6477,44 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?MemAlloc@ImGui@@YAPEAX_K@Z"]
+    #[link_name = "\u{1}__ZN5ImGui8MemAllocEm"]
     pub fn ImGui_MemAlloc(size: usize) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?MemFree@ImGui@@YAXPEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7MemFreeEPv"]
     pub fn ImGui_MemFree(ptr: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?UpdatePlatformWindows@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui21UpdatePlatformWindowsEv"]
     pub fn ImGui_UpdatePlatformWindows();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RenderPlatformWindowsDefault@ImGui@@YAXPEAX0@Z"]
+    #[link_name = "\u{1}__ZN5ImGui28RenderPlatformWindowsDefaultEPvS0_"]
     pub fn ImGui_RenderPlatformWindowsDefault(
         platform_render_arg: *mut ::std::os::raw::c_void,
         renderer_render_arg: *mut ::std::os::raw::c_void,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DestroyPlatformWindows@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui22DestroyPlatformWindowsEv"]
     pub fn ImGui_DestroyPlatformWindows();
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?FindViewportByID@ImGui@@YAPEAUImGuiViewport@@I@Z"]
+    #[link_name = "\u{1}__ZN5ImGui16FindViewportByIDEj"]
     pub fn ImGui_FindViewportByID(id: ImGuiID) -> *mut ImGuiViewport;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?FindViewportByPlatformHandle@ImGui@@YAPEAUImGuiViewport@@PEAX@Z"]
+    #[link_name = "\u{1}__ZN5ImGui28FindViewportByPlatformHandleEPv"]
     pub fn ImGui_FindViewportByPlatformHandle(
         platform_handle: *mut ::std::os::raw::c_void,
     ) -> *mut ImGuiViewport;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetWindowFontScale@ImGui@@YAXM@Z"]
+    #[link_name = "\u{1}__ZN5ImGui18SetWindowFontScaleEf"]
     pub fn ImGui_SetWindowFontScale(scale: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Image@ImGui@@YAXUImTextureRef@@AEBUImVec2@@11AEBUImVec4@@2@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ImageE12ImTextureRefRK6ImVec2S3_S3_RK6ImVec4S6_"]
     pub fn ImGui_Image1(
         tex_ref: ImTextureRef,
         image_size: *const ImVec2,
@@ -3802,19 +6525,19 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetContentRegionMax@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui19GetContentRegionMaxEv"]
     pub fn ImGui_GetContentRegionMax() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowContentRegionMin@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui25GetWindowContentRegionMinEv"]
     pub fn ImGui_GetWindowContentRegionMin() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetWindowContentRegionMax@ImGui@@YA?AUImVec2@@XZ"]
+    #[link_name = "\u{1}__ZN5ImGui25GetWindowContentRegionMaxEv"]
     pub fn ImGui_GetWindowContentRegionMax() -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Combo@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui5ComboEPKcPiPFbPviPS1_ES3_ii"]
     pub fn ImGui_Combo3(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -3831,7 +6554,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ListBox@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z"]
+    #[link_name = "\u{1}__ZN5ImGui7ListBoxEPKcPiPFbPviPS1_ES3_ii"]
     pub fn ImGui_ListBox2(
         label: *const ::std::os::raw::c_char,
         current_item: *mut ::std::os::raw::c_int,
@@ -3848,7 +6571,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemAllowOverlap@ImGui@@YAXXZ"]
+    #[link_name = "\u{1}__ZN5ImGui19SetItemAllowOverlapEv"]
     pub fn ImGui_SetItemAllowOverlap();
 }
 pub const ImGuiWindowFlags__ImGuiWindowFlags_None: ImGuiWindowFlags_ = 0;
@@ -3883,7 +6606,7 @@ pub const ImGuiWindowFlags__ImGuiWindowFlags_Modal: ImGuiWindowFlags_ = 13421772
 pub const ImGuiWindowFlags__ImGuiWindowFlags_ChildMenu: ImGuiWindowFlags_ = 268435456;
 pub const ImGuiWindowFlags__ImGuiWindowFlags_NavFlattened: ImGuiWindowFlags_ = 536870912;
 pub const ImGuiWindowFlags__ImGuiWindowFlags_AlwaysUseWindowPadding: ImGuiWindowFlags_ = 1073741824;
-pub type ImGuiWindowFlags_ = ::std::os::raw::c_int;
+pub type ImGuiWindowFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiChildFlags__ImGuiChildFlags_None: ImGuiChildFlags_ = 0;
 pub const ImGuiChildFlags__ImGuiChildFlags_Borders: ImGuiChildFlags_ = 1;
 pub const ImGuiChildFlags__ImGuiChildFlags_AlwaysUseWindowPadding: ImGuiChildFlags_ = 2;
@@ -3895,7 +6618,7 @@ pub const ImGuiChildFlags__ImGuiChildFlags_AlwaysAutoResize: ImGuiChildFlags_ = 
 pub const ImGuiChildFlags__ImGuiChildFlags_FrameStyle: ImGuiChildFlags_ = 128;
 pub const ImGuiChildFlags__ImGuiChildFlags_NavFlattened: ImGuiChildFlags_ = 256;
 pub const ImGuiChildFlags__ImGuiChildFlags_Border: ImGuiChildFlags_ = 1;
-pub type ImGuiChildFlags_ = ::std::os::raw::c_int;
+pub type ImGuiChildFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiItemFlags__ImGuiItemFlags_None: ImGuiItemFlags_ = 0;
 pub const ImGuiItemFlags__ImGuiItemFlags_NoTabStop: ImGuiItemFlags_ = 1;
 pub const ImGuiItemFlags__ImGuiItemFlags_NoNav: ImGuiItemFlags_ = 2;
@@ -3903,7 +6626,7 @@ pub const ImGuiItemFlags__ImGuiItemFlags_NoNavDefaultFocus: ImGuiItemFlags_ = 4;
 pub const ImGuiItemFlags__ImGuiItemFlags_ButtonRepeat: ImGuiItemFlags_ = 8;
 pub const ImGuiItemFlags__ImGuiItemFlags_AutoClosePopups: ImGuiItemFlags_ = 16;
 pub const ImGuiItemFlags__ImGuiItemFlags_AllowDuplicateId: ImGuiItemFlags_ = 32;
-pub type ImGuiItemFlags_ = ::std::os::raw::c_int;
+pub type ImGuiItemFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiInputTextFlags__ImGuiInputTextFlags_None: ImGuiInputTextFlags_ = 0;
 pub const ImGuiInputTextFlags__ImGuiInputTextFlags_CharsDecimal: ImGuiInputTextFlags_ = 1;
 pub const ImGuiInputTextFlags__ImGuiInputTextFlags_CharsHexadecimal: ImGuiInputTextFlags_ = 2;
@@ -3931,7 +6654,7 @@ pub const ImGuiInputTextFlags__ImGuiInputTextFlags_CallbackCharFilter: ImGuiInpu
     2097152;
 pub const ImGuiInputTextFlags__ImGuiInputTextFlags_CallbackResize: ImGuiInputTextFlags_ = 4194304;
 pub const ImGuiInputTextFlags__ImGuiInputTextFlags_CallbackEdit: ImGuiInputTextFlags_ = 8388608;
-pub type ImGuiInputTextFlags_ = ::std::os::raw::c_int;
+pub type ImGuiInputTextFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_None: ImGuiTreeNodeFlags_ = 0;
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_Selected: ImGuiTreeNodeFlags_ = 1;
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_Framed: ImGuiTreeNodeFlags_ = 2;
@@ -3957,7 +6680,7 @@ pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_DrawLinesToNodes: ImGuiTreeNode
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_NavLeftJumpsBackHere: ImGuiTreeNodeFlags_ = 131072;
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_SpanTextWidth: ImGuiTreeNodeFlags_ = 8192;
 pub const ImGuiTreeNodeFlags__ImGuiTreeNodeFlags_AllowItemOverlap: ImGuiTreeNodeFlags_ = 4;
-pub type ImGuiTreeNodeFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTreeNodeFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiPopupFlags__ImGuiPopupFlags_None: ImGuiPopupFlags_ = 0;
 pub const ImGuiPopupFlags__ImGuiPopupFlags_MouseButtonLeft: ImGuiPopupFlags_ = 0;
 pub const ImGuiPopupFlags__ImGuiPopupFlags_MouseButtonRight: ImGuiPopupFlags_ = 1;
@@ -3970,7 +6693,7 @@ pub const ImGuiPopupFlags__ImGuiPopupFlags_NoOpenOverItems: ImGuiPopupFlags_ = 2
 pub const ImGuiPopupFlags__ImGuiPopupFlags_AnyPopupId: ImGuiPopupFlags_ = 1024;
 pub const ImGuiPopupFlags__ImGuiPopupFlags_AnyPopupLevel: ImGuiPopupFlags_ = 2048;
 pub const ImGuiPopupFlags__ImGuiPopupFlags_AnyPopup: ImGuiPopupFlags_ = 3072;
-pub type ImGuiPopupFlags_ = ::std::os::raw::c_int;
+pub type ImGuiPopupFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_None: ImGuiSelectableFlags_ = 0;
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_NoAutoClosePopups: ImGuiSelectableFlags_ = 1;
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_SpanAllColumns: ImGuiSelectableFlags_ = 2;
@@ -3980,7 +6703,7 @@ pub const ImGuiSelectableFlags__ImGuiSelectableFlags_AllowOverlap: ImGuiSelectab
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_Highlight: ImGuiSelectableFlags_ = 32;
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_DontClosePopups: ImGuiSelectableFlags_ = 1;
 pub const ImGuiSelectableFlags__ImGuiSelectableFlags_AllowItemOverlap: ImGuiSelectableFlags_ = 16;
-pub type ImGuiSelectableFlags_ = ::std::os::raw::c_int;
+pub type ImGuiSelectableFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiComboFlags__ImGuiComboFlags_None: ImGuiComboFlags_ = 0;
 pub const ImGuiComboFlags__ImGuiComboFlags_PopupAlignLeft: ImGuiComboFlags_ = 1;
 pub const ImGuiComboFlags__ImGuiComboFlags_HeightSmall: ImGuiComboFlags_ = 2;
@@ -3991,7 +6714,7 @@ pub const ImGuiComboFlags__ImGuiComboFlags_NoArrowButton: ImGuiComboFlags_ = 32;
 pub const ImGuiComboFlags__ImGuiComboFlags_NoPreview: ImGuiComboFlags_ = 64;
 pub const ImGuiComboFlags__ImGuiComboFlags_WidthFitPreview: ImGuiComboFlags_ = 128;
 pub const ImGuiComboFlags__ImGuiComboFlags_HeightMask_: ImGuiComboFlags_ = 30;
-pub type ImGuiComboFlags_ = ::std::os::raw::c_int;
+pub type ImGuiComboFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_None: ImGuiTabBarFlags_ = 0;
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_Reorderable: ImGuiTabBarFlags_ = 1;
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_AutoSelectNewTabs: ImGuiTabBarFlags_ = 2;
@@ -4004,7 +6727,7 @@ pub const ImGuiTabBarFlags__ImGuiTabBarFlags_FittingPolicyResizeDown: ImGuiTabBa
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_FittingPolicyScroll: ImGuiTabBarFlags_ = 256;
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_FittingPolicyMask_: ImGuiTabBarFlags_ = 384;
 pub const ImGuiTabBarFlags__ImGuiTabBarFlags_FittingPolicyDefault_: ImGuiTabBarFlags_ = 128;
-pub type ImGuiTabBarFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTabBarFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_None: ImGuiTabItemFlags_ = 0;
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_UnsavedDocument: ImGuiTabItemFlags_ = 1;
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_SetSelected: ImGuiTabItemFlags_ = 2;
@@ -4015,7 +6738,7 @@ pub const ImGuiTabItemFlags__ImGuiTabItemFlags_NoReorder: ImGuiTabItemFlags_ = 3
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_Leading: ImGuiTabItemFlags_ = 64;
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_Trailing: ImGuiTabItemFlags_ = 128;
 pub const ImGuiTabItemFlags__ImGuiTabItemFlags_NoAssumedClosure: ImGuiTabItemFlags_ = 256;
-pub type ImGuiTabItemFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTabItemFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_None: ImGuiFocusedFlags_ = 0;
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_ChildWindows: ImGuiFocusedFlags_ = 1;
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_RootWindow: ImGuiFocusedFlags_ = 2;
@@ -4023,7 +6746,7 @@ pub const ImGuiFocusedFlags__ImGuiFocusedFlags_AnyWindow: ImGuiFocusedFlags_ = 4
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_NoPopupHierarchy: ImGuiFocusedFlags_ = 8;
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_DockHierarchy: ImGuiFocusedFlags_ = 16;
 pub const ImGuiFocusedFlags__ImGuiFocusedFlags_RootAndChildWindows: ImGuiFocusedFlags_ = 3;
-pub type ImGuiFocusedFlags_ = ::std::os::raw::c_int;
+pub type ImGuiFocusedFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_None: ImGuiHoveredFlags_ = 0;
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_ChildWindows: ImGuiHoveredFlags_ = 1;
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_RootWindow: ImGuiHoveredFlags_ = 2;
@@ -4047,7 +6770,7 @@ pub const ImGuiHoveredFlags__ImGuiHoveredFlags_DelayNone: ImGuiHoveredFlags_ = 1
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_DelayShort: ImGuiHoveredFlags_ = 32768;
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_DelayNormal: ImGuiHoveredFlags_ = 65536;
 pub const ImGuiHoveredFlags__ImGuiHoveredFlags_NoSharedDelay: ImGuiHoveredFlags_ = 131072;
-pub type ImGuiHoveredFlags_ = ::std::os::raw::c_int;
+pub type ImGuiHoveredFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_None: ImGuiDockNodeFlags_ = 0;
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_KeepAliveOnly: ImGuiDockNodeFlags_ = 1;
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_NoDockingOverCentralNode: ImGuiDockNodeFlags_ = 4;
@@ -4058,7 +6781,7 @@ pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_AutoHideTabBar: ImGuiDockNodeFl
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_NoUndocking: ImGuiDockNodeFlags_ = 128;
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_NoSplit: ImGuiDockNodeFlags_ = 16;
 pub const ImGuiDockNodeFlags__ImGuiDockNodeFlags_NoDockingInCentralNode: ImGuiDockNodeFlags_ = 4;
-pub type ImGuiDockNodeFlags_ = ::std::os::raw::c_int;
+pub type ImGuiDockNodeFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_None: ImGuiDragDropFlags_ = 0;
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_SourceNoPreviewTooltip: ImGuiDragDropFlags_ = 1;
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_SourceNoDisableHover: ImGuiDragDropFlags_ = 2;
@@ -4074,7 +6797,7 @@ pub const ImGuiDragDropFlags__ImGuiDragDropFlags_AcceptNoDrawDefaultRect: ImGuiD
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_AcceptNoPreviewTooltip: ImGuiDragDropFlags_ = 4096;
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_AcceptPeekOnly: ImGuiDragDropFlags_ = 3072;
 pub const ImGuiDragDropFlags__ImGuiDragDropFlags_SourceAutoExpirePayload: ImGuiDragDropFlags_ = 32;
-pub type ImGuiDragDropFlags_ = ::std::os::raw::c_int;
+pub type ImGuiDragDropFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiDataType__ImGuiDataType_S8: ImGuiDataType_ = 0;
 pub const ImGuiDataType__ImGuiDataType_U8: ImGuiDataType_ = 1;
 pub const ImGuiDataType__ImGuiDataType_S16: ImGuiDataType_ = 2;
@@ -4088,7 +6811,7 @@ pub const ImGuiDataType__ImGuiDataType_Double: ImGuiDataType_ = 9;
 pub const ImGuiDataType__ImGuiDataType_Bool: ImGuiDataType_ = 10;
 pub const ImGuiDataType__ImGuiDataType_String: ImGuiDataType_ = 11;
 pub const ImGuiDataType__ImGuiDataType_COUNT: ImGuiDataType_ = 12;
-pub type ImGuiDataType_ = ::std::os::raw::c_int;
+pub type ImGuiDataType_ = ::std::os::raw::c_uint;
 pub const ImGuiDir_ImGuiDir_None: ImGuiDir = -1;
 pub const ImGuiDir_ImGuiDir_Left: ImGuiDir = 0;
 pub const ImGuiDir_ImGuiDir_Right: ImGuiDir = 1;
@@ -4283,7 +7006,7 @@ pub const ImGuiInputFlags__ImGuiInputFlags_RouteOverActive: ImGuiInputFlags_ = 3
 pub const ImGuiInputFlags__ImGuiInputFlags_RouteUnlessBgFocused: ImGuiInputFlags_ = 65536;
 pub const ImGuiInputFlags__ImGuiInputFlags_RouteFromRootWindow: ImGuiInputFlags_ = 131072;
 pub const ImGuiInputFlags__ImGuiInputFlags_Tooltip: ImGuiInputFlags_ = 262144;
-pub type ImGuiInputFlags_ = ::std::os::raw::c_int;
+pub type ImGuiInputFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiConfigFlags__ImGuiConfigFlags_None: ImGuiConfigFlags_ = 0;
 pub const ImGuiConfigFlags__ImGuiConfigFlags_NavEnableKeyboard: ImGuiConfigFlags_ = 1;
 pub const ImGuiConfigFlags__ImGuiConfigFlags_NavEnableGamepad: ImGuiConfigFlags_ = 2;
@@ -4298,7 +7021,7 @@ pub const ImGuiConfigFlags__ImGuiConfigFlags_NavEnableSetMousePos: ImGuiConfigFl
 pub const ImGuiConfigFlags__ImGuiConfigFlags_NavNoCaptureKeyboard: ImGuiConfigFlags_ = 8;
 pub const ImGuiConfigFlags__ImGuiConfigFlags_DpiEnableScaleFonts: ImGuiConfigFlags_ = 16384;
 pub const ImGuiConfigFlags__ImGuiConfigFlags_DpiEnableScaleViewports: ImGuiConfigFlags_ = 32768;
-pub type ImGuiConfigFlags_ = ::std::os::raw::c_int;
+pub type ImGuiConfigFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiBackendFlags__ImGuiBackendFlags_None: ImGuiBackendFlags_ = 0;
 pub const ImGuiBackendFlags__ImGuiBackendFlags_HasGamepad: ImGuiBackendFlags_ = 1;
 pub const ImGuiBackendFlags__ImGuiBackendFlags_HasMouseCursors: ImGuiBackendFlags_ = 2;
@@ -4308,7 +7031,7 @@ pub const ImGuiBackendFlags__ImGuiBackendFlags_RendererHasTextures: ImGuiBackend
 pub const ImGuiBackendFlags__ImGuiBackendFlags_PlatformHasViewports: ImGuiBackendFlags_ = 1024;
 pub const ImGuiBackendFlags__ImGuiBackendFlags_HasMouseHoveredViewport: ImGuiBackendFlags_ = 2048;
 pub const ImGuiBackendFlags__ImGuiBackendFlags_RendererHasViewports: ImGuiBackendFlags_ = 4096;
-pub type ImGuiBackendFlags_ = ::std::os::raw::c_int;
+pub type ImGuiBackendFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiCol__ImGuiCol_Text: ImGuiCol_ = 0;
 pub const ImGuiCol__ImGuiCol_TextDisabled: ImGuiCol_ = 1;
 pub const ImGuiCol__ImGuiCol_WindowBg: ImGuiCol_ = 2;
@@ -4374,7 +7097,7 @@ pub const ImGuiCol__ImGuiCol_TabActive: ImGuiCol_ = 36;
 pub const ImGuiCol__ImGuiCol_TabUnfocused: ImGuiCol_ = 38;
 pub const ImGuiCol__ImGuiCol_TabUnfocusedActive: ImGuiCol_ = 39;
 pub const ImGuiCol__ImGuiCol_NavHighlight: ImGuiCol_ = 56;
-pub type ImGuiCol_ = ::std::os::raw::c_int;
+pub type ImGuiCol_ = ::std::os::raw::c_uint;
 pub const ImGuiStyleVar__ImGuiStyleVar_Alpha: ImGuiStyleVar_ = 0;
 pub const ImGuiStyleVar__ImGuiStyleVar_DisabledAlpha: ImGuiStyleVar_ = 1;
 pub const ImGuiStyleVar__ImGuiStyleVar_WindowPadding: ImGuiStyleVar_ = 2;
@@ -4413,14 +7136,14 @@ pub const ImGuiStyleVar__ImGuiStyleVar_SeparatorTextAlign: ImGuiStyleVar_ = 34;
 pub const ImGuiStyleVar__ImGuiStyleVar_SeparatorTextPadding: ImGuiStyleVar_ = 35;
 pub const ImGuiStyleVar__ImGuiStyleVar_DockingSeparatorSize: ImGuiStyleVar_ = 36;
 pub const ImGuiStyleVar__ImGuiStyleVar_COUNT: ImGuiStyleVar_ = 37;
-pub type ImGuiStyleVar_ = ::std::os::raw::c_int;
+pub type ImGuiStyleVar_ = ::std::os::raw::c_uint;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_None: ImGuiButtonFlags_ = 0;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_MouseButtonLeft: ImGuiButtonFlags_ = 1;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_MouseButtonRight: ImGuiButtonFlags_ = 2;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_MouseButtonMiddle: ImGuiButtonFlags_ = 4;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_MouseButtonMask_: ImGuiButtonFlags_ = 7;
 pub const ImGuiButtonFlags__ImGuiButtonFlags_EnableNav: ImGuiButtonFlags_ = 8;
-pub type ImGuiButtonFlags_ = ::std::os::raw::c_int;
+pub type ImGuiButtonFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_None: ImGuiColorEditFlags_ = 0;
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_NoAlpha: ImGuiColorEditFlags_ = 2;
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_NoPicker: ImGuiColorEditFlags_ = 4;
@@ -4454,7 +7177,7 @@ pub const ImGuiColorEditFlags__ImGuiColorEditFlags_DataTypeMask_: ImGuiColorEdit
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_PickerMask_: ImGuiColorEditFlags_ = 100663296;
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_InputMask_: ImGuiColorEditFlags_ = 402653184;
 pub const ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaPreview: ImGuiColorEditFlags_ = 0;
-pub type ImGuiColorEditFlags_ = ::std::os::raw::c_int;
+pub type ImGuiColorEditFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiSliderFlags__ImGuiSliderFlags_None: ImGuiSliderFlags_ = 0;
 pub const ImGuiSliderFlags__ImGuiSliderFlags_Logarithmic: ImGuiSliderFlags_ = 32;
 pub const ImGuiSliderFlags__ImGuiSliderFlags_NoRoundToFormat: ImGuiSliderFlags_ = 64;
@@ -4465,12 +7188,12 @@ pub const ImGuiSliderFlags__ImGuiSliderFlags_ClampZeroRange: ImGuiSliderFlags_ =
 pub const ImGuiSliderFlags__ImGuiSliderFlags_NoSpeedTweaks: ImGuiSliderFlags_ = 2048;
 pub const ImGuiSliderFlags__ImGuiSliderFlags_AlwaysClamp: ImGuiSliderFlags_ = 1536;
 pub const ImGuiSliderFlags__ImGuiSliderFlags_InvalidMask_: ImGuiSliderFlags_ = 1879048207;
-pub type ImGuiSliderFlags_ = ::std::os::raw::c_int;
+pub type ImGuiSliderFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiMouseButton__ImGuiMouseButton_Left: ImGuiMouseButton_ = 0;
 pub const ImGuiMouseButton__ImGuiMouseButton_Right: ImGuiMouseButton_ = 1;
 pub const ImGuiMouseButton__ImGuiMouseButton_Middle: ImGuiMouseButton_ = 2;
 pub const ImGuiMouseButton__ImGuiMouseButton_COUNT: ImGuiMouseButton_ = 5;
-pub type ImGuiMouseButton_ = ::std::os::raw::c_int;
+pub type ImGuiMouseButton_ = ::std::os::raw::c_uint;
 pub const ImGuiMouseCursor__ImGuiMouseCursor_None: ImGuiMouseCursor_ = -1;
 pub const ImGuiMouseCursor__ImGuiMouseCursor_Arrow: ImGuiMouseCursor_ = 0;
 pub const ImGuiMouseCursor__ImGuiMouseCursor_TextInput: ImGuiMouseCursor_ = 1;
@@ -4495,7 +7218,7 @@ pub const ImGuiCond__ImGuiCond_Always: ImGuiCond_ = 1;
 pub const ImGuiCond__ImGuiCond_Once: ImGuiCond_ = 2;
 pub const ImGuiCond__ImGuiCond_FirstUseEver: ImGuiCond_ = 4;
 pub const ImGuiCond__ImGuiCond_Appearing: ImGuiCond_ = 8;
-pub type ImGuiCond_ = ::std::os::raw::c_int;
+pub type ImGuiCond_ = ::std::os::raw::c_uint;
 pub const ImGuiTableFlags__ImGuiTableFlags_None: ImGuiTableFlags_ = 0;
 pub const ImGuiTableFlags__ImGuiTableFlags_Resizable: ImGuiTableFlags_ = 1;
 pub const ImGuiTableFlags__ImGuiTableFlags_Reorderable: ImGuiTableFlags_ = 2;
@@ -4533,7 +7256,7 @@ pub const ImGuiTableFlags__ImGuiTableFlags_SortMulti: ImGuiTableFlags_ = 6710886
 pub const ImGuiTableFlags__ImGuiTableFlags_SortTristate: ImGuiTableFlags_ = 134217728;
 pub const ImGuiTableFlags__ImGuiTableFlags_HighlightHoveredColumn: ImGuiTableFlags_ = 268435456;
 pub const ImGuiTableFlags__ImGuiTableFlags_SizingMask_: ImGuiTableFlags_ = 57344;
-pub type ImGuiTableFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTableFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTableColumnFlags__ImGuiTableColumnFlags_None: ImGuiTableColumnFlags_ = 0;
 pub const ImGuiTableColumnFlags__ImGuiTableColumnFlags_Disabled: ImGuiTableColumnFlags_ = 1;
 pub const ImGuiTableColumnFlags__ImGuiTableColumnFlags_DefaultHide: ImGuiTableColumnFlags_ = 2;
@@ -4571,15 +7294,15 @@ pub const ImGuiTableColumnFlags__ImGuiTableColumnFlags_StatusMask_: ImGuiTableCo
     251658240;
 pub const ImGuiTableColumnFlags__ImGuiTableColumnFlags_NoDirectResize_: ImGuiTableColumnFlags_ =
     1073741824;
-pub type ImGuiTableColumnFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTableColumnFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTableRowFlags__ImGuiTableRowFlags_None: ImGuiTableRowFlags_ = 0;
 pub const ImGuiTableRowFlags__ImGuiTableRowFlags_Headers: ImGuiTableRowFlags_ = 1;
-pub type ImGuiTableRowFlags_ = ::std::os::raw::c_int;
+pub type ImGuiTableRowFlags_ = ::std::os::raw::c_uint;
 pub const ImGuiTableBgTarget__ImGuiTableBgTarget_None: ImGuiTableBgTarget_ = 0;
 pub const ImGuiTableBgTarget__ImGuiTableBgTarget_RowBg0: ImGuiTableBgTarget_ = 1;
 pub const ImGuiTableBgTarget__ImGuiTableBgTarget_RowBg1: ImGuiTableBgTarget_ = 2;
 pub const ImGuiTableBgTarget__ImGuiTableBgTarget_CellBg: ImGuiTableBgTarget_ = 3;
-pub type ImGuiTableBgTarget_ = ::std::os::raw::c_int;
+pub type ImGuiTableBgTarget_ = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ImGuiTableSortSpecs {
@@ -4845,11 +7568,11 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiStyle, _NextFrameFontSizeBase) - 1264usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z"]
+    #[link_name = "\u{1}__ZN10ImGuiStyle13ScaleAllSizesEf"]
     pub fn ImGuiStyle_ScaleAllSizes(this: *mut ImGuiStyle, scale_factor: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiStyle@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN10ImGuiStyleC1Ev"]
     pub fn ImGuiStyle_ImGuiStyle(this: *mut ImGuiStyle);
 }
 impl ImGuiStyle {
@@ -5231,19 +7954,19 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiIO, ClipboardUserData) - 3080usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddKeyEvent@ImGuiIO@@QEAAXW4ImGuiKey@@_N@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO11AddKeyEventE8ImGuiKeyb"]
     pub fn ImGuiIO_AddKeyEvent(this: *mut ImGuiIO, key: ImGuiKey, down: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddKeyAnalogEvent@ImGuiIO@@QEAAXW4ImGuiKey@@_NM@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO17AddKeyAnalogEventE8ImGuiKeybf"]
     pub fn ImGuiIO_AddKeyAnalogEvent(this: *mut ImGuiIO, key: ImGuiKey, down: bool, v: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddMousePosEvent@ImGuiIO@@QEAAXMM@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO16AddMousePosEventEff"]
     pub fn ImGuiIO_AddMousePosEvent(this: *mut ImGuiIO, x: f32, y: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddMouseButtonEvent@ImGuiIO@@QEAAXH_N@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO19AddMouseButtonEventEib"]
     pub fn ImGuiIO_AddMouseButtonEvent(
         this: *mut ImGuiIO,
         button: ::std::os::raw::c_int,
@@ -5251,35 +7974,35 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddMouseWheelEvent@ImGuiIO@@QEAAXMM@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO18AddMouseWheelEventEff"]
     pub fn ImGuiIO_AddMouseWheelEvent(this: *mut ImGuiIO, wheel_x: f32, wheel_y: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddMouseSourceEvent@ImGuiIO@@QEAAXW4ImGuiMouseSource@@@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO19AddMouseSourceEventE16ImGuiMouseSource"]
     pub fn ImGuiIO_AddMouseSourceEvent(this: *mut ImGuiIO, source: ImGuiMouseSource);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddMouseViewportEvent@ImGuiIO@@QEAAXI@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO21AddMouseViewportEventEj"]
     pub fn ImGuiIO_AddMouseViewportEvent(this: *mut ImGuiIO, id: ImGuiID);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFocusEvent@ImGuiIO@@QEAAX_N@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO13AddFocusEventEb"]
     pub fn ImGuiIO_AddFocusEvent(this: *mut ImGuiIO, focused: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddInputCharacter@ImGuiIO@@QEAAXI@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO17AddInputCharacterEj"]
     pub fn ImGuiIO_AddInputCharacter(this: *mut ImGuiIO, c: ::std::os::raw::c_uint);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO22AddInputCharacterUTF16Et"]
     pub fn ImGuiIO_AddInputCharacterUTF16(this: *mut ImGuiIO, c: ImWchar16);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO22AddInputCharactersUTF8EPKc"]
     pub fn ImGuiIO_AddInputCharactersUTF8(this: *mut ImGuiIO, str_: *const ::std::os::raw::c_char);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetKeyEventNativeData@ImGuiIO@@QEAAXW4ImGuiKey@@HHH@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO21SetKeyEventNativeDataE8ImGuiKeyiii"]
     pub fn ImGuiIO_SetKeyEventNativeData(
         this: *mut ImGuiIO,
         key: ImGuiKey,
@@ -5289,27 +8012,27 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetAppAcceptingEvents@ImGuiIO@@QEAAX_N@Z"]
+    #[link_name = "\u{1}__ZN7ImGuiIO21SetAppAcceptingEventsEb"]
     pub fn ImGuiIO_SetAppAcceptingEvents(this: *mut ImGuiIO, accepting_events: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearEventsQueue@ImGuiIO@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN7ImGuiIO16ClearEventsQueueEv"]
     pub fn ImGuiIO_ClearEventsQueue(this: *mut ImGuiIO);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearInputKeys@ImGuiIO@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN7ImGuiIO14ClearInputKeysEv"]
     pub fn ImGuiIO_ClearInputKeys(this: *mut ImGuiIO);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearInputMouse@ImGuiIO@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN7ImGuiIO15ClearInputMouseEv"]
     pub fn ImGuiIO_ClearInputMouse(this: *mut ImGuiIO);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearInputCharacters@ImGuiIO@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN7ImGuiIO20ClearInputCharactersEv"]
     pub fn ImGuiIO_ClearInputCharacters(this: *mut ImGuiIO);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiIO@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN7ImGuiIOC1Ev"]
     pub fn ImGuiIO_ImGuiIO(this: *mut ImGuiIO);
 }
 impl ImGuiIO {
@@ -5451,7 +8174,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiInputTextCallbackData, SelectionEnd) - 60usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiInputTextCallbackData11DeleteCharsEii"]
     pub fn ImGuiInputTextCallbackData_DeleteChars(
         this: *mut ImGuiInputTextCallbackData,
         pos: ::std::os::raw::c_int,
@@ -5459,7 +8182,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiInputTextCallbackData11InsertCharsEiPKcS1_"]
     pub fn ImGuiInputTextCallbackData_InsertChars(
         this: *mut ImGuiInputTextCallbackData,
         pos: ::std::os::raw::c_int,
@@ -5468,7 +8191,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiInputTextCallbackData@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN26ImGuiInputTextCallbackDataC1Ev"]
     pub fn ImGuiInputTextCallbackData_ImGuiInputTextCallbackData(
         this: *mut ImGuiInputTextCallbackData,
     );
@@ -5625,7 +8348,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiTextFilter_ImGuiTextRange, e) - 8usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?split@ImGuiTextRange@ImGuiTextFilter@@QEBAXDPEAU?$ImVector@UImGuiTextRange@ImGuiTextFilter@@@@@Z"]
+    #[link_name = "\u{1}__ZNK15ImGuiTextFilter14ImGuiTextRange5splitEcP8ImVectorIS0_E"]
     pub fn ImGuiTextFilter_ImGuiTextRange_split(
         this: *const ImGuiTextFilter_ImGuiTextRange,
         separator: ::std::os::raw::c_char,
@@ -5654,7 +8377,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiTextFilter, CountGrep) - 272usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z"]
+    #[link_name = "\u{1}__ZN15ImGuiTextFilter4DrawEPKcf"]
     pub fn ImGuiTextFilter_Draw(
         this: *mut ImGuiTextFilter,
         label: *const ::std::os::raw::c_char,
@@ -5662,7 +8385,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z"]
+    #[link_name = "\u{1}__ZNK15ImGuiTextFilter10PassFilterEPKcS1_"]
     pub fn ImGuiTextFilter_PassFilter(
         this: *const ImGuiTextFilter,
         text: *const ::std::os::raw::c_char,
@@ -5670,11 +8393,11 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Build@ImGuiTextFilter@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN15ImGuiTextFilter5BuildEv"]
     pub fn ImGuiTextFilter_Build(this: *mut ImGuiTextFilter);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiTextFilter@@QEAA@PEBD@Z"]
+    #[link_name = "\u{1}__ZN15ImGuiTextFilterC1EPKc"]
     pub fn ImGuiTextFilter_ImGuiTextFilter(
         this: *mut ImGuiTextFilter,
         default_filter: *const ::std::os::raw::c_char,
@@ -5710,7 +8433,7 @@ pub struct ImGuiTextBuffer {
     pub Buf: ImVector<::std::os::raw::c_char>,
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?EmptyString@ImGuiTextBuffer@@2PADA"]
+    #[link_name = "\u{1}__ZN15ImGuiTextBuffer11EmptyStringE"]
     pub static mut ImGuiTextBuffer_EmptyString: [::std::os::raw::c_char; 1usize];
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
@@ -5721,7 +8444,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiTextBuffer, Buf) - 0usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?append@ImGuiTextBuffer@@QEAAXPEBD0@Z"]
+    #[link_name = "\u{1}__ZN15ImGuiTextBuffer6appendEPKcS1_"]
     pub fn ImGuiTextBuffer_append(
         this: *mut ImGuiTextBuffer,
         str_: *const ::std::os::raw::c_char,
@@ -5729,7 +8452,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ"]
+    #[link_name = "\u{1}__ZN15ImGuiTextBuffer7appendfEPKcz"]
     pub fn ImGuiTextBuffer_appendf(
         this: *mut ImGuiTextBuffer,
         fmt: *const ::std::os::raw::c_char,
@@ -5737,7 +8460,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?appendfv@ImGuiTextBuffer@@QEAAXPEBDPEAD@Z"]
+    #[link_name = "\u{1}__ZN15ImGuiTextBuffer8appendfvEPKcPc"]
     pub fn ImGuiTextBuffer_appendfv(
         this: *mut ImGuiTextBuffer,
         fmt: *const ::std::os::raw::c_char,
@@ -5802,7 +8525,7 @@ const _: () = {
     ["Offset of field: ImGuiStorage::Data"][::std::mem::offset_of!(ImGuiStorage, Data) - 0usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetInt@ImGuiStorage@@QEBAHIH@Z"]
+    #[link_name = "\u{1}__ZNK12ImGuiStorage6GetIntEji"]
     pub fn ImGuiStorage_GetInt(
         this: *const ImGuiStorage,
         key: ImGuiID,
@@ -5810,35 +8533,35 @@ unsafe extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetInt@ImGuiStorage@@QEAAXIH@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage6SetIntEji"]
     pub fn ImGuiStorage_SetInt(this: *mut ImGuiStorage, key: ImGuiID, val: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetBool@ImGuiStorage@@QEBA_NI_N@Z"]
+    #[link_name = "\u{1}__ZNK12ImGuiStorage7GetBoolEjb"]
     pub fn ImGuiStorage_GetBool(this: *const ImGuiStorage, key: ImGuiID, default_val: bool)
-    -> bool;
+        -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetBool@ImGuiStorage@@QEAAXI_N@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage7SetBoolEjb"]
     pub fn ImGuiStorage_SetBool(this: *mut ImGuiStorage, key: ImGuiID, val: bool);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFloat@ImGuiStorage@@QEBAMIM@Z"]
+    #[link_name = "\u{1}__ZNK12ImGuiStorage8GetFloatEjf"]
     pub fn ImGuiStorage_GetFloat(this: *const ImGuiStorage, key: ImGuiID, default_val: f32) -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetFloat@ImGuiStorage@@QEAAXIM@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage8SetFloatEjf"]
     pub fn ImGuiStorage_SetFloat(this: *mut ImGuiStorage, key: ImGuiID, val: f32);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z"]
+    #[link_name = "\u{1}__ZNK12ImGuiStorage10GetVoidPtrEj"]
     pub fn ImGuiStorage_GetVoidPtr(
         this: *const ImGuiStorage,
         key: ImGuiID,
     ) -> *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage10SetVoidPtrEjPv"]
     pub fn ImGuiStorage_SetVoidPtr(
         this: *mut ImGuiStorage,
         key: ImGuiID,
@@ -5846,7 +8569,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage9GetIntRefEji"]
     pub fn ImGuiStorage_GetIntRef(
         this: *mut ImGuiStorage,
         key: ImGuiID,
@@ -5854,7 +8577,7 @@ unsafe extern "C" {
     ) -> *mut ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage10GetBoolRefEjb"]
     pub fn ImGuiStorage_GetBoolRef(
         this: *mut ImGuiStorage,
         key: ImGuiID,
@@ -5862,7 +8585,7 @@ unsafe extern "C" {
     ) -> *mut bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage11GetFloatRefEjf"]
     pub fn ImGuiStorage_GetFloatRef(
         this: *mut ImGuiStorage,
         key: ImGuiID,
@@ -5870,7 +8593,7 @@ unsafe extern "C" {
     ) -> *mut f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage13GetVoidPtrRefEjPv"]
     pub fn ImGuiStorage_GetVoidPtrRef(
         this: *mut ImGuiStorage,
         key: ImGuiID,
@@ -5878,11 +8601,11 @@ unsafe extern "C" {
     ) -> *mut *mut ::std::os::raw::c_void;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BuildSortByKey@ImGuiStorage@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage14BuildSortByKeyEv"]
     pub fn ImGuiStorage_BuildSortByKey(this: *mut ImGuiStorage);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetAllInt@ImGuiStorage@@QEAAXH@Z"]
+    #[link_name = "\u{1}__ZN12ImGuiStorage9SetAllIntEi"]
     pub fn ImGuiStorage_SetAllInt(this: *mut ImGuiStorage, val: ::std::os::raw::c_int);
 }
 impl ImGuiStorage {
@@ -5989,7 +8712,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiListClipper, TempData) - 40usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?Begin@ImGuiListClipper@@QEAAXHM@Z"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipper5BeginEif"]
     pub fn ImGuiListClipper_Begin(
         this: *mut ImGuiListClipper,
         items_count: ::std::os::raw::c_int,
@@ -5997,15 +8720,15 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?End@ImGuiListClipper@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipper3EndEv"]
     pub fn ImGuiListClipper_End(this: *mut ImGuiListClipper);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Step@ImGuiListClipper@@QEAA_NXZ"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipper4StepEv"]
     pub fn ImGuiListClipper_Step(this: *mut ImGuiListClipper) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IncludeItemsByIndex@ImGuiListClipper@@QEAAXHH@Z"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipper19IncludeItemsByIndexEii"]
     pub fn ImGuiListClipper_IncludeItemsByIndex(
         this: *mut ImGuiListClipper,
         item_begin: ::std::os::raw::c_int,
@@ -6013,18 +8736,18 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SeekCursorForItem@ImGuiListClipper@@QEAAXH@Z"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipper17SeekCursorForItemEi"]
     pub fn ImGuiListClipper_SeekCursorForItem(
         this: *mut ImGuiListClipper,
         item_index: ::std::os::raw::c_int,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiListClipper@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipperC1Ev"]
     pub fn ImGuiListClipper_ImGuiListClipper(this: *mut ImGuiListClipper);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??1ImGuiListClipper@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN16ImGuiListClipperD1Ev"]
     pub fn ImGuiListClipper_ImGuiListClipper_destructor(this: *mut ImGuiListClipper);
 }
 impl ImGuiListClipper {
@@ -6095,7 +8818,7 @@ pub const ImGuiMultiSelectFlags__ImGuiMultiSelectFlags_SelectOnClick: ImGuiMulti
 pub const ImGuiMultiSelectFlags__ImGuiMultiSelectFlags_SelectOnClickRelease:
     ImGuiMultiSelectFlags_ = 16384;
 pub const ImGuiMultiSelectFlags__ImGuiMultiSelectFlags_NavWrapX: ImGuiMultiSelectFlags_ = 65536;
-pub type ImGuiMultiSelectFlags_ = ::std::os::raw::c_int;
+pub type ImGuiMultiSelectFlags_ = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug)]
 pub struct ImGuiMultiSelectIO {
@@ -6127,7 +8850,7 @@ pub const ImGuiSelectionRequestType_ImGuiSelectionRequestType_None: ImGuiSelecti
 pub const ImGuiSelectionRequestType_ImGuiSelectionRequestType_SetAll: ImGuiSelectionRequestType = 1;
 pub const ImGuiSelectionRequestType_ImGuiSelectionRequestType_SetRange: ImGuiSelectionRequestType =
     2;
-pub type ImGuiSelectionRequestType = ::std::os::raw::c_int;
+pub type ImGuiSelectionRequestType = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ImGuiSelectionRequest {
@@ -6187,32 +8910,32 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiSelectionBasicStorage, _Storage) - 32usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?ApplyRequests@ImGuiSelectionBasicStorage@@QEAAXPEAUImGuiMultiSelectIO@@@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorage13ApplyRequestsEP18ImGuiMultiSelectIO"]
     pub fn ImGuiSelectionBasicStorage_ApplyRequests(
         this: *mut ImGuiSelectionBasicStorage,
         ms_io: *mut ImGuiMultiSelectIO,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Contains@ImGuiSelectionBasicStorage@@QEBA_NI@Z"]
+    #[link_name = "\u{1}__ZNK26ImGuiSelectionBasicStorage8ContainsEj"]
     pub fn ImGuiSelectionBasicStorage_Contains(
         this: *const ImGuiSelectionBasicStorage,
         id: ImGuiID,
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Clear@ImGuiSelectionBasicStorage@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorage5ClearEv"]
     pub fn ImGuiSelectionBasicStorage_Clear(this: *mut ImGuiSelectionBasicStorage);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Swap@ImGuiSelectionBasicStorage@@QEAAXAEAU1@@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorage4SwapERS_"]
     pub fn ImGuiSelectionBasicStorage_Swap(
         this: *mut ImGuiSelectionBasicStorage,
         r: *mut ImGuiSelectionBasicStorage,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetItemSelected@ImGuiSelectionBasicStorage@@QEAAXI_N@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorage15SetItemSelectedEjb"]
     pub fn ImGuiSelectionBasicStorage_SetItemSelected(
         this: *mut ImGuiSelectionBasicStorage,
         id: ImGuiID,
@@ -6220,7 +8943,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetNextSelectedItem@ImGuiSelectionBasicStorage@@QEAA_NPEAPEAXPEAI@Z"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorage19GetNextSelectedItemEPPvPj"]
     pub fn ImGuiSelectionBasicStorage_GetNextSelectedItem(
         this: *mut ImGuiSelectionBasicStorage,
         opaque_it: *mut *mut ::std::os::raw::c_void,
@@ -6228,7 +8951,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiSelectionBasicStorage@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN26ImGuiSelectionBasicStorageC1Ev"]
     pub fn ImGuiSelectionBasicStorage_ImGuiSelectionBasicStorage(
         this: *mut ImGuiSelectionBasicStorage,
     );
@@ -6293,14 +9016,14 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiSelectionExternalStorage, AdapterSetItemSelected) - 8usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?ApplyRequests@ImGuiSelectionExternalStorage@@QEAAXPEAUImGuiMultiSelectIO@@@Z"]
+    #[link_name = "\u{1}__ZN29ImGuiSelectionExternalStorage13ApplyRequestsEP18ImGuiMultiSelectIO"]
     pub fn ImGuiSelectionExternalStorage_ApplyRequests(
         this: *mut ImGuiSelectionExternalStorage,
         ms_io: *mut ImGuiMultiSelectIO,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiSelectionExternalStorage@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN29ImGuiSelectionExternalStorageC1Ev"]
     pub fn ImGuiSelectionExternalStorage_ImGuiSelectionExternalStorage(
         this: *mut ImGuiSelectionExternalStorage,
     );
@@ -6422,11 +9145,11 @@ const _: () = {
         [::std::mem::offset_of!(ImDrawListSplitter, _Channels) - 8usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN18ImDrawListSplitter15ClearFreeMemoryEv"]
     pub fn ImDrawListSplitter_ClearFreeMemory(this: *mut ImDrawListSplitter);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z"]
+    #[link_name = "\u{1}__ZN18ImDrawListSplitter5SplitEP10ImDrawListi"]
     pub fn ImDrawListSplitter_Split(
         this: *mut ImDrawListSplitter,
         draw_list: *mut ImDrawList,
@@ -6434,11 +9157,11 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z"]
+    #[link_name = "\u{1}__ZN18ImDrawListSplitter5MergeEP10ImDrawList"]
     pub fn ImDrawListSplitter_Merge(this: *mut ImDrawListSplitter, draw_list: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z"]
+    #[link_name = "\u{1}__ZN18ImDrawListSplitter17SetCurrentChannelEP10ImDrawListi"]
     pub fn ImDrawListSplitter_SetCurrentChannel(
         this: *mut ImDrawListSplitter,
         draw_list: *mut ImDrawList,
@@ -6481,13 +9204,13 @@ pub const ImDrawFlags__ImDrawFlags_RoundCornersRight: ImDrawFlags_ = 160;
 pub const ImDrawFlags__ImDrawFlags_RoundCornersAll: ImDrawFlags_ = 240;
 pub const ImDrawFlags__ImDrawFlags_RoundCornersDefault_: ImDrawFlags_ = 240;
 pub const ImDrawFlags__ImDrawFlags_RoundCornersMask_: ImDrawFlags_ = 496;
-pub type ImDrawFlags_ = ::std::os::raw::c_int;
+pub type ImDrawFlags_ = ::std::os::raw::c_uint;
 pub const ImDrawListFlags__ImDrawListFlags_None: ImDrawListFlags_ = 0;
 pub const ImDrawListFlags__ImDrawListFlags_AntiAliasedLines: ImDrawListFlags_ = 1;
 pub const ImDrawListFlags__ImDrawListFlags_AntiAliasedLinesUseTex: ImDrawListFlags_ = 2;
 pub const ImDrawListFlags__ImDrawListFlags_AntiAliasedFill: ImDrawListFlags_ = 4;
 pub const ImDrawListFlags__ImDrawListFlags_AllowVtxOffset: ImDrawListFlags_ = 8;
-pub type ImDrawListFlags_ = ::std::os::raw::c_int;
+pub type ImDrawListFlags_ = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug)]
 pub struct ImDrawList {
@@ -6543,7 +9266,7 @@ const _: () = {
         [::std::mem::offset_of!(ImDrawList, _OwnerName) - 216usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushClipRect@ImDrawList@@QEAAXAEBUImVec2@@0_N@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList12PushClipRectERK6ImVec2S2_b"]
     pub fn ImDrawList_PushClipRect(
         this: *mut ImDrawList,
         clip_rect_min: *const ImVec2,
@@ -6552,23 +9275,23 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushClipRectFullScreen@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList22PushClipRectFullScreenEv"]
     pub fn ImDrawList_PushClipRectFullScreen(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopClipRect@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList11PopClipRectEv"]
     pub fn ImDrawList_PopClipRect(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PushTexture@ImDrawList@@QEAAXUImTextureRef@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11PushTextureE12ImTextureRef"]
     pub fn ImDrawList_PushTexture(this: *mut ImDrawList, tex_ref: ImTextureRef);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PopTexture@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList10PopTextureEv"]
     pub fn ImDrawList_PopTexture(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddLine@ImDrawList@@QEAAXAEBUImVec2@@0IM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddLineERK6ImVec2S2_jf"]
     pub fn ImDrawList_AddLine(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6578,7 +9301,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddRectERK6ImVec2S2_jfif"]
     pub fn ImDrawList_AddRect(
         this: *mut ImDrawList,
         p_min: *const ImVec2,
@@ -6590,7 +9313,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList13AddRectFilledERK6ImVec2S2_jfi"]
     pub fn ImDrawList_AddRectFilled(
         this: *mut ImDrawList,
         p_min: *const ImVec2,
@@ -6601,7 +9324,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddRectFilledMultiColor@ImDrawList@@QEAAXAEBUImVec2@@0IIII@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList23AddRectFilledMultiColorERK6ImVec2S2_jjjj"]
     pub fn ImDrawList_AddRectFilledMultiColor(
         this: *mut ImDrawList,
         p_min: *const ImVec2,
@@ -6613,7 +9336,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddQuad@ImDrawList@@QEAAXAEBUImVec2@@000IM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddQuadERK6ImVec2S2_S2_S2_jf"]
     pub fn ImDrawList_AddQuad(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6625,7 +9348,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddQuadFilled@ImDrawList@@QEAAXAEBUImVec2@@000I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList13AddQuadFilledERK6ImVec2S2_S2_S2_j"]
     pub fn ImDrawList_AddQuadFilled(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6636,7 +9359,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddTriangle@ImDrawList@@QEAAXAEBUImVec2@@00IM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11AddTriangleERK6ImVec2S2_S2_jf"]
     pub fn ImDrawList_AddTriangle(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6647,7 +9370,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddTriangleFilled@ImDrawList@@QEAAXAEBUImVec2@@00I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList17AddTriangleFilledERK6ImVec2S2_S2_j"]
     pub fn ImDrawList_AddTriangleFilled(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6657,7 +9380,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCircle@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList9AddCircleERK6ImVec2fjif"]
     pub fn ImDrawList_AddCircle(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6668,7 +9391,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCircleFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList15AddCircleFilledERK6ImVec2fji"]
     pub fn ImDrawList_AddCircleFilled(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6678,7 +9401,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddNgon@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddNgonERK6ImVec2fjif"]
     pub fn ImDrawList_AddNgon(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6689,7 +9412,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddNgonFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList13AddNgonFilledERK6ImVec2fji"]
     pub fn ImDrawList_AddNgonFilled(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6699,7 +9422,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddEllipse@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList10AddEllipseERK6ImVec2S2_jfif"]
     pub fn ImDrawList_AddEllipse(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6711,7 +9434,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddEllipseFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList16AddEllipseFilledERK6ImVec2S2_jfi"]
     pub fn ImDrawList_AddEllipseFilled(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6722,7 +9445,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddText@ImDrawList@@QEAAXAEBUImVec2@@IPEBD1@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddTextERK6ImVec2jPKcS4_"]
     pub fn ImDrawList_AddText(
         this: *mut ImDrawList,
         pos: *const ImVec2,
@@ -6732,7 +9455,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddText@ImDrawList@@QEAAXPEAUImFont@@MAEBUImVec2@@IPEBD2MPEBUImVec4@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList7AddTextEP6ImFontfRK6ImVec2jPKcS6_fPK6ImVec4"]
     pub fn ImDrawList_AddText1(
         this: *mut ImDrawList,
         font: *mut ImFont,
@@ -6746,7 +9469,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddBezierCubic@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList14AddBezierCubicERK6ImVec2S2_S2_S2_jfi"]
     pub fn ImDrawList_AddBezierCubic(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6759,7 +9482,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddBezierQuadratic@ImDrawList@@QEAAXAEBUImVec2@@00IMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList18AddBezierQuadraticERK6ImVec2S2_S2_jfi"]
     pub fn ImDrawList_AddBezierQuadratic(
         this: *mut ImDrawList,
         p1: *const ImVec2,
@@ -6771,7 +9494,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddPolyline@ImDrawList@@QEAAXPEBUImVec2@@HIHM@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11AddPolylineEPK6ImVec2ijif"]
     pub fn ImDrawList_AddPolyline(
         this: *mut ImDrawList,
         points: *const ImVec2,
@@ -6782,7 +9505,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddConvexPolyFilled@ImDrawList@@QEAAXPEBUImVec2@@HI@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList19AddConvexPolyFilledEPK6ImVec2ij"]
     pub fn ImDrawList_AddConvexPolyFilled(
         this: *mut ImDrawList,
         points: *const ImVec2,
@@ -6791,7 +9514,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddConcavePolyFilled@ImDrawList@@QEAAXPEBUImVec2@@HI@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList20AddConcavePolyFilledEPK6ImVec2ij"]
     pub fn ImDrawList_AddConcavePolyFilled(
         this: *mut ImDrawList,
         points: *const ImVec2,
@@ -6800,7 +9523,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddImage@ImDrawList@@QEAAXUImTextureRef@@AEBUImVec2@@111I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList8AddImageE12ImTextureRefRK6ImVec2S3_S3_S3_j"]
     pub fn ImDrawList_AddImage(
         this: *mut ImDrawList,
         tex_ref: ImTextureRef,
@@ -6812,7 +9535,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddImageQuad@ImDrawList@@QEAAXUImTextureRef@@AEBUImVec2@@1111111I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList12AddImageQuadE12ImTextureRefRK6ImVec2S3_S3_S3_S3_S3_S3_S3_j"]
     pub fn ImDrawList_AddImageQuad(
         this: *mut ImDrawList,
         tex_ref: ImTextureRef,
@@ -6828,7 +9551,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddImageRounded@ImDrawList@@QEAAXUImTextureRef@@AEBUImVec2@@111IMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList15AddImageRoundedE12ImTextureRefRK6ImVec2S3_S3_S3_jfi"]
     pub fn ImDrawList_AddImageRounded(
         this: *mut ImDrawList,
         tex_ref: ImTextureRef,
@@ -6842,7 +9565,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList9PathArcToERK6ImVec2fffi"]
     pub fn ImDrawList_PathArcTo(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6853,7 +9576,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathArcToFast@ImDrawList@@QEAAXAEBUImVec2@@MHH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList13PathArcToFastERK6ImVec2fii"]
     pub fn ImDrawList_PathArcToFast(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6863,7 +9586,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathEllipticalArcTo@ImDrawList@@QEAAXAEBUImVec2@@0MMMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList19PathEllipticalArcToERK6ImVec2S2_fffi"]
     pub fn ImDrawList_PathEllipticalArcTo(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -6875,7 +9598,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathBezierCubicCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList22PathBezierCubicCurveToERK6ImVec2S2_S2_i"]
     pub fn ImDrawList_PathBezierCubicCurveTo(
         this: *mut ImDrawList,
         p2: *const ImVec2,
@@ -6885,7 +9608,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathBezierQuadraticCurveTo@ImDrawList@@QEAAXAEBUImVec2@@0H@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList26PathBezierQuadraticCurveToERK6ImVec2S2_i"]
     pub fn ImDrawList_PathBezierQuadraticCurveTo(
         this: *mut ImDrawList,
         p2: *const ImVec2,
@@ -6894,7 +9617,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList8PathRectERK6ImVec2S2_fi"]
     pub fn ImDrawList_PathRect(
         this: *mut ImDrawList,
         rect_min: *const ImVec2,
@@ -6904,7 +9627,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCallback@ImDrawList@@QEAAXP6AXPEBU1@PEBUImDrawCmd@@@ZPEAX_K@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11AddCallbackEPFvPKS_PK9ImDrawCmdEPvm"]
     pub fn ImDrawList_AddCallback(
         this: *mut ImDrawList,
         callback: ImDrawCallback,
@@ -6913,15 +9636,15 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddDrawCmd@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList10AddDrawCmdEv"]
     pub fn ImDrawList_AddDrawCmd(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CloneOutput@ImDrawList@@QEBAPEAU1@XZ"]
+    #[link_name = "\u{1}__ZNK10ImDrawList11CloneOutputEv"]
     pub fn ImDrawList_CloneOutput(this: *const ImDrawList) -> *mut ImDrawList;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PrimReserve@ImDrawList@@QEAAXHH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11PrimReserveEii"]
     pub fn ImDrawList_PrimReserve(
         this: *mut ImDrawList,
         idx_count: ::std::os::raw::c_int,
@@ -6929,7 +9652,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PrimUnreserve@ImDrawList@@QEAAXHH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList13PrimUnreserveEii"]
     pub fn ImDrawList_PrimUnreserve(
         this: *mut ImDrawList,
         idx_count: ::std::os::raw::c_int,
@@ -6937,7 +9660,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PrimRect@ImDrawList@@QEAAXAEBUImVec2@@0I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList8PrimRectERK6ImVec2S2_j"]
     pub fn ImDrawList_PrimRect(
         this: *mut ImDrawList,
         a: *const ImVec2,
@@ -6946,7 +9669,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PrimRectUV@ImDrawList@@QEAAXAEBUImVec2@@000I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList10PrimRectUVERK6ImVec2S2_S2_S2_j"]
     pub fn ImDrawList_PrimRectUV(
         this: *mut ImDrawList,
         a: *const ImVec2,
@@ -6957,7 +9680,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?PrimQuadUV@ImDrawList@@QEAAXAEBUImVec2@@0000000I@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList10PrimQuadUVERK6ImVec2S2_S2_S2_S2_S2_S2_S2_j"]
     pub fn ImDrawList_PrimQuadUV(
         this: *mut ImDrawList,
         a: *const ImVec2,
@@ -6972,53 +9695,53 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_SetDrawListSharedData@ImDrawList@@QEAAXPEAUImDrawListSharedData@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList22_SetDrawListSharedDataEP20ImDrawListSharedData"]
     pub fn ImDrawList__SetDrawListSharedData(
         this: *mut ImDrawList,
         data: *mut ImDrawListSharedData,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_ResetForNewFrame@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList17_ResetForNewFrameEv"]
     pub fn ImDrawList__ResetForNewFrame(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_ClearFreeMemory@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList16_ClearFreeMemoryEv"]
     pub fn ImDrawList__ClearFreeMemory(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_PopUnusedDrawCmd@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList17_PopUnusedDrawCmdEv"]
     pub fn ImDrawList__PopUnusedDrawCmd(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_TryMergeDrawCmds@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList17_TryMergeDrawCmdsEv"]
     pub fn ImDrawList__TryMergeDrawCmds(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_OnChangedClipRect@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList18_OnChangedClipRectEv"]
     pub fn ImDrawList__OnChangedClipRect(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_OnChangedTexture@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList17_OnChangedTextureEv"]
     pub fn ImDrawList__OnChangedTexture(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_OnChangedVtxOffset@ImDrawList@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawList19_OnChangedVtxOffsetEv"]
     pub fn ImDrawList__OnChangedVtxOffset(this: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_SetTexture@ImDrawList@@QEAAXUImTextureRef@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11_SetTextureE12ImTextureRef"]
     pub fn ImDrawList__SetTexture(this: *mut ImDrawList, tex_ref: ImTextureRef);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_CalcCircleAutoSegmentCount@ImDrawList@@QEBAHM@Z"]
+    #[link_name = "\u{1}__ZNK10ImDrawList27_CalcCircleAutoSegmentCountEf"]
     pub fn ImDrawList__CalcCircleAutoSegmentCount(
         this: *const ImDrawList,
         radius: f32,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_PathArcToFastEx@ImDrawList@@QEAAXAEBUImVec2@@MHHH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList16_PathArcToFastExERK6ImVec2fiii"]
     pub fn ImDrawList__PathArcToFastEx(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -7029,7 +9752,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?_PathArcToN@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawList11_PathArcToNERK6ImVec2fffi"]
     pub fn ImDrawList__PathArcToN(
         this: *mut ImDrawList,
         center: *const ImVec2,
@@ -7040,11 +9763,11 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImDrawList@@QEAA@PEAUImDrawListSharedData@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawListC1EP20ImDrawListSharedData"]
     pub fn ImDrawList_ImDrawList(this: *mut ImDrawList, shared_data: *mut ImDrawListSharedData);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??1ImDrawList@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN10ImDrawListD1Ev"]
     pub fn ImDrawList_ImDrawList_destructor(this: *mut ImDrawList);
 }
 impl ImDrawList {
@@ -7609,19 +10332,19 @@ const _: () = {
         [::std::mem::offset_of!(ImDrawData, Textures) - 64usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?Clear@ImDrawData@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawData5ClearEv"]
     pub fn ImDrawData_Clear(this: *mut ImDrawData);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddDrawList@ImDrawData@@QEAAXPEAUImDrawList@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawData11AddDrawListEP10ImDrawList"]
     pub fn ImDrawData_AddDrawList(this: *mut ImDrawData, draw_list: *mut ImDrawList);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DeIndexAllBuffers@ImDrawData@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN10ImDrawData17DeIndexAllBuffersEv"]
     pub fn ImDrawData_DeIndexAllBuffers(this: *mut ImDrawData);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN10ImDrawData14ScaleClipRectsERK6ImVec2"]
     pub fn ImDrawData_ScaleClipRects(this: *mut ImDrawData, fb_scale: *const ImVec2);
 }
 impl ImDrawData {
@@ -7644,13 +10367,13 @@ impl ImDrawData {
 }
 pub const ImTextureFormat_ImTextureFormat_RGBA32: ImTextureFormat = 0;
 pub const ImTextureFormat_ImTextureFormat_Alpha8: ImTextureFormat = 1;
-pub type ImTextureFormat = ::std::os::raw::c_int;
+pub type ImTextureFormat = ::std::os::raw::c_uint;
 pub const ImTextureStatus_ImTextureStatus_OK: ImTextureStatus = 0;
 pub const ImTextureStatus_ImTextureStatus_Destroyed: ImTextureStatus = 1;
 pub const ImTextureStatus_ImTextureStatus_WantCreate: ImTextureStatus = 2;
 pub const ImTextureStatus_ImTextureStatus_WantUpdates: ImTextureStatus = 3;
 pub const ImTextureStatus_ImTextureStatus_WantDestroy: ImTextureStatus = 4;
-pub type ImTextureStatus = ::std::os::raw::c_int;
+pub type ImTextureStatus = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ImTextureRect {
@@ -7726,7 +10449,7 @@ const _: () = {
         [::std::mem::offset_of!(ImTextureData, WantDestroyNextFrame) - 87usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?Create@ImTextureData@@QEAAXW4ImTextureFormat@@HH@Z"]
+    #[link_name = "\u{1}__ZN13ImTextureData6CreateE15ImTextureFormatii"]
     pub fn ImTextureData_Create(
         this: *mut ImTextureData,
         format: ImTextureFormat,
@@ -7735,7 +10458,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?DestroyPixels@ImTextureData@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN13ImTextureData13DestroyPixelsEv"]
     pub fn ImTextureData_DestroyPixels(this: *mut ImTextureData);
 }
 impl ImTextureData {
@@ -7837,7 +10560,7 @@ const _: () = {
         [::std::mem::offset_of!(ImFontConfig, FontLoaderData) - 136usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImFontConfig@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN12ImFontConfigC1Ev"]
     pub fn ImFontConfig_ImFontConfig(this: *mut ImFontConfig);
 }
 impl ImFontConfig {
@@ -8055,7 +10778,7 @@ const _: () = {
         [::std::mem::offset_of!(ImFontGlyphRangesBuilder, UsedChars) - 0usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z"]
+    #[link_name = "\u{1}__ZN24ImFontGlyphRangesBuilder7AddTextEPKcS1_"]
     pub fn ImFontGlyphRangesBuilder_AddText(
         this: *mut ImFontGlyphRangesBuilder,
         text: *const ::std::os::raw::c_char,
@@ -8063,14 +10786,14 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z"]
+    #[link_name = "\u{1}__ZN24ImFontGlyphRangesBuilder9AddRangesEPKt"]
     pub fn ImFontGlyphRangesBuilder_AddRanges(
         this: *mut ImFontGlyphRangesBuilder,
         ranges: *const ImWchar,
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?BuildRanges@ImFontGlyphRangesBuilder@@QEAAXPEAU?$ImVector@G@@@Z"]
+    #[link_name = "\u{1}__ZN24ImFontGlyphRangesBuilder11BuildRangesEP8ImVectorItE"]
     pub fn ImFontGlyphRangesBuilder_BuildRanges(
         this: *mut ImFontGlyphRangesBuilder,
         out_ranges: *mut ImVector<ImWchar>,
@@ -8122,7 +10845,7 @@ pub const ImFontAtlasFlags__ImFontAtlasFlags_None: ImFontAtlasFlags_ = 0;
 pub const ImFontAtlasFlags__ImFontAtlasFlags_NoPowerOfTwoHeight: ImFontAtlasFlags_ = 1;
 pub const ImFontAtlasFlags__ImFontAtlasFlags_NoMouseCursors: ImFontAtlasFlags_ = 2;
 pub const ImFontAtlasFlags__ImFontAtlasFlags_NoBakedLines: ImFontAtlasFlags_ = 4;
-pub type ImFontAtlasFlags_ = ::std::os::raw::c_int;
+pub type ImFontAtlasFlags_ = ::std::os::raw::c_uint;
 #[repr(C)]
 pub struct ImFontAtlas {
     pub Flags: ImFontAtlasFlags,
@@ -8237,21 +10960,21 @@ const _: () = {
         [::std::mem::offset_of!(ImFontAtlas, TempRect) - 736usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas7AddFontEPK12ImFontConfig"]
     pub fn ImFontAtlas_AddFont(
         this: *mut ImFontAtlas,
         font_cfg: *const ImFontConfig,
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas14AddFontDefaultEPK12ImFontConfig"]
     pub fn ImFontAtlas_AddFontDefault(
         this: *mut ImFontAtlas,
         font_cfg: *const ImFontConfig,
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas18AddFontFromFileTTFEPKcfPK12ImFontConfigPKt"]
     pub fn ImFontAtlas_AddFontFromFileTTF(
         this: *mut ImFontAtlas,
         filename: *const ::std::os::raw::c_char,
@@ -8261,7 +10984,7 @@ unsafe extern "C" {
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas20AddFontFromMemoryTTFEPvifPK12ImFontConfigPKt"]
     pub fn ImFontAtlas_AddFontFromMemoryTTF(
         this: *mut ImFontAtlas,
         font_data: *mut ::std::os::raw::c_void,
@@ -8272,7 +10995,7 @@ unsafe extern "C" {
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas30AddFontFromMemoryCompressedTTFEPKvifPK12ImFontConfigPKt"]
     pub fn ImFontAtlas_AddFontFromMemoryCompressedTTF(
         this: *mut ImFontAtlas,
         compressed_font_data: *const ::std::os::raw::c_void,
@@ -8283,7 +11006,7 @@ unsafe extern "C" {
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas36AddFontFromMemoryCompressedBase85TTFEPKcfPK12ImFontConfigPKt"]
     pub fn ImFontAtlas_AddFontFromMemoryCompressedBase85TTF(
         this: *mut ImFontAtlas,
         compressed_font_data_base85: *const ::std::os::raw::c_char,
@@ -8293,35 +11016,35 @@ unsafe extern "C" {
     ) -> *mut ImFont;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RemoveFont@ImFontAtlas@@QEAAXPEAUImFont@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas10RemoveFontEP6ImFont"]
     pub fn ImFontAtlas_RemoveFont(this: *mut ImFontAtlas, font: *mut ImFont);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Clear@ImFontAtlas@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas5ClearEv"]
     pub fn ImFontAtlas_Clear(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CompactCache@ImFontAtlas@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas12CompactCacheEv"]
     pub fn ImFontAtlas_CompactCache(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearInputData@ImFontAtlas@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas14ClearInputDataEv"]
     pub fn ImFontAtlas_ClearInputData(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearFonts@ImFontAtlas@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas10ClearFontsEv"]
     pub fn ImFontAtlas_ClearFonts(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearTexData@ImFontAtlas@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas12ClearTexDataEv"]
     pub fn ImFontAtlas_ClearTexData(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?Build@ImFontAtlas@@QEAA_NXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas5BuildEv"]
     pub fn ImFontAtlas_Build(this: *mut ImFontAtlas) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas18GetTexDataAsAlpha8EPPhPiS2_S2_"]
     pub fn ImFontAtlas_GetTexDataAsAlpha8(
         this: *mut ImFontAtlas,
         out_pixels: *mut *mut ::std::os::raw::c_uchar,
@@ -8331,7 +11054,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas18GetTexDataAsRGBA32EPPhPiS2_S2_"]
     pub fn ImFontAtlas_GetTexDataAsRGBA32(
         this: *mut ImFontAtlas,
         out_pixels: *mut *mut ::std::os::raw::c_uchar,
@@ -8341,45 +11064,45 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas21GetGlyphRangesDefaultEv"]
     pub fn ImFontAtlas_GetGlyphRangesDefault(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesGreek@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas19GetGlyphRangesGreekEv"]
     pub fn ImFontAtlas_GetGlyphRangesGreek(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas20GetGlyphRangesKoreanEv"]
     pub fn ImFontAtlas_GetGlyphRangesKorean(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas22GetGlyphRangesJapaneseEv"]
     pub fn ImFontAtlas_GetGlyphRangesJapanese(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas25GetGlyphRangesChineseFullEv"]
     pub fn ImFontAtlas_GetGlyphRangesChineseFull(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas37GetGlyphRangesChineseSimplifiedCommonEv"]
     pub fn ImFontAtlas_GetGlyphRangesChineseSimplifiedCommon(
         this: *mut ImFontAtlas,
     ) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas22GetGlyphRangesCyrillicEv"]
     pub fn ImFontAtlas_GetGlyphRangesCyrillic(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas18GetGlyphRangesThaiEv"]
     pub fn ImFontAtlas_GetGlyphRangesThai(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas24GetGlyphRangesVietnameseEv"]
     pub fn ImFontAtlas_GetGlyphRangesVietnamese(this: *mut ImFontAtlas) -> *const ImWchar;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCustomRect@ImFontAtlas@@QEAAHHHPEAUImFontAtlasRect@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas13AddCustomRectEiiP15ImFontAtlasRect"]
     pub fn ImFontAtlas_AddCustomRect(
         this: *mut ImFontAtlas,
         width: ::std::os::raw::c_int,
@@ -8388,11 +11111,11 @@ unsafe extern "C" {
     ) -> ImFontAtlasRectId;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RemoveCustomRect@ImFontAtlas@@QEAAXH@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas16RemoveCustomRectEi"]
     pub fn ImFontAtlas_RemoveCustomRect(this: *mut ImFontAtlas, id: ImFontAtlasRectId);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCustomRect@ImFontAtlas@@QEBA_NHPEAUImFontAtlasRect@@@Z"]
+    #[link_name = "\u{1}__ZNK11ImFontAtlas13GetCustomRectEiP15ImFontAtlasRect"]
     pub fn ImFontAtlas_GetCustomRect(
         this: *const ImFontAtlas,
         id: ImFontAtlasRectId,
@@ -8400,7 +11123,7 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas22AddCustomRectFontGlyphEP6ImFonttiifRK6ImVec2"]
     pub fn ImFontAtlas_AddCustomRectFontGlyph(
         this: *mut ImFontAtlas,
         font: *mut ImFont,
@@ -8412,7 +11135,7 @@ unsafe extern "C" {
     ) -> ImFontAtlasRectId;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddCustomRectFontGlyphForSize@ImFontAtlas@@QEAAHPEAUImFont@@MGHHMAEBUImVec2@@@Z"]
+    #[link_name = "\u{1}__ZN11ImFontAtlas29AddCustomRectFontGlyphForSizeEP6ImFontftiifRK6ImVec2"]
     pub fn ImFontAtlas_AddCustomRectFontGlyphForSize(
         this: *mut ImFontAtlas,
         font: *mut ImFont,
@@ -8425,11 +11148,11 @@ unsafe extern "C" {
     ) -> ImFontAtlasRectId;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImFontAtlas@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlasC1Ev"]
     pub fn ImFontAtlas_ImFontAtlas(this: *mut ImFontAtlas);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??1ImFontAtlas@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN11ImFontAtlasD1Ev"]
     pub fn ImFontAtlas_ImFontAtlas_destructor(this: *mut ImFontAtlas);
 }
 impl ImFontAtlas {
@@ -8690,27 +11413,27 @@ const _: () = {
         [::std::mem::offset_of!(ImFontBaked, FontLoaderDatas) - 96usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearOutputData@ImFontBaked@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN11ImFontBaked15ClearOutputDataEv"]
     pub fn ImFontBaked_ClearOutputData(this: *mut ImFontBaked);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?FindGlyph@ImFontBaked@@QEAAPEAUImFontGlyph@@G@Z"]
+    #[link_name = "\u{1}__ZN11ImFontBaked9FindGlyphEt"]
     pub fn ImFontBaked_FindGlyph(this: *mut ImFontBaked, c: ImWchar) -> *mut ImFontGlyph;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?FindGlyphNoFallback@ImFontBaked@@QEAAPEAUImFontGlyph@@G@Z"]
+    #[link_name = "\u{1}__ZN11ImFontBaked19FindGlyphNoFallbackEt"]
     pub fn ImFontBaked_FindGlyphNoFallback(this: *mut ImFontBaked, c: ImWchar) -> *mut ImFontGlyph;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetCharAdvance@ImFontBaked@@QEAAMG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontBaked14GetCharAdvanceEt"]
     pub fn ImFontBaked_GetCharAdvance(this: *mut ImFontBaked, c: ImWchar) -> f32;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsGlyphLoaded@ImFontBaked@@QEAA_NG@Z"]
+    #[link_name = "\u{1}__ZN11ImFontBaked13IsGlyphLoadedEt"]
     pub fn ImFontBaked_IsGlyphLoaded(this: *mut ImFontBaked, c: ImWchar) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImFontBaked@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN11ImFontBakedC1Ev"]
     pub fn ImFontBaked_ImFontBaked(this: *mut ImFontBaked);
 }
 impl ImFontBaked {
@@ -8866,7 +11589,7 @@ pub const ImFontFlags__ImFontFlags_DefaultToLegacySize: ImFontFlags_ = 1;
 pub const ImFontFlags__ImFontFlags_NoLoadError: ImFontFlags_ = 2;
 pub const ImFontFlags__ImFontFlags_NoLoadGlyphs: ImFontFlags_ = 4;
 pub const ImFontFlags__ImFontFlags_LockBakedSizes: ImFontFlags_ = 8;
-pub type ImFontFlags_ = ::std::os::raw::c_int;
+pub type ImFontFlags_ = ::std::os::raw::c_uint;
 #[repr(C)]
 pub struct ImFont {
     pub LastBaked: *mut ImFontBaked,
@@ -8908,16 +11631,16 @@ const _: () = {
     ["Offset of field: ImFont::Scale"][::std::mem::offset_of!(ImFont, Scale) - 72usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsGlyphInFont@ImFont@@QEAA_NG@Z"]
+    #[link_name = "\u{1}__ZN6ImFont13IsGlyphInFontEt"]
     pub fn ImFont_IsGlyphInFont(this: *mut ImFont, c: ImWchar) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?GetFontBaked@ImFont@@QEAAPEAUImFontBaked@@MM@Z"]
+    #[link_name = "\u{1}__ZN6ImFont12GetFontBakedEff"]
     pub fn ImFont_GetFontBaked(this: *mut ImFont, font_size: f32, density: f32)
-    -> *mut ImFontBaked;
+        -> *mut ImFontBaked;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CalcTextSizeA@ImFont@@QEAA?AUImVec2@@MMMPEBD0PEAPEBD@Z"]
+    #[link_name = "\u{1}__ZN6ImFont13CalcTextSizeAEfffPKcS1_PS1_"]
     pub fn ImFont_CalcTextSizeA(
         this: *mut ImFont,
         size: f32,
@@ -8929,7 +11652,7 @@ unsafe extern "C" {
     ) -> ImVec2;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?CalcWordWrapPosition@ImFont@@QEAAPEBDMPEBD0M@Z"]
+    #[link_name = "\u{1}__ZN6ImFont20CalcWordWrapPositionEfPKcS1_f"]
     pub fn ImFont_CalcWordWrapPosition(
         this: *mut ImFont,
         size: f32,
@@ -8939,7 +11662,7 @@ unsafe extern "C" {
     ) -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RenderChar@ImFont@@QEAAXPEAUImDrawList@@MAEBUImVec2@@IGPEBUImVec4@@@Z"]
+    #[link_name = "\u{1}__ZN6ImFont10RenderCharEP10ImDrawListfRK6ImVec2jtPK6ImVec4"]
     pub fn ImFont_RenderChar(
         this: *mut ImFont,
         draw_list: *mut ImDrawList,
@@ -8951,7 +11674,7 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?RenderText@ImFont@@QEAAXPEAUImDrawList@@MAEBUImVec2@@IAEBUImVec4@@PEBD3M_N@Z"]
+    #[link_name = "\u{1}__ZN6ImFont10RenderTextEP10ImDrawListfRK6ImVec2jRK6ImVec4PKcS9_fb"]
     pub fn ImFont_RenderText(
         this: *mut ImFont,
         draw_list: *mut ImDrawList,
@@ -8966,15 +11689,15 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?ClearOutputData@ImFont@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN6ImFont15ClearOutputDataEv"]
     pub fn ImFont_ClearOutputData(this: *mut ImFont);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?AddRemapChar@ImFont@@QEAAXGG@Z"]
+    #[link_name = "\u{1}__ZN6ImFont12AddRemapCharEtt"]
     pub fn ImFont_AddRemapChar(this: *mut ImFont, from_codepoint: ImWchar, to_codepoint: ImWchar);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}?IsGlyphRangeUnused@ImFont@@QEAA_NII@Z"]
+    #[link_name = "\u{1}__ZN6ImFont18IsGlyphRangeUnusedEjj"]
     pub fn ImFont_IsGlyphRangeUnused(
         this: *mut ImFont,
         c_begin: ::std::os::raw::c_uint,
@@ -8982,11 +11705,11 @@ unsafe extern "C" {
     ) -> bool;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImFont@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN6ImFontC1Ev"]
     pub fn ImFont_ImFont(this: *mut ImFont);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}??1ImFont@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN6ImFontD1Ev"]
     pub fn ImFont_ImFont_destructor(this: *mut ImFont);
 }
 impl ImFont {
@@ -9102,7 +11825,7 @@ pub const ImGuiViewportFlags__ImGuiViewportFlags_TopMost: ImGuiViewportFlags_ = 
 pub const ImGuiViewportFlags__ImGuiViewportFlags_CanHostOtherWindows: ImGuiViewportFlags_ = 2048;
 pub const ImGuiViewportFlags__ImGuiViewportFlags_IsMinimized: ImGuiViewportFlags_ = 4096;
 pub const ImGuiViewportFlags__ImGuiViewportFlags_IsFocused: ImGuiViewportFlags_ = 8192;
-pub type ImGuiViewportFlags_ = ::std::os::raw::c_int;
+pub type ImGuiViewportFlags_ = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug)]
 pub struct ImGuiViewport {
@@ -9332,7 +12055,7 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiPlatformIO, Viewports) - 312usize];
 };
 unsafe extern "C" {
-    #[link_name = "\u{1}??0ImGuiPlatformIO@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN15ImGuiPlatformIOC1Ev"]
     pub fn ImGuiPlatformIO_ImGuiPlatformIO(this: *mut ImGuiPlatformIO);
 }
 impl ImGuiPlatformIO {
@@ -9395,16 +12118,8 @@ const _: () = {
         [::std::mem::offset_of!(ImGuiPlatformImeData, ViewportId) - 16usize];
 };
 pub type ImFontAtlasCustomRect = ImFontAtlasRect;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __crt_locale_data {
-    pub _address: u8,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct __crt_multibyte_data {
-    pub _address: u8,
-}
+pub type __builtin_va_list = *mut ::std::os::raw::c_char;
+pub type __uint128_t = u128;
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
     ["Size of template specialization: ImVector_open0_ImWchar_close0"]
