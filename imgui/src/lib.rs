@@ -10,17 +10,13 @@ pub mod color;
 pub use color::*;
 
 
-pub trait MutGuiOption<'a, T> {
+pub trait OptionMut<'a, T> {
   fn into_option(self) -> Option<&'a mut T>;
 }
-pub trait RefGuiOption<'a, T> 
-where 
-  T: ?Sized,
-{
-  fn into_option(self) -> Option<&'a T>;
+pub trait OptionRef<'a, T> {
   fn into_i32(self) -> i32 where T: GuiFlag;
 }
-pub trait OwnedGuiOption<T> {
+pub trait OptionOwned<T> {
   fn into_option(self) -> Option<T>;
   fn into_i32(self) -> i32 
   where 
@@ -31,35 +27,45 @@ pub trait OwnedGuiOption<T> {
   }
 }
 
-impl<'a, T: 'static, I> MutGuiOption<'a, T> for I
+impl<'a, T: 'static, I> OptionMut<'a, T> for I
 where 
-  I: Into<Option<&'a mut T>>
+  I: Into<Option<&'a mut T>>,
 {
   fn into_option(self) -> Option<&'a mut T> {
     self.into()
   }
 }
-impl<'a, T: 'static, I> RefGuiOption<'a, T> for I
-where 
-  I: Into<Option<&'a T>>
-{
-  fn into_option(self) -> Option<&'a T> {
-    self.into()
-  }
-  fn into_i32(self) -> i32 
-  where 
-    T: GuiFlag
-  {
-    let Some(t) = self.into() else { return T::default_i32() };
-    t.as_i32()
+
+impl<'a, T> OptionRef<'a, T> for &'a Vec<T> {
+  fn into_i32(self) -> i32 where T: GuiFlag {
+    self.as_i32()
   }
 }
-impl<T> OwnedGuiOption<T> for T 
-where 
-  T: Into<Option<T>>,
-{
+impl<'a, T> OptionRef<'a, T> for Option<&'a Vec<T>> {
+  fn into_i32(self) -> i32 where T: GuiFlag {
+    let Some(vec) = self else { return T::default_i32() };
+    <&Vec<T> as OptionRef<'a, T>>::into_i32(vec)
+  }
+}
+
+impl<T> OptionOwned<T> for T {
   fn into_option(self) -> Option<T> {
-    self.into()
+    Some(self)
+  }
+}
+impl<T> OptionOwned<T> for Option<T> {
+  fn into_option(self) -> Option<T> {
+    self
+  }
+}
+
+impl<T: GuiFlag> GuiFlag for Vec<T> {
+  fn as_i32(&self) -> i32 {
+    self.iter()
+      .fold(0, |l, r| l | r.as_i32())
+  }
+  fn default_i32() -> i32 {
+    T::default_i32()
   }
 }
 

@@ -5,7 +5,7 @@ use std::os::raw::c_char as Char;
 use std::os::raw::c_void as Void;
 use std::fmt::{ Display };
 
-use crate::{Color, MutGuiOption, OwnedGuiOption, RefGuiOption};
+use crate::{Color, OptionMut, OptionOwned, OptionRef};
 use crate::flags::*;
 
 include!("./bindings/imgui_c.rs");
@@ -13,7 +13,7 @@ include!("./bindings/imgui_cpp.rs");
 
 
 // interface...
-pub unsafe fn show_demo_window<'a>(open: impl MutGuiOption<'a, bool>) {
+pub unsafe fn show_demo_window<'a>(open: impl OptionMut<'a, bool>) {
   if let Some(open) = open.into_option() {
     let mut int = if *open { 1 } else { 0 };
     _show_demo_window(&mut int);
@@ -32,10 +32,10 @@ pub unsafe fn get_mouse_pos() -> (f32, f32) {
   _get_mouse_pos(&mut x, &mut y);
   (x, y)
 }
-pub unsafe fn is_window_hovered(flags: impl OwnedGuiOption<HoveredFlags>) -> bool {
+pub unsafe fn is_window_hovered(flags: impl OptionOwned<HoveredFlags>) -> bool {
   _is_window_hovered(flags.into_i32()) != 0
 }
-pub unsafe fn is_window_focused(flags: impl OwnedGuiOption<FocusedFlags>) -> bool {
+pub unsafe fn is_window_focused(flags: impl OptionOwned<FocusedFlags>) -> bool {
   _is_window_focused(flags.into_i32()) != 0
 }
 pub unsafe fn get_cursor_screen_pos() -> (f32, f32) {
@@ -67,7 +67,7 @@ pub unsafe fn get_mouse_pos_in_window() -> (f32, f32) {
   //(mouse_x - w / 2.0, -(mouse_y - h / 2.0))
   (mouse_x, mouse_y)
 }
-pub unsafe fn set_next_window_size(size: [f32; 2], cond: impl OwnedGuiOption<Cond>) {
+pub unsafe fn set_next_window_size(size: [f32; 2], cond: impl OptionOwned<Cond>) {
   _set_next_window_size(
     size[0], 
     size[1], 
@@ -86,7 +86,7 @@ pub unsafe fn get_content_region_avail() -> (f32, f32) {
   _get_content_region_avail(&mut w, &mut h);
   (w, h)
 }
-pub unsafe fn set_next_window_pos(pos: [f32; 2], cond: impl OwnedGuiOption<Cond>, pivot: impl OwnedGuiOption<[f32; 2]>) {
+pub unsafe fn set_next_window_pos(pos: [f32; 2], cond: impl OptionOwned<Cond>, pivot: impl OptionOwned<[f32; 2]>) {
   let pivot = pivot.into_option().unwrap_or([0.0, 0.0]);
   _set_next_window_pos(
     pos[0], 
@@ -104,7 +104,7 @@ pub unsafe fn get_window_pos() -> (f32, f32) {
 }
 
 
-pub unsafe fn begin<'a, D: Display>(title: D, open: impl MutGuiOption<'a, bool>, flags: impl RefGuiOption<'a, [WindowFlags]>) -> bool {
+pub unsafe fn begin<'a, D: Display>(title: D, open: impl OptionMut<'a, bool>, flags: impl OptionRef<'a, WindowFlags>) -> bool {
   let title = stringify(title);
   let c_title = title.cify();
   let flags = flags.into_i32();
@@ -117,7 +117,7 @@ pub unsafe fn begin<'a, D: Display>(title: D, open: impl MutGuiOption<'a, bool>,
     _begin(c_title.as_ptr(), std::ptr::null_mut(), flags) != 0
   }
 }
-pub unsafe fn begin_child<'a, D: Display>(id: D, size: impl OwnedGuiOption<[f32; 2]>, child_flags: impl RefGuiOption<'a, [ChildFlags]>, window_flags: impl RefGuiOption<'a, [WindowFlags]>) -> bool {
+pub unsafe fn begin_child<'a, D: Display>(id: D, size: impl OptionOwned<[f32; 2]>, child_flags: impl OptionRef<'a, ChildFlags>, window_flags: impl OptionRef<'a, WindowFlags>) -> bool {
   let id = stringify(id);
   let c_id = id.cify();
   let size = size.into_option().unwrap_or([0.0, 0.0]);
@@ -129,12 +129,12 @@ pub unsafe fn begin_child<'a, D: Display>(id: D, size: impl OwnedGuiOption<[f32;
     window_flags.into_i32(),
   ) != 0
 }
-pub unsafe fn open_popup<'a, D: Display>(id: D, flags: impl RefGuiOption<'a, [PopupFlags]>) {
+pub unsafe fn open_popup<'a, D: Display>(id: D, flags: impl OptionRef<'a, PopupFlags>) {
   let id = stringify(id);
   let c_id = id.cify();
   _open_popup(c_id.as_ptr(), flags.into_i32());
 }
-pub unsafe fn begin_popup<'a, D: Display>(id: D, flags: impl RefGuiOption<'a, [WindowFlags]>) -> bool {
+pub unsafe fn begin_popup<'a, D: Display>(id: D, flags: impl OptionRef<'a, WindowFlags>) -> bool {
   let id = stringify(id);
   let c_id = id.cify();
   _begin_popup(
@@ -142,7 +142,7 @@ pub unsafe fn begin_popup<'a, D: Display>(id: D, flags: impl RefGuiOption<'a, [W
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn begin_popup_modal<'a, D: Display>(name: D, open: impl MutGuiOption<'a, bool>, flags: impl RefGuiOption<'a, [WindowFlags]>) -> bool {
+pub unsafe fn begin_popup_modal<'a, D: Display>(name: D, open: impl OptionMut<'a, bool>, flags: impl OptionRef<'a, WindowFlags>) -> bool {
   let name = stringify(name);
   let c_name = name.cify();
   let flags = flags.into_i32();
@@ -173,12 +173,12 @@ pub unsafe fn tree_node<D: Display>(label: D) -> bool {
   _selectable(c_label.as_ptr(), selected.cify(), flags.unwrap_or(0), size[0], size[1]) != 0
 }*/
 
-pub unsafe fn begin_tab_bar<'a, D: Display>(label: D, flags: impl RefGuiOption<'a, [TabBarFlags]>) -> bool {
+pub unsafe fn begin_tab_bar<'a, D: Display>(label: D, flags: impl OptionRef<'a, TabBarFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   _begin_tab_bar(c_label.as_ptr(), flags.into_i32()) != 0
 }
-pub unsafe fn begin_tab_item<'a, D: Display>(label: D, open: impl MutGuiOption<'a, bool>, flags: impl RefGuiOption<'a, [TabItemFlags]>) -> bool {
+pub unsafe fn begin_tab_item<'a, D: Display>(label: D, open: impl OptionMut<'a, bool>, flags: impl OptionRef<'a, TabItemFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let flags = flags.into_i32();
@@ -191,13 +191,13 @@ pub unsafe fn begin_tab_item<'a, D: Display>(label: D, open: impl MutGuiOption<'
     _begin_tab_item(c_label.as_ptr(), std::ptr::null_mut(), flags) != 0
   }
 }
-pub unsafe fn tab_item_button<'a, D: Display>(label: D, flags: impl RefGuiOption<'a, [TabItemFlags]>) -> bool {
+pub unsafe fn tab_item_button<'a, D: Display>(label: D, flags: impl OptionRef<'a, TabItemFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   _tab_item_button(c_label.as_ptr(), flags.into_i32()) != 0
 }
 
-pub unsafe fn columns<'a, D: Display>(count: i32, id: impl OwnedGuiOption<D>, border: impl OwnedGuiOption<bool>) {
+pub unsafe fn columns<'a, D: Display>(count: i32, id: impl OptionOwned<D>, border: impl OptionOwned<bool>) {
   _columns(
     count, 
     id
@@ -207,7 +207,7 @@ pub unsafe fn columns<'a, D: Display>(count: i32, id: impl OwnedGuiOption<D>, bo
     if border.into_option().unwrap_or(true) { 1 } else { 0 }
   );
 }
-pub unsafe fn table_setup_column<'a, D: Display>(label: D, flags: impl RefGuiOption<'a, [TableColumnFlags]>, width_or_weight: impl OwnedGuiOption<f32>, user_id: impl OwnedGuiOption<u32>) {
+pub unsafe fn table_setup_column<'a, D: Display>(label: D, flags: impl OptionRef<'a, TableColumnFlags>, width_or_weight: impl OptionOwned<f32>, user_id: impl OptionOwned<u32>) {
   let label = stringify(label);
   let c_label = label.cify();
   _table_setup_column(
@@ -217,7 +217,7 @@ pub unsafe fn table_setup_column<'a, D: Display>(label: D, flags: impl RefGuiOpt
     user_id.into_option().unwrap_or(0)
   );
 }
-pub unsafe fn begin_table<'a, D: Display>(id: D, columns: i32, flags: impl RefGuiOption<'a, [TableFlags]>) -> bool {
+pub unsafe fn begin_table<'a, D: Display>(id: D, columns: i32, flags: impl OptionRef<'a, TableFlags>) -> bool {
   let id = stringify(id);
   let c_id = id.cify();
   _begin_table(
@@ -229,7 +229,7 @@ pub unsafe fn begin_table<'a, D: Display>(id: D, columns: i32, flags: impl RefGu
 pub unsafe fn table_set_column_index(column: i32) -> bool {
   _table_set_column_index(column) != 0
 }
-pub unsafe fn table_next_row<'a>(flags: impl RefGuiOption<'a, [TableRowFlags]>, min_row_height: impl OwnedGuiOption<f32>) {
+pub unsafe fn table_next_row<'a>(flags: impl OptionRef<'a, TableRowFlags>, min_row_height: impl OptionOwned<f32>) {
   _table_next_row(
     flags.into_i32(), 
     min_row_height.into_option().unwrap_or(0.0)
@@ -250,7 +250,7 @@ pub unsafe fn text_wrapped<D: Display>(text: D) {
   let c_text = c_text.cify();
   _text_wrapped(c_text.as_ptr());
 }
-pub unsafe fn input_text<'a, D: Display>(label: D, string: &mut String, flags: impl RefGuiOption<'a, [InputTextFlags]>, callback: impl OwnedGuiOption<fn()>, user_data: impl OwnedGuiOption<*const ()>) -> bool {
+pub unsafe fn input_text<'a, D: Display>(label: D, string: &mut String, flags: impl OptionRef<'a, InputTextFlags>, callback: impl OptionOwned<fn()>, user_data: impl OptionOwned<*const ()>) -> bool {
   
   assert!(callback.into_option().is_none());
   assert!(user_data.into_option().is_none());
@@ -279,7 +279,7 @@ pub unsafe fn input_text<'a, D: Display>(label: D, string: &mut String, flags: i
 
   res
 }
-pub unsafe fn input_text_multiline<'a, D: Display>(label: D, string: &mut String, size: impl OwnedGuiOption<[f32; 2]>, flags: impl RefGuiOption<'a, [InputTextFlags]>, callback: impl OwnedGuiOption<fn()>, user_data: impl OwnedGuiOption<*const ()>) -> bool {
+pub unsafe fn input_text_multiline<'a, D: Display>(label: D, string: &mut String, size: impl OptionOwned<[f32; 2]>, flags: impl OptionRef<'a, InputTextFlags>, callback: impl OptionOwned<fn()>, user_data: impl OptionOwned<*const ()>) -> bool {
   
   assert!(callback.into_option().is_none());
   assert!(user_data.into_option().is_none());
@@ -324,7 +324,7 @@ where
   _text_colored(color[0], color[1], color[2], color[3], c_text.as_ptr());
 }
 
-pub unsafe fn image(texture_id: *const Void, img_size: [f32; 2], uv0: impl OwnedGuiOption<[f32; 2]>, uv1: impl OwnedGuiOption<[f32; 2]>, tint_col: impl OwnedGuiOption<[f32; 4]>, border_col: impl OwnedGuiOption<[f32; 4]>) {
+pub unsafe fn image(texture_id: *const Void, img_size: [f32; 2], uv0: impl OptionOwned<[f32; 2]>, uv1: impl OptionOwned<[f32; 2]>, tint_col: impl OptionOwned<[f32; 4]>, border_col: impl OptionOwned<[f32; 4]>) {
   _image(
     texture_id, 
     img_size.as_ptr(),
@@ -342,13 +342,13 @@ pub unsafe fn begin_menu_bar() -> bool {
   _begin_menu_bar() != 0
 }
 
-pub unsafe fn begin_menu<D: Display>(label: D, enabled: impl OwnedGuiOption<bool>) -> bool {
+pub unsafe fn begin_menu<D: Display>(label: D, enabled: impl OptionOwned<bool>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let enabled = if enabled.into_option().unwrap_or(true) { 1 } else { 0 };
   _begin_menu(c_label.as_ptr(), enabled) == 1
 }
-pub unsafe fn menu_item<'a, D: Display>(label: D, shortcut: impl OwnedGuiOption<&'static str>, selected: impl MutGuiOption<'a, bool>, enabled: impl OwnedGuiOption<bool>) -> bool {
+pub unsafe fn menu_item<'a, D: Display>(label: D, shortcut: impl OptionOwned<&'static str>, selected: impl OptionMut<'a, bool>, enabled: impl OptionOwned<bool>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let shortcut = shortcut.into_option().map_or(std::ptr::null(), |sh| sh.cify().as_ptr());
@@ -368,14 +368,14 @@ pub unsafe fn separator_text<D: Display>(text: D) {
   let c_text = text.cify();
   _separator_text(c_text.as_ptr());
 }
-pub unsafe fn same_line(offset: impl OwnedGuiOption<f32>, spacing: impl OwnedGuiOption<f32>) {
+pub unsafe fn same_line(offset: impl OptionOwned<f32>, spacing: impl OptionOwned<f32>) {
   _same_line(
     offset.into_option().unwrap_or(0.0), 
     spacing.into_option().unwrap_or(-1.0)
   );
 }
 
-pub unsafe fn button<D: Display>(label: D, size: impl OwnedGuiOption<[f32; 2]>) -> bool {
+pub unsafe fn button<D: Display>(label: D, size: impl OptionOwned<[f32; 2]>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let size = size.into_option().unwrap_or([0.0; 2]);
@@ -444,7 +444,7 @@ where
 // !!! WARNING !!!
 // overloaded methods exist in imgui.h, should their be equivalents in rust?
 // !!! WARNING !!!
-pub unsafe fn combo<D, I>(label: D, current: &mut usize, items: &Vec<I>, max_height: impl OwnedGuiOption<i32>) -> bool 
+pub unsafe fn combo<D, I>(label: D, current: &mut usize, items: &Vec<I>, max_height: impl OptionOwned<i32>) -> bool 
 where
   D: Display, 
   I: Display
@@ -469,13 +469,13 @@ where
   res
 }
 
-pub unsafe fn push_style_var(idx: StyleVar, x: f32, y: impl OwnedGuiOption<f32>) {
+pub unsafe fn push_style_var(idx: StyleVar, x: f32, y: impl OptionOwned<f32>) {
   _push_style_var(idx as i32, x, y.into_option().unwrap_or(0.0));
 }
 pub unsafe fn pop_style_var(count: usize) {
   _pop_style_var(count as i32);
 }
-pub unsafe fn get_style_var<'a>(idx: StyleVar, x: &mut f32, y: impl MutGuiOption<'a, f32>) {
+pub unsafe fn get_style_var<'a>(idx: StyleVar, x: &mut f32, y: impl OptionMut<'a, f32>) {
   let mut tmp = 0.0;
   _get_style_var(idx as i32, x, &mut tmp);
   if let Some(p_y) = y.into_option() {
@@ -488,15 +488,15 @@ pub unsafe fn push_style_color<C: Into<Color>>(idx: ColorVar, color: C) {
   _push_style_color(idx as i32, color.as_mut_ptr());
 }
 
-pub unsafe fn is_item_clicked(mouse_button: impl OwnedGuiOption<MouseButton>) -> bool {
+pub unsafe fn is_item_clicked(mouse_button: impl OptionOwned<MouseButton>) -> bool {
   _is_item_clicked(mouse_button.into_option().unwrap_or(MouseButton::Left) as i32) != 0
 }
-pub unsafe fn is_item_hovered<'a>(flags: impl RefGuiOption<'a, [WindowFlags]>) -> bool {
+pub unsafe fn is_item_hovered<'a>(flags: impl OptionRef<'a, WindowFlags>) -> bool {
   _is_item_hovered(flags.into_i32()) != 0
 }
 
 
-pub unsafe fn input_float_2<'a, D: Display>(label: D, value: &mut [f32; 2], format: impl OwnedGuiOption<&'static str>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_float_2<'a, D: Display>(label: D, value: &mut [f32; 2], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -507,7 +507,7 @@ pub unsafe fn input_float_2<'a, D: Display>(label: D, value: &mut [f32; 2], form
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_float_3<'a, D: Display>(label: D, value: &mut [f32; 3], format: impl OwnedGuiOption<&'static str>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_float_3<'a, D: Display>(label: D, value: &mut [f32; 3], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -518,7 +518,7 @@ pub unsafe fn input_float_3<'a, D: Display>(label: D, value: &mut [f32; 3], form
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], format: impl OwnedGuiOption<&'static str>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -530,7 +530,7 @@ pub unsafe fn input_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], form
   ) != 0
 }
 
-pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl OwnedGuiOption<f32>, step_fast: impl OwnedGuiOption<f32>, format: impl OwnedGuiOption<&'static str>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl OptionOwned<f32>, step_fast: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -543,7 +543,7 @@ pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl Ow
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_f64<'a, D: Display>(label: D, value: &mut f64, step: impl OwnedGuiOption<f64>, step_fast: impl OwnedGuiOption<f64>, format: impl OwnedGuiOption<&'static str>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_f64<'a, D: Display>(label: D, value: &mut f64, step: impl OptionOwned<f64>, step_fast: impl OptionOwned<f64>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -556,7 +556,7 @@ pub unsafe fn input_f64<'a, D: Display>(label: D, value: &mut f64, step: impl Ow
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_i32<'a, D: Display>(label: D, value: &mut i32, step: impl OwnedGuiOption<i32>, step_fast: impl OwnedGuiOption<i32>, flags: impl RefGuiOption<'a, [InputTextFlags]>) -> bool {
+pub unsafe fn input_i32<'a, D: Display>(label: D, value: &mut i32, step: impl OptionOwned<i32>, step_fast: impl OptionOwned<i32>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   _input_int(
