@@ -1,5 +1,8 @@
-use std::ops::{Deref, DerefMut};
 
+
+#![allow(dead_code)]
+
+use std::ops::{Deref, DerefMut};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Color([f32; 4]);
@@ -76,7 +79,11 @@ impl From<[f32; 3]> for Color {
 }
 impl From<bool> for Color {
   fn from(value: bool) -> Self {
-    Color::Red
+    if value { 
+      Color::Green 
+    } else {
+      Color::Red
+    }
   }
 }
 

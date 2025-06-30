@@ -8,13 +8,12 @@ pub struct vulkan_info {
     pub device: *mut ::std::os::raw::c_void,
     pub queue_familty: ::std::os::raw::c_int,
     pub queue: *mut ::std::os::raw::c_void,
-    pub render_pass: *mut ::std::os::raw::c_void,
     pub min_image_count: ::std::os::raw::c_int,
     pub actual_image_count: ::std::os::raw::c_int,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of vulkan_info"][::std::mem::size_of::<vulkan_info>() - 56usize];
+    ["Size of vulkan_info"][::std::mem::size_of::<vulkan_info>() - 48usize];
     ["Alignment of vulkan_info"][::std::mem::align_of::<vulkan_info>() - 8usize];
     ["Offset of field: vulkan_info::instance"]
         [::std::mem::offset_of!(vulkan_info, instance) - 0usize];
@@ -24,11 +23,9 @@ const _: () = {
     ["Offset of field: vulkan_info::queue_familty"]
         [::std::mem::offset_of!(vulkan_info, queue_familty) - 24usize];
     ["Offset of field: vulkan_info::queue"][::std::mem::offset_of!(vulkan_info, queue) - 32usize];
-    ["Offset of field: vulkan_info::render_pass"]
-        [::std::mem::offset_of!(vulkan_info, render_pass) - 40usize];
     ["Offset of field: vulkan_info::min_image_count"]
-        [::std::mem::offset_of!(vulkan_info, min_image_count) - 48usize];
+        [::std::mem::offset_of!(vulkan_info, min_image_count) - 40usize];
     ["Offset of field: vulkan_info::actual_image_count"]
-        [::std::mem::offset_of!(vulkan_info, actual_image_count) - 52usize];
+        [::std::mem::offset_of!(vulkan_info, actual_image_count) - 44usize];
 };
 pub type VulkanInfo = vulkan_info;

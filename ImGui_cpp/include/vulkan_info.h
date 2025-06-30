@@ -13,7 +13,6 @@ typedef struct vulkan_info {
     void* device;
     int queue_familty;
     void* queue;
-    void* render_pass;
     int min_image_count;
     int actual_image_count;
 } VulkanInfo;

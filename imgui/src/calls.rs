@@ -1,12 +1,12 @@
 
 use std::ffi::{ CString, CStr };
 use std::os::raw::c_int as Int;
-use std::os::raw::c_char as Char;
 use std::os::raw::c_void as Void;
 use std::fmt::{ Display };
 
 use crate::{Color, OptionMut, OptionOwned, OptionRef};
 use crate::flags::*;
+
 
 include!("./bindings/imgui_c.rs");
 include!("./bindings/vulkan_info.rs");
@@ -61,7 +61,7 @@ pub unsafe fn set_cursor_pos(x: f32, y: f32) {
 pub unsafe fn get_mouse_pos_in_window() -> (f32, f32) {
 
   let (window_x, window_y) = get_window_pos();
-  let (w, h) = get_window_size();
+  //let (w, h) = get_window_size();
   let (mouse_x, mouse_y) = get_mouse_pos();
   let (mouse_x, mouse_y) = (mouse_x - window_x, mouse_y - window_y);
 

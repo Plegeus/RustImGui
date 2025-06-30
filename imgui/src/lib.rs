@@ -1,5 +1,8 @@
 
 
+#![allow(dead_code)]
+
+
 pub mod calls;
 pub use calls::*;
 

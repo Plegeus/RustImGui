@@ -41,12 +41,13 @@ void __init_glfw_vk(void* p_window, void* p_info) {
     info.QueueFamily = (uint32_t) vulkan_info->queue_familty;
     info.Queue = (VkQueue) vulkan_info->queue;
     info.DescriptorPool = VK_NULL_HANDLE;
-    info.RenderPass = (VkRenderPass) vulkan_info->render_pass;
+    //info.RenderPass = (VkRenderPass) vulkan_info->render_pass;
+    info.RenderPass = VK_NULL_HANDLE;
     info.MinImageCount = (uint32_t) vulkan_info->min_image_count;
     info.ImageCount = (uint32_t) vulkan_info->actual_image_count;
     info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
     info.PipelineCache = VK_NULL_HANDLE;
-    info.DescriptorPoolSize = 256;
+    info.DescriptorPoolSize = 1024;
     info.UseDynamicRendering = false;
     info.Allocator = nullptr;
     info.CheckVkResultFn = check_vk_result;
