@@ -7,13 +7,13 @@ unsafe extern "C" {
     pub fn __terminate();
 }
 unsafe extern "C" {
-    pub fn __new_frame(arg1: *const ::std::os::raw::c_void);
+    pub fn __new_frame(arg1: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
     pub fn __end_frame();
 }
 unsafe extern "C" {
-    pub fn __render(arg1: *const ::std::os::raw::c_void, arg2: *const ::std::os::raw::c_void);
+    pub fn __render(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
     pub fn __create_context() -> *mut ::std::os::raw::c_void;

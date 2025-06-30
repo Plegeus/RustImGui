@@ -19,7 +19,7 @@ fn link() {
   println!("cargo:rustc-link-lib=ImGui_c");
   println!("cargo:rustc-link-lib=ImGui_cpp");
   #[cfg(target_os = "macos")]
-    println!("cargo:rustc-link-lib=ImGui_cpp_mtl");
+  println!("cargo:rustc-link-lib=ImGui_cpp_mtl");
   #[cfg(target_os = "windows")] 
   println!("cargo:rustc-link-lib=ImGui_cpp_vk");
 
@@ -33,6 +33,13 @@ fn bind() {
     .generate()
     .unwrap()
     .write_to_file("./src/bindings/imgui_cpp.rs")
+    .unwrap();
+  bindgen::Builder::default()
+    .header("../ImGui_cpp/include/vulkan_info.h")
+    .default_visibility(bindgen::FieldVisibilityKind::Public) // https://docs.rs/bindgen/latest/bindgen/struct.Builder.html#method.default_visibility
+    .generate()
+    .unwrap()
+    .write_to_file("./src/bindings/vulkan_info.rs")
     .unwrap();
   bindgen::Builder::default()
     .header("../ImGui_c/include/imgui_c.h")

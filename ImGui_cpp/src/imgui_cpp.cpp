@@ -6,6 +6,7 @@
 #include <imgui.h>
 #ifdef _WIN32
 #include <imgui_cpp_vk.h>
+#include <vulkan/vulkan.h>
 #endif
 #ifdef __APPLE__ 
 #include <imgui_cpp_mtl.h>
@@ -13,12 +14,12 @@
 #include <stdio.h>
 
 
-void __init_glfw(void* p_window, void* p_device) {
+void __init_glfw(void* p_window, void* p_data) {
 #ifdef __APPLE__
-    __init_glfw_mtl(p_window, p_device);
+    __init_glfw_mtl(p_window, p_data);
 #endif
 #ifdef _WIN32
-    __init_glfw_vk();
+    __init_glfw_vk(p_window, p_data);
 #endif
 }
 void __terminate() {
@@ -30,7 +31,7 @@ void __terminate() {
 #endif
 }
 
-void __new_frame(void const* descriptor) {
+void __new_frame(void* descriptor) {
 #ifdef __APPLE__
     __new_frame_mtl(descriptor);
 #endif
@@ -46,12 +47,12 @@ void __end_frame() {
     __end_frame_vk();
 #endif
 }
-void __render(void const* command_buffer, void const* command_encoder) {
+void __render(void* p_command_buffer, void* p_command_encoder) {
 #ifdef __APPLE__
     __render_mtl(command_buffer, command_encoder);
 #endif
 #ifdef _WIN32
-    __render_vk();
+    __render_vk(p_command_buffer);
 #endif
 }
 

@@ -2,20 +2,21 @@
 // Created by Timoty Gielkens on 08/07/2024.
 //
 
-#ifndef IMGUI_DOCKING_IMGUI_DOCKING_H
-#define IMGUI_DOCKING_IMGUI_DOCKING_H
+#ifndef IMGUI_CPP_H
+#define IMGUI_CPP_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+
 // platform specific...
 void __init_glfw(void*, void*);
 void __terminate();
 
-void __new_frame(void const*);
+void __new_frame(void*);
 void __end_frame();
-void __render(void const*, void const*);
+void __render(void*, void*);
 
 // cross platform...
 void* __create_context();

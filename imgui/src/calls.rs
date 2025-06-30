@@ -9,7 +9,8 @@ use crate::{Color, OptionMut, OptionOwned, OptionRef};
 use crate::flags::*;
 
 include!("./bindings/imgui_c.rs");
-include!("./bindings/imgui_cpp.rs");
+include!("./bindings/vulkan_info.rs");
+//include!("./bindings/imgui_cpp.rs");
 
 
 // interface...
@@ -243,7 +244,7 @@ pub unsafe fn table_next_column() -> bool {
 pub unsafe fn text<D: Display>(text: D) {
   let c_text = stringify(text);
   let c_text = c_text.cify();
-  __text(c_text.as_ptr());
+  _text(c_text.as_ptr());
 }
 pub unsafe fn text_wrapped<D: Display>(text: D) {
   let c_text = stringify(text);

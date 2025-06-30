@@ -50,9 +50,9 @@ void __end_frame_mtl(void) {
 void __render_mtl(void const* command_buffer, void const* command_encoder) {
     ImGui::Render();
     ImGui_ImplMetal_RenderDrawData(
-            ImGui::GetDrawData(),
-            (__bridge id <MTLCommandBuffer>) command_buffer,
-            (__bridge id <MTLRenderCommandEncoder>) command_encoder
+        ImGui::GetDrawData(),
+        (__bridge id <MTLCommandBuffer>) command_buffer,
+        (__bridge id <MTLRenderCommandEncoder>) command_encoder
     );
 }
 
