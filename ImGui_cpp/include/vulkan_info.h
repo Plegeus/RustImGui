@@ -15,6 +15,7 @@ typedef struct vulkan_info {
     void* queue;
     int min_image_count;
     int actual_image_count;
+    int color_attachment_format;
 } VulkanInfo;
 
 

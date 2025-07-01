@@ -33,6 +33,16 @@ void __init_glfw_vk(void* p_window, void* p_info) {
 
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForVulkan(window, true);
+
+    VkPipelineRenderingCreateInfo rendering_info;
+    rendering_info.sType = VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO;
+    rendering_info.pNext = NULL;
+    rendering_info.viewMask = 0;
+    rendering_info.colorAttachmentCount = 1;
+    rendering_info.pColorAttachmentFormats = (VkFormat*) &vulkan_info->color_attachment_format;
+    rendering_info.depthAttachmentFormat = VK_FORMAT_UNDEFINED;
+    rendering_info.stencilAttachmentFormat = VK_FORMAT_UNDEFINED;
+
     
     ImGui_ImplVulkan_InitInfo info = { 0 };
     info.Instance = (VkInstance) vulkan_info->instance;
@@ -41,14 +51,14 @@ void __init_glfw_vk(void* p_window, void* p_info) {
     info.QueueFamily = (uint32_t) vulkan_info->queue_familty;
     info.Queue = (VkQueue) vulkan_info->queue;
     info.DescriptorPool = VK_NULL_HANDLE;
-    //info.RenderPass = (VkRenderPass) vulkan_info->render_pass;
     info.RenderPass = VK_NULL_HANDLE;
     info.MinImageCount = (uint32_t) vulkan_info->min_image_count;
     info.ImageCount = (uint32_t) vulkan_info->actual_image_count;
     info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
     info.PipelineCache = VK_NULL_HANDLE;
     info.DescriptorPoolSize = 1024;
-    info.UseDynamicRendering = false;
+    info.UseDynamicRendering = true;
+    info.PipelineRenderingCreateInfo = rendering_info;
     info.Allocator = nullptr;
     info.CheckVkResultFn = check_vk_result;
     ImGui_ImplVulkan_Init(&info);

@@ -10,10 +10,11 @@ pub struct vulkan_info {
     pub queue: *mut ::std::os::raw::c_void,
     pub min_image_count: ::std::os::raw::c_int,
     pub actual_image_count: ::std::os::raw::c_int,
+    pub color_attachment_format: ::std::os::raw::c_int,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of vulkan_info"][::std::mem::size_of::<vulkan_info>() - 48usize];
+    ["Size of vulkan_info"][::std::mem::size_of::<vulkan_info>() - 56usize];
     ["Alignment of vulkan_info"][::std::mem::align_of::<vulkan_info>() - 8usize];
     ["Offset of field: vulkan_info::instance"]
         [::std::mem::offset_of!(vulkan_info, instance) - 0usize];
@@ -27,5 +28,7 @@ const _: () = {
         [::std::mem::offset_of!(vulkan_info, min_image_count) - 40usize];
     ["Offset of field: vulkan_info::actual_image_count"]
         [::std::mem::offset_of!(vulkan_info, actual_image_count) - 44usize];
+    ["Offset of field: vulkan_info::color_attachment_format"]
+        [::std::mem::offset_of!(vulkan_info, color_attachment_format) - 48usize];
 };
 pub type VulkanInfo = vulkan_info;
