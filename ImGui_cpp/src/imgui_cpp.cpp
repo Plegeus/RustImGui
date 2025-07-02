@@ -327,7 +327,7 @@ void __end_menu() {
 int __menu_item(const char const* label, const char const* shortcut, int* selected, int enabled) {
     bool result;
     if (selected == nullptr) {
-        result = ImGui::MenuItem(label, shortcut, enabled != 0);
+        result = ImGui::MenuItem(label, shortcut, false, enabled != 0);
     } else {
         bool b_selected = *selected != 0;
         result = ImGui::MenuItem(label, shortcut, &b_selected, enabled != 0);

@@ -568,6 +568,12 @@ pub unsafe fn input_i32<'a, D: Display>(label: D, value: &mut i32, step: impl Op
     flags.into_i32(),
   ) != 0
 }
+pub unsafe fn input_usize<'a, D: Display>(label: D, value: &mut usize, step: impl OptionOwned<i32>, step_fast: impl OptionOwned<i32>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
+  let mut i32 = *value as i32;
+  let res = input_i32(label, &mut i32, step, step_fast, flags);
+  *value = i32 as usize;
+  res
+}
 pub unsafe fn checkbox<D: Display>(label: D, value: &mut bool) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
