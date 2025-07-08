@@ -291,9 +291,33 @@ int _input_float_3(const char const* label, float* value, const char const* form
 int _input_float_4(const char const* label, float* value, const char const* format, int flags) {
     return __input_float_4(label, value, format, flags);
 }
+int _slider_float_2(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return __slider_float_2(label, value, min, max, format, flags);
+}
+int _slider_float_3(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return __slider_float_3(label, value, min, max, format, flags);
+}
+int _slider_float_4(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return __slider_float_4(label, value, min, max, format, flags);
+}
+int _drag_float_2(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return __drag_float_2(label, value, speed, min, max, format, flags);
+}
+int _drag_float_3(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return __drag_float_3(label, value, speed, min, max, format, flags);
+}
+int _drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return __drag_float_4(label, value, speed, min, max, format, flags);
+}
 
 int _input_float(const char const* label, float* value, float step, float step_fast, const char const* format, int flags) {
     return __input_float(label, value, step, step_fast, format, flags);
+}
+int _drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return __drag_float(label, value, speed, min, max, format, flags);
+}
+int _slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return __slider_float(label, value, min, max, format, flags);
 }
 int _input_double(const char const* label, double* value, double step, double step_fast, const char const* format, int flags) {
     return __input_double(label, value, step, step_fast, format, flags);
@@ -304,6 +328,20 @@ int _input_int(const char const* label, int* value, int step, int step_fast, int
 int _checkbox(const char const* label, int* boo) {
     return __checkbox(label, boo);
 }
+
+int _color_edit_3(const char const* label, float* col, int flags) {
+    return __color_edit_3(label, col, flags);
+}
+int _color_edit_4(const char const* label, float* col, int flags) {
+    return __color_edit_4(label, col, flags);
+}
+int _color_picker_3(const char const* label, float* col, int flags) {
+    return __color_picker_3(label, col, flags);
+}
+int _color_picker_4(const char const* label, float* col, int flags, const float* ref_col) {
+    return __color_picker_4(label, col, flags, ref_col);
+}
+
 
 float frame_rate() {
     return __frame_rate();

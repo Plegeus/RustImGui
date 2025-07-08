@@ -117,11 +117,25 @@ int _is_item_hovered(int);
 int _input_float_2(const char const*, float*, const char const*, int);
 int _input_float_3(const char const*, float*, const char const*, int);
 int _input_float_4(const char const*, float*, const char const*, int);
+int _slider_float_2(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int _slider_float_3(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int _slider_float_4(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int _drag_float_2(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int _drag_float_3(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int _drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
 
 int _input_float(const char const*, float*, float, float, const char const*, int);
+int _drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int _slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags);
 int _input_double(const char const*, double*, double, double, const char const*, int);
 int _input_int(const char const*, int*, int, int, int);
 int _checkbox(const char const*, int*);
+
+int _color_edit_3(const char const* label, float* col, int flags);
+int _color_edit_4(const char const* label, float* col, int flags);
+int _color_picker_3(const char const* label, float* col, int flags);
+int _color_picker_4(const char const* label, float* col, int flags, const float* ref_col);
+
 
 float frame_rate();
 

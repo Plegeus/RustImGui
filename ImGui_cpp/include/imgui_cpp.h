@@ -125,11 +125,25 @@ int __is_item_hovered(int);
 int __input_float_2(const char const*, float*, const char const*, int);
 int __input_float_3(const char const*, float*, const char const*, int);
 int __input_float_4(const char const*, float*, const char const*, int);
+int __slider_float_2(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __slider_float_3(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __slider_float_4(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __drag_float_2(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_float_3(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
 
 int __input_float(const char const*, float*, float, float, const char const*, int);
+int __drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags);
 int __input_double(const char const*, double*, double, double, const char const*, int);
 int __input_int(const char const*, int*, int, int, int);
 int __checkbox(const char const*, int*);
+
+int __color_edit_3(const char const* label, float* col, int flags);
+int __color_edit_4(const char const* label, float* col, int flags);
+int __color_picker_3(const char const* label, float* col, int flags);
+int __color_picker_4(const char const* label, float* col, int flags, const float* ref_col);
+
 
 float __frame_rate();
 
@@ -139,3 +153,6 @@ float __frame_rate();
 #endif
 
 #endif //IMGUI_DOCKING_IMGUI_DOCKING_H
+
+
+

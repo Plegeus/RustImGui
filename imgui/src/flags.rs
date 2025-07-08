@@ -398,6 +398,55 @@ pub enum InputTextFlags {
   CallbackEdit = bindings::ImGuiInputTextFlags__ImGuiInputTextFlags_CallbackEdit as isize,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum SliderFlags {
+  None = bindings::ImGuiSliderFlags__ImGuiSliderFlags_None as isize,
+  Logarithmic = bindings::ImGuiSliderFlags__ImGuiSliderFlags_Logarithmic as isize,
+  NoRoundToFormat = bindings::ImGuiSliderFlags__ImGuiSliderFlags_NoRoundToFormat as isize,
+  NoInput = bindings::ImGuiSliderFlags__ImGuiSliderFlags_NoInput as isize,
+  WrapAround = bindings::ImGuiSliderFlags__ImGuiSliderFlags_WrapAround as isize,
+  ClampOnInput = bindings::ImGuiSliderFlags__ImGuiSliderFlags_ClampOnInput as isize,
+  ClampZeroRange = bindings::ImGuiSliderFlags__ImGuiSliderFlags_ClampZeroRange as isize,
+  NoSpeedTweaks = bindings::ImGuiSliderFlags__ImGuiSliderFlags_NoSpeedTweaks as isize,
+  AlwaysClamp = bindings::ImGuiSliderFlags__ImGuiSliderFlags_AlwaysClamp as isize,
+  InvalidMask_ = bindings::ImGuiSliderFlags__ImGuiSliderFlags_InvalidMask_ as isize,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ColorEditFlags {
+  None = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_None as isize,
+  NoAlpha = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoAlpha as isize,
+  NoPicker = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoPicker as isize,
+  NoOptions = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoOptions as isize,
+  NoSmallPreview = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoSmallPreview as isize,
+  NoInputs = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoInputs as isize,
+  NoTooltip = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoTooltip as isize,
+  NoLabel = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoLabel as isize,
+  NoSidePreview = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoSidePreview as isize,
+  NoDragDrop = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoDragDrop as isize,
+  NoBorder = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_NoBorder as isize,
+  AlphaOpaque = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaOpaque as isize,
+  AlphaNoBg = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaNoBg as isize,
+  AlphaPreviewHal = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaPreviewHalf as isize,
+  AlphaBar = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaBar as isize,
+  HDR = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_HDR as isize,
+  DisplayRGB = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DisplayRGB as isize,
+  DisplayHSV = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DisplayHSV as isize,
+  DisplayHex = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DisplayHex as isize,
+  Uint8 = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_Uint8 as isize,
+  Float = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_Float as isize,
+  PickerHueBar = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_PickerHueBar as isize,
+  PickerHueWheel = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_PickerHueWheel as isize,
+  InputRGB = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_InputRGB as isize,
+  InputHSV = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_InputHSV as isize,
+  DefaultOptions_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DefaultOptions_ as isize,
+  AlphaMask_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_AlphaMask_ as isize,
+  DisplayMask_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DisplayMask_ as isize,
+  DataTypeMask_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_DataTypeMask_ as isize,
+  PickerMask_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_PickerMask_ as isize,
+  InputMask_ = bindings::ImGuiColorEditFlags__ImGuiColorEditFlags_InputMask_ as isize,
+}
+
 
 
 impl_gui_flag!(FocusedFlags, None);
@@ -415,6 +464,8 @@ impl_gui_flag!(TableFlags, None);
 impl_gui_flag!(TableRowFlags, None);
 
 impl_gui_flag!(InputTextFlags, None);
+impl_gui_flag!(SliderFlags, None);
+impl_gui_flag!(ColorEditFlags, None);
 
 
 
