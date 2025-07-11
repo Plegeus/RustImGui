@@ -611,6 +611,48 @@ pub unsafe fn drag_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], speed
     flags.into_i32()
   ) != 0
 }
+pub unsafe fn drag_int_2<'a, D: Display>(label: D, value: &mut [i32; 2], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_2(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_int_3<'a, D: Display>(label: D, value: &mut [i32; 3], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_3(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_int_4<'a, D: Display>(label: D, value: &mut [i32; 4], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_4(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
 
 
 pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl OptionOwned<f32>, step_fast: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
@@ -649,6 +691,20 @@ pub unsafe fn drag_float<'a, D: Display>(label: D, value: &mut f32, speed: impl 
     speed.into_option().unwrap_or(1.0),
     min.into_option().unwrap_or(0.0),
     max.into_option().unwrap_or(0.0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_int<'a, D: Display>(label: D, value: &mut i32, speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int(
+    c_label.as_ptr(), 
+    value, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
     c_format.as_ptr(), 
     flags.into_i32()
   ) != 0

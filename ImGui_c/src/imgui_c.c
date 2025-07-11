@@ -309,12 +309,24 @@ int _drag_float_3(const char const* label, float* value, float speed, float min,
 int _drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
     return __drag_float_4(label, value, speed, min, max, format, flags);
 }
+int _drag_int_2(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return __drag_int_2(label, value, speed, min, max, format, flags);
+}
+int _drag_int_3(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return __drag_int_3(label, value, speed, min, max, format, flags);
+}
+int _drag_int_4(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return __drag_int_4(label, value, speed, min, max, format, flags);
+}
 
 int _input_float(const char const* label, float* value, float step, float step_fast, const char const* format, int flags) {
     return __input_float(label, value, step, step_fast, format, flags);
 }
 int _drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
     return __drag_float(label, value, speed, min, max, format, flags);
+}
+int _drag_int(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return __drag_int(label, value, speed, min, max, format, flags);
 }
 int _slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags) {
     return __slider_float(label, value, min, max, format, flags);

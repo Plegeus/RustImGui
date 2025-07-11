@@ -454,6 +454,39 @@ unsafe extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
+    pub fn __drag_int_2(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int_3(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int_4(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
     pub fn __input_float(
         arg1: *const ::std::os::raw::c_char,
         arg2: *mut f32,
@@ -470,6 +503,17 @@ unsafe extern "C" {
         speed: f32,
         min: f32,
         max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
         format: *const ::std::os::raw::c_char,
         flags: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
