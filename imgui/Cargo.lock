@@ -86,6 +86,7 @@ dependencies = [
 [[package]]
 name = "imgui_derive"
 version = "0.1.0"
+source = "git+https://github.com/Plegeus/RustImGui.git#094e9fc2db2860493857b944ed342c15fc53d84f"
 dependencies = [
  "quote",
  "syn",
