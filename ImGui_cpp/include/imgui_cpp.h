@@ -61,7 +61,8 @@ void __end_popup();
 int __collapsing_header(const char const*);
 int __tree_node(const char const*);
 void __tree_pop();
-int __selectable(const char const*, int, int, float, float);
+int __selectable(const char const* label, int selected, int flags, float w, float h);
+int __selectable_ptr(const char const* label, int* selected, int flags, float w, float h);
 
 int __begin_tab_bar(const char const*, int);
 void __end_tab_bar();

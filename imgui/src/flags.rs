@@ -369,6 +369,18 @@ pub enum TableRowFlags {
   Headers = bindings::ImGuiTableRowFlags__ImGuiTableRowFlags_Headers as isize,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)] 
+pub enum SelectableFlags {
+  None = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_None as isize,
+  NoAutoClosePopups = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_NoAutoClosePopups as isize,
+  SpanAllColumns = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_SpanAllColumns as isize,
+  AllowDoubleClick = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_AllowDoubleClick as isize,
+  Disabled = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_Disabled as isize,
+  AllowOverlap = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_AllowOverlap as isize,
+  Highlight = bindings::ImGuiSelectableFlags__ImGuiSelectableFlags_Highlight as isize,
+}
+
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum InputTextFlags {
   None = bindings::ImGuiInputTextFlags__ImGuiInputTextFlags_None as isize,
@@ -462,6 +474,8 @@ impl_gui_flag!(TabItemFlags, None);
 impl_gui_flag!(TableColumnFlags, None);
 impl_gui_flag!(TableFlags, None);
 impl_gui_flag!(TableRowFlags, None);
+impl_gui_flag!(SelectableFlags, None);
+
 
 impl_gui_flag!(InputTextFlags, None);
 impl_gui_flag!(SliderFlags, None);

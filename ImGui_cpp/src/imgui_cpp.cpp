@@ -218,6 +218,13 @@ int __selectable(const char const* label, int selected, int flags, float w, floa
     ImVec2 size(w, h);
     return ImGui::Selectable(label, selected != 0, flags, size) ? 1 : 0;
 }
+int __selectable_ptr(const char const* label, int* selected, int flags, float w, float h) {
+    ImVec2 size(w, h);
+    bool b = *selected != 0;
+    int res = ImGui::Selectable(label, &b, flags, size) ? 1 : 0;
+    *selected = b ? 1 : 0;
+    return res;
+}
 
 int __begin_tab_bar(const char const* id, int flags) {
     return ImGui::BeginTabBar(id, flags) ? 1 : 0;

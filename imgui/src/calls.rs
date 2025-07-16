@@ -166,13 +166,51 @@ pub unsafe fn tree_node<D: Display>(label: D) -> bool {
   let c_label = label.cify();
   _tree_node(c_label.as_ptr()) != 0
 }
-// add a GuiBool trait that allows to pass a &mut bool as well as a bool (see imgui.h)
+
 /*pub unsafe fn selectable<D: Display>(label: D, selected: bool, flags: Option<i32>, size: Option<[f32; 2]>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let size = size.unwrap_or([0.0; 2]);
   _selectable(c_label.as_ptr(), selected.cify(), flags.unwrap_or(0), size[0], size[1]) != 0
 }*/
+
+enum GuiBool<'a> {
+  Bool(bool),
+  MutBool(&'a mut bool),
+}
+
+impl<'a> Into<GuiBool<'a>> for bool {
+  fn into(self) -> GuiBool<'a> {
+    GuiBool::Bool(self)
+  }
+}
+impl<'a> Into<GuiBool<'a>> for &'a mut bool {
+  fn into(self) -> GuiBool<'a> {
+    GuiBool::MutBool(self)
+  }
+}
+
+pub unsafe fn selectable<'a, D: Display, B: Into<GuiBool<'a>>>(label: D, selected: B, flags: impl OptionRef<'a, SelectableFlags>, size: impl OptionOwned<[f32; 2]>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let size = size.into_option().unwrap_or([0.0, 0.0]);
+  //let selected = selected.into_option();
+  //if selected.is_none() {
+  //  return selectable(label, None, flags, size);
+  //}
+  match selected.into() {
+    GuiBool::Bool(selected) => {
+      let i32 = if selected { 1 } else { 0 };
+      _selectable(c_label.as_ptr(), i32, flags.into_i32(), size[0], size[1]) != 0
+    },
+    GuiBool::MutBool(selected) => {
+      let mut i32 = if *selected { 1 } else { 0 };
+      let res = _selectable_ptr(c_label.as_ptr(), &mut i32, flags.into_i32(), size[0], size[1]) != 0;
+      *selected = i32 != 0;
+      res
+    },
+  }
+}
 
 pub unsafe fn begin_tab_bar<'a, D: Display>(label: D, flags: impl OptionRef<'a, TabBarFlags>) -> bool {
   let label = stringify(label);

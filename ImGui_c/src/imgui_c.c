@@ -133,6 +133,9 @@ void tree_pop() {
 int _selectable(const char const* label, int selected, int flags, float w, float h) {
     return __selectable(label, selected, flags, w, h);
 }
+int _selectable_ptr(const char const* label, int* selected, int flags, float w, float h) {
+    return __selectable_ptr(label, selected, flags, w, h);
+}
 
 int _begin_tab_bar(const char const* label, int flags) {
     return __begin_tab_bar(label, flags);

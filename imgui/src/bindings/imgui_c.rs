@@ -142,11 +142,20 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn _selectable(
-        arg1: *const ::std::os::raw::c_char,
-        arg2: ::std::os::raw::c_int,
-        arg3: ::std::os::raw::c_int,
-        arg4: f32,
-        arg5: f32,
+        label: *const ::std::os::raw::c_char,
+        selected: ::std::os::raw::c_int,
+        flags: ::std::os::raw::c_int,
+        w: f32,
+        h: f32,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn _selectable_ptr(
+        label: *const ::std::os::raw::c_char,
+        selected: *mut ::std::os::raw::c_int,
+        flags: ::std::os::raw::c_int,
+        w: f32,
+        h: f32,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
