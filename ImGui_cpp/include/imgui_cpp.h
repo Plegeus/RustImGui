@@ -136,7 +136,7 @@ int __drag_int_2(const char const* label, int* value, float speed, int min, int 
 int __drag_int_3(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);
 int __drag_int_4(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);
 
-int __input_float(const char const*, float*, float, float, const char const*, int);
+int __input_float(const char const* label, float* value, float step, float step_fast, const char const* format, int flags);
 int __drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
 int __drag_int(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);  
 int __slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags);

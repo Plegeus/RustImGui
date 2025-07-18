@@ -497,12 +497,12 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn __input_float(
-        arg1: *const ::std::os::raw::c_char,
-        arg2: *mut f32,
-        arg3: f32,
-        arg4: f32,
-        arg5: *const ::std::os::raw::c_char,
-        arg6: ::std::os::raw::c_int,
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        step: f32,
+        step_fast: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
