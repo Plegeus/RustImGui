@@ -29,6 +29,8 @@ fn link() {
   #[cfg(target_os = "windows")] 
   println!("cargo:rustc-link-lib=ImGui_cpp_vk");
 
+  println!("cargo:rustc-link-lib=glfw3");
+
 }
 fn bind() {
     
