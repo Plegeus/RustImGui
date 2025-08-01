@@ -11,6 +11,12 @@ fn main() {
 
 fn link() {
 
+  #[cfg(target_os = "windows")] {
+    let vulkan_sdk = env!("VULKAN_SDK");
+    println!("cargo:rustc-link-search={vulkan_sdk}/Lib");
+    println!("cargo:rustc-link-lib=vulkan-1");
+  }
+
   #[cfg(target_os = "macos")]
   println!("cargo:rustc-link-search=/usr/local/lib/cms");
   #[cfg(target_os = "windows")]

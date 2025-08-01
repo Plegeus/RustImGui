@@ -40,7 +40,7 @@ void __init_glfw_vk(void* p_window, void* p_info) {
     rendering_info.viewMask = 0;
     rendering_info.colorAttachmentCount = 1;
     rendering_info.pColorAttachmentFormats = (VkFormat*) &vulkan_info->color_attachment_format;
-    rendering_info.depthAttachmentFormat = VK_FORMAT_UNDEFINED;
+    rendering_info.depthAttachmentFormat = VK_FORMAT_D32_SFLOAT;
     rendering_info.stencilAttachmentFormat = VK_FORMAT_UNDEFINED;
 
     
