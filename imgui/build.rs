@@ -15,6 +15,7 @@ fn link() {
     let vulkan_sdk = env!("VULKAN_SDK");
     println!("cargo:rustc-link-search={vulkan_sdk}/Lib");
     println!("cargo:rustc-link-lib=vulkan-1");
+    println!("cargo:rustc-link-lib=User32");
   }
 
   #[cfg(target_os = "macos")]
