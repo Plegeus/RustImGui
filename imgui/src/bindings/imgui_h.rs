@@ -49,11 +49,7 @@ where
             index % 8
         };
         let mask = 1 << bit_index;
-        if val {
-            byte | mask
-        } else {
-            byte & !mask
-        }
+        if val { byte | mask } else { byte & !mask }
     }
     #[inline]
     pub fn set_bit(&mut self, index: usize, val: bool) {
@@ -5774,7 +5770,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui10BeginPopupEPKci"]
     pub fn ImGui_BeginPopup(str_id: *const ::std::os::raw::c_char, flags: ImGuiWindowFlags)
-        -> bool;
+    -> bool;
 }
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui15BeginPopupModalEPKcPbi"]
@@ -5831,7 +5827,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui11IsPopupOpenEPKci"]
     pub fn ImGui_IsPopupOpen(str_id: *const ::std::os::raw::c_char, flags: ImGuiPopupFlags)
-        -> bool;
+    -> bool;
 }
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui10BeginTableEPKciiRK6ImVec2f"]
@@ -6426,7 +6422,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui23SaveIniSettingsToMemoryEPm"]
     pub fn ImGui_SaveIniSettingsToMemory(out_ini_size: *mut usize)
-        -> *const ::std::os::raw::c_char;
+    -> *const ::std::os::raw::c_char;
 }
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN5ImGui17DebugTextEncodingEPKc"]
@@ -8539,7 +8535,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     #[link_name = "\u{1}__ZNK12ImGuiStorage7GetBoolEjb"]
     pub fn ImGuiStorage_GetBool(this: *const ImGuiStorage, key: ImGuiID, default_val: bool)
-        -> bool;
+    -> bool;
 }
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN12ImGuiStorage7SetBoolEjb"]
@@ -11637,7 +11633,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN6ImFont12GetFontBakedEff"]
     pub fn ImFont_GetFontBaked(this: *mut ImFont, font_size: f32, density: f32)
-        -> *mut ImFontBaked;
+    -> *mut ImFontBaked;
 }
 unsafe extern "C" {
     #[link_name = "\u{1}__ZN6ImFont13CalcTextSizeAEfffPKcS1_PS1_"]
