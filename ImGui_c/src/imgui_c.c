@@ -6,9 +6,11 @@
 #include "../include/imgui_c.h"
 
 
+#ifdef __APPLE__
 void init_cocoa(void* p1, void* p2) {
     __init_cocoa(p1, p2);
 }
+#endif
 void init_glfw(void* p_window, void* p_device) {
     __init_glfw(p_window, p_device);
 }

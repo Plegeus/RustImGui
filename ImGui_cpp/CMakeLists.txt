@@ -9,11 +9,11 @@ set(IMGUI_DIR ${DEPS_DIR}/imgui-docking)
 if(APPLE)
   set(GLFW_DIR ${DEPS_DIR}/glfw-3.4.bin.MACOS)
   set(BACKEND_DIR ${PROJECT_SOURCE_DIR}/../ImGui_cpp_mtl)
-  set(IMGUI_IMPL_FILE ${IMGUI_DIR}/backends/imgui_impl_metal.mm)
+  set(IMGUI_IMPL_FILES ${IMGUI_DIR}/backends/imgui_impl_metal.mm ${IMGUI_DIR}/backends/imgui_impl_osx.mm)
 else()
   set(GLFW_DIR ${DEPS_DIR}/glfw-3.4.bin.WIN64)
   set(BACKEND_DIR ${PROJECT_SOURCE_DIR}/../ImGui_cpp_vk)
-  set(IMGUI_IMPL_FILE ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp)
+  set(IMGUI_IMPL_FILES ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp)
 endif()
 
 
@@ -28,8 +28,7 @@ add_library(
   ${IMGUI_DIR}/imgui_demo.cpp
   ${IMGUI_DIR}/misc/cpp/imgui_stdlib.cpp
   ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
-  ${IMGUI_DIR}/backends/imgui_impl_osx.mm
-  ${IMGUI_IMPL_FILE}
+  ${IMGUI_IMPL_FILES}
 )
 
 

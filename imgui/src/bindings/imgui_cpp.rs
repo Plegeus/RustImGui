@@ -4,9 +4,6 @@ unsafe extern "C" {
     pub fn __init_glfw(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
-    pub fn __init_cocoa(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
-}
-unsafe extern "C" {
     pub fn __terminate();
 }
 unsafe extern "C" {
