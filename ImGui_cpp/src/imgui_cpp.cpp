@@ -14,9 +14,12 @@
 #include <stdio.h>
 
 
+void __init_cocoa(void* pWindow, void* pDevice) {
+    __init_cocoa_mtl(pWindow, pDevice);
+}
 void __init_glfw(void* p_window, void* p_data) {
 #ifdef __APPLE__
-    __init_glfw_mtl(p_window, p_data);
+    //__init_glfw_mtl();
 #endif
 #ifdef _WIN32
     __init_glfw_vk(p_window, p_data);
@@ -31,9 +34,9 @@ void __terminate() {
 #endif
 }
 
-void __new_frame(void* descriptor) {
+void __new_frame(void* descriptor, void* pView) {
 #ifdef __APPLE__
-    __new_frame_mtl(descriptor);
+    __new_frame_mtl(descriptor, pView);
 #endif
 #ifdef _WIN32
     __new_frame_vk();
@@ -47,9 +50,9 @@ void __end_frame() {
     __end_frame_vk();
 #endif
 }
-void __render(void* p_command_buffer, void* p_command_encoder) {
+void __render(void* pCommandBuffer, void* pCommandEncoder) {
 #ifdef __APPLE__
-    __render_mtl(command_buffer, command_encoder);
+    __render_mtl(pCommandBuffer, pCommandEncoder);
 #endif
 #ifdef _WIN32
     __render_vk(p_command_buffer);

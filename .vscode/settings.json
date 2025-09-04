@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.mm": "cpp",
+    "iostream": "cpp",
+    "imgui_cpp.h": "c",
+    "imgui_c.h": "c"
+  }
+}

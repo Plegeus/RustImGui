@@ -6,7 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-imgui_derive = { git = "https://github.com/Plegeus/RustImGui.git" }
+#imgui_derive = { git = "https://github.com/Plegeus/RustImGui.git" }
+imgui_derive = { path = "/Users/timo/Documents/coding/black-death-studios/RustImGui/imgui_derive" }
 
 [build-dependencies]
 bindgen = "0.72.0"

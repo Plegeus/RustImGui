@@ -6,6 +6,9 @@
 #include "../include/imgui_c.h"
 
 
+void init_cocoa(void* p1, void* p2) {
+    __init_cocoa(p1, p2);
+}
 void init_glfw(void* p_window, void* p_device) {
     __init_glfw(p_window, p_device);
 }
@@ -42,8 +45,8 @@ void _set_cursor_pos(float x, float y) {
     __set_cursor_pos(x, y);
 }
 
-void new_frame(void const* descriptor) {
-    __new_frame(descriptor);
+void new_frame(void const* descriptor, void* view) {
+    __new_frame(descriptor, view);
 }
 void end_frame() {
     __end_frame();

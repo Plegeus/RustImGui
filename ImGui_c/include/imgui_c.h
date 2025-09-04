@@ -6,6 +6,7 @@
 #define IMGUI_BINDINGS_IMGUI_BINDINGS_H
 
 
+void init_cocoa(void*, void*);
 void init_glfw(void*, void*);
 void terminate();
 
@@ -20,7 +21,7 @@ void _set_cursor_screen_pos(float x, float y);
 void _get_cursor_pos(float* x, float* y);
 void _set_cursor_pos(float x, float y);
 
-void new_frame(void const*);
+void new_frame(void const*, void*);
 void end_frame();
 void render(void const*, void const*);
 

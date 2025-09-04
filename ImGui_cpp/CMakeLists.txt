@@ -28,6 +28,7 @@ add_library(
   ${IMGUI_DIR}/imgui_demo.cpp
   ${IMGUI_DIR}/misc/cpp/imgui_stdlib.cpp
   ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+  ${IMGUI_DIR}/backends/imgui_impl_osx.mm
   ${IMGUI_IMPL_FILE}
 )
 

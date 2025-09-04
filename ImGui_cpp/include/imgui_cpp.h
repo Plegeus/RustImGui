@@ -12,9 +12,12 @@ extern "C" {
 
 // platform specific...
 void __init_glfw(void*, void*);
+#ifdef __APPLE__
+void __init_cocoa(void*, void*);
+#endif
 void __terminate();
 
-void __new_frame(void*);
+void __new_frame(void*, void*);
 void __end_frame();
 void __render(void*, void*);
 
