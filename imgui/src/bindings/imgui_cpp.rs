@@ -4,16 +4,19 @@ unsafe extern "C" {
     pub fn __init_glfw(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
+    pub fn __init_cocoa(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
+}
+unsafe extern "C" {
     pub fn __terminate();
 }
 unsafe extern "C" {
-    pub fn __new_frame(arg1: *const ::std::os::raw::c_void);
+    pub fn __new_frame(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
     pub fn __end_frame();
 }
 unsafe extern "C" {
-    pub fn __render(arg1: *const ::std::os::raw::c_void, arg2: *const ::std::os::raw::c_void);
+    pub fn __render(arg1: *mut ::std::os::raw::c_void, arg2: *mut ::std::os::raw::c_void);
 }
 unsafe extern "C" {
     pub fn __create_context() -> *mut ::std::os::raw::c_void;
@@ -156,11 +159,20 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn __selectable(
-        arg1: *const ::std::os::raw::c_char,
-        arg2: ::std::os::raw::c_int,
-        arg3: ::std::os::raw::c_int,
-        arg4: f32,
-        arg5: f32,
+        label: *const ::std::os::raw::c_char,
+        selected: ::std::os::raw::c_int,
+        flags: ::std::os::raw::c_int,
+        w: f32,
+        h: f32,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __selectable_ptr(
+        label: *const ::std::os::raw::c_char,
+        selected: *mut ::std::os::raw::c_int,
+        flags: ::std::os::raw::c_int,
+        w: f32,
+        h: f32,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
@@ -391,13 +403,141 @@ unsafe extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
+    pub fn __slider_float_2(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __slider_float_3(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __slider_float_4(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_float_2(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        speed: f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_float_3(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        speed: f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_float_4(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        speed: f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int_2(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int_3(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int_4(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
     pub fn __input_float(
-        arg1: *const ::std::os::raw::c_char,
-        arg2: *mut f32,
-        arg3: f32,
-        arg4: f32,
-        arg5: *const ::std::os::raw::c_char,
-        arg6: ::std::os::raw::c_int,
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        step: f32,
+        step_fast: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_float(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        speed: f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __drag_int(
+        label: *const ::std::os::raw::c_char,
+        value: *mut ::std::os::raw::c_int,
+        speed: f32,
+        min: ::std::os::raw::c_int,
+        max: ::std::os::raw::c_int,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __slider_float(
+        label: *const ::std::os::raw::c_char,
+        value: *mut f32,
+        min: f32,
+        max: f32,
+        format: *const ::std::os::raw::c_char,
+        flags: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {
@@ -423,6 +563,35 @@ unsafe extern "C" {
     pub fn __checkbox(
         arg1: *const ::std::os::raw::c_char,
         arg2: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __color_edit_3(
+        label: *const ::std::os::raw::c_char,
+        col: *mut f32,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __color_edit_4(
+        label: *const ::std::os::raw::c_char,
+        col: *mut f32,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __color_picker_3(
+        label: *const ::std::os::raw::c_char,
+        col: *mut f32,
+        flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+unsafe extern "C" {
+    pub fn __color_picker_4(
+        label: *const ::std::os::raw::c_char,
+        col: *mut f32,
+        flags: ::std::os::raw::c_int,
+        ref_col: *const f32,
     ) -> ::std::os::raw::c_int;
 }
 unsafe extern "C" {

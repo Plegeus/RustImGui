@@ -11,7 +11,7 @@ Since Rust does not support variadic nor overloaded functions, the wrapper funct
  - imgui: Rust crate
  - imgui_derive: derive macros for imgui
  - ImGui_cpp: the Dear ImGui source code (wrapped in C compatible calls)
- - ImGui_cpp_mtl: Apple specific code for ImGui_docking
+ - ImGui_cpp_mtl: Apple specific code for ImGui_cpp
  - ImGui_cpp_vk: Vulkan
  - ImGui_c: Rust compatible C calls
 

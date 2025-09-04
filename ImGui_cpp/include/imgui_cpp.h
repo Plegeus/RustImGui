@@ -2,20 +2,24 @@
 // Created by Timoty Gielkens on 08/07/2024.
 //
 
-#ifndef IMGUI_DOCKING_IMGUI_DOCKING_H
-#define IMGUI_DOCKING_IMGUI_DOCKING_H
+#ifndef IMGUI_CPP_H
+#define IMGUI_CPP_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+
 // platform specific...
 void __init_glfw(void*, void*);
+#ifdef __APPLE__
+void __init_cocoa(void*, void*);
+#endif
 void __terminate();
 
-void __new_frame(void const*);
+void __new_frame(void*, void*);
 void __end_frame();
-void __render(void const*, void const*);
+void __render(void*, void*);
 
 // cross platform...
 void* __create_context();
@@ -60,7 +64,8 @@ void __end_popup();
 int __collapsing_header(const char const*);
 int __tree_node(const char const*);
 void __tree_pop();
-int __selectable(const char const*, int, int, float, float);
+int __selectable(const char const* label, int selected, int flags, float w, float h);
+int __selectable_ptr(const char const* label, int* selected, int flags, float w, float h);
 
 int __begin_tab_bar(const char const*, int);
 void __end_tab_bar();
@@ -124,11 +129,29 @@ int __is_item_hovered(int);
 int __input_float_2(const char const*, float*, const char const*, int);
 int __input_float_3(const char const*, float*, const char const*, int);
 int __input_float_4(const char const*, float*, const char const*, int);
+int __slider_float_2(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __slider_float_3(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __slider_float_4(const char const* label, float* value, float min, float max, const char const* format, int flags);
+int __drag_float_2(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_float_3(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_int_2(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);
+int __drag_int_3(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);
+int __drag_int_4(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);
 
-int __input_float(const char const*, float*, float, float, const char const*, int);
+int __input_float(const char const* label, float* value, float step, float step_fast, const char const* format, int flags);
+int __drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags);
+int __drag_int(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags);  
+int __slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags);
 int __input_double(const char const*, double*, double, double, const char const*, int);
 int __input_int(const char const*, int*, int, int, int);
 int __checkbox(const char const*, int*);
+
+int __color_edit_3(const char const* label, float* col, int flags);
+int __color_edit_4(const char const* label, float* col, int flags);
+int __color_picker_3(const char const* label, float* col, int flags);
+int __color_picker_4(const char const* label, float* col, int flags, const float* ref_col);
+
 
 float __frame_rate();
 
@@ -138,3 +161,6 @@ float __frame_rate();
 #endif
 
 #endif //IMGUI_DOCKING_IMGUI_DOCKING_H
+
+
+

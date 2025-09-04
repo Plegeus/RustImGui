@@ -1,15 +1,16 @@
 
 use std::ffi::{ CString, CStr };
 use std::os::raw::c_int as Int;
-use std::os::raw::c_char as Char;
 use std::os::raw::c_void as Void;
 use std::fmt::{ Display };
 
 use crate::{Color, OptionMut, OptionOwned, OptionRef};
 use crate::flags::*;
 
+
 include!("./bindings/imgui_c.rs");
-include!("./bindings/imgui_cpp.rs");
+include!("./bindings/vulkan_info.rs");
+//include!("./bindings/imgui_cpp.rs");
 
 
 // interface...
@@ -60,7 +61,7 @@ pub unsafe fn set_cursor_pos(x: f32, y: f32) {
 pub unsafe fn get_mouse_pos_in_window() -> (f32, f32) {
 
   let (window_x, window_y) = get_window_pos();
-  let (w, h) = get_window_size();
+  //let (w, h) = get_window_size();
   let (mouse_x, mouse_y) = get_mouse_pos();
   let (mouse_x, mouse_y) = (mouse_x - window_x, mouse_y - window_y);
 
@@ -165,13 +166,51 @@ pub unsafe fn tree_node<D: Display>(label: D) -> bool {
   let c_label = label.cify();
   _tree_node(c_label.as_ptr()) != 0
 }
-// add a GuiBool trait that allows to pass a &mut bool as well as a bool (see imgui.h)
+
 /*pub unsafe fn selectable<D: Display>(label: D, selected: bool, flags: Option<i32>, size: Option<[f32; 2]>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let size = size.unwrap_or([0.0; 2]);
   _selectable(c_label.as_ptr(), selected.cify(), flags.unwrap_or(0), size[0], size[1]) != 0
 }*/
+
+enum GuiBool<'a> {
+  Bool(bool),
+  MutBool(&'a mut bool),
+}
+
+impl<'a> Into<GuiBool<'a>> for bool {
+  fn into(self) -> GuiBool<'a> {
+    GuiBool::Bool(self)
+  }
+}
+impl<'a> Into<GuiBool<'a>> for &'a mut bool {
+  fn into(self) -> GuiBool<'a> {
+    GuiBool::MutBool(self)
+  }
+}
+
+pub unsafe fn selectable<'a, D: Display, B: Into<GuiBool<'a>>>(label: D, selected: B, flags: impl OptionRef<'a, SelectableFlags>, size: impl OptionOwned<[f32; 2]>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let size = size.into_option().unwrap_or([0.0, 0.0]);
+  //let selected = selected.into_option();
+  //if selected.is_none() {
+  //  return selectable(label, None, flags, size);
+  //}
+  match selected.into() {
+    GuiBool::Bool(selected) => {
+      let i32 = if selected { 1 } else { 0 };
+      _selectable(c_label.as_ptr(), i32, flags.into_i32(), size[0], size[1]) != 0
+    },
+    GuiBool::MutBool(selected) => {
+      let mut i32 = if *selected { 1 } else { 0 };
+      let res = _selectable_ptr(c_label.as_ptr(), &mut i32, flags.into_i32(), size[0], size[1]) != 0;
+      *selected = i32 != 0;
+      res
+    },
+  }
+}
 
 pub unsafe fn begin_tab_bar<'a, D: Display>(label: D, flags: impl OptionRef<'a, TabBarFlags>) -> bool {
   let label = stringify(label);
@@ -243,7 +282,7 @@ pub unsafe fn table_next_column() -> bool {
 pub unsafe fn text<D: Display>(text: D) {
   let c_text = stringify(text);
   let c_text = c_text.cify();
-  __text(c_text.as_ptr());
+  _text(c_text.as_ptr());
 }
 pub unsafe fn text_wrapped<D: Display>(text: D) {
   let c_text = stringify(text);
@@ -496,7 +535,7 @@ pub unsafe fn is_item_hovered<'a>(flags: impl OptionRef<'a, WindowFlags>) -> boo
 }
 
 
-pub unsafe fn input_float_2<'a, D: Display>(label: D, value: &mut [f32; 2], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
+pub unsafe fn input_f32_2<'a, D: Display>(label: D, value: &mut [f32; 2], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -507,7 +546,7 @@ pub unsafe fn input_float_2<'a, D: Display>(label: D, value: &mut [f32; 2], form
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_float_3<'a, D: Display>(label: D, value: &mut [f32; 3], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
+pub unsafe fn input_f32_3<'a, D: Display>(label: D, value: &mut [f32; 3], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -518,7 +557,7 @@ pub unsafe fn input_float_3<'a, D: Display>(label: D, value: &mut [f32; 3], form
     flags.into_i32(),
   ) != 0
 }
-pub unsafe fn input_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
+pub unsafe fn input_f32_4<'a, D: Display>(label: D, value: &mut [f32; 4], format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
   let c_format = format.into_option().unwrap_or("%.3f").cify();
@@ -529,6 +568,130 @@ pub unsafe fn input_float_4<'a, D: Display>(label: D, value: &mut [f32; 4], form
     flags.into_i32(),
   ) != 0
 }
+pub unsafe fn slider_f32_2<'a, D: Display>(label: D, value: &mut [f32; 2], min: f32, max: f32, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _slider_float_2(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    min, 
+    max, 
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn slider_f32_3<'a, D: Display>(label: D, value: &mut [f32; 3], min: f32, max: f32, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _slider_float_3(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    min, 
+    max, 
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn slider_f32_4<'a, D: Display>(label: D, value: &mut [f32; 4], min: f32, max: f32, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _slider_float_4(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    min, 
+    max, 
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_f32_2<'a, D: Display>(label: D, value: &mut [f32; 2], speed: impl OptionOwned<f32>, min: impl OptionOwned<f32>, max: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _drag_float_2(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0.0),
+    max.into_option().unwrap_or(0.0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_f32_3<'a, D: Display>(label: D, value: &mut [f32; 3], speed: impl OptionOwned<f32>, min: impl OptionOwned<f32>, max: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _drag_float_3(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0.0),
+    max.into_option().unwrap_or(0.0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_f32_4<'a, D: Display>(label: D, value: &mut [f32; 4], speed: impl OptionOwned<f32>, min: impl OptionOwned<f32>, max: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _drag_float_4(
+    c_label.as_ptr(), 
+    value as *mut f32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0.0),
+    max.into_option().unwrap_or(0.0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_i32_2<'a, D: Display>(label: D, value: &mut [i32; 2], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_2(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_i32_3<'a, D: Display>(label: D, value: &mut [i32; 3], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_3(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_i32_4<'a, D: Display>(label: D, value: &mut [i32; 4], speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+    let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int_4(
+    c_label.as_ptr(), 
+    value as *mut i32, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+
 
 pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl OptionOwned<f32>, step_fast: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
   let label = stringify(label);
@@ -541,6 +704,48 @@ pub unsafe fn input_f32<'a, D: Display>(label: D, value: &mut f32, step: impl Op
     step_fast.into_option().unwrap_or(0.0),
     c_format.as_ptr(),
     flags.into_i32(),
+  ) != 0
+}
+
+pub unsafe fn slider_f32<'a, D: Display>(label: D, value: &mut f32, min: f32, max: f32, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _slider_float(
+    c_label.as_ptr(), 
+    value, 
+    min, 
+    max, 
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_f32<'a, D: Display>(label: D, value: &mut f32, speed: impl OptionOwned<f32>, min: impl OptionOwned<f32>, max: impl OptionOwned<f32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%.3f").cify();
+  _drag_float(
+    c_label.as_ptr(), 
+    value, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0.0),
+    max.into_option().unwrap_or(0.0),
+    c_format.as_ptr(), 
+    flags.into_i32()
+  ) != 0
+}
+pub unsafe fn drag_i32<'a, D: Display>(label: D, value: &mut i32, speed: impl OptionOwned<f32>, min: impl OptionOwned<i32>, max: impl OptionOwned<i32>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, SliderFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let c_format = format.into_option().unwrap_or("%d").cify();
+  _drag_int(
+    c_label.as_ptr(), 
+    value, 
+    speed.into_option().unwrap_or(1.0),
+    min.into_option().unwrap_or(0),
+    max.into_option().unwrap_or(0),
+    c_format.as_ptr(), 
+    flags.into_i32()
   ) != 0
 }
 pub unsafe fn input_f64<'a, D: Display>(label: D, value: &mut f64, step: impl OptionOwned<f64>, step_fast: impl OptionOwned<f64>, format: impl OptionOwned<&'static str>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
@@ -567,6 +772,12 @@ pub unsafe fn input_i32<'a, D: Display>(label: D, value: &mut i32, step: impl Op
     flags.into_i32(),
   ) != 0
 }
+pub unsafe fn input_usize<'a, D: Display>(label: D, value: &mut usize, step: impl OptionOwned<i32>, step_fast: impl OptionOwned<i32>, flags: impl OptionRef<'a, InputTextFlags>) -> bool {
+  let mut i32 = *value as i32;
+  let res = input_i32(label, &mut i32, step, step_fast, flags);
+  *value = i32 as usize;
+  res
+}
 pub unsafe fn checkbox<D: Display>(label: D, value: &mut bool) -> bool {
   let label = stringify(label);
   let c_label = label.cify();
@@ -575,6 +786,49 @@ pub unsafe fn checkbox<D: Display>(label: D, value: &mut bool) -> bool {
   *value = i != 0;
   res
 }
+
+pub unsafe fn color_edit_3<'a, D: Display>(label: D, color: &mut [f32; 3], flags: impl OptionRef<'a, ColorEditFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  _color_edit_3(
+    c_label.as_ptr(), 
+    color as *mut f32, 
+    flags.into_i32(),
+  ) != 0
+}
+pub unsafe fn color_edit_4<'a, D: Display>(label: D, color: &mut [f32; 4], flags: impl OptionRef<'a, ColorEditFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  _color_edit_4(
+    c_label.as_ptr(), 
+    color as *mut f32, 
+    flags.into_i32(),
+  ) != 0
+}
+pub unsafe fn color_picker_3<'a, D: Display>(label: D, color: &mut [f32; 3], flags: impl OptionRef<'a, ColorEditFlags>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  _color_picker_3(
+    c_label.as_ptr(), 
+    color as *mut f32, 
+    flags.into_i32(),
+  ) != 0
+}
+pub unsafe fn color_picker_4<'a, D: Display>(label: D, color: &mut [f32; 4], flags: impl OptionRef<'a, ColorEditFlags>, ref_col: impl OptionOwned<[f32; 4]>) -> bool {
+  let label = stringify(label);
+  let c_label = label.cify();
+  let mut p_ref_col = std::ptr::null();
+  if let Some(ref_col) = ref_col.into_option() {
+    p_ref_col = ref_col.as_ptr();
+  }
+  _color_picker_4(
+    c_label.as_ptr(), 
+    color as *mut f32, 
+    flags.into_i32(),
+    p_ref_col,
+  ) != 0
+}
+
 
 
 // helpers...

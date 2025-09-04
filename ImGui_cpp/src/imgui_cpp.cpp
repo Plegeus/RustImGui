@@ -6,6 +6,7 @@
 #include <imgui.h>
 #ifdef _WIN32
 #include <imgui_cpp_vk.h>
+#include <vulkan/vulkan.h>
 #endif
 #ifdef __APPLE__ 
 #include <imgui_cpp_mtl.h>
@@ -13,12 +14,15 @@
 #include <stdio.h>
 
 
-void __init_glfw(void* p_window, void* p_device) {
+void __init_cocoa(void* pWindow, void* pDevice) {
+    __init_cocoa_mtl(pWindow, pDevice);
+}
+void __init_glfw(void* p_window, void* p_data) {
 #ifdef __APPLE__
-    __init_glfw_mtl(p_window, p_device);
+    //__init_glfw_mtl();
 #endif
 #ifdef _WIN32
-    __init_glfw_vk();
+    __init_glfw_vk(p_window, p_data);
 #endif
 }
 void __terminate() {
@@ -30,9 +34,9 @@ void __terminate() {
 #endif
 }
 
-void __new_frame(void const* descriptor) {
+void __new_frame(void* descriptor, void* pView) {
 #ifdef __APPLE__
-    __new_frame_mtl(descriptor);
+    __new_frame_mtl(descriptor, pView);
 #endif
 #ifdef _WIN32
     __new_frame_vk();
@@ -46,12 +50,12 @@ void __end_frame() {
     __end_frame_vk();
 #endif
 }
-void __render(void const* command_buffer, void const* command_encoder) {
+void __render(void* pCommandBuffer, void* pCommandEncoder) {
 #ifdef __APPLE__
-    __render_mtl(command_buffer, command_encoder);
+    __render_mtl(pCommandBuffer, pCommandEncoder);
 #endif
 #ifdef _WIN32
-    __render_vk();
+    __render_vk(p_command_buffer);
 #endif
 }
 
@@ -217,6 +221,13 @@ int __selectable(const char const* label, int selected, int flags, float w, floa
     ImVec2 size(w, h);
     return ImGui::Selectable(label, selected != 0, flags, size) ? 1 : 0;
 }
+int __selectable_ptr(const char const* label, int* selected, int flags, float w, float h) {
+    ImVec2 size(w, h);
+    bool b = *selected != 0;
+    int res = ImGui::Selectable(label, &b, flags, size) ? 1 : 0;
+    *selected = b ? 1 : 0;
+    return res;
+}
 
 int __begin_tab_bar(const char const* id, int flags) {
     return ImGui::BeginTabBar(id, flags) ? 1 : 0;
@@ -325,8 +336,8 @@ void __end_menu() {
 
 int __menu_item(const char const* label, const char const* shortcut, int* selected, int enabled) {
     bool result;
-    if (selected == NULL) {
-        result = ImGui::MenuItem(label, shortcut, nullptr, enabled != 0);
+    if (selected == nullptr) {
+        result = ImGui::MenuItem(label, shortcut, false, enabled != 0);
     } else {
         bool b_selected = *selected != 0;
         result = ImGui::MenuItem(label, shortcut, &b_selected, enabled != 0);
@@ -438,9 +449,45 @@ int __input_float_3(const char const* label, float* value, const char const* for
 int __input_float_4(const char const* label, float* value, const char const* format, int flags) {
     return ImGui::InputFloat4(label, value, format, flags) ? 1 : 0;
 }
+int __slider_float_2(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return ImGui::SliderFloat2(label, value, min, max, format, flags) ? 1 : 0;
+}
+int __slider_float_3(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return ImGui::SliderFloat3(label, value, min, max, format, flags) ? 1 : 0;
+}
+int __slider_float_4(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return ImGui::SliderFloat4(label, value, min, max, format, flags) ? 1 : 0;
+}
+int __drag_float_2(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return ImGui::DragFloat2(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_float_3(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return ImGui::DragFloat3(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_float_4(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return ImGui::DragFloat4(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_int_2(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return ImGui::DragInt2(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_int_3(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return ImGui::DragInt3(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_int_4(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return ImGui::DragInt4(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
 
 int __input_float(const char const* label, float* value, float step, float step_fast, const char const* format, int flags) {
     return ImGui::InputFloat(label, value, step, step_fast, format, flags) ? 1 : 0;
+}
+int __drag_float(const char const* label, float* value, float speed, float min, float max, const char const* format, int flags) {
+    return ImGui::DragFloat(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __drag_int(const char const* label, int* value, float speed, int min, int max, const char const* format, int flags) {
+    return ImGui::DragInt(label, value, speed, min, max, format, flags) ? 1 : 0;
+}
+int __slider_float(const char const* label, float* value, float min, float max, const char const* format, int flags) {
+    return ImGui::SliderFloat(label, value, min, max, format, flags) ? 1 : 0;
 }
 int __input_double(const char const* label, double* value, double step, double step_fast, const char const* format, int flags) {
     return ImGui::InputDouble(label, value, step, step_fast, format, flags) ? 1 : 0;
@@ -454,6 +501,20 @@ int __checkbox(const char const* label, int* boo) {
     *boo = b ? 1 : 0;
     return result;
 }
+
+int __color_edit_3(const char const* label, float* col, int flags) {
+    return ImGui::ColorEdit3(label, col, flags) ? 1 : 0;
+}
+int __color_edit_4(const char const* label, float* col, int flags) {
+    return ImGui::ColorEdit4(label, col, flags) ? 1 : 0;
+}
+int __color_picker_3(const char const* label, float* col, int flags) {
+    return ImGui::ColorPicker3(label, col, flags) ? 1 : 0;
+}
+int __color_picker_4(const char const* label, float* col, int flags, const float* ref_col) {
+    return ImGui::ColorPicker4(label, col, flags, ref_col) ? 1 : 0;
+}
+
 
 float __frame_rate() {
     return ImGui::GetIO().Framerate;
