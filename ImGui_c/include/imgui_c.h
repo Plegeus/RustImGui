@@ -6,7 +6,9 @@
 #define IMGUI_BINDINGS_IMGUI_BINDINGS_H
 
 
+#ifdef __APPLE__
 void init_cocoa(void*, void*);
+#endif
 void init_glfw(void*, void*);
 void terminate();
 

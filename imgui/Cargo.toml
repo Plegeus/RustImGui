@@ -7,7 +7,8 @@ edition = "2021"
 
 [dependencies]
 #imgui_derive = { git = "https://github.com/Plegeus/RustImGui.git" }
-imgui_derive = { path = "/Users/timo/Documents/coding/black-death-studios/RustImGui/imgui_derive" }
+#imgui_derive = { path = "/Users/timo/Documents/coding/black-death-studios/RustImGui/imgui_derive" }
+imgui_derive = { path = "../imgui_derive" }
 
 [build-dependencies]
 bindgen = "0.72.0"

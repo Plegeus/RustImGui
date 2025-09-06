@@ -14,9 +14,11 @@
 #include <stdio.h>
 
 
+#ifdef __APPLE__
 void __init_cocoa(void* pWindow, void* pDevice) {
     __init_cocoa_mtl(pWindow, pDevice);
 }
+#endif
 void __init_glfw(void* p_window, void* p_data) {
 #ifdef __APPLE__
     //__init_glfw_mtl();
@@ -55,7 +57,7 @@ void __render(void* pCommandBuffer, void* pCommandEncoder) {
     __render_mtl(pCommandBuffer, pCommandEncoder);
 #endif
 #ifdef _WIN32
-    __render_vk(p_command_buffer);
+    __render_vk(pCommandBuffer);
 #endif
 }
 
