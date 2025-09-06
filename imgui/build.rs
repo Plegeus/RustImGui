@@ -71,7 +71,7 @@ fn bind() {
     .unwrap();
 
 }
-fn compile() {
+fn _compile() {
 
   use std::process::Command;
 

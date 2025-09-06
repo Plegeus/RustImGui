@@ -3,7 +3,6 @@ extern crate proc_macro;
 
 use proc_macro::{TokenStream};
 use quote::quote;
-use syn::Data;
 
 
 /*
@@ -99,7 +98,7 @@ pub fn assert_imgui_context(args: TokenStream, input: TokenStream) -> TokenStrea
 
   let mut func = ast.clone();
   func.block = {
-    let mut block = ast.block;
+    let block = ast.block;
     //block.stmts.insert(
     //  0, 
     //  syn::parse(quote! { println!("Function Called, Wow!"); }.into()).unwrap(),

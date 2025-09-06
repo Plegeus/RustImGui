@@ -1,6 +1,7 @@
 
 
 #![allow(dead_code)]
+#![allow(warnings)]
 
 
 pub mod calls;
