@@ -483,17 +483,14 @@ where
 // !!! WARNING !!!
 // overloaded methods exist in imgui.h, should their be equivalents in rust?
 // !!! WARNING !!!
-pub unsafe fn combo<D, I>(label: D, current: &mut usize, items: &Vec<I>, max_height: impl OptionOwned<i32>) -> bool 
+pub unsafe fn combo<D, I>(label: D, current: &mut usize, items: impl Iterator<Item = I>, max_height: impl OptionOwned<i32>) -> bool 
 where
   D: Display, 
   I: Display
 {
   let label = stringify(label);
   let c_label = label.cify();
-  let items: Vec<_> = items
-    .iter()
-    .map(|item| stringify(item))
-    .collect();
+  let items: Vec<_> = items.map(stringify).collect();
   let c_items = items.iter().map(|item| item.cify()).collect::<Vec<_>>();
   let c_item_ptrs = c_items.iter().map(|item| item.as_ptr()).collect::<Vec<_>>();
   let mut current2 = *current as i32;
